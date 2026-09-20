@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Science 11 Reviewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        .option-btn {
+            transition: all 0.3s ease;
+        }
+        .option-btn:hover:not(.selected):not(.correct):not(.wrong) {
+            transform: translateX(8px);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .selected {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .correct {
+            background: #10b981 !important;
+            color: white !important;
+        }
+        .wrong {
+            background: #ef4444 !important;
+            color: white !important;
+        }
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div id="app" class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">General Science 11 Reviewer</h1>
+            <p class="text-gray-600">Term I - Practice & Learn</p>
+        </header>
+
+        <!-- Stats Bar -->
+        <div class="bg-white rounded-2xl card-shadow p-6 mb-6">
+            <div class="flex flex-wrap justify-between items-center gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <svg class="progress-ring w-16 h-16">
+                            <circle cx="32" cy="32" r="28" stroke="#e5e7eb" stroke-width="4" fill="none"/>
+                            <circle id="progress-circle" cx="32" cy="32" r="28" stroke="url(#gradient)" stroke-width="4" fill="none" 
+                                stroke-dasharray="175.93" stroke-dashoffset="175.93" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#667eea"/>
+                                    <stop offset="100%" stop-color="#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span id="progress-text" class="absolute inset-0 flex items-center justify-center text-sm font-bold text-gray-700">0%</span>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Progress</p>
+                        <p id="question-count" class="text-lg font-semibold text-gray-800">0 / 0 Questions</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-green-500" id="correct-count">0</p>
+                        <p class="text-xs text-gray-500">Correct</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-red-500" id="wrong-count">0</p>
+                        <p class="text-xs text-gray-500">Wrong</p>
+                    </div>
+                </div>
+                <button id="review-btn" class="hidden px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition flex items-center gap-2">
+                    <i class="fas fa-redo"></i>
+                    Review Wrong (0)
+                </button>
+            </div>
+        </div>
+
+        <!-- Mode Toggle -->
+        <div class="flex justify-center gap-4 mb-6">
+            <button id="practice-mode" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white">
+                <i class="fas fa-pencil-alt mr-2"></i>Practice Mode
+            </button>
+            <button id="review-mode" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">
+                <i class="fas fa-history mr-2"></i>Review Wrong
+            </button>
+        </div>
+
+        <!-- Question Card -->
+        <div id="question-card" class="bg-white rounded-2xl card-shadow p-8 fade-in">
+            <div class="mb-6">
+                <span id="question-number" class="text-sm font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">Question 1</span>
+            </div>
+            <h2 id="question-text" class="text-xl font-semibold text-gray-800 mb-6">Loading questions...</h2>
+            <div id="options-container" class="space-y-3">
+                <!-- Options will be rendered here -->
+            </div>
+            <div id="feedback" class="hidden mt-6 p-4 rounded-xl">
+                <p id="feedback-text" class="font-semibold mb-2"></p>
+                <p id="rationale" class="text-gray-600 text-sm"></p>
+            </div>
+            <div class="mt-6 flex justify-between">
+                <button id="prev-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <i class="fas fa-arrow-left mr-2"></i>Previous
+                </button>
+                <button id="next-btn" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
+                    Next<i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden bg-white rounded-2xl card-shadow p-12 text-center">
+            <i class="fas fa-check-circle text-6xl text-green-500 mb-4"></i>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Great Job!</h2>
+            <p class="text-gray-600 mb-6">You've completed all questions. Keep practicing!</p>
+            <button id="restart-btn" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white hover:opacity-90">
+                <i class="fas fa-redo mr-2"></i>Start Over
+            </button>
+        </div>
+
+        <!-- No Wrong Questions State -->
+        <div id="no-wrong-state" class="hidden bg-white rounded-2xl card-shadow p-12 text-center">
+            <i class="fas fa-trophy text-6xl text-amber-500 mb-4"></i>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">No Wrong Answers!</h2>
+            <p class="text-gray-600 mb-6">You haven't gotten any questions wrong yet. Keep up the great work!</p>
+            <button id="back-to-practice" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white hover:opacity-90">
+                <i class="fas fa-pencil-alt mr-2"></i>Back to Practice
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
