@@ -2188,10 +2188,887 @@ const mathQuestions = [
     }
 ];
 
+// Biology Questions - Biology 1 Term 1
+const biologyQuestions = [
+    // I. Biology and Its Branches (Questions 1-5)
+    {
+        id: 1,
+        subject: "biology",
+        question: "A scientist is studying how a population of deer interacts with the plants and other animals in a forest ecosystem. Which branch of biology is most relevant to this study?",
+        options: [
+            "Genetics",
+            "Ecology",
+            "Physiology",
+            "Morphology"
+        ],
+        correct: 1,
+        rationale: "Ecology studies interactions among organisms and their environment, which matches the scenario of studying deer in a forest ecosystem."
+    },
+    {
+        id: 2,
+        subject: "biology",
+        question: "A researcher is investigating how blue eye color is passed from parents to children across generations. This study belongs to which branch of biology?",
+        options: [
+            "Genetics",
+            "Histology",
+            "Biochemistry",
+            "Embryology"
+        ],
+        correct: 0,
+        rationale: "Genetics is the study of genes, heredity, and transmission of traits, which describes the study of eye color inheritance."
+    },
+    {
+        id: 3,
+        subject: "biology",
+        question: "A doctor is examining tissue samples under a microscope to diagnose a disease. Which branch of biology involves the microscopic study of tissues?",
+        options: [
+            "Morphology",
+            "Physiology",
+            "Histology",
+            "Biochemistry"
+        ],
+        correct: 2,
+        rationale: "Histology is the microscopic study of tissues, which is what the doctor is doing with tissue samples."
+    },
+    {
+        id: 4,
+        subject: "biology",
+        question: "A scientist is studying the chemical reactions that occur during cellular respiration. This falls under which branch of biology?",
+        options: [
+            "Embryology",
+            "Biochemistry",
+            "Ecology",
+            "Morphology"
+        ],
+        correct: 1,
+        rationale: "Biochemistry studies chemical processes in living organisms, such as those in cellular respiration."
+    },
+    {
+        id: 5,
+        subject: "biology",
+        question: "When studying the development of a fertilized egg into a fully formed organism, which branch of biology would be most relevant?",
+        options: [
+            "Embryology",
+            "Genetics",
+            "Physiology",
+            "Ecology"
+        ],
+        correct: 0,
+        rationale: "Embryology studies the development of organisms, from fertilized egg to fully formed organism."
+    },
+
+    // II. Cell Theory (Questions 6-10)
+    {
+        id: 6,
+        subject: "biology",
+        question: "A student observes that all the bacteria in a culture dish came from existing bacteria that were already present. Which principle of cell theory does this observation support?",
+        options: [
+            "All living organisms are composed of one or more cells",
+            "Cell is the basic unit of life",
+            "All cells arise from pre-existing cells",
+            "Cells contain genetic material"
+        ],
+        correct: 2,
+        rationale: "The observation that bacteria come from existing bacteria supports the principle that all cells arise from pre-existing cells."
+    },
+    {
+        id: 7,
+        subject: "biology",
+        question: "Which scientist is credited with observing cork cells and introducing the term 'cell'?",
+        options: [
+            "Antonie van Leeuwenhoek",
+            "Robert Hooke",
+            "Matthias Schleiden",
+            "Theodor Schwann"
+        ],
+        correct: 1,
+        rationale: "Robert Hooke observed cork and introduced the term 'cell'."
+    },
+    {
+        id: 8,
+        subject: "biology",
+        question: "A scientist claims that plants are composed of cells. Which scientist's work supports this claim?",
+        options: [
+            "Rudolf Virchow",
+            "Theodor Schwann",
+            "Matthias Schleiden",
+            "Robert Hooke"
+        ],
+        correct: 2,
+        rationale: "Matthias Schleiden concluded that plants are composed of cells."
+    },
+    {
+        id: 9,
+        subject: "biology",
+        question: "Who proposed that animals are composed of cells?",
+        options: [
+            "Matthias Schleiden",
+            "Theodor Schwann",
+            "Rudolf Virchow",
+            "Antonie van Leeuwenhoek"
+        ],
+        correct: 1,
+        rationale: "Theodor Schwann concluded that animals are composed of cells."
+    },
+    {
+        id: 10,
+        subject: "biology",
+        question: "Which scientist is associated with the principle that cells arise from pre-existing cells?",
+        options: [
+            "Robert Hooke",
+            "Antonie van Leeuwenhoek",
+            "Rudolf Virchow",
+            "Matthias Schleiden"
+        ],
+        correct: 2,
+        rationale: "Rudolf Virchow proposed that cells arise from pre-existing cells."
+    },
+
+    // III. Prokaryotic vs Eukaryotic (Questions 11-15)
+    {
+        id: 11,
+        subject: "biology",
+        question: "A bacterium is found to have its DNA floating in the nucleoid region without a nuclear membrane. Is this cell prokaryotic or eukaryotic?",
+        options: [
+            "Prokaryotic",
+            "Eukaryotic",
+            "Both",
+            "Neither"
+        ],
+        correct: 0,
+        rationale: "Prokaryotic cells have DNA in the nucleoid and no membrane-bound nucleus or organelles."
+    },
+    {
+        id: 12,
+        subject: "biology",
+        question: "A cell contains mitochondria, endoplasmic reticulum, and a membrane-bound nucleus. What type of cell is this?",
+        options: [
+            "Prokaryotic",
+            "Eukaryotic",
+            "Virus",
+            "Prion"
+        ],
+        correct: 1,
+        rationale: "Eukaryotic cells have a membrane-bound nucleus and membrane-bound organelles like mitochondria and ER."
+    },
+    {
+        id: 13,
+        subject: "biology",
+        question: "If a cell has a nucleoid but lacks mitochondria and Golgi apparatus, how would you classify it?",
+        options: [
+            "Eukaryotic",
+            "Prokaryotic",
+            "Plant cell",
+            "Animal cell"
+        ],
+        correct: 1,
+        rationale: "Nucleoid + no membrane-bound organelles = prokaryotic."
+    },
+    {
+        id: 14,
+        subject: "biology",
+        question: "A student is examining a cell under a microscope and observes a nucleus, mitochondria, and ER. What conclusion can they draw?",
+        options: [
+            "The cell is prokaryotic",
+            "The cell is eukaryotic",
+            "The cell is a virus",
+            "The cell is dead"
+        ],
+        correct: 1,
+        rationale: "Nucleus + mitochondria + ER = eukaryotic."
+    },
+    {
+        id: 15,
+        subject: "biology",
+        question: "Which of the following structures would you NOT expect to find in a prokaryotic cell?",
+        options: [
+            "DNA",
+            "Ribosomes",
+            "Nucleus",
+            "Cell membrane"
+        ],
+        correct: 2,
+        rationale: "Prokaryotic cells lack a membrane-bound nucleus, though they have DNA, ribosomes, and cell membrane."
+    },
+
+    // IV. Cell Cycle (Questions 16-20)
+    {
+        id: 16,
+        subject: "biology",
+        question: "During which phase of the cell cycle does DNA replication occur?",
+        options: [
+            "G₁ phase",
+            "S phase",
+            "G₂ phase",
+            "M phase"
+        ],
+        correct: 1,
+        rationale: "DNA replication occurs during S (Synthesis) phase."
+    },
+    {
+        id: 17,
+        subject: "biology",
+        question: "A cell is growing and performing its normal functions but not replicating DNA. Which phase is it likely in?",
+        options: [
+            "S phase",
+            "G₁ phase",
+            "G₂ phase",
+            "M phase"
+        ],
+        correct: 1,
+        rationale: "G₁ phase is when the cell grows and performs normal functions before DNA replication."
+    },
+    {
+        id: 18,
+        subject: "biology",
+        question: "What is the purpose of DNA replication during the cell cycle?",
+        options: [
+            "To increase cell size",
+            "To ensure genetic material can be distributed to daughter cells",
+            "To produce proteins",
+            "To generate energy"
+        ],
+        correct: 1,
+        rationale: "DNA replication ensures genetic material can be distributed to daughter cells."
+    },
+    {
+        id: 19,
+        subject: "biology",
+        question: "During which phase does the cell prepare for division after DNA has been replicated?",
+        options: [
+            "G₁ phase",
+            "S phase",
+            "G₂ phase",
+            "Cytokinesis"
+        ],
+        correct: 2,
+        rationale: "G₂ phase is when the cell grows and prepares for cell division after DNA replication."
+    },
+    {
+        id: 20,
+        subject: "biology",
+        question: "In what order do the phases of the cell cycle occur?",
+        options: [
+            "M → G₁ → S → G₂ → Cytokinesis",
+            "G₁ → S → G₂ → M → Cytokinesis",
+            "S → G₁ → G₂ → M → Cytokinesis",
+            "G₂ → S → G₁ → M → Cytokinesis"
+        ],
+        correct: 1,
+        rationale: "The correct order is Interphase (G₁, S, G₂) → M Phase → Cytokinesis."
+    },
+
+    // V. Mitosis (Questions 21-25)
+    {
+        id: 21,
+        subject: "biology",
+        question: "During which phase of mitosis do chromosomes align at the equatorial plane?",
+        options: [
+            "Prophase",
+            "Metaphase",
+            "Anaphase",
+            "Telophase"
+        ],
+        correct: 1,
+        rationale: "During metaphase, chromosomes align at the equatorial plane."
+    },
+    {
+        id: 22,
+        subject: "biology",
+        question: "What happens during anaphase of mitosis?",
+        options: [
+            "Chromosomes condense",
+            "Sister chromatids separate and move to opposite poles",
+            "New nuclear envelopes form",
+            "Chromosomes align at the equator"
+        ],
+        correct: 1,
+        rationale: "During anaphase, sister chromatids separate and move to opposite poles."
+    },
+    {
+        id: 23,
+        subject: "biology",
+        question: "How does cytokinesis differ between animal and plant cells?",
+        options: [
+            "Animal cells form a cell plate, plant cells form a cleavage furrow",
+            "Animal cells form a cleavage furrow, plant cells form a cell plate",
+            "Both form cleavage furrows",
+            "Both form cell plates"
+        ],
+        correct: 1,
+        rationale: "Animal cells form a cleavage furrow, while plant cells form a cell plate during cytokinesis."
+    },
+    {
+        id: 24,
+        subject: "biology",
+        question: "What is the result of mitosis in terms of daughter cells?",
+        options: [
+            "Four genetically different haploid cells",
+            "Two genetically identical diploid cells",
+            "Two genetically different haploid cells",
+            "Four genetically identical diploid cells"
+        ],
+        correct: 1,
+        rationale: "Mitosis produces two genetically identical daughter cells with the same chromosome number as the parent."
+    },
+    {
+        id: 25,
+        subject: "biology",
+        question: "During which phase of mitosis do chromosomes condense and the nuclear envelope break down?",
+        options: [
+            "Prophase",
+            "Metaphase",
+            "Anaphase",
+            "Telophase"
+        ],
+        correct: 0,
+        rationale: "During prophase, chromosomes condense and the nuclear envelope breaks down."
+    },
+
+    // VI. Cell Cycle Checkpoints (Questions 26-30)
+    {
+        id: 26,
+        subject: "biology",
+        question: "If a cell has damaged DNA at the G₁ checkpoint, what might happen?",
+        options: [
+            "The cell immediately divides",
+            "The cell cycle may stop until repair occurs or enter G₀",
+            "The cell skips to M phase",
+            "The cell undergoes meiosis"
+        ],
+        correct: 1,
+        rationale: "Damaged DNA at G₁ checkpoint may cause the cell cycle to stop until repair occurs or enter G₀."
+    },
+    {
+        id: 27,
+        subject: "biology",
+        question: "What can happen if cell cycle checkpoints fail?",
+        options: [
+            "Cell death",
+            "Uncontrolled cell division which may contribute to cancer",
+            "Normal cell division",
+            "Increased DNA repair"
+        ],
+        correct: 1,
+        rationale: "Checkpoint failure can lead to uncontrolled cell division, which may contribute to cancer."
+    },
+    {
+        id: 28,
+        subject: "biology",
+        question: "What is the purpose of cell cycle checkpoints?",
+        options: [
+            "To speed up cell division",
+            "To regulate progression and prevent damaged cells from dividing",
+            "To increase genetic variation",
+            "To produce more ATP"
+        ],
+        correct: 1,
+        rationale: "Checkpoints regulate progression through the cell cycle and help prevent damaged cells from dividing."
+    },
+    {
+        id: 29,
+        subject: "biology",
+        question: "A cell enters G₀ phase. What does this indicate?",
+        options: [
+            "The cell is actively dividing",
+            "The cell is in a resting phase and not preparing to divide",
+            "The cell is undergoing DNA replication",
+            "The cell is in mitosis"
+        ],
+        correct: 1,
+        rationale: "G₀ is a resting phase where the cell is not preparing to divide."
+    },
+    {
+        id: 30,
+        subject: "biology",
+        question: "Which checkpoint is most critical for preventing cancer development?",
+        options: [
+            "The checkpoint that allows all cells to divide",
+            "The checkpoint that stops damaged cells from dividing",
+            "The checkpoint that speeds up division",
+            "The checkpoint that skips DNA repair"
+        ],
+        correct: 1,
+        rationale: "The checkpoint that stops damaged cells from dividing is critical for preventing cancer development."
+    },
+
+    // VII. Meiosis (Questions 31-35)
+    {
+        id: 31,
+        subject: "biology",
+        question: "What is the purpose of meiosis?",
+        options: [
+            "Cell growth and repair",
+            "Production of haploid cells for sexual reproduction",
+            "Production of identical daughter cells",
+            "DNA replication"
+        ],
+        correct: 1,
+        rationale: "Meiosis produces haploid cells for sexual reproduction."
+    },
+    {
+        id: 32,
+        subject: "biology",
+        question: "During which phase of meiosis does crossing over occur?",
+        options: [
+            "Metaphase I",
+            "Anaphase I",
+            "Prophase I",
+            "Telophase II"
+        ],
+        correct: 2,
+        rationale: "Crossing over occurs during Prophase I when homologous chromosomes pair to form tetrads."
+    },
+    {
+        id: 33,
+        subject: "biology",
+        question: "How many divisions occur in meiosis?",
+        options: [
+            "One",
+            "Two",
+            "Three",
+            "Four"
+        ],
+        correct: 1,
+        rationale: "Meiosis involves two divisions: Meiosis I and Meiosis II."
+    },
+    {
+        id: 34,
+        subject: "biology",
+        question: "What is the final result of meiosis?",
+        options: [
+            "Two genetically identical diploid cells",
+            "Four genetically different haploid cells",
+            "Two genetically different haploid cells",
+            "Four genetically identical diploid cells"
+        ],
+        correct: 1,
+        rationale: "Meiosis results in four genetically different haploid cells."
+    },
+    {
+        id: 35,
+        subject: "biology",
+        question: "When does DNA replication occur in meiosis?",
+        options: [
+            "Before Meiosis I only",
+            "Before Meiosis II only",
+            "Before both Meiosis I and Meiosis II",
+            "After Meiosis II"
+        ],
+        correct: 0,
+        rationale: "DNA replication occurs before Meiosis I only."
+    },
+
+    // VIII. Genetic Variation (Questions 36-40)
+    {
+        id: 36,
+        subject: "biology",
+        question: "What is crossing over?",
+        options: [
+            "Separation of sister chromatids",
+            "Exchange of genetic material between homologous chromosomes",
+            "Random arrangement of chromosomes",
+            "Division of cytoplasm"
+        ],
+        correct: 1,
+        rationale: "Crossing over is the exchange of genetic material between homologous chromosomes during Prophase I."
+    },
+    {
+        id: 37,
+        subject: "biology",
+        question: "During which phase does independent assortment occur?",
+        options: [
+            "Prophase I",
+            "Metaphase I",
+            "Anaphase I",
+            "Telophase I"
+        ],
+        correct: 1,
+        rationale: "Independent assortment occurs during Metaphase I when homologous pairs align randomly."
+    },
+    {
+        id: 38,
+        subject: "biology",
+        question: "If crossing over does not occur, what happens to genetic variation?",
+        options: [
+            "It increases",
+            "It is reduced but chromosome number still decreases",
+            "It remains the same",
+            "It becomes zero"
+        ],
+        correct: 1,
+        rationale: "If crossing over does not occur, genetic variation is reduced but chromosome number can still be reduced normally."
+    },
+    {
+        id: 39,
+        subject: "biology",
+        question: "What is independent assortment?",
+        options: [
+            "Exchange of genetic material",
+            "Random arrangement of homologous chromosome pairs during Metaphase I",
+            "Separation of sister chromatids",
+            "DNA replication"
+        ],
+        correct: 1,
+        rationale: "Independent assortment is the random arrangement of homologous chromosome pairs during Metaphase I."
+    },
+    {
+        id: 40,
+        subject: "biology",
+        question: "Which process contributes to genetic variation by exchanging genetic material between homologous chromosomes?",
+        options: [
+            "Independent assortment",
+            "Crossing over",
+            "DNA replication",
+            "Cytokinesis"
+        ],
+        correct: 1,
+        rationale: "Crossing over contributes to genetic variation by exchanging genetic material between homologous chromosomes."
+    },
+
+    // IX. Mitosis vs Meiosis (Questions 41-45)
+    {
+        id: 41,
+        subject: "biology",
+        question: "How many daughter cells are produced in mitosis?",
+        options: [
+            "One",
+            "Two",
+            "Four",
+            "Eight"
+        ],
+        correct: 1,
+        rationale: "Mitosis produces two daughter cells."
+    },
+    {
+        id: 42,
+        subject: "biology",
+        question: "What separates during Meiosis I?",
+        options: [
+            "Sister chromatids",
+            "Homologous chromosomes",
+            "Centromeres",
+            "Nuclear envelope"
+        ],
+        correct: 1,
+        rationale: "Homologous chromosomes separate during Meiosis I."
+    },
+    {
+        id: 43,
+        subject: "biology",
+        question: "Which process is used for cell growth and repair?",
+        options: [
+            "Meiosis",
+            "Mitosis",
+            "Both",
+            "Neither"
+        ],
+        correct: 1,
+        rationale: "Mitosis is used for cell growth and repair."
+    },
+    {
+        id: 44,
+        subject: "biology",
+        question: "What separates during Mitosis and Meiosis II?",
+        options: [
+            "Homologous chromosomes",
+            "Sister chromatids",
+            "Nucleus",
+            "Cytoplasm"
+        ],
+        correct: 1,
+        rationale: "Sister chromatids separate during Mitosis and Meiosis II."
+    },
+    {
+        id: 45,
+        subject: "biology",
+        question: "Which process produces genetically identical daughter cells?",
+        options: [
+            "Meiosis",
+            "Mitosis",
+            "Both",
+            "Neither"
+        ],
+        correct: 1,
+        rationale: "Mitosis produces genetically identical daughter cells."
+    },
+
+    // X. Cell Transport (Questions 46-50)
+    {
+        id: 46,
+        subject: "biology",
+        question: "What is selective permeability?",
+        options: [
+            "All substances can cross the membrane",
+            "No substances can cross the membrane",
+            "Membrane regulates which substances can cross",
+            "Water only can cross"
+        ],
+        correct: 2,
+        rationale: "Selective permeability means the membrane regulates which substances can cross."
+    },
+    {
+        id: 47,
+        subject: "biology",
+        question: "Which type of transport does NOT require ATP?",
+        options: [
+            "Active transport",
+            "Passive transport",
+            "Both",
+            "Neither"
+        ],
+        correct: 1,
+        rationale: "Passive transport does not require ATP."
+    },
+    {
+        id: 48,
+        subject: "biology",
+        question: "What is the general direction of passive transport?",
+        options: [
+            "Low to high concentration",
+            "High to low concentration",
+            "Both directions equally",
+            "No specific direction"
+        ],
+        correct: 1,
+        rationale: "Passive transport generally moves substances from high to low concentration."
+    },
+    {
+        id: 49,
+        subject: "biology",
+        question: "Which type of transport can move substances against the concentration gradient?",
+        options: [
+            "Passive transport",
+            "Active transport",
+            "Both",
+            "Neither"
+        ],
+        correct: 1,
+        rationale: "Active transport can move substances against the concentration gradient using cellular energy."
+    },
+    {
+        id: 50,
+        subject: "biology",
+        question: "What is cell transport?",
+        options: [
+            "Cell division",
+            "Movement of substances into and out of cells",
+            "Energy production",
+            "DNA replication"
+        ],
+        correct: 1,
+        rationale: "Cell transport is the movement of substances into and out of cells."
+    },
+
+    // XI. Types of Transport (Questions 51-55)
+    {
+        id: 51,
+        subject: "biology",
+        question: "A substance moves from high to low concentration without using ATP. What type of transport is this?",
+        options: [
+            "Active transport",
+            "Simple diffusion",
+            "Phagocytosis",
+            "Exocytosis"
+        ],
+        correct: 1,
+        rationale: "Simple diffusion moves substances from high to low concentration without ATP."
+    },
+    {
+        id: 52,
+        subject: "biology",
+        question: "What is osmosis?",
+        options: [
+            "Movement of ions against gradient",
+            "Movement of water across a selectively permeable membrane",
+            "Engulfing large particles",
+            "Release of substances from vesicles"
+        ],
+        correct: 1,
+        rationale: "Osmosis is the movement of water across a selectively permeable membrane."
+    },
+    {
+        id: 53,
+        subject: "biology",
+        question: "A cell engulfs a large bacterium. What process is this?",
+        options: [
+            "Exocytosis",
+            "Phagocytosis",
+            "Simple diffusion",
+            "Facilitated diffusion"
+        ],
+        correct: 1,
+        rationale: "Phagocytosis is when a cell engulfs a large particle."
+    },
+    {
+        id: 54,
+        subject: "biology",
+        question: "Vesicles fuse with the plasma membrane to release substances outside the cell. What is this process called?",
+        options: [
+            "Phagocytosis",
+            "Exocytosis",
+            "Osmosis",
+            "Active transport"
+        ],
+        correct: 1,
+        rationale: "Exocytosis is when vesicles fuse with the plasma membrane and release substances outside the cell."
+    },
+    {
+        id: 55,
+        subject: "biology",
+        question: "What moves substances such as ions against their concentration gradient?",
+        options: [
+            "Simple diffusion",
+            "Protein pump",
+            "Osmosis",
+            "Facilitated diffusion"
+        ],
+        correct: 1,
+        rationale: "Protein pumps move substances such as ions against their concentration gradient using cellular energy."
+    },
+
+    // XII. Tonicity (Questions 56-58)
+    {
+        id: 56,
+        subject: "biology",
+        question: "An animal cell is placed in a hypertonic solution. What happens to the cell?",
+        options: [
+            "Water moves in and the cell may burst",
+            "Water moves out and the cell shrinks",
+            "No water movement occurs",
+            "The cell divides"
+        ],
+        correct: 1,
+        rationale: "In hypertonic solution (higher solute outside), water moves out and animal cell shrinks."
+    },
+    {
+        id: 57,
+        subject: "biology",
+        question: "What happens to a plant cell in a hypertonic solution?",
+        options: [
+            "It swells and becomes turgid",
+            "Water leaves and plasmolysis occurs",
+            "It bursts",
+            "No change occurs"
+        ],
+        correct: 1,
+        rationale: "Plant cell in hypertonic solution: water leaves → plasmolysis."
+    },
+    {
+        id: 58,
+        subject: "biology",
+        question: "If the solute concentration is lower outside the cell, what type of solution is this and what happens?",
+        options: [
+            "Hypertonic, water moves out",
+            "Hypotonic, water moves in",
+            "Hypertonic, water moves in",
+            "Hypotonic, water moves out"
+        ],
+        correct: 1,
+        rationale: "Lower solute outside = hypotonic, water moves in (Hypo = water in)."
+    },
+
+    // XIII. Cell Requirements (Questions 59-60)
+    {
+        id: 59,
+        subject: "biology",
+        question: "What are the basic requirements of a cell?",
+        options: [
+            "Only water",
+            "Energy, nutrients, and water",
+            "Only energy",
+            "Only nutrients"
+        ],
+        correct: 1,
+        rationale: "Basic requirements of a cell are energy, nutrients, and water."
+    },
+    {
+        id: 60,
+        subject: "biology",
+        question: "Why is waste removal important for cells?",
+        options: [
+            "To increase cell size",
+            "To prevent waste accumulation from interfering with normal cellular functions",
+            "To produce more energy",
+            "To replicate DNA"
+        ],
+        correct: 1,
+        rationale: "Waste removal prevents waste accumulation from interfering with normal cellular functions."
+    },
+
+    // Alternative questions for Biology
+    {
+        id: 101,
+        subject: "biology",
+        question: "A marine biologist studies how coral reefs interact with fish, algae, and water quality. Which branch of biology is this study primarily related to?",
+        options: [
+            "Genetics",
+            "Ecology",
+            "Histology",
+            "Embryology"
+        ],
+        correct: 1,
+        rationale: "Ecology studies interactions among organisms and their environment."
+    },
+    {
+        id: 102,
+        subject: "biology",
+        question: "A genetic counselor helps a family understand how a genetic disorder might be passed to their children. This involves which branch of biology?",
+        options: [
+            "Physiology",
+            "Genetics",
+            "Morphology",
+            "Biochemistry"
+        ],
+        correct: 1,
+        rationale: "Genetics studies genes, heredity, and transmission of traits."
+    },
+    {
+        id: 103,
+        subject: "biology",
+        question: "A cell has a nucleus but no membrane-bound organelles. Is this possible?",
+        options: [
+            "Yes, this is a prokaryotic cell",
+            "No, eukaryotic cells have both nucleus and organelles",
+            "Yes, this is a eukaryotic cell",
+            "No, prokaryotic cells have no nucleus"
+        ],
+        correct: 1,
+        rationale: "Eukaryotic cells have both a nucleus and membrane-bound organelles. A cell with nucleus but no organelles is not typical."
+    },
+    {
+        id: 104,
+        subject: "biology",
+        question: "During which phase does the cell grow and prepare for division after DNA replication?",
+        options: [
+            "G₁ phase",
+            "S phase",
+            "G₂ phase",
+            "M phase"
+        ],
+        correct: 2,
+        rationale: "G₂ phase is for growth and preparation for cell division after DNA replication in S phase."
+    },
+    {
+        id: 105,
+        subject: "biology",
+        question: "A cell in a hypotonic solution swells. Why does this happen?",
+        options: [
+            "Water moves out of the cell",
+            "Water moves into the cell",
+            "Solute moves into the cell",
+            "Solute moves out of the cell"
+        ],
+        correct: 1,
+        rationale: "In hypotonic solution, water moves into the cell causing it to swell."
+    }
+];
+
 // Combine all questions
 const allQuestions = [
     ...scienceQuestions.map(q => ({...q, subject: "science"})),
-    ...mathQuestions
+    ...mathQuestions,
+    ...biologyQuestions
 ];
 
 // Shuffle function for randomization
@@ -2262,6 +3139,7 @@ const restartBtn = document.getElementById('restart-btn');
 const backToPracticeBtn = document.getElementById('back-to-practice');
 const scienceBtn = document.getElementById('science-btn');
 const mathBtn = document.getElementById('math-btn');
+const biologyBtn = document.getElementById('biology-btn');
 
 // Initialize
 function init() {
@@ -2481,6 +3359,7 @@ function setupEventListeners() {
         questions = selectRandomQuestions(currentSubject);
         scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         renderQuestion();
@@ -2499,6 +3378,26 @@ function setupEventListeners() {
         questions = selectRandomQuestions(currentSubject);
         mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        renderQuestion();
+        updateStats();
+    });
+
+    biologyBtn.addEventListener('click', () => {
+        if (currentSubject === "biology") return;
+        currentSubject = "biology";
+        currentQuestionIndex = 0;
+        userAnswers = {};
+        reviewAnswers = {};
+        wrongQuestions = [];
+        reviewIndex = 0;
+        isReviewMode = false;
+        questions = selectRandomQuestions(currentSubject);
+        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         renderQuestion();

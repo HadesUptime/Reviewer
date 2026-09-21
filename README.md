@@ -44,6 +44,21 @@ A modern, interactive quiz application for reviewing Grade 11 subjects with 150+
 - **Lesson 6**: Sequences and Series in Finance
 - **Lesson 7**: Sigma Notation
 
+### Biology 1 - Term 1
+- **I**: Biology and Its Branches
+- **II**: Cell Theory
+- **III**: Prokaryotic vs Eukaryotic
+- **IV**: Cell Cycle
+- **V**: Mitosis
+- **VI**: Cell Cycle Checkpoints
+- **VII**: Meiosis
+- **VIII**: Genetic Variation
+- **IX**: Mitosis vs Meiosis
+- **X**: Cell Transport
+- **XI**: Types of Transport
+- **XII**: Tonicity
+- **XIII**: Cell Requirements
+
 ## Question Structure
 
 Each subject includes:
