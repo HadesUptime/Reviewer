@@ -5,9 +5,9 @@ A modern, interactive quiz application for reviewing General Science 11 Term I m
 ## Features
 
 - **Practice Mode**: Answer questions one by one with immediate feedback
-- **Review Wrong Mode**: Focus on questions you got wrong
-- **Random Question Selection**: Each session shows 30 randomly selected questions (70% original, 30% alternative)
-- **Alternative Questions**: 15 additional questions that test the same concepts in different ways to prevent memorization
+- **Review Wrong Mode**: Focus on questions you got wrong (answerable to test learning)
+- **Random Question Selection**: Each session shows 60 questions with random order
+- **Alternative Questions**: 15 alternative questions that randomly replace their corresponding original questions (30% chance) to prevent memorization
 - **Progress Tracking**: Visual progress ring and statistics
 - **Answer Validation**: Shows correct/incorrect answers with detailed rationales
 - **Responsive Design**: Works on desktop and mobile devices
@@ -16,11 +16,11 @@ A modern, interactive quiz application for reviewing General Science 11 Term I m
 ## How to Use
 
 1. Open `index.html` in your web browser
-2. Start answering questions in Practice Mode (30 random questions per session)
+2. Start answering questions in Practice Mode (60 questions per session)
 3. Get immediate feedback on your answers with detailed explanations
 4. Track your progress with the statistics bar
-5. Use "Review Wrong" button to practice questions you missed
-6. Click "Start Over" to begin a new session with different random questions
+5. Use "Review Wrong" button to practice questions you missed (answerable to test if you learned)
+6. Click "Start Over" to begin a new session with different random questions (some may be alternatives)
 7. Switch between Practice and Review modes using the toggle buttons
 
 ## Question Structure
@@ -29,7 +29,7 @@ The reviewer includes:
 - **60 original questions** covering all 6 parts of the Term I examination
 - **15 alternative questions** that test the same concepts with different scenarios
 
-Each session randomly selects 30 questions (21 original + 9 alternative) to prevent memorization and ensure you learn the concepts rather than just memorizing answers.
+Each session shows all 60 questions, but for each question that has an alternative version, there's a 30% chance the alternative will appear instead of the original. This prevents memorization while ensuring you cover all the material.
 
 ## Question Format
 
@@ -69,7 +69,6 @@ Each question in `app.js` follows this format:
 ## Customization
 
 You can customize the reviewer by modifying:
-- **Number of questions per session**: Change the parameter in `selectRandomQuestions(30)` in `app.js`
-- **Question mix ratio**: Adjust the 70/30 split in the `selectRandomQuestions` function
+- **Alternative question probability**: Change the 0.3 (30%) value in the `selectRandomQuestions` function
 - **Colors and styling**: Modify the CSS in `index.html` (gradient colors, correct/wrong colors)
 - **Animations**: Adjust transitions and animations in the CSS

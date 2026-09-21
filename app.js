@@ -1109,28 +1109,29 @@ function shuffleArray(array) {
     return shuffled;
 }
 
-// Select random subset of questions (mix of original and alternatives)
-function selectRandomQuestions(count = 30) {
-    const originalQuestions = allQuestions.filter(q => q.id <= 60);
-    const alternativeQuestions = allQuestions.filter(q => q.id > 60);
+// Select random subset of questions (alternatives replace originals)
+function selectRandomQuestions() {
+    const selected = [];
     
-    // Select 70% original, 30% alternative
-    const numOriginal = Math.floor(count * 0.7);
-    const numAlternative = count - numOriginal;
+    // Group questions by their base ID (1-60)
+    for (let baseId = 1; baseId <= 60; baseId++) {
+        const original = allQuestions.find(q => q.id === baseId);
+        const alternative = allQuestions.find(q => q.id === baseId + 100);
+        
+        // 30% chance to use alternative if it exists
+        if (alternative && Math.random() < 0.3) {
+            selected.push(alternative);
+        } else {
+            selected.push(original);
+        }
+    }
     
-    const shuffledOriginal = shuffleArray(originalQuestions);
-    const shuffledAlternative = shuffleArray(alternativeQuestions);
-    
-    const selected = [
-        ...shuffledOriginal.slice(0, numOriginal),
-        ...shuffledAlternative.slice(0, numAlternative)
-    ];
-    
+    // Shuffle the selected questions
     return shuffleArray(selected);
 }
 
 // Current questions for this session
-let questions = selectRandomQuestions(30);
+let questions = selectRandomQuestions();
 
 // State management
 let currentQuestionIndex = 0;
@@ -1361,7 +1362,7 @@ function setupEventListeners() {
         wrongQuestions = [];
        reviewIndex = 0;
         isReviewMode = false;
-        questions = selectRandomQuestions(30); // Re-randomize questions
+        questions = selectRandomQuestions(); // Re-randomize questions
         practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         renderQuestion();
