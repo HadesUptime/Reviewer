@@ -59,6 +59,15 @@ A modern, interactive quiz application for reviewing Grade 11 subjects with 150+
 - **XII**: Tonicity
 - **XIII**: Cell Requirements
 
+### Mabisang Komunikasyon
+- **Komunikasyon**: Berbal at Di-berbal na Komunikasyon
+- **Wika at Kultura**: Idiolect, Ethnolect, Dialect, Sociolect, Bilingguwalismo
+- **Speaking Theory**: Dell Hymes' 8 Components (Setting, Participants, Ends, Act Sequence, Key, Instrumentalities, Norms, Genre)
+- **Interpersonal at Intrapersonal**: Komunikasyon sa sarili at sa iba
+- **Mabisang Pakikinig**: Aktibong at Passive na Pakikinig
+- **Empatiya**: 6 na Pamantayan (Adaptability, Conversational Involvement, Conversational Management, Empathy, Effectiveness, Appropriateness)
+- **Pagsulat ng Dyornal**: Repleksyon, Travel, at Personal na Journal
+
 ## Question Structure
 
 Each subject includes:

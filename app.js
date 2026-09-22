@@ -3064,11 +3064,880 @@ const biologyQuestions = [
     }
 ];
 
+// Mabisang Komunikasyon Questions
+const komunikasyonQuestions = [
+    // I. Komunikasyon (Questions 1-5)
+    {
+        id: 1,
+        subject: "komunikasyon",
+        question: "Nag-uusap ang isang guro sa kanyang mga estudyante gamit ang wikang Filipino. Anong uri ng komunikasyon ang ginagamit niya?",
+        options: [
+            "Di-berbal na komunikasyon",
+            "Berbal na komunikasyon",
+            "Pasulat na komunikasyon",
+            "Non-verbal na komunikasyon"
+        ],
+        correct: 1,
+        rationale: "Berbal na komunikasyon ay gumagamit ng mga salitang sinasalita."
+    },
+    {
+        id: 2,
+        subject: "komunikasyon",
+        question: "Isang estudyante ay nagpapahiwatig ng kanyang kalungkutan sa pamamagitan ng pag-iyak. Anong uri ng komunikasyon ang ipinapakita niya?",
+        options: [
+            "Pasalita na komunikasyon",
+            "Ekspresyon ng mukha",
+            "Pasulat na komunikasyon",
+            "Berbal na komunikasyon"
+        ],
+        correct: 1,
+        rationale: "Ekspresyon ng mukha ay nagpapakita ng damdamin tulad ng lungkot."
+    },
+    {
+        id: 3,
+        subject: "komunikasyon",
+        question: "Nagpapadala ng mensahe ang isang tao sa pamamagitan ng paggamit ng senyas o hand signals. Anong uri ng komunikasyon ito?",
+        options: [
+            "Berbal na komunikasyon",
+            "Di-berbal na komunikasyon",
+            "Pasalita na komunikasyon",
+            "Pasulat na komunikasyon"
+        ],
+        correct: 1,
+        rationale: "Di-berbal na komunikasyon ay gumagamit ng senyas at simbolo."
+    },
+    {
+        id: 4,
+        subject: "komunikasyon",
+        question: "Nag-aabot ng sulat ang isang tao sa kanyang kaibigan. Anong uri ng berbal na komunikasyon ang ginagamit niya?",
+        options: [
+            "Pasalita",
+            "Pasulat",
+            "Kilos",
+            "Galaw ng mata"
+        ],
+        correct: 1,
+        rationale: "Pasulat na komunikasyon ay gamit ng mga letra."
+    },
+    {
+        id: 5,
+        subject: "komunikasyon",
+        question: "Nagbibigay ng pahiwatig ang isang tao sa pamamagitan ng pagtaas ng kilay habang nakikinig. Anong bahagi ng di-berbal na komunikasyon ang ginagamit niya?",
+        options: [
+            "Kilos",
+            "Galaw ng mata",
+            "Tinig",
+            "Espasyo at distansya"
+        ],
+        correct: 1,
+        rationale: "Galaw ng mata ay nagpapakita ng interes o atensyon."
+    },
+
+    // II. Wika at Kultura (Questions 6-12)
+    {
+        id: 6,
+        subject: "komunikasyon",
+        question: "Ang isang tao ay may sariling estilo sa paggamit ng wika na kakaiba sa iba. Anong uri ng wika ang tinutukoy nito?",
+        options: [
+            "Idiolect",
+            "Ethnolect",
+            "Dialect",
+            "Sociolect"
+        ],
+        correct: 0,
+        rationale: "Idiolect ay personal na paraan ng paggamit ng wika; kaugnay ng personal identity."
+    },
+    {
+        id: 7,
+        subject: "komunikasyon",
+        question: "Ang mga Ilocano ay may sariling paraan ng pagsasalita na iba sa mga Tagalog. Anong uri ng wika ang ito?",
+        options: [
+            "Idiolect",
+            "Ethnolect",
+            "Dialect",
+            "Sociolect"
+        ],
+        correct: 1,
+        rationale: "Ethnolect ay partikular na gamit ng wika ng isang ethnic group."
+    },
+    {
+        id: 8,
+        subject: "komunikasyon",
+        question: "Ang mga tao sa Batangas ay may ibang bigkas ng mga salita kumpara sa mga tao sa Manila. Anong tawag sa kanilang paraan ng pagsasalita?",
+        options: [
+            "Idiolect",
+            "Ethnolect",
+            "Dialect",
+            "Sociolect"
+        ],
+        correct: 2,
+        rationale: "Dialect ay paraan ng pagsasalita na ginagamit sa isang lugar."
+    },
+    {
+        id: 9,
+        subject: "komunikasyon",
+        question: "Ang mga doktor ay may sariling terminolohiya o salita na ginagamit nila sa pag-uusap. Anong uri ng wika ang ito?",
+        options: [
+            "Idiolect",
+            "Ethnolect",
+            "Dialect",
+            "Sociolect"
+        ],
+        correct: 3,
+        rationale: "Sociolect ay paraan ng pagsasalita ng isang partikular na pangkat o society."
+    },
+    {
+        id: 10,
+        subject: "komunikasyon",
+        question: "Isang tao ay nakakapagsalita ng Filipino at Ingles nang magkasabay. Anong tawag sa kanyang kakayahan?",
+        options: [
+            "First Language",
+            "Bilingguwalismo",
+            "Ethnolect",
+            "Dialect"
+        ],
+        correct: 1,
+        rationale: "Bilingguwalismo ay paggamit ng dalawa o higit pang wika."
+    },
+    {
+        id: 11,
+        subject: "komunikasyon",
+        question: "Ang unang wika na natutunan ng isang bata mula sa kanyang mga magulang ay tinatawag na:",
+        options: [
+            "Second Language",
+            "First Language",
+            "Foreign Language",
+            "Ethnolect"
+        ],
+        correct: 1,
+        rationale: "First Language ay unang wika natutuhan o ginagamit ng isang tao."
+    },
+    {
+        id: 12,
+        subject: "komunikasyon",
+        question: "Ang wika ay pangunahing instrumento sa pakikipag-ugnayan dahil:",
+        options: [
+            "Nagpapakita ito ng katalinuhan",
+            "Nagbibigay ito ng paraan upang magkaunawaan ang mga tao",
+            "Nagpapakita ito ng social status",
+            "Nagbibigay ito ng trabaho"
+        ],
+        correct: 1,
+        rationale: "Wika ay nagbibigay ng paraan upang magkaunawaan ang mga tao."
+    },
+
+    // III. Speaking Theory (Questions 13-20)
+    {
+        id: 13,
+        subject: "komunikasyon",
+        question: "Sa Speaking Theory ni Dell Hymes, ang lugar o pisikal na kapaligiran ng komunikasyon ay tinatawag na:",
+        options: [
+            "Participants",
+            "Setting",
+            "Ends",
+            "Key"
+        ],
+        correct: 1,
+        rationale: "Setting ay lugar o pisikal na kapaligiran ng komunikasyon."
+    },
+    {
+        id: 14,
+        subject: "komunikasyon",
+        question: "Ang mga taong kasangkot sa komunikasyon ay tinatawag na:",
+        options: [
+            "Setting",
+            "Participants",
+            "Ends",
+            "Act Sequence"
+        ],
+        correct: 1,
+        rationale: "Participants ay mga taong kasangkot sa komunikasyon."
+    },
+    {
+        id: 15,
+        subject: "komunikasyon",
+        question: "Ang layunin o dahilan ng komunikasyon ay tinatawag na:",
+        options: [
+            "Setting",
+            "Participants",
+            "Ends",
+            "Key"
+        ],
+        correct: 2,
+        rationale: "Ends ay layunin o dahilan ng komunikasyon."
+    },
+    {
+        id: 16,
+        subject: "komunikasyon",
+        question: "Ang pagkakasunod-sunod ng mga pangyayari o pahayag sa komunikasyon ay tinatawag na:",
+        options: [
+            "Act Sequence",
+            "Key",
+            "Instrumentalities",
+            "Norms"
+        ],
+        correct: 0,
+        rationale: "Act Sequence ay pagkakasunod-sunod ng mga pangyayari o pahayag."
+    },
+    {
+        id: 17,
+        subject: "komunikasyon",
+        question: "Ang tono, paraan, o espiritu ng mensahe ay tinatawag na:",
+        options: [
+            "Act Sequence",
+            "Key",
+            "Instrumentalities",
+            "Norms"
+        ],
+        correct: 1,
+        rationale: "Key ay tono, paraan, o espiritu ng mensahe."
+    },
+    {
+        id: 18,
+        subject: "komunikasyon",
+        question: "Ang mga channel o paraan ng pagpapadala ng komunikasyon ay tinatawag na:",
+        options: [
+            "Key",
+            "Instrumentalities",
+            "Norms",
+            "Genre"
+        ],
+        correct: 1,
+        rationale: "Instrumentalities ay mga channel o paraan ng pagpapadala ng komunikasyon."
+    },
+    {
+        id: 19,
+        subject: "komunikasyon",
+        question: "Ang mga patakaran o inaasahang asal ng komunikasyon ay tinatawag na:",
+        options: [
+            "Instrumentalities",
+            "Norms",
+            "Genre",
+            "Setting"
+        ],
+        correct: 1,
+        rationale: "Norms ay mga patakaran o inaasahang asal ng komunikasyon."
+    },
+    {
+        id: 20,
+        subject: "komunikasyon",
+        question: "Ang kategorya o uri ng komunikasyon ay tinatawag na:",
+        options: [
+            "Norms",
+            "Genre",
+            "Setting",
+            "Participants"
+        ],
+        correct: 1,
+        rationale: "Genre ay kategorya o uri ng komunikasyon."
+    },
+
+    // IV. Interpersonal at Intrapersonal (Questions 21-25)
+    {
+        id: 21,
+        subject: "komunikasyon",
+        question: "Nag-iisip si Juan tungkol sa kanyang mga plano sa buhay. Anong uri ng komunikasyon ang ginagamit niya?",
+        options: [
+            "Interpersonal",
+            "Intrapersonal",
+            "Berbal",
+            "Di-berbal"
+        ],
+        correct: 1,
+        rationale: "Intrapersonal ay komunikasyon sa loob ng sarili o pag-iisip."
+    },
+    {
+        id: 22,
+        subject: "komunikasyon",
+        question: "Nag-uusap si Maria sa kanyang kaibigan tungkol sa kanilang proyekto. Anong uri ng komunikasyon ang ito?",
+        options: [
+            "Intrapersonal",
+            "Interpersonal",
+            "Pasulat",
+            "Di-berbal lamang"
+        ],
+        correct: 1,
+        rationale: "Interpersonal ay pakikipag-usap o pakikipag-ugnayan sa ibang tao."
+    },
+    {
+        id: 23,
+        subject: "komunikasyon",
+        question: "Ang pakikipag-usap sa sariling kaisipan ay tinatawag na:",
+        options: [
+            "Interpersonal",
+            "Intrapersonal",
+            "Berbal",
+            "Di-berbal"
+        ],
+        correct: 1,
+        rationale: "Intrapersonal ay pag-iisip o pakikipag-usap sa sariling kaisipan."
+    },
+    {
+        id: 24,
+        subject: "komunikasyon",
+        question: "Ang pakikipag-ugnayan sa ibang tao ay tinatawag na:",
+        options: [
+            "Intrapersonal",
+            "Interpersonal",
+            "Pasulat",
+            "Di-berbal"
+        ],
+        correct: 1,
+        rationale: "Interpersonal ay pakikipag-usap o pakikipag-ugnayan sa ibang tao."
+    },
+    {
+        id: 25,
+        subject: "komunikasyon",
+        question: "Maaring berbal o di-berbal ang interpersonal na komunikasyon. Tama o Mali?",
+        options: [
+            "Tama",
+            "Mali",
+            "Hindi sigurado",
+            "Depende sa sitwasyon"
+        ],
+        correct: 0,
+        rationale: "Tama, maaring berbal o di-berbal ang interpersonal na komunikasyon."
+    },
+
+    // V. Mabisang Pakikinig (Questions 26-32)
+    {
+        id: 26,
+        subject: "komunikasyon",
+        question: "Ang pagbibigay ng atensyon at pag-unawa sa mensahe ng kausap ay tinatawag na:",
+        options: [
+            "Pagsulat",
+            "Pakikinig",
+            "Pagbasa",
+            "Pagsasalita"
+        ],
+        correct: 1,
+        rationale: "Pakikinig ay pagbibigay ng atensyon at pag-unawa sa mensahe ng kausap."
+    },
+    {
+        id: 27,
+        subject: "komunikasyon",
+        question: "Ang pagbibigay ng buong pansin sa kausap ay tinatawag na:",
+        options: [
+            "Reaksyon",
+            "Atensyon",
+            "Empatiya",
+            "Pagtatanong"
+        ],
+        correct: 1,
+        rationale: "Atensyon ay pagbibigay ng buong pansin."
+    },
+    {
+        id: 28,
+        subject: "komunikasyon",
+        question: "Ang pagtugon sa mensahe ng kausap ay tinatawag na:",
+        options: [
+            "Atensyon",
+            "Reaksyon at Feedback",
+            "Empatiya",
+            "Pagtatanong"
+        ],
+        correct: 1,
+        rationale: "Reaksyon at Feedback ay pagtugon sa mensahe."
+    },
+    {
+        id: 29,
+        subject: "komunikasyon",
+        question: "Ang pagtatanong upang mas malinaw na maunawaan ang mensahe ay tinatawag na:",
+        options: [
+            "Atensyon",
+            "Reaksyon",
+            "Pagtatanong",
+            "Empatiya"
+        ],
+        correct: 2,
+        rationale: "Pagtatanong ay pagtatanong upang mas malinaw na maunawaan."
+    },
+    {
+        id: 30,
+        subject: "komunikasyon",
+        question: "Ang pag-unawa sa damdamin at pananaw ng nagsasalita ay tinatawag na:",
+        options: [
+            "Atensyon",
+            "Reaksyon",
+            "Pagtatanong",
+            "Empatiya"
+        ],
+        correct: 3,
+        rationale: "Empatiya ay pag-unawa sa damdamin at pananaw ng nagsasalita."
+    },
+    {
+        id: 31,
+        subject: "komunikasyon",
+        question: "Naririnig lamang ang impormasyon ngunit maaaring walang aktibong tugon. Anong uri ng pakikinig ito?",
+        options: [
+            "Aktibong pakikinig",
+            "Passive na pakikinig",
+            "Empatikong pakikinig",
+            "Kritikal na pakikinig"
+        ],
+        correct: 1,
+        rationale: "Passive na pakikinig ay naririnig lamang ang impormasyon ngunit maaaring walang aktibong tugon."
+    },
+    {
+        id: 32,
+        subject: "komunikasyon",
+        question: "Nakikinig nang mabuti at may reaksyon/tugon sa kausap. Anong uri ng pakikinig ito?",
+        options: [
+            "Passive na pakikinig",
+            "Aktibong pakikinig",
+            "Di-berbal na pakikinig",
+            "Berbal na pakikinig"
+        ],
+        correct: 1,
+        rationale: "Aktibong pakikinig ay nakikinig nang mabuti at may reaksyon/tugon."
+    },
+
+    // VI. Empatiya (Questions 33-39)
+    {
+        id: 33,
+        subject: "komunikasyon",
+        question: "Ang kakayahang maunawaan at maramdaman ang nararamdaman ng iba ay tinatawag na:",
+        options: [
+            "Empatiya",
+            "Simpatiya",
+            "Ampatya",
+            "Kapatiran"
+        ],
+        correct: 0,
+        rationale: "Empatiya ay kakayahang maunawaan at maramdaman ang nararamdaman ng iba."
+    },
+    {
+        id: 34,
+        subject: "komunikasyon",
+        question: "Nakakatulong ang empatiya sa mas magandang pakikipag-ugnayan dahil:",
+        options: [
+            "Nagpapakita ito ng lakas",
+            "Mas nauunawaan ang sitwasyon at damdamin ng iba",
+            "Nagbibigay ito ng pera",
+            "Nagpapakita ito ng power"
+        ],
+        correct: 1,
+        rationale: "Empatiya ay nakakatulong sa mas magandang pakikipag-ugnayan dahil mas nauunawaan ang sitwasyon at damdamin ng iba."
+    },
+    {
+        id: 35,
+        subject: "komunikasyon",
+        question: "Ang pag-unawa sa damdamin ng iba ay nakakatulong sa:",
+        options: [
+            "Pagkakaroon ng away",
+            "Pagbuo ng magandang relasyon",
+            "Pagkakaroon ng problema",
+            "Pagkakaroon ng galit"
+        ],
+        correct: 1,
+        rationale: "Empatiya ay nakakatulong sa pagbuo ng magandang relasyon."
+    },
+    {
+        id: 36,
+        subject: "komunikasyon",
+        question: "Ang empatiya ay nakakaiwas sa:",
+        options: [
+            "Pagkakaibigan",
+            "Pagkakaroon ng trabaho",
+            "Pagkakaroon ng pera",
+            "Hindi pagkakaunawaan"
+        ],
+        correct: 3,
+        rationale: "Empatiya ay nakakaiwas sa hindi pagkakaunawaan."
+    },
+    {
+        id: 37,
+        subject: "komunikasyon",
+        question: "Sa 6 na Pamantayan ng Empatiya, ang marunong mag-adjust depende sa sitwasyon ay tinatawag na:",
+        options: [
+            "Adaptability",
+            "Conversational Involvement",
+            "Conversational Management",
+            "Empathy"
+        ],
+        correct: 0,
+        rationale: "Adaptability ay marunong mag-adjust depende sa sitwasyon."
+    },
+    {
+        id: 38,
+        subject: "komunikasyon",
+        question: "Ang aktibong nakikilahok sa usapan ay tinatawag na:",
+        options: [
+            "Adaptability",
+            "Conversational Involvement",
+            "Conversational Management",
+            "Effectiveness"
+        ],
+        correct: 1,
+        rationale: "Conversational Involvement ay aktibong nakikilahok sa usapan."
+    },
+    {
+        id: 39,
+        subject: "komunikasyon",
+        question: "Ang maayos na pamamahala sa daloy ng pag-uusap ay tinatawag na:",
+        options: [
+            "Conversational Involvement",
+            "Conversational Management",
+            "Empathy",
+            "Effectiveness"
+        ],
+        correct: 1,
+        rationale: "Conversational Management ay maayos na pamamahala sa daloy ng pag-uusap."
+    },
+
+    // VII. 6 na Pamantayan (Questions 40-45)
+    {
+        id: 40,
+        subject: "komunikasyon",
+        question: "Ang sikolohikal na kakayahang maunawaan ang damdamin ng iba ay tinatawag na:",
+        options: [
+            "Adaptability",
+            "Conversational Involvement",
+            "Conversational Management",
+            "Empathy"
+        ],
+        correct: 3,
+        rationale: "Empathy ay sikolohikal na kakayahang maunawaan ang damdamin ng iba."
+    },
+    {
+        id: 41,
+        subject: "komunikasyon",
+        question: "Ang mahusay na paggamit ng komunikasyon upang makamit ang layunin ay tinatawag na:",
+        options: [
+            "Empathy",
+            "Effectiveness",
+            "Appropriateness",
+            "Adaptability"
+        ],
+        correct: 1,
+        rationale: "Effectiveness ay mahusay na paggamit ng komunikasyon upang makamit ang layunin."
+    },
+    {
+        id: 42,
+        subject: "komunikasyon",
+        question: "Ang angkop na komunikasyon sa sitwasyon, lugar, kausap, at paksa ay tinatawag na:",
+        options: [
+            "Effectiveness",
+            "Appropriateness",
+            "Empathy",
+            "Adaptability"
+        ],
+        correct: 1,
+        rationale: "Appropriateness ay angkop ang komunikasyon sa sitwasyon, lugar, kausap, at paksa."
+    },
+    {
+        id: 43,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nasa formal na interview ka para sa trabaho. Dapat kang mag-adjust sa iyong paraan ng pagsasalita. Anong pamantayan ang itinuturo nito?",
+        options: [
+            "Appropriateness",
+            "Adaptability",
+            "Effectiveness",
+            "Empathy"
+        ],
+        correct: 1,
+        rationale: "Adaptability ay marunong mag-adjust depende sa sitwasyon, pormal man o di-pormal."
+    },
+    {
+        id: 44,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nakikipag-usap ka sa isang bata tungkol sa laro. Dapat mong gamitin ang mga simpleng salita. Anong pamantayan ang itinuturo nito?",
+        options: [
+            "Effectiveness",
+            "Appropriateness",
+            "Empathy",
+            "Conversational Management"
+        ],
+        correct: 1,
+        rationale: "Appropriateness ay angkop ang komunikasyon sa sitwasyon, lugar, kausap, at paksa."
+    },
+    {
+        id: 45,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nakikinig ka sa kwento ng kaibigan tungkol sa kanyang problema. Naiintindihan mo ang kanyang nararamdaman. Anong pamantayan ang itinuturo nito?",
+        options: [
+            "Conversational Involvement",
+            "Empathy",
+            "Effectiveness",
+            "Adaptability"
+        ],
+        correct: 1,
+        rationale: "Empathy ay sikolohikal na kakayahang maunawaan ang damdamin ng iba."
+    },
+
+    // VIII. Pagsulat ng Dyornal (Questions 46-52)
+    {
+        id: 46,
+        subject: "komunikasyon",
+        question: "Ang isang sulat o tala kung saan itinatala ang mga karanasan, damdamin, at pagninilay ay tinatawag na:",
+        options: [
+            "Talaarawan",
+            "Dyornal",
+            "Memo",
+            "Letter"
+        ],
+        correct: 1,
+        rationale: "Dyornal ay isang sulat o tala kung saan itinatala ang mga karanasan, damdamin, at pagninilay."
+    },
+    {
+        id: 47,
+        subject: "komunikasyon",
+        question: "Ang pagninilay tungkol sa mga karanasan, aral, at damdamin sa buhay ay uri ng:",
+        options: [
+            "Travel Journal",
+            "Personal na Journal",
+            "Repleksyon Journal",
+            "Work Journal"
+        ],
+        correct: 2,
+        rationale: "Repleksyon Journal ay pagninilay tungkol sa mga karanasan, aral, at damdamin sa buhay."
+    },
+    {
+        id: 48,
+        subject: "komunikasyon",
+        question: "Ang talaan ng mga karanasan, lugar, at taong nakilala sa paglalakbay ay uri ng:",
+        options: [
+            "Repleksyon Journal",
+            "Travel Journal",
+            "Personal na Journal",
+            "Dream Journal"
+        ],
+        correct: 1,
+        rationale: "Travel Journal ay talaan ng mga karanasan, lugar, at taong nakilala sa paglalakbay."
+    },
+    {
+        id: 49,
+        subject: "komunikasyon",
+        question: "Ang personal na tala ng iniisip, nararamdaman, pangarap, at pang-araw-araw na karanasan ay uri ng:",
+        options: [
+            "Travel Journal",
+            "Repleksyon Journal",
+            "Personal na Journal",
+            "Food Journal"
+        ],
+        correct: 2,
+        rationale: "Personal na Journal ay personal na tala ng iniisip, nararamdaman, pangarap, at pang-araw-araw na karanasan."
+    },
+    {
+        id: 50,
+        subject: "komunikasyon",
+        question: "Nakatuon sa mga natutunan mula sa karanasan ang:",
+        options: [
+            "Travel Journal",
+            "Personal na Journal",
+            "Repleksyon Journal",
+            "Work Journal"
+        ],
+        correct: 2,
+        rationale: "Repleksyon Journal ay nakatuon sa mga natutunan mula sa karanasan."
+    },
+    {
+        id: 51,
+        subject: "komunikasyon",
+        question: "Maaaring maglaman ng larawan, mapa, tiket, obserbasyon, at alaala ang:",
+        options: [
+            "Repleksyon Journal",
+            "Personal na Journal",
+            "Travel Journal",
+            "Dream Journal"
+        ],
+        correct: 2,
+        rationale: "Travel Journal ay maaaring maglaman ng larawan, mapa, tiket, obserbasyon, at alaala."
+    },
+    {
+        id: 52,
+        subject: "komunikasyon",
+        question: "Para sa sarili at maaaring magsilbing lugar ng pagpapahayag ang:",
+        options: [
+            "Travel Journal",
+            "Repleksyon Journal",
+            "Personal na Journal",
+            "Work Journal"
+        ],
+        correct: 2,
+        rationale: "Personal na Journal ay para sa sarili at maaaring magsilbing lugar ng pagpapahayag."
+    },
+
+    // IX. Additional Situational Questions (Questions 53-60)
+    {
+        id: 53,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nasa simbahan ka at ang pari ay nagsisimulang magsalita. Dapat kang maging tahimik at makinig. Anong pamantayan ang dapat mong sundin?",
+        options: [
+            "Appropriateness",
+            "Adaptability",
+            "Effectiveness",
+            "Conversational Involvement"
+        ],
+        correct: 0,
+        rationale: "Appropriateness ay angkop ang komunikasyon sa sitwasyon, lugar, kausap, at paksa."
+    },
+    {
+        id: 54,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nakikipag-usap ka sa iyong lolo na may sakit. Dapat mong gamitin ang malambing na tono. Anong pamantayan ang itinuturo nito?",
+        options: [
+            "Appropriateness",
+            "Effectiveness",
+            "Empathy",
+            "Adaptability"
+        ],
+        correct: 2,
+        rationale: "Empathy ay sikolohikal na kakayahang maunawaan ang damdamin ng iba."
+    },
+    {
+        id: 55,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nasa debate ka at kailangan mong ipahayag ang iyong punto nang malinaw. Dapat mong gamitin ang tamang salita. Anong pamantayan ang itinuturo nito?",
+        options: [
+            "Effectiveness",
+            "Appropriateness",
+            "Empathy",
+            "Conversational Management"
+        ],
+        correct: 0,
+        rationale: "Effectiveness ay mahusay na paggamit ng komunikasyon upang makamit ang layunin."
+    },
+    {
+        id: 56,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nakikipag-usap ka sa isang banyagang turista. Dapat mong mag-adjust sa iyong paraan ng pagsasalita. Anong pamantayan ang itinuturo nito?",
+        options: [
+            "Adaptability",
+            "Effectiveness",
+            "Empathy",
+            "Conversational Involvement"
+        ],
+        correct: 0,
+        rationale: "Adaptability ay marunong mag-adjust depende sa sitwasyon."
+    },
+    {
+        id: 57,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Ikaw ang moderator ng isang group discussion. Dapat mong maayos na pamahalaan ang daloy ng usapan. Anong pamantayan ang itinuturo nito?",
+        options: [
+            "Conversational Involvement",
+            "Conversational Management",
+            "Empathy",
+            "Effectiveness"
+        ],
+        correct: 1,
+        rationale: "Conversational Management ay maayos na pamamahala sa daloy ng pag-uusap."
+    },
+    {
+        id: 58,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nakikinig ka sa kwento ng iyong kaibigan tungkol sa kanyang tagumpay. Aktibong kang nakikilahok sa usapan. Anong pamantayan ang itinuturo nito?",
+        options: [
+            "Conversational Management",
+            "Conversational Involvement",
+            "Empathy",
+            "Appropriateness"
+        ],
+        correct: 1,
+        rationale: "Conversational Involvement ay aktibong nakikilahok sa usapan."
+    },
+    {
+        id: 59,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nagsusulat ka ng dyornal tungkol sa iyong unang paglalakbay sa probinsya. Anong uri ng dyornal ang dapat mong gamitin?",
+        options: [
+            "Repleksyon Journal",
+            "Travel Journal",
+            "Personal na Journal",
+            "Dream Journal"
+        ],
+        correct: 1,
+        rationale: "Travel Journal ay talaan ng mga karanasan, lugar, at taong nakilala sa paglalakbay."
+    },
+    {
+        id: 60,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nagsusulat ka ng dyornal tungkol sa mga aral na natutunan mo sa iyong pagkakamali. Anong uri ng dyornal ang dapat mong gamitin?",
+        options: [
+            "Travel Journal",
+            "Personal na Journal",
+            "Repleksyon Journal",
+            "Food Journal"
+        ],
+        correct: 2,
+        rationale: "Repleksyon Journal ay pagninilay tungkol sa mga karanasan, aral, at damdamin sa buhay."
+    },
+
+    // Alternative questions for Mabisang Komunikasyon
+    {
+        id: 101,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nasa classroom ka at ang guro ay nagtuturo. Dapat kang makinig at magtanong kung may hindi ka maintindihan. Anong uri ng pakikinig ang dapat mong gawin?",
+        options: [
+            "Passive na pakikinig",
+            "Aktibong pakikinig",
+            "Di-berbal na pakikinig",
+            "Berbal na pakikinig"
+        ],
+        correct: 1,
+        rationale: "Aktibong pakikinig ay nakikinig nang mabuti at may reaksyon/tugon."
+    },
+    {
+        id: 102,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nakikipag-usap ka sa iyong boss tungkol sa iyong promotion. Dapat mong gamitin ang pormal na wika. Anong pamantayan ang itinuturo nito?",
+        options: [
+            "Appropriateness",
+            "Adaptability",
+            "Effectiveness",
+            "Empathy"
+        ],
+        correct: 0,
+        rationale: "Appropriateness ay angkop ang komunikasyon sa sitwasyon, lugar, kausap, at paksa."
+    },
+    {
+        id: 103,
+        subject: "komunikasyon",
+        question: "Ang mga Cebuano ay may sariling paraan ng pagsasalita na iba sa mga Tagalog. Anong uri ng wika ang ito?",
+        options: [
+            "Idiolect",
+            "Ethnolect",
+            "Dialect",
+            "Sociolect"
+        ],
+        correct: 1,
+        rationale: "Ethnolect ay partikular na gamit ng wika ng isang ethnic group."
+    },
+    {
+        id: 104,
+        subject: "komunikasyon",
+        question: "Sitwasyon: Nakikipag-usap ka sa isang biktima ng bagyo. Dapat mong ipakita na naiintindihan mo ang kanyang sitwasyon. Anong pamantayan ang itinuturo nito?",
+        options: [
+            "Conversational Involvement",
+            "Empathy",
+            "Effectiveness",
+            "Adaptability"
+        ],
+        correct: 1,
+        rationale: "Empathy ay sikolohikal na kakayahang maunawaan ang damdamin ng iba."
+    },
+    {
+        id: 105,
+        subject: "komunikasyon",
+        question: "Ang paggamit ng tatlong wika (Filipino, English, at Mandarin) ay tinatawag na:",
+        options: [
+            "Bilingguwalismo",
+            "Multilingguwalismo",
+            "Ethnolect",
+            "Dialect"
+        ],
+        correct: 1,
+        rationale: "Multilingguwalismo ay paggamit ng dalawa o higit pang wika."
+    }
+];
+
 // Combine all questions
 const allQuestions = [
     ...scienceQuestions.map(q => ({...q, subject: "science"})),
     ...mathQuestions,
-    ...biologyQuestions
+    ...biologyQuestions,
+    ...komunikasyonQuestions
 ];
 
 // Shuffle function for randomization
@@ -3140,6 +4009,7 @@ const backToPracticeBtn = document.getElementById('back-to-practice');
 const scienceBtn = document.getElementById('science-btn');
 const mathBtn = document.getElementById('math-btn');
 const biologyBtn = document.getElementById('biology-btn');
+const komunikasyonBtn = document.getElementById('komunikasyon-btn');
 
 // Initialize
 function init() {
@@ -3360,6 +4230,7 @@ function setupEventListeners() {
         scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         renderQuestion();
@@ -3379,6 +4250,7 @@ function setupEventListeners() {
         mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         renderQuestion();
@@ -3398,6 +4270,27 @@ function setupEventListeners() {
         biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        renderQuestion();
+        updateStats();
+    });
+
+    komunikasyonBtn.addEventListener('click', () => {
+        if (currentSubject === "komunikasyon") return;
+        currentSubject = "komunikasyon";
+        currentQuestionIndex = 0;
+        userAnswers = {};
+        reviewAnswers = {};
+        wrongQuestions = [];
+        reviewIndex = 0;
+        isReviewMode = false;
+        questions = selectRandomQuestions(currentSubject);
+        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         renderQuestion();
