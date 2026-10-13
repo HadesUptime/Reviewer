@@ -3064,871 +3064,673 @@ const biologyQuestions = [
     }
 ];
 
-// Mabisang Komunikasyon Questions
+// Effective Communication Questions - Second Term First Summative
 const komunikasyonQuestions = [
-    // I. Komunikasyon (Questions 1-5)
+    // I. Academic Texts vs Technical Texts (Questions 1-6)
     {
         id: 1,
         subject: "komunikasyon",
-        question: "Nag-uusap ang isang guro sa kanyang mga estudyante gamit ang wikang Filipino. Anong uri ng komunikasyon ang ginagamit niya?",
+        question: "Which type of text presents ideas, arguments, interpretations, or research findings?",
         options: [
-            "Di-berbal na komunikasyon",
-            "Berbal na komunikasyon",
-            "Pasulat na komunikasyon",
-            "Non-verbal na komunikasyon"
+            "Technical text",
+            "Academic text",
+            "Instructional manual",
+            "Memorandum"
         ],
         correct: 1,
-        rationale: "Berbal na komunikasyon ay gumagamit ng mga salitang sinasalita."
+        rationale: "Academic texts present ideas, arguments, interpretations, or research findings through scholarly writing."
     },
     {
         id: 2,
         subject: "komunikasyon",
-        question: "Isang estudyante ay nagpapahiwatig ng kanyang kalungkutan sa pamamagitan ng pag-iyak. Anong uri ng komunikasyon ang ipinapakita niya?",
+        question: "What is the main purpose of a technical text?",
         options: [
-            "Pasalita na komunikasyon",
-            "Ekspresyon ng mukha",
-            "Pasulat na komunikasyon",
-            "Berbal na komunikasyon"
+            "To entertain readers with fictional stories",
+            "To express personal feelings",
+            "To instruct, guide, or communicate technical information",
+            "To present unsupported opinions"
         ],
-        correct: 1,
-        rationale: "Ekspresyon ng mukha ay nagpapakita ng damdamin tulad ng lungkot."
+        correct: 2,
+        rationale: "Technical texts are designed to instruct, guide, or communicate technical information clearly and precisely."
     },
     {
         id: 3,
         subject: "komunikasyon",
-        question: "Nagpapadala ng mensahe ang isang tao sa pamamagitan ng paggamit ng senyas o hand signals. Anong uri ng komunikasyon ito?",
+        question: "Which of the following is an example of an academic text?",
         options: [
-            "Berbal na komunikasyon",
-            "Di-berbal na komunikasyon",
-            "Pasalita na komunikasyon",
-            "Pasulat na komunikasyon"
+            "Research paper",
+            "User guide",
+            "Instructional manual",
+            "Operating instructions"
         ],
-        correct: 1,
-        rationale: "Di-berbal na komunikasyon ay gumagamit ng senyas at simbolo."
+        correct: 0,
+        rationale: "A research paper is an academic text that presents scholarly analysis, research findings, and arguments."
     },
     {
         id: 4,
         subject: "komunikasyon",
-        question: "Nag-aabot ng sulat ang isang tao sa kanyang kaibigan. Anong uri ng berbal na komunikasyon ang ginagamit niya?",
+        question: "Which feature is most commonly associated with technical texts?",
         options: [
-            "Pasalita",
-            "Pasulat",
-            "Kilos",
-            "Galaw ng mata"
+            "Emotional language",
+            "Unsupported arguments",
+            "Creative storytelling",
+            "Clear and precise instructions"
         ],
-        correct: 1,
-        rationale: "Pasulat na komunikasyon ay gamit ng mga letra."
+        correct: 3,
+        rationale: "Technical texts emphasize clear and precise instructions to help users perform tasks accurately."
     },
     {
         id: 5,
         subject: "komunikasyon",
-        question: "Nagbibigay ng pahiwatig ang isang tao sa pamamagitan ng pagtaas ng kilay habang nakikinig. Anong bahagi ng di-berbal na komunikasyon ang ginagamit niya?",
+        question: "A student writes a paper analyzing the effects of AI on education using research evidence. What type of text is it?",
         options: [
-            "Kilos",
-            "Galaw ng mata",
-            "Tinig",
-            "Espasyo at distansya"
+            "Technical report",
+            "Academic text",
+            "Instructional manual",
+            "System user guide"
         ],
         correct: 1,
-        rationale: "Galaw ng mata ay nagpapakita ng interes o atensyon."
+        rationale: "An academic text presents analysis and interpretation supported by research evidence."
     },
-
-    // II. Wika at Kultura (Questions 6-12)
     {
         id: 6,
         subject: "komunikasyon",
-        question: "Ang isang tao ay may sariling estilo sa paggamit ng wika na kakaiba sa iba. Anong uri ng wika ang tinutukoy nito?",
+        question: "A document explains how to operate an AI learning platform step by step. What type of text is it?",
         options: [
-            "Idiolect",
-            "Ethnolect",
-            "Dialect",
-            "Sociolect"
+            "Position paper",
+            "Book review",
+            "Technical text",
+            "Academic essay"
         ],
-        correct: 0,
-        rationale: "Idiolect ay personal na paraan ng paggamit ng wika; kaugnay ng personal identity."
+        correct: 2,
+        rationale: "A technical text provides step-by-step instructions for operating equipment or systems."
     },
+    // II. Types of Texts (Questions 7-14)
     {
         id: 7,
         subject: "komunikasyon",
-        question: "Ang mga Ilocano ay may sariling paraan ng pagsasalita na iba sa mga Tagalog. Anong uri ng wika ang ito?",
+        question: "Which text presents a systematic investigation of a problem or question?",
         options: [
-            "Idiolect",
-            "Ethnolect",
-            "Dialect",
-            "Sociolect"
+            "Research paper",
+            "Memorandum",
+            "Book review",
+            "Instructional manual"
         ],
-        correct: 1,
-        rationale: "Ethnolect ay partikular na gamit ng wika ng isang ethnic group."
+        correct: 0,
+        rationale: "A research paper presents a systematic investigation through methodology, findings, and conclusions."
     },
     {
         id: 8,
         subject: "komunikasyon",
-        question: "Ang mga tao sa Batangas ay may ibang bigkas ng mga salita kumpara sa mga tao sa Manila. Anong tawag sa kanilang paraan ng pagsasalita?",
+        question: "Which text states a clear position on an issue and supports it with evidence and logical arguments?",
         options: [
-            "Idiolect",
-            "Ethnolect",
-            "Dialect",
-            "Sociolect"
+            "Abstract",
+            "Technical report",
+            "Academic essay",
+            "Position paper"
         ],
-        correct: 2,
-        rationale: "Dialect ay paraan ng pagsasalita na ginagamit sa isang lugar."
+        correct: 3,
+        rationale: "A position paper states a clear stance on an issue and supports it with evidence and logical arguments."
     },
     {
         id: 9,
         subject: "komunikasyon",
-        question: "Ang mga doktor ay may sariling terminolohiya o salita na ginagamit nila sa pag-uusap. Anong uri ng wika ang ito?",
+        question: "What is a brief overview of a research study that summarizes its problem, methods, findings, and conclusions?",
         options: [
-            "Idiolect",
-            "Ethnolect",
-            "Dialect",
-            "Sociolect"
+            "Memorandum",
+            "Abstract",
+            "Book review",
+            "Technical report"
         ],
-        correct: 3,
-        rationale: "Sociolect ay paraan ng pagsasalita ng isang partikular na pangkat o society."
+        correct: 1,
+        rationale: "An abstract provides a concise summary of a research study's key components."
     },
     {
         id: 10,
         subject: "komunikasyon",
-        question: "Isang tao ay nakakapagsalita ng Filipino at Ingles nang magkasabay. Anong tawag sa kanyang kakayahan?",
+        question: "Which text evaluates a book's content, themes, strengths, weaknesses, and significance?",
         options: [
-            "First Language",
-            "Bilingguwalismo",
-            "Ethnolect",
-            "Dialect"
+            "Research paper",
+            "Position paper",
+            "Book review",
+            "Abstract"
         ],
-        correct: 1,
-        rationale: "Bilingguwalismo ay paggamit ng dalawa o higit pang wika."
+        correct: 2,
+        rationale: "A book review critically evaluates a book's content, themes, strengths, weaknesses, and significance."
     },
     {
         id: 11,
         subject: "komunikasyon",
-        question: "Ang unang wika na natutunan ng isang bata mula sa kanyang mga magulang ay tinatawag na:",
+        question: "Which text presents technical information, findings, analysis, and conclusions related to a project or investigation?",
         options: [
-            "Second Language",
-            "First Language",
-            "Foreign Language",
-            "Ethnolect"
+            "Technical report",
+            "Academic essay",
+            "Memorandum",
+            "Book review"
         ],
-        correct: 1,
-        rationale: "First Language ay unang wika natutuhan o ginagamit ng isang tao."
+        correct: 0,
+        rationale: "A technical report presents technical information, findings, analysis, and conclusions about a project."
     },
     {
         id: 12,
         subject: "komunikasyon",
-        question: "Ang wika ay pangunahing instrumento sa pakikipag-ugnayan dahil:",
+        question: "Which type of text develops a central idea through an introduction, body, and conclusion?",
         options: [
-            "Nagpapakita ito ng katalinuhan",
-            "Nagbibigay ito ng paraan upang magkaunawaan ang mga tao",
-            "Nagpapakita ito ng social status",
-            "Nagbibigay ito ng trabaho"
+            "Abstract",
+            "Instructional manual",
+            "Technical report",
+            "Academic essay"
         ],
-        correct: 1,
-        rationale: "Wika ay nagbibigay ng paraan upang magkaunawaan ang mga tao."
+        correct: 3,
+        rationale: "An academic essay develops a central idea through introduction, body, and conclusion structure."
     },
-
-    // III. Speaking Theory (Questions 13-20)
     {
         id: 13,
         subject: "komunikasyon",
-        question: "Sa Speaking Theory ni Dell Hymes, ang lugar o pisikal na kapaligiran ng komunikasyon ay tinatawag na:",
+        question: "What is a concise, professional written message used for official internal communication?",
         options: [
-            "Participants",
-            "Setting",
-            "Ends",
-            "Key"
+            "Position paper",
+            "Memorandum",
+            "Research paper",
+            "Book review"
         ],
         correct: 1,
-        rationale: "Setting ay lugar o pisikal na kapaligiran ng komunikasyon."
+        rationale: "A memorandum is a concise, professional message for official internal communication."
     },
     {
         id: 14,
         subject: "komunikasyon",
-        question: "Ang mga taong kasangkot sa komunikasyon ay tinatawag na:",
+        question: "Which text provides directions for operating equipment, using a system, or completing a task?",
         options: [
-            "Setting",
-            "Participants",
-            "Ends",
-            "Act Sequence"
+            "Abstract",
+            "Academic essay",
+            "Instructional manual",
+            "Position paper"
         ],
-        correct: 1,
-        rationale: "Participants ay mga taong kasangkot sa komunikasyon."
+        correct: 2,
+        rationale: "An instructional manual provides step-by-step directions for operating equipment or completing tasks."
     },
+
+    // III. Characteristics of Effective Technical Writing (Questions 15-20)
     {
         id: 15,
         subject: "komunikasyon",
-        question: "Ang layunin o dahilan ng komunikasyon ay tinatawag na:",
+        question: "Which characteristic ensures that instructions are easy to understand?",
         options: [
-            "Setting",
-            "Participants",
-            "Ends",
-            "Key"
+            "Clarity",
+            "Precision",
+            "Accuracy",
+            "Organization"
         ],
-        correct: 2,
-        rationale: "Ends ay layunin o dahilan ng komunikasyon."
+        correct: 0,
+        rationale: "Clarity ensures that instructions are easy to understand and follow."
     },
     {
         id: 16,
         subject: "komunikasyon",
-        question: "Ang pagkakasunod-sunod ng mga pangyayari o pahayag sa komunikasyon ay tinatawag na:",
+        question: "Which characteristic requires information to be exact and measurable whenever necessary?",
         options: [
-            "Act Sequence",
-            "Key",
-            "Instrumentalities",
-            "Norms"
+            "Context",
+            "Engagement",
+            "Expression",
+            "Precision"
         ],
-        correct: 0,
-        rationale: "Act Sequence ay pagkakasunod-sunod ng mga pangyayari o pahayag."
+        correct: 3,
+        rationale: "Precision requires information to be exact and measurable for accuracy."
     },
     {
         id: 17,
         subject: "komunikasyon",
-        question: "Ang tono, paraan, o espiritu ng mensahe ay tinatawag na:",
+        question: "Why is accuracy important in technical writing?",
         options: [
-            "Act Sequence",
-            "Key",
-            "Instrumentalities",
-            "Norms"
+            "It makes the text more entertaining.",
+            "It ensures that technical information is correct and reliable.",
+            "It allows writers to use complicated words.",
+            "It makes instructions longer."
         ],
         correct: 1,
-        rationale: "Key ay tono, paraan, o espiritu ng mensahe."
+        rationale: "Accuracy ensures technical information is correct and reliable for safe and effective use."
     },
     {
         id: 18,
         subject: "komunikasyon",
-        question: "Ang mga channel o paraan ng pagpapadala ng komunikasyon ay tinatawag na:",
+        question: "Why should instructions follow a logical sequence?",
         options: [
-            "Key",
-            "Instrumentalities",
-            "Norms",
-            "Genre"
+            "To make the text more emotional",
+            "To add unnecessary information",
+            "To ensure steps are presented in the correct order",
+            "To make the text more difficult to understand"
         ],
-        correct: 1,
-        rationale: "Instrumentalities ay mga channel o paraan ng pagpapadala ng komunikasyon."
+        correct: 2,
+        rationale: "Logical sequence ensures steps are presented in the correct order for successful completion."
     },
     {
         id: 19,
         subject: "komunikasyon",
-        question: "Ang mga patakaran o inaasahang asal ng komunikasyon ay tinatawag na:",
+        question: "What should a writer do when using unfamiliar technical terms for beginners?",
         options: [
-            "Instrumentalities",
-            "Norms",
-            "Genre",
-            "Setting"
+            "Explain the unfamiliar terms.",
+            "Remove all explanations.",
+            "Use more complicated vocabulary.",
+            "Assume everyone understands the terms."
         ],
-        correct: 1,
-        rationale: "Norms ay mga patakaran o inaasahang asal ng komunikasyon."
+        correct: 0,
+        rationale: "Writers should explain unfamiliar technical terms to help beginners understand."
     },
     {
         id: 20,
         subject: "komunikasyon",
-        question: "Ang kategorya o uri ng komunikasyon ay tinatawag na:",
+        question: "Which instruction demonstrates precision?",
         options: [
-            "Norms",
-            "Genre",
-            "Setting",
-            "Participants"
+            "Heat the solution for a while.",
+            "Add enough water until it looks right.",
+            "Mix the ingredients as needed.",
+            "Heat the solution at 80°C for five minutes."
         ],
-        correct: 1,
-        rationale: "Genre ay kategorya o uri ng komunikasyon."
+        correct: 3,
+        rationale: "Precision uses exact measurements and time: '80°C for five minutes' is specific and measurable."
     },
 
-    // IV. Interpersonal at Intrapersonal (Questions 21-25)
+    // IV. Audience, Purpose, and Context (Questions 21-25)
     {
         id: 21,
         subject: "komunikasyon",
-        question: "Nag-iisip si Juan tungkol sa kanyang mga plano sa buhay. Anong uri ng komunikasyon ang ginagamit niya?",
+        question: "Who refers to the intended readers or listeners of a message?",
         options: [
-            "Interpersonal",
-            "Intrapersonal",
-            "Berbal",
-            "Di-berbal"
+            "Purpose",
+            "Audience",
+            "Context",
+            "Evidence"
         ],
         correct: 1,
-        rationale: "Intrapersonal ay komunikasyon sa loob ng sarili o pag-iisip."
+        rationale: "Audience refers to the intended readers or listeners of a message."
     },
     {
         id: 22,
         subject: "komunikasyon",
-        question: "Nag-uusap si Maria sa kanyang kaibigan tungkol sa kanilang proyekto. Anong uri ng komunikasyon ang ito?",
+        question: "Which question does purpose answer?",
         options: [
-            "Intrapersonal",
-            "Interpersonal",
-            "Pasulat",
-            "Di-berbal lamang"
+            "Who will receive the message?",
+            "Where did the communication happen?",
+            "Why is the message being communicated?",
+            "What is the reader's background?"
         ],
-        correct: 1,
-        rationale: "Interpersonal ay pakikipag-usap o pakikipag-ugnayan sa ibang tao."
+        correct: 2,
+        rationale: "Purpose answers the question 'Why is the message being communicated?'"
     },
     {
         id: 23,
         subject: "komunikasyon",
-        question: "Ang pakikipag-usap sa sariling kaisipan ay tinatawag na:",
+        question: "What does context refer to?",
         options: [
-            "Interpersonal",
-            "Intrapersonal",
-            "Berbal",
-            "Di-berbal"
+            "The circumstances and situation surrounding communication",
+            "The intended readers of a message",
+            "The reason for writing a text",
+            "The grammatical structure of a sentence"
         ],
-        correct: 1,
-        rationale: "Intrapersonal ay pag-iisip o pakikipag-usap sa sariling kaisipan."
+        correct: 0,
+        rationale: "Context refers to the circumstances and situation surrounding communication."
     },
     {
         id: 24,
         subject: "komunikasyon",
-        question: "Ang pakikipag-ugnayan sa ibang tao ay tinatawag na:",
+        question: "A student creates a cyberbullying awareness poster for younger students using simple words and relatable examples. What is the student primarily adapting to?",
         options: [
-            "Intrapersonal",
-            "Interpersonal",
-            "Pasulat",
-            "Di-berbal"
+            "Research findings",
+            "Technical vocabulary",
+            "The conclusion",
+            "The audience"
         ],
-        correct: 1,
-        rationale: "Interpersonal ay pakikipag-usap o pakikipag-ugnayan sa ibang tao."
+        correct: 3,
+        rationale: "The student is adapting to the audience by using simple words and relatable examples for younger students."
     },
     {
         id: 25,
         subject: "komunikasyon",
-        question: "Maaring berbal o di-berbal ang interpersonal na komunikasyon. Tama o Mali?",
+        question: "A student writes a formal proposal for school administrators using evidence and recommended policies. Which approach is most appropriate?",
         options: [
-            "Tama",
-            "Mali",
-            "Hindi sigurado",
-            "Depende sa sitwasyon"
+            "Casual language and jokes",
+            "Formal language, evidence, and recommendations",
+            "Unverified claims and personal attacks",
+            "Slang and unrelated stories"
         ],
-        correct: 0,
-        rationale: "Tama, maaring berbal o di-berbal ang interpersonal na komunikasyon."
+        correct: 1,
+        rationale: "Formal proposals for administrators require formal language, evidence, and recommendations."
     },
 
-    // V. Mabisang Pakikinig (Questions 26-32)
+    // V. Multimodal Communication (Questions 26-31)
     {
         id: 26,
         subject: "komunikasyon",
-        question: "Ang pagbibigay ng atensyon at pag-unawa sa mensahe ng kausap ay tinatawag na:",
+        question: "What is multimodal communication?",
         options: [
-            "Pagsulat",
-            "Pakikinig",
-            "Pagbasa",
-            "Pagsasalita"
+            "Communicating only through written words",
+            "Using only pictures to communicate",
+            "Combining two or more modes to communicate meaning",
+            "Communicating without a clear purpose"
         ],
-        correct: 1,
-        rationale: "Pakikinig ay pagbibigay ng atensyon at pag-unawa sa mensahe ng kausap."
+        correct: 2,
+        rationale: "Multimodal communication combines two or more modes (linguistic, visual, audio, gestural, spatial) to communicate meaning."
     },
     {
         id: 27,
         subject: "komunikasyon",
-        question: "Ang pagbibigay ng buong pansin sa kausap ay tinatawag na:",
+        question: "Which mode includes words, sentences, written explanations, and spoken language?",
         options: [
-            "Reaksyon",
-            "Atensyon",
-            "Empatiya",
-            "Pagtatanong"
+            "Linguistic",
+            "Visual",
+            "Audio",
+            "Spatial"
         ],
-        correct: 1,
-        rationale: "Atensyon ay pagbibigay ng buong pansin."
+        correct: 0,
+        rationale: "Linguistic mode includes words, sentences, written explanations, and spoken language."
     },
     {
         id: 28,
         subject: "komunikasyon",
-        question: "Ang pagtugon sa mensahe ng kausap ay tinatawag na:",
+        question: "Which mode includes photographs, illustrations, icons, diagrams, and colors?",
         options: [
-            "Atensyon",
-            "Reaksyon at Feedback",
-            "Empatiya",
-            "Pagtatanong"
+            "Gestural",
+            "Linguistic",
+            "Spatial",
+            "Visual"
         ],
-        correct: 1,
-        rationale: "Reaksyon at Feedback ay pagtugon sa mensahe."
+        correct: 3,
+        rationale: "Visual mode includes photographs, illustrations, icons, diagrams, and colors."
     },
     {
         id: 29,
         subject: "komunikasyon",
-        question: "Ang pagtatanong upang mas malinaw na maunawaan ang mensahe ay tinatawag na:",
+        question: "Which mode includes narration, music, and sound effects?",
         options: [
-            "Atensyon",
-            "Reaksyon",
-            "Pagtatanong",
-            "Empatiya"
+            "Visual",
+            "Audio",
+            "Gestural",
+            "Linguistic"
         ],
-        correct: 2,
-        rationale: "Pagtatanong ay pagtatanong upang mas malinaw na maunawaan."
+        correct: 1,
+        rationale: "Audio mode includes narration, music, and sound effects."
     },
     {
         id: 30,
         subject: "komunikasyon",
-        question: "Ang pag-unawa sa damdamin at pananaw ng nagsasalita ay tinatawag na:",
+        question: "Facial expressions, body movements, and hand gestures belong to which mode?",
         options: [
-            "Atensyon",
-            "Reaksyon",
-            "Pagtatanong",
-            "Empatiya"
+            "Spatial",
+            "Audio",
+            "Gestural",
+            "Visual"
         ],
-        correct: 3,
-        rationale: "Empatiya ay pag-unawa sa damdamin at pananaw ng nagsasalita."
+        correct: 2,
+        rationale: "Gestural mode includes facial expressions, body movements, and hand gestures."
     },
     {
         id: 31,
         subject: "komunikasyon",
-        question: "Naririnig lamang ang impormasyon ngunit maaaring walang aktibong tugon. Anong uri ng pakikinig ito?",
+        question: "The arrangement, placement, and organization of elements belong to which mode?",
         options: [
-            "Aktibong pakikinig",
-            "Passive na pakikinig",
-            "Empatikong pakikinig",
-            "Kritikal na pakikinig"
+            "Spatial",
+            "Linguistic",
+            "Audio",
+            "Gestural"
         ],
-        correct: 1,
-        rationale: "Passive na pakikinig ay naririnig lamang ang impormasyon ngunit maaaring walang aktibong tugon."
+        correct: 0,
+        rationale: "Spatial mode includes the arrangement, placement, and organization of elements."
     },
+
+    // VI. Interpretation, Engagement, and Expression (Questions 32-36)
     {
         id: 32,
         subject: "komunikasyon",
-        question: "Nakikinig nang mabuti at may reaksyon/tugon sa kausap. Anong uri ng pakikinig ito?",
+        question: "What should you do when interpreting a multimodal text?",
         options: [
-            "Passive na pakikinig",
-            "Aktibong pakikinig",
-            "Di-berbal na pakikinig",
-            "Berbal na pakikinig"
+            "Focus only on its colors.",
+            "Ignore the captions and images.",
+            "Judge the text based only on its appearance.",
+            "Examine the words, visuals, data, audience, purpose, and relationships between elements."
         ],
-        correct: 1,
-        rationale: "Aktibong pakikinig ay nakikinig nang mabuti at may reaksyon/tugon."
+        correct: 3,
+        rationale: "Interpreting multimodal texts requires examining words, visuals, data, audience, purpose, and relationships between elements."
     },
-
-    // VI. Empatiya (Questions 33-39)
     {
         id: 33,
         subject: "komunikasyon",
-        question: "Ang kakayahang maunawaan at maramdaman ang nararamdaman ng iba ay tinatawag na:",
+        question: "What involves understanding and explaining a text's meaning by examining its claims, evidence, purpose, audience, and context?",
         options: [
-            "Empatiya",
-            "Simpatiya",
-            "Ampatya",
-            "Kapatiran"
+            "Expression",
+            "Interpretation",
+            "Engagement",
+            "Organization"
         ],
-        correct: 0,
-        rationale: "Empatiya ay kakayahang maunawaan at maramdaman ang nararamdaman ng iba."
+        correct: 1,
+        rationale: "Interpretation involves understanding and explaining a text's meaning by examining claims, evidence, purpose, audience, and context."
     },
     {
         id: 34,
         subject: "komunikasyon",
-        question: "Nakakatulong ang empatiya sa mas magandang pakikipag-ugnayan dahil:",
+        question: "What involves actively interacting with ideas by asking questions, discussing implications, and evaluating information?",
         options: [
-            "Nagpapakita ito ng lakas",
-            "Mas nauunawaan ang sitwasyon at damdamin ng iba",
-            "Nagbibigay ito ng pera",
-            "Nagpapakita ito ng power"
+            "Interpretation",
+            "Expression",
+            "Engagement",
+            "Precision"
         ],
-        correct: 1,
-        rationale: "Empatiya ay nakakatulong sa mas magandang pakikipag-ugnayan dahil mas nauunawaan ang sitwasyon at damdamin ng iba."
+        correct: 2,
+        rationale: "Engagement involves actively interacting with ideas by asking questions, discussing implications, and evaluating information."
     },
     {
         id: 35,
         subject: "komunikasyon",
-        question: "Ang pag-unawa sa damdamin ng iba ay nakakatulong sa:",
+        question: "What refers to communicating one's own thoughts, interpretations, opinions, and ideas effectively?",
         options: [
-            "Pagkakaroon ng away",
-            "Pagbuo ng magandang relasyon",
-            "Pagkakaroon ng problema",
-            "Pagkakaroon ng galit"
+            "Expression",
+            "Context",
+            "Interpretation",
+            "Engagement"
         ],
-        correct: 1,
-        rationale: "Empatiya ay nakakatulong sa pagbuo ng magandang relasyon."
+        correct: 0,
+        rationale: "Expression refers to communicating one's own thoughts, interpretations, opinions, and ideas effectively."
     },
     {
         id: 36,
         subject: "komunikasyon",
-        question: "Ang empatiya ay nakakaiwas sa:",
+        question: "A student analyzes an editorial's arguments and supporting evidence to understand its message. Which process is demonstrated?",
         options: [
-            "Pagkakaibigan",
-            "Pagkakaroon ng trabaho",
-            "Pagkakaroon ng pera",
-            "Hindi pagkakaunawaan"
+            "Engagement",
+            "Expression",
+            "Precision",
+            "Interpretation"
         ],
         correct: 3,
-        rationale: "Empatiya ay nakakaiwas sa hindi pagkakaunawaan."
+        rationale: "Analyzing arguments and evidence to understand a message demonstrates interpretation."
     },
+
+    // VII. Critical Thinking and Credible Evidence (Questions 37-41)
     {
         id: 37,
         subject: "komunikasyon",
-        question: "Sa 6 na Pamantayan ng Empatiya, ang marunong mag-adjust depende sa sitwasyon ay tinatawag na:",
+        question: "What should you do first when evaluating information from an online source?",
         options: [
-            "Adaptability",
-            "Conversational Involvement",
-            "Conversational Management",
-            "Empathy"
+            "Count its likes and reposts.",
+            "Verify whether the source is credible and relevant.",
+            "Accept the claim immediately.",
+            "Share it with friends."
         ],
-        correct: 0,
-        rationale: "Adaptability ay marunong mag-adjust depende sa sitwasyon."
+        correct: 1,
+        rationale: "First verify whether the source is credible and relevant before accepting or sharing information."
     },
     {
         id: 38,
         subject: "komunikasyon",
-        question: "Ang aktibong nakikilahok sa usapan ay tinatawag na:",
+        question: "What should you examine to determine whether a claim is trustworthy?",
         options: [
-            "Adaptability",
-            "Conversational Involvement",
-            "Conversational Management",
-            "Effectiveness"
+            "The number of emojis used",
+            "The attractiveness of the graphics",
+            "Reliable data, research findings, and supporting details",
+            "The popularity of the person posting it"
         ],
-        correct: 1,
-        rationale: "Conversational Involvement ay aktibong nakikilahok sa usapan."
+        correct: 2,
+        rationale: "Examine reliable data, research findings, and supporting details to determine if a claim is trustworthy."
     },
     {
         id: 39,
         subject: "komunikasyon",
-        question: "Ang maayos na pamamahala sa daloy ng pag-uusap ay tinatawag na:",
+        question: "A claim presents evidence that does not actually support its conclusion. What should a critical thinker do?",
         options: [
-            "Conversational Involvement",
-            "Conversational Management",
-            "Empathy",
-            "Effectiveness"
+            "Analyze whether the evidence supports the claim.",
+            "Accept the conclusion without question.",
+            "Ignore the evidence.",
+            "Share the claim immediately."
         ],
-        correct: 1,
-        rationale: "Conversational Management ay maayos na pamamahala sa daloy ng pag-uusap."
+        correct: 0,
+        rationale: "A critical thinker analyzes whether the evidence actually supports the claim."
     },
-
-    // VII. 6 na Pamantayan (Questions 40-45)
     {
         id: 40,
         subject: "komunikasyon",
-        question: "Ang sikolohikal na kakayahang maunawaan ang damdamin ng iba ay tinatawag na:",
+        question: "Why should you consider alternative explanations when evaluating information?",
         options: [
-            "Adaptability",
-            "Conversational Involvement",
-            "Conversational Management",
-            "Empathy"
+            "To make your opinion impossible to change",
+            "To ignore evidence that disagrees with you",
+            "To prove that your first opinion is always correct",
+            "To avoid accepting only information that supports your initial opinion"
         ],
         correct: 3,
-        rationale: "Empathy ay sikolohikal na kakayahang maunawaan ang damdamin ng iba."
+        rationale: "Considering alternative explanations helps avoid confirmation bias and leads to more balanced conclusions."
     },
     {
         id: 41,
         subject: "komunikasyon",
-        question: "Ang mahusay na paggamit ng komunikasyon upang makamit ang layunin ay tinatawag na:",
+        question: "What does it mean to interpret results carefully?",
         options: [
-            "Empathy",
-            "Effectiveness",
-            "Appropriateness",
-            "Adaptability"
+            "Make conclusions based on personal feelings.",
+            "Avoid conclusions that go beyond what the evidence shows.",
+            "Accept every online claim as factual.",
+            "Ignore limitations in the evidence."
         ],
         correct: 1,
-        rationale: "Effectiveness ay mahusay na paggamit ng komunikasyon upang makamit ang layunin."
+        rationale: "Interpreting results carefully means avoiding conclusions that go beyond what the evidence supports."
     },
+
+    // VIII. Organization, Tone, and Language (Questions 42-45)
     {
         id: 42,
         subject: "komunikasyon",
-        question: "Ang angkop na komunikasyon sa sitwasyon, lugar, kausap, at paksa ay tinatawag na:",
+        question: "Which part of an academic text introduces the topic and central idea?",
         options: [
-            "Effectiveness",
-            "Appropriateness",
-            "Empathy",
-            "Adaptability"
+            "Body",
+            "Conclusion",
+            "Introduction",
+            "References"
         ],
-        correct: 1,
-        rationale: "Appropriateness ay angkop ang komunikasyon sa sitwasyon, lugar, kausap, at paksa."
+        correct: 2,
+        rationale: "The introduction introduces the topic and central idea of an academic text."
     },
     {
         id: 43,
         subject: "komunikasyon",
-        question: "Sitwasyon: Nasa formal na interview ka para sa trabaho. Dapat kang mag-adjust sa iyong paraan ng pagsasalita. Anong pamantayan ang itinuturo nito?",
+        question: "Which part develops supporting ideas, arguments, and evidence?",
         options: [
-            "Appropriateness",
-            "Adaptability",
-            "Effectiveness",
-            "Empathy"
+            "Body",
+            "Introduction",
+            "Conclusion",
+            "Title"
         ],
-        correct: 1,
-        rationale: "Adaptability ay marunong mag-adjust depende sa sitwasyon, pormal man o di-pormal."
+        correct: 0,
+        rationale: "The body develops supporting ideas, arguments, and evidence."
     },
     {
         id: 44,
         subject: "komunikasyon",
-        question: "Sitwasyon: Nakikipag-usap ka sa isang bata tungkol sa laro. Dapat mong gamitin ang mga simpleng salita. Anong pamantayan ang itinuturo nito?",
+        question: "Which tone is most appropriate for a memorandum sent to teachers announcing a schedule change?",
         options: [
-            "Effectiveness",
-            "Appropriateness",
-            "Empathy",
-            "Conversational Management"
+            "Sarcastic and emotional",
+            "Casual and disrespectful",
+            "Dramatic and humorous",
+            "Concise, polite, and professional"
         ],
-        correct: 1,
-        rationale: "Appropriateness ay angkop ang komunikasyon sa sitwasyon, lugar, kausap, at paksa."
+        correct: 3,
+        rationale: "Professional communication requires a concise, polite, and professional tone."
     },
     {
         id: 45,
         subject: "komunikasyon",
-        question: "Sitwasyon: Nakikinig ka sa kwento ng kaibigan tungkol sa kanyang problema. Naiintindihan mo ang kanyang nararamdaman. Anong pamantayan ang itinuturo nito?",
+        question: "When adapting a research report into a social media campaign, what must remain accurate?",
         options: [
-            "Conversational Involvement",
-            "Empathy",
-            "Effectiveness",
-            "Adaptability"
+            "Only the original report's formatting",
+            "The evidence and meaning of the findings",
+            "The length of every paragraph",
+            "The exact arrangement of every section"
         ],
         correct: 1,
-        rationale: "Empathy ay sikolohikal na kakayahang maunawaan ang damdamin ng iba."
+        rationale: "When adapting content, the evidence and meaning of findings must remain accurate, even if format changes."
     },
 
-    // VIII. Pagsulat ng Dyornal (Questions 46-52)
-    {
-        id: 46,
-        subject: "komunikasyon",
-        question: "Ang isang sulat o tala kung saan itinatala ang mga karanasan, damdamin, at pagninilay ay tinatawag na:",
-        options: [
-            "Talaarawan",
-            "Dyornal",
-            "Memo",
-            "Letter"
-        ],
-        correct: 1,
-        rationale: "Dyornal ay isang sulat o tala kung saan itinatala ang mga karanasan, damdamin, at pagninilay."
-    },
-    {
-        id: 47,
-        subject: "komunikasyon",
-        question: "Ang pagninilay tungkol sa mga karanasan, aral, at damdamin sa buhay ay uri ng:",
-        options: [
-            "Travel Journal",
-            "Personal na Journal",
-            "Repleksyon Journal",
-            "Work Journal"
-        ],
-        correct: 2,
-        rationale: "Repleksyon Journal ay pagninilay tungkol sa mga karanasan, aral, at damdamin sa buhay."
-    },
-    {
-        id: 48,
-        subject: "komunikasyon",
-        question: "Ang talaan ng mga karanasan, lugar, at taong nakilala sa paglalakbay ay uri ng:",
-        options: [
-            "Repleksyon Journal",
-            "Travel Journal",
-            "Personal na Journal",
-            "Dream Journal"
-        ],
-        correct: 1,
-        rationale: "Travel Journal ay talaan ng mga karanasan, lugar, at taong nakilala sa paglalakbay."
-    },
-    {
-        id: 49,
-        subject: "komunikasyon",
-        question: "Ang personal na tala ng iniisip, nararamdaman, pangarap, at pang-araw-araw na karanasan ay uri ng:",
-        options: [
-            "Travel Journal",
-            "Repleksyon Journal",
-            "Personal na Journal",
-            "Food Journal"
-        ],
-        correct: 2,
-        rationale: "Personal na Journal ay personal na tala ng iniisip, nararamdaman, pangarap, at pang-araw-araw na karanasan."
-    },
-    {
-        id: 50,
-        subject: "komunikasyon",
-        question: "Nakatuon sa mga natutunan mula sa karanasan ang:",
-        options: [
-            "Travel Journal",
-            "Personal na Journal",
-            "Repleksyon Journal",
-            "Work Journal"
-        ],
-        correct: 2,
-        rationale: "Repleksyon Journal ay nakatuon sa mga natutunan mula sa karanasan."
-    },
-    {
-        id: 51,
-        subject: "komunikasyon",
-        question: "Maaaring maglaman ng larawan, mapa, tiket, obserbasyon, at alaala ang:",
-        options: [
-            "Repleksyon Journal",
-            "Personal na Journal",
-            "Travel Journal",
-            "Dream Journal"
-        ],
-        correct: 2,
-        rationale: "Travel Journal ay maaaring maglaman ng larawan, mapa, tiket, obserbasyon, at alaala."
-    },
-    {
-        id: 52,
-        subject: "komunikasyon",
-        question: "Para sa sarili at maaaring magsilbing lugar ng pagpapahayag ang:",
-        options: [
-            "Travel Journal",
-            "Repleksyon Journal",
-            "Personal na Journal",
-            "Work Journal"
-        ],
-        correct: 2,
-        rationale: "Personal na Journal ay para sa sarili at maaaring magsilbing lugar ng pagpapahayag."
-    },
-
-    // IX. Additional Situational Questions (Questions 53-60)
-    {
-        id: 53,
-        subject: "komunikasyon",
-        question: "Sitwasyon: Nasa simbahan ka at ang pari ay nagsisimulang magsalita. Dapat kang maging tahimik at makinig. Anong pamantayan ang dapat mong sundin?",
-        options: [
-            "Appropriateness",
-            "Adaptability",
-            "Effectiveness",
-            "Conversational Involvement"
-        ],
-        correct: 0,
-        rationale: "Appropriateness ay angkop ang komunikasyon sa sitwasyon, lugar, kausap, at paksa."
-    },
-    {
-        id: 54,
-        subject: "komunikasyon",
-        question: "Sitwasyon: Nakikipag-usap ka sa iyong lolo na may sakit. Dapat mong gamitin ang malambing na tono. Anong pamantayan ang itinuturo nito?",
-        options: [
-            "Appropriateness",
-            "Effectiveness",
-            "Empathy",
-            "Adaptability"
-        ],
-        correct: 2,
-        rationale: "Empathy ay sikolohikal na kakayahang maunawaan ang damdamin ng iba."
-    },
-    {
-        id: 55,
-        subject: "komunikasyon",
-        question: "Sitwasyon: Nasa debate ka at kailangan mong ipahayag ang iyong punto nang malinaw. Dapat mong gamitin ang tamang salita. Anong pamantayan ang itinuturo nito?",
-        options: [
-            "Effectiveness",
-            "Appropriateness",
-            "Empathy",
-            "Conversational Management"
-        ],
-        correct: 0,
-        rationale: "Effectiveness ay mahusay na paggamit ng komunikasyon upang makamit ang layunin."
-    },
-    {
-        id: 56,
-        subject: "komunikasyon",
-        question: "Sitwasyon: Nakikipag-usap ka sa isang banyagang turista. Dapat mong mag-adjust sa iyong paraan ng pagsasalita. Anong pamantayan ang itinuturo nito?",
-        options: [
-            "Adaptability",
-            "Effectiveness",
-            "Empathy",
-            "Conversational Involvement"
-        ],
-        correct: 0,
-        rationale: "Adaptability ay marunong mag-adjust depende sa sitwasyon."
-    },
-    {
-        id: 57,
-        subject: "komunikasyon",
-        question: "Sitwasyon: Ikaw ang moderator ng isang group discussion. Dapat mong maayos na pamahalaan ang daloy ng usapan. Anong pamantayan ang itinuturo nito?",
-        options: [
-            "Conversational Involvement",
-            "Conversational Management",
-            "Empathy",
-            "Effectiveness"
-        ],
-        correct: 1,
-        rationale: "Conversational Management ay maayos na pamamahala sa daloy ng pag-uusap."
-    },
-    {
-        id: 58,
-        subject: "komunikasyon",
-        question: "Sitwasyon: Nakikinig ka sa kwento ng iyong kaibigan tungkol sa kanyang tagumpay. Aktibong kang nakikilahok sa usapan. Anong pamantayan ang itinuturo nito?",
-        options: [
-            "Conversational Management",
-            "Conversational Involvement",
-            "Empathy",
-            "Appropriateness"
-        ],
-        correct: 1,
-        rationale: "Conversational Involvement ay aktibong nakikilahok sa usapan."
-    },
-    {
-        id: 59,
-        subject: "komunikasyon",
-        question: "Sitwasyon: Nagsusulat ka ng dyornal tungkol sa iyong unang paglalakbay sa probinsya. Anong uri ng dyornal ang dapat mong gamitin?",
-        options: [
-            "Repleksyon Journal",
-            "Travel Journal",
-            "Personal na Journal",
-            "Dream Journal"
-        ],
-        correct: 1,
-        rationale: "Travel Journal ay talaan ng mga karanasan, lugar, at taong nakilala sa paglalakbay."
-    },
-    {
-        id: 60,
-        subject: "komunikasyon",
-        question: "Sitwasyon: Nagsusulat ka ng dyornal tungkol sa mga aral na natutunan mo sa iyong pagkakamali. Anong uri ng dyornal ang dapat mong gamitin?",
-        options: [
-            "Travel Journal",
-            "Personal na Journal",
-            "Repleksyon Journal",
-            "Food Journal"
-        ],
-        correct: 2,
-        rationale: "Repleksyon Journal ay pagninilay tungkol sa mga karanasan, aral, at damdamin sa buhay."
-    },
-
-    // Alternative questions for Mabisang Komunikasyon
+    // Alternative questions for Effective Communication
     {
         id: 101,
         subject: "komunikasyon",
-        question: "Sitwasyon: Nasa classroom ka at ang guro ay nagtuturo. Dapat kang makinig at magtanong kung may hindi ka maintindihan. Anong uri ng pakikinig ang dapat mong gawin?",
+        question: "A writer uses simple language and short sentences when explaining a complex topic to beginners. Which characteristic of effective writing does this demonstrate?",
         options: [
-            "Passive na pakikinig",
-            "Aktibong pakikinig",
-            "Di-berbal na pakikinig",
-            "Berbal na pakikinig"
+            "Clarity",
+            "Precision",
+            "Accuracy",
+            "Complexity"
         ],
-        correct: 1,
-        rationale: "Aktibong pakikinig ay nakikinig nang mabuti at may reaksyon/tugon."
+        correct: 0,
+        rationale: "Using simple language and short sentences demonstrates clarity, making information easy to understand."
     },
     {
         id: 102,
         subject: "komunikasyon",
-        question: "Sitwasyon: Nakikipag-usap ka sa iyong boss tungkol sa iyong promotion. Dapat mong gamitin ang pormal na wika. Anong pamantayan ang itinuturo nito?",
+        question: "A technical document specifies '15 minutes at 200°C' instead of 'cook for a bit.' Which characteristic does this show?",
         options: [
-            "Appropriateness",
-            "Adaptability",
-            "Effectiveness",
-            "Empathy"
+            "Vagueness",
+            "Precision",
+            "Emotion",
+            "Creativity"
         ],
-        correct: 0,
-        rationale: "Appropriateness ay angkop ang komunikasyon sa sitwasyon, lugar, kausap, at paksa."
+        correct: 1,
+        rationale: "Specifying exact time and temperature demonstrates precision in technical writing."
     },
     {
         id: 103,
         subject: "komunikasyon",
-        question: "Ang mga Cebuano ay may sariling paraan ng pagsasalita na iba sa mga Tagalog. Anong uri ng wika ang ito?",
+        question: "When writing for an audience of medical professionals, a writer uses specialized terminology. When writing for general readers, the writer explains those terms. What is the writer adapting to?",
         options: [
-            "Idiolect",
-            "Ethnolect",
-            "Dialect",
-            "Sociolect"
+            "The writer's personal preference",
+            "The audience's knowledge level",
+            "The length of the document",
+            "The formatting requirements"
         ],
         correct: 1,
-        rationale: "Ethnolect ay partikular na gamit ng wika ng isang ethnic group."
+        rationale: "The writer is adapting to the audience's knowledge level."
     },
     {
         id: 104,
         subject: "komunikasyon",
-        question: "Sitwasyon: Nakikipag-usap ka sa isang biktima ng bagyo. Dapat mong ipakita na naiintindihan mo ang kanyang sitwasyon. Anong pamantayan ang itinuturo nito?",
+        question: "A social media post uses emojis, hashtags, and images along with text. How many modes of communication are being used?",
         options: [
-            "Conversational Involvement",
-            "Empathy",
-            "Effectiveness",
-            "Adaptability"
+            "One mode only",
+            "Two modes",
+            "Three modes",
+            "Four modes"
         ],
-        correct: 1,
-        rationale: "Empathy ay sikolohikal na kakayahang maunawaan ang damdamin ng iba."
+        correct: 2,
+        rationale: "Three modes are used: linguistic (text), visual (images), and spatial (arrangement of elements)."
     },
     {
         id: 105,
         subject: "komunikasyon",
-        question: "Ang paggamit ng tatlong wika (Filipino, English, at Mandarin) ay tinatawag na:",
+        question: "When evaluating a viral news story, a student checks the source, date, and supporting evidence. What skill is the student demonstrating?",
         options: [
-            "Bilingguwalismo",
-            "Multilingguwalismo",
-            "Ethnolect",
-            "Dialect"
+            "Blind acceptance",
+            "Critical thinking",
+            "Emotional reaction",
+            "Rapid sharing"
         ],
         correct: 1,
-        rationale: "Multilingguwalismo ay paggamit ng dalawa o higit pang wika."
+        rationale: "Checking source, date, and evidence demonstrates critical thinking and information evaluation."
     }
 ];
 
