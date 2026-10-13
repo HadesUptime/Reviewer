@@ -2,174 +2,414 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Grade 11 Reviewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --ink: #500724;
+            --muted: #9d4a6f;
+            --line: #fbcfe8;
+            --surface: #ffffff;
+            --bg: #fff1f7;
+            --brand-a: #ec4899;
+            --brand-b: #be185d;
+            --pad: clamp(10px, 2.2vmin, 20px);
+            --gap: clamp(6px, 1.4vmin, 14px);
+        }
+
+        * { -webkit-tap-highlight-color: transparent; }
+
+        /* ---------- Fit the screen: the page itself never scrolls ---------- */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', system-ui, sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(900px 500px at 8% -10%, rgba(244,114,182,.30), transparent 60%),
+                radial-gradient(800px 500px at 100% 110%, rgba(251,113,133,.20), transparent 60%),
+                var(--bg);
+            padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        #app {
+            height: 100vh;
+            height: 100dvh;
+            max-width: 56rem;
+            margin: 0 auto;
+            padding: var(--pad);
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap);
+            overflow: hidden;
         }
-        .card-shadow {
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        #app > * { flex-shrink: 0; }
+        #app > #question-card,
+        #app > #empty-state,
+        #app > #no-wrong-state { flex: 1 1 0; min-height: 0; flex-shrink: 1; }
+
+        /* ---------- Brand ---------- */
+        .gradient-bg { background: linear-gradient(135deg, var(--brand-a) 0%, var(--brand-b) 100%); }
+        .card-shadow { box-shadow: 0 8px 30px rgba(190, 24, 93, 0.12); }
+
+        /* ---------- Header ---------- */
+        .app-header {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap);
         }
-        .option-btn {
-            transition: all 0.3s ease;
+        .app-title-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .app-title {
+            font-size: clamp(1.15rem, 3.6vmin, 1.9rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        .app-sub {
+            font-size: clamp(.7rem, 1.8vmin, .85rem);
+            color: var(--muted);
+            font-weight: 500;
+        }
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: clamp(5px, 1vmin, 10px);
+        }
+        @media (min-width: 640px) {
+            .subject-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        }
+        /* Targeted by id so sizing survives any class swapping done in app.js */
+        #science-btn, #math-btn, #biology-btn, #komunikasyon-btn {
+            width: 100%;
+            padding: clamp(6px, 1.5vmin, 12px) 8px !important;
+            font-size: clamp(.7rem, 1.9vmin, .9rem) !important;
+            font-weight: 700 !important;
+            border-radius: 12px !important;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.2;
+            cursor: pointer;
+            border: 0;
+        }
+        #science-btn i, #math-btn i, #biology-btn i, #komunikasyon-btn i { margin-right: 6px !important; }
+
+        /* ---------- Stats ---------- */
+        .stats-bar {
+            padding: clamp(8px, 1.6vmin, 14px) clamp(12px, 2.4vmin, 20px);
+            border-radius: 16px;
+        }
+        .stats-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .ring-wrap { position: relative; width: clamp(40px, 8vmin, 56px); height: clamp(40px, 8vmin, 56px); flex-shrink: 0; }
+        .ring-wrap svg { width: 100%; height: 100%; }
+        .progress-ring { transform: rotate(-90deg); }
+        #progress-circle { transition: stroke-dashoffset .5s ease; }
+        #progress-text { font-size: clamp(.6rem, 1.6vmin, .78rem) !important; }
+        #question-count { font-size: clamp(.8rem, 2vmin, 1rem) !important; line-height: 1.2; }
+        .stat-num { font-size: clamp(1.1rem, 3vmin, 1.5rem) !important; line-height: 1.1; }
+        .stat-label { font-size: .65rem !important; }
+        #review-btn {
+            padding: 6px 10px !important;
+            font-size: clamp(.68rem, 1.8vmin, .85rem);
+            font-weight: 700;
+            border-radius: 10px !important;
+            white-space: nowrap;
+        }
+        #review-btn.hidden { display: none !important; }
+
+        /* ---------- Mode toggle (segmented control) ---------- */
+        .mode-toggle {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            padding: 4px;
+            background: rgba(255,255,255,.7);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            max-width: 26rem;
+            width: 100%;
+            margin: 0 auto;
+        }
+        #practice-mode, #review-mode {
+            padding: clamp(6px, 1.4vmin, 10px) 8px !important;
+            font-size: clamp(.72rem, 1.9vmin, .9rem) !important;
+            font-weight: 700 !important;
+            border-radius: 10px !important;
+            white-space: nowrap;
+            cursor: pointer;
+            border: 0;
+        }
+        #practice-mode i, #review-mode i { margin-right: 6px !important; }
+
+        /* ---------- Question card ---------- */
+        #question-card {
+            display: flex;
+            flex-direction: column;
+            padding: 0 !important;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        #question-card.hidden { display: none !important; }
+        .card-scroll {
+            flex: 1 1 auto;
+            min-height: 0;
+            overflow-y: auto;            /* only scrolls inside the card if a question is unusually long */
+            overscroll-behavior: contain;
+            padding: clamp(12px, 3vmin, 28px);
+            padding-bottom: 8px;
+        }
+        .card-footer {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: clamp(8px, 1.8vmin, 16px) clamp(12px, 3vmin, 28px);
+            border-top: 1px solid var(--line);
+            background: #fff;
+        }
+        #prev-btn, #next-btn {
+            padding: clamp(8px, 1.8vmin, 14px) clamp(14px, 3vmin, 26px) !important;
+            font-size: clamp(.8rem, 2vmin, .95rem);
+            font-weight: 700;
+            border-radius: 12px !important;
+            cursor: pointer;
+            border: 0;
+        }
+        #question-number {
+            font-size: clamp(.68rem, 1.7vmin, .8rem) !important;
+            padding: 3px 10px !important;
+        }
+        #question-card .mb-6:first-child { margin-bottom: clamp(6px, 1.6vmin, 14px) !important; }
+        #question-text {
+            font-size: clamp(.95rem, 2.9vmin, 1.3rem) !important;
+            line-height: 1.35;
+            margin-bottom: clamp(8px, 2vmin, 18px) !important;
+            font-weight: 700 !important;
+        }
+
+        /* Options */
+        #options-container { display: flex; flex-direction: column; gap: clamp(6px, 1.3vmin, 12px); }
+        #options-container > * { margin: 0 !important; }
+        .option-btn,
+        #options-container > button {
+            width: 100%;
+            text-align: left;
+            padding: clamp(8px, 1.7vmin, 14px) clamp(10px, 2vmin, 16px);
+            font-size: clamp(.82rem, 2.2vmin, 1rem);
+            line-height: 1.3;
+            font-weight: 500;
+            color: var(--ink);
+            background: #fff5fa;
+            border: 1.5px solid #fbcfe8;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
         }
         .option-btn:hover:not(.selected):not(.correct):not(.wrong) {
-            transform: translateX(8px);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            transform: translateX(4px);
+            background: linear-gradient(135deg, var(--brand-a) 0%, var(--brand-b) 100%);
+            border-color: transparent;
+            color: #fff;
         }
+        .option-btn:focus-visible, button:focus-visible { outline: 3px solid #f9a8d4; outline-offset: 2px; }
         .selected {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--brand-a) 0%, var(--brand-b) 100%) !important;
+            color: #fff !important;
+            border-color: transparent !important;
         }
-        .correct {
-            background: #10b981 !important;
-            color: white !important;
+        .correct { background: #10b981 !important; color: #fff !important; border-color: transparent !important; }
+        .wrong   { background: #dc2626 !important; color: #fff !important; border-color: transparent !important; }
+
+        /* Feedback */
+        #feedback { margin-top: clamp(8px, 1.8vmin, 16px) !important; padding: clamp(8px, 1.6vmin, 14px) !important; }
+        #feedback-text { font-size: clamp(.85rem, 2.1vmin, 1rem); margin-bottom: 4px !important; }
+        #rationale { font-size: clamp(.75rem, 1.9vmin, .9rem) !important; line-height: 1.4; }
+
+        /* ---------- End states ---------- */
+        #empty-state, #no-wrong-state {
+            padding: 16px !important;
+            overflow: hidden;
+            border-radius: 20px;
         }
-        .wrong {
-            background: #ef4444 !important;
-            color: white !important;
+        #empty-state:not(.hidden), #no-wrong-state:not(.hidden) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .progress-ring {
-            transform: rotate(-90deg);
+        #empty-state.hidden, #no-wrong-state.hidden { display: none !important; }
+        #empty-state i.fa-check-circle, #no-wrong-state i.fa-trophy {
+            font-size: clamp(2.5rem, 12vmin, 4.5rem) !important;
+            margin-bottom: 12px !important;
         }
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
+        #empty-state h2, #no-wrong-state h2 { font-size: clamp(1.2rem, 4vmin, 1.7rem) !important; }
+        #empty-state p, #no-wrong-state p { font-size: clamp(.8rem, 2.2vmin, 1rem); margin-bottom: 16px !important; }
+        #restart-btn, #back-to-practice { padding: 10px 22px !important; border-radius: 12px !important; font-weight: 700; border: 0; cursor: pointer; }
+
+        /* ---------- Entrance (one moment, on question change) ---------- */
+        .fade-in { animation: fadeIn .35s ease-out; }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
-        .pulse {
-            animation: pulse 2s infinite;
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
         }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+        /* ---------- Very short screens (landscape phones) ---------- */
+        @media (max-height: 520px) {
+            .app-sub, .stat-label { display: none; }
+            .app-header { flex-direction: row; align-items: center; }
+            .app-title-row { flex-shrink: 0; }
+            .subject-grid { flex: 1; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            #science-btn i, #math-btn i, #biology-btn i, #komunikasyon-btn i { display: none; }
         }
+        /* Tiny phones: shorten button text spacing */
+        @media (max-width: 380px) {
+            #science-btn i, #math-btn i, #biology-btn i, #komunikasyon-btn i { display: none; }
+        }
+
+        /* ---------- Pink theme overrides (win over classes toggled by app.js) ---------- */
+        .bg-gray-200 { background: #fce7f3 !important; color: #9d174d !important; }
+        .hover\:bg-gray-300:hover { background: #fbcfe8 !important; }
+        .text-gray-800 { color: #500724 !important; }
+        .text-gray-700 { color: #831843 !important; }
+        .text-gray-600 { color: #9d4a6f !important; }
+        .text-gray-500 { color: #b0678a !important; }
+        .text-purple-600 { color: #be185d !important; }
+        .bg-purple-100 { background: #fce7f3 !important; }
+        .bg-amber-500 { background: #db2777 !important; color: #fff !important; }
+        .hover\:bg-amber-600:hover { background: #be185d !important; }
+        .text-amber-500 { color: #ec4899 !important; }
+        .mode-toggle { background: rgba(255,255,255,.75); border-color: #fbcfe8; }
+        .gradient-bg { color: #fff !important; }
+        .card-footer { border-top-color: #fbcfe8; }
+        #empty-state, #no-wrong-state { gap: 2px; }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <div id="app" class="container mx-auto px-4 py-8 max-w-4xl">
+<body>
+    <div id="app">
         <!-- Header -->
-        <header class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">Grade 11 Reviewer</h1>
-            <p class="text-gray-600 mb-4">Practice & Learn</p>
-            
+        <header class="app-header">
+            <div class="app-title-row">
+                <h1 class="app-title">Grade 11 Reviewer</h1>
+                <p class="app-sub">Practice &amp; Learn</p>
+            </div>
+
             <!-- Subject Selector -->
-            <div class="flex justify-center gap-4 flex-wrap">
-                <button id="science-btn" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white">
-                    <i class="fas fa-flask mr-2"></i>General Science
+            <div class="subject-grid">
+                <button id="science-btn" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white">General Science
                 </button>
-                <button id="math-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">
-                    <i class="fas fa-calculator mr-2"></i>General Mathematics
+                <button id="math-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">General Mathematics
                 </button>
-                <button id="biology-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">
-                    <i class="fas fa-dna mr-2"></i>Biology
+                <button id="biology-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">Biology
                 </button>
-                <button id="komunikasyon-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">
-                    <i class="fas fa-comments mr-2"></i>Mabisang Komunikasyon
+                <button id="komunikasyon-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">Effective Communication
                 </button>
             </div>
         </header>
 
         <!-- Stats Bar -->
-        <div class="bg-white rounded-2xl card-shadow p-6 mb-6">
-            <div class="flex flex-wrap justify-between items-center gap-4">
-                <div class="flex items-center gap-4">
-                    <div class="relative">
-                        <svg class="progress-ring w-16 h-16">
-                            <circle cx="32" cy="32" r="28" stroke="#e5e7eb" stroke-width="4" fill="none"/>
-                            <circle id="progress-circle" cx="32" cy="32" r="28" stroke="url(#gradient)" stroke-width="4" fill="none" 
+        <div class="stats-bar bg-white card-shadow">
+            <div class="stats-inner">
+                <div class="flex items-center gap-3 min-w-0">
+                    <div class="ring-wrap">
+                        <svg class="progress-ring" viewBox="0 0 64 64">
+                            <circle cx="32" cy="32" r="28" stroke="#fce7f3" stroke-width="4" fill="none"/>
+                            <circle id="progress-circle" cx="32" cy="32" r="28" stroke="url(#gradient)" stroke-width="4" fill="none"
                                 stroke-dasharray="175.93" stroke-dashoffset="175.93" stroke-linecap="round"/>
                             <defs>
                                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stop-color="#667eea"/>
-                                    <stop offset="100%" stop-color="#764ba2"/>
+                                    <stop offset="0%" stop-color="#f472b6"/>
+                                    <stop offset="100%" stop-color="#be185d"/>
                                 </linearGradient>
                             </defs>
                         </svg>
                         <span id="progress-text" class="absolute inset-0 flex items-center justify-center text-sm font-bold text-gray-700">0%</span>
                     </div>
-                    <div>
-                        <p class="text-sm text-gray-500">Progress</p>
+                    <div class="min-w-0">
+                        <p class="text-sm text-gray-500 stat-label">Progress</p>
                         <p id="question-count" class="text-lg font-semibold text-gray-800">0 / 0 Questions</p>
                     </div>
                 </div>
-                <div class="flex gap-6">
-                    <div class="text-center">
-                        <p class="text-2xl font-bold text-green-500" id="correct-count">0</p>
-                        <p class="text-xs text-gray-500">Correct</p>
+
+                <div class="flex items-center gap-4">
+                    <div class="flex gap-4">
+                        <div class="text-center">
+                            <p class="stat-num font-bold text-green-500" id="correct-count">0</p>
+                            <p class="stat-label text-gray-500">Correct</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="stat-num font-bold text-red-500" id="wrong-count">0</p>
+                            <p class="stat-label text-gray-500">Wrong</p>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <p class="text-2xl font-bold text-red-500" id="wrong-count">0</p>
-                        <p class="text-xs text-gray-500">Wrong</p>
-                    </div>
+                    <button id="review-btn" class="hidden bg-amber-500 text-white hover:bg-amber-600 transition flex items-center gap-2">Review Wrong (0)
+                    </button>
                 </div>
-                <button id="review-btn" class="hidden px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition flex items-center gap-2">
-                    <i class="fas fa-redo"></i>
-                    Review Wrong (0)
-                </button>
             </div>
         </div>
 
         <!-- Mode Toggle -->
-        <div class="flex justify-center gap-4 mb-6">
-            <button id="practice-mode" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white">
-                <i class="fas fa-pencil-alt mr-2"></i>Practice Mode
+        <div class="mode-toggle">
+            <button id="practice-mode" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white">Practice Mode
             </button>
-            <button id="review-mode" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">
-                <i class="fas fa-history mr-2"></i>Review Wrong
+            <button id="review-mode" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">Review Wrong
             </button>
         </div>
 
         <!-- Question Card -->
-        <div id="question-card" class="bg-white rounded-2xl card-shadow p-8 fade-in">
-            <div class="mb-6">
-                <span id="question-number" class="text-sm font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">Question 1</span>
+        <div id="question-card" class="bg-white card-shadow fade-in">
+            <div class="card-scroll">
+                <div class="mb-6">
+                    <span id="question-number" class="text-sm font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">Question 1</span>
+                </div>
+                <h2 id="question-text" class="text-xl font-semibold text-gray-800 mb-6">Loading questions...</h2>
+                <div id="options-container" class="space-y-3">
+                    <!-- Options will be rendered here -->
+                </div>
+                <div id="feedback" class="hidden mt-6 p-4 rounded-xl">
+                    <p id="feedback-text" class="font-semibold mb-2"></p>
+                    <p id="rationale" class="text-gray-600 text-sm"></p>
+                </div>
             </div>
-            <h2 id="question-text" class="text-xl font-semibold text-gray-800 mb-6">Loading questions...</h2>
-            <div id="options-container" class="space-y-3">
-                <!-- Options will be rendered here -->
-            </div>
-            <div id="feedback" class="hidden mt-6 p-4 rounded-xl">
-                <p id="feedback-text" class="font-semibold mb-2"></p>
-                <p id="rationale" class="text-gray-600 text-sm"></p>
-            </div>
-            <div class="mt-6 flex justify-between">
-                <button id="prev-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <i class="fas fa-arrow-left mr-2"></i>Previous
+            <div class="card-footer">
+                <button id="prev-btn" class="transition bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">Previous
                 </button>
-                <button id="next-btn" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
-                    Next<i class="fas fa-arrow-right ml-2"></i>
-                </button>
+                <button id="next-btn" class="transition gradient-bg text-white hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
+                    Next</button>
             </div>
         </div>
 
         <!-- Empty State -->
-        <div id="empty-state" class="hidden bg-white rounded-2xl card-shadow p-12 text-center">
-            <i class="fas fa-check-circle text-6xl text-green-500 mb-4"></i>
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">Great Job!</h2>
-            <p class="text-gray-600 mb-6">You've completed all questions. Keep practicing!</p>
-            <button id="restart-btn" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white hover:opacity-90">
-                <i class="fas fa-redo mr-2"></i>Start Over
+        <div id="empty-state" class="hidden bg-white card-shadow text-center"><h2 class="font-bold text-gray-800 mb-2">Great Job!</h2>
+            <p class="text-gray-600">You've completed all questions. Keep practicing!</p>
+            <button id="restart-btn" class="transition gradient-bg text-white hover:opacity-90">Start Over
             </button>
         </div>
 
         <!-- No Wrong Questions State -->
-        <div id="no-wrong-state" class="hidden bg-white rounded-2xl card-shadow p-12 text-center">
-            <i class="fas fa-trophy text-6xl text-amber-500 mb-4"></i>
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">No Wrong Answers!</h2>
-            <p class="text-gray-600 mb-6">You haven't gotten any questions wrong yet. Keep up the great work!</p>
-            <button id="back-to-practice" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white hover:opacity-90">
-                <i class="fas fa-pencil-alt mr-2"></i>Back to Practice
+        <div id="no-wrong-state" class="hidden bg-white card-shadow text-center"><h2 class="font-bold text-gray-800 mb-2">No Wrong Answers!</h2>
+            <p class="text-gray-600">You haven't gotten any questions wrong yet. Keep up the great work!</p>
+            <button id="back-to-practice" class="transition gradient-bg text-white hover:opacity-90">Back to Practice
             </button>
         </div>
     </div>
