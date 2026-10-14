@@ -338,6 +338,13 @@
         .gradient-bg { color: #fff !important; }
         .card-footer { border-top-color: #fbcfe8; }
         #empty-state, #no-wrong-state { gap: 2px; }
+        /* Letter badge (A, B, C...) inside answer options */
+        .bg-gray-100 { background: #fce7f3 !important; color: #9d174d !important; }
+        .selected .bg-gray-100, .correct .bg-gray-100, .wrong .bg-gray-100,
+        .option-btn:hover:not(.selected):not(.correct):not(.wrong) .bg-gray-100 {
+            background: rgba(255,255,255,.25) !important; color: #fff !important;
+        }
+
 
         /* =====================================================================
            EXAM MODE: calm, dark, distraction-free.
@@ -474,6 +481,14 @@
         /* Navigation */
         body.exam-active #next-btn { background: #2563eb; }
         body.exam-active #submit-exam-btn { background: #e2e8f0; color: #0b1220 !important; }
+
+
+        body.exam-active .bg-gray-100 { background: #1e2c47 !important; color: #cbd5e1 !important; }
+        body.exam-active .selected .bg-gray-100,
+        body.exam-active .option-btn:hover:not(.selected):not(.correct):not(.wrong) .bg-gray-100 {
+            background: rgba(255,255,255,.22) !important; color: #fff !important;
+        }
+        body.exam-active #submit-exam-btn:disabled { opacity: .6; }
 
         /* No explanations during an exam */
         body.exam-active #feedback { display: none !important; }
