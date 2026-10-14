@@ -4657,6 +4657,9 @@ let examAnswers = {};
 let examTimeLeft = 0;
 let examTimerInterval = null;
 let examSubmitted = false;
+let examPending = false;          // true while the briefing / countdown is showing
+let examCountdownTimer = null;
+let examLeaveTimer = null;
 
 // DOM Elements
 const questionCard = document.getElementById('question-card');
@@ -4697,6 +4700,32 @@ const examDetailText = document.getElementById('exam-detail-text');
 const examReviewBtn = document.getElementById('exam-review-btn');
 const examRetryBtn = document.getElementById('exam-retry-btn');
 const examPracticeBtn = document.getElementById('exam-practice-btn');
+const examIntro = document.getElementById('exam-intro');
+const examIntroSubject = document.getElementById('exam-intro-subject');
+const examIntroCount = document.getElementById('exam-intro-count');
+const examIntroTime = document.getElementById('exam-intro-time');
+const examBeginBtn = document.getElementById('exam-begin-btn');
+const examCancelBtn = document.getElementById('exam-cancel-btn');
+const examCancelBtn2 = document.getElementById('exam-cancel-btn-2');
+const examCountNum = document.getElementById('exam-count-num');
+const examSubjectPill = document.getElementById('exam-subject-pill');
+
+// ---------- Small animation helpers ----------
+function replayClass(el, cls) {
+    if (!el) return;
+    el.classList.remove(cls);
+    void el.offsetWidth; // force reflow so the animation restarts
+    el.classList.add(cls);
+}
+
+function animateQuestion(dir) {
+    const el = questionCard && questionCard.querySelector('.card-scroll');
+    if (!el) return;
+    el.classList.remove('q-in-next', 'q-in-prev');
+    void el.offsetWidth;
+    el.scrollTop = 0;
+    el.classList.add(dir >= 0 ? 'q-in-next' : 'q-in-prev');
+}
 
 // Initialize
 function init() {
@@ -4711,6 +4740,13 @@ function renderQuestion() {
 
     const isReview = isReviewMode;
     const isExam = isExamMode && !isReview;
+
+    // Exam briefing / countdown replaces the question card until the exam actually begins
+    if (isExam && examPending) {
+        showExamIntro();
+        return;
+    }
+    if (examIntro) examIntro.classList.add('hidden');
 
     const currentQuestions = isReview ? wrongQuestions : questions;
     const currentIndex = isReview ? reviewIndex : currentQuestionIndex;
@@ -4819,6 +4855,13 @@ function selectAnswer(index) {
 
     if (isExam) {
         examAnswers[question.id] = index;
+        // Update the choices in place (no rebuild) so the selection animates smoothly
+        Array.from(optionsContainer.children).forEach((btn, i) => {
+            btn.classList.toggle('selected', i === index);
+            if (i === index) replayClass(btn, 'just-picked');
+        });
+        updateStats();
+        return;
     } else if (isReview) {
         reviewAnswers[question.id] = index;
     } else {
@@ -4892,6 +4935,10 @@ function updateStats() {
 }
 
 // ---------- Exam mode helpers ----------
+function getExamDuration() {
+    return Math.max(questions.length * 60, 600);
+}
+
 function formatExamTime(totalSeconds) {
     const s = Math.max(0, totalSeconds);
     const m = Math.floor(s / 60);
@@ -4918,7 +4965,7 @@ function stopExamTimer() {
 
 function startExamTimer() {
     stopExamTimer();
-    examTimeLeft = Math.max(questions.length * 60, 600);
+    examTimeLeft = getExamDuration();
     updateExamTimerDisplay();
     examTimerInterval = setInterval(() => {
         examTimeLeft--;
@@ -4938,6 +4985,19 @@ function updateModeButtons() {
     reviewModeBtn.className = isReviewMode ? active : inactive;
 }
 
+function getSubjectLabel() {
+    const map = {
+        'science': scienceBtn,
+        'math': mathBtn,
+        'biology': biologyBtn,
+        'komunikasyon': komunikasyonBtn,
+        'effective-comm': effectiveCommBtn,
+        'life-career': lifeCareerBtn,
+        'pagkas': pagkasBtn
+    };
+    return map[currentSubject] ? map[currentSubject].textContent.trim() : '';
+}
+
 function updateSubjectButtons() {
     const active = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
     const inactive = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
@@ -4953,21 +5013,119 @@ function updateSubjectButtons() {
     Object.keys(map).forEach(key => {
         if (map[key]) map[key].className = (currentSubject === key) ? active : inactive;
     });
+    if (examSubjectPill) examSubjectPill.textContent = getSubjectLabel();
 }
 
+// Clears any in-flight briefing / countdown / panel animation.
+function resetExamIntro() {
+    if (examCountdownTimer) { clearTimeout(examCountdownTimer); examCountdownTimer = null; }
+    if (examLeaveTimer) { clearTimeout(examLeaveTimer); examLeaveTimer = null; }
+    examPending = false;
+    [questionCard, examResult, emptyState, noWrongState].forEach(el => el && el.classList.remove('panel-leave'));
+    if (examIntro) {
+        examIntro.classList.remove('leaving');
+        examIntro.classList.add('hidden');
+        examIntro.dataset.phase = 'brief';
+    }
+}
+
+// Step 1: switch to the exam look and show the briefing. The timer has NOT started yet.
 function startExam() {
+    stopExamTimer();
+    resetExamIntro();
     isExamMode = true;
     isReviewMode = false;
     examSubmitted = false;
+    examPending = true;
     examAnswers = {};
     currentQuestionIndex = 0;
     reviewIndex = 0;
-    if (examResult) examResult.classList.add('hidden');
-    startExamTimer();
+
+    // Start the theme cross-fade right away...
     updateModeButtons();
     updateSubjectButtons();
-    renderQuestion();
     updateStats();
+
+    // ...while the current panel lifts away, then the briefing rises in.
+    const leaving = [questionCard, examResult, emptyState, noWrongState]
+        .find(el => el && !el.classList.contains('hidden'));
+    if (leaving) {
+        leaving.classList.add('panel-leave');
+        examLeaveTimer = setTimeout(() => {
+            examLeaveTimer = null;
+            leaving.classList.remove('panel-leave');
+            if (isExamMode && examPending) renderQuestion();
+        }, 240);
+    } else {
+        renderQuestion();
+    }
+}
+
+function showExamIntro() {
+    [questionCard, emptyState, noWrongState, examResult].forEach(el => el && el.classList.add('hidden'));
+    if (submitExamBtn) submitExamBtn.classList.add('hidden');
+    if (examTimerWrap) examTimerWrap.classList.add('hidden');
+
+    if (!examIntro) { launchExam(); return; } // markup missing: just start
+
+    if (examIntroSubject) examIntroSubject.textContent = getSubjectLabel();
+    if (examIntroCount) examIntroCount.textContent = questions.length;
+    if (examIntroTime) examIntroTime.textContent = Math.round(getExamDuration() / 60);
+
+    if (examIntro.classList.contains('hidden')) {
+        examIntro.dataset.phase = 'brief';
+        examIntro.classList.remove('hidden');
+        replayClass(examIntro, 'enter-rise');
+        if (examBeginBtn) examBeginBtn.focus({ preventScroll: true });
+    }
+}
+
+// Step 2: 3 - 2 - 1
+function beginExamCountdown() {
+    if (!examPending || examCountdownTimer || !examIntro) return;
+    examIntro.dataset.phase = 'count';
+    let n = 3;
+    const tick = () => {
+        if (examCountNum) {
+            examCountNum.textContent = n;
+            replayClass(examCountNum, 'tick');
+        }
+        examCountdownTimer = setTimeout(() => {
+            n--;
+            if (n > 0) {
+                tick();
+            } else {
+                examCountdownTimer = null;
+                launchExam();
+            }
+        }, 800);
+    };
+    tick();
+}
+
+// Step 3: fade the briefing out, start the clock, bring in question 1.
+function launchExam() {
+    if (!examPending) return;
+    const begin = () => {
+        examLeaveTimer = null;
+        if (!examPending) return;
+        if (examIntro) {
+            examIntro.classList.remove('leaving');
+            examIntro.classList.add('hidden');
+            examIntro.dataset.phase = 'brief';
+        }
+        examPending = false;
+        startExamTimer();
+        renderQuestion();
+        updateStats();
+        replayClass(questionCard, 'enter-rise');
+    };
+    if (examIntro && !examIntro.classList.contains('hidden')) {
+        examIntro.classList.add('leaving');
+        examLeaveTimer = setTimeout(begin, 270);
+    } else {
+        begin();
+    }
 }
 
 function getExamProgress() {
@@ -4991,9 +5149,11 @@ function updateSubmitButtonState() {
 function goToFirstUnanswered() {
     const idx = questions.findIndex(q => examAnswers[q.id] === undefined || examAnswers[q.id] === null);
     if (idx !== -1) {
+        const dir = idx >= currentQuestionIndex ? 1 : -1;
         currentQuestionIndex = idx;
         renderQuestion();
         updateStats();
+        animateQuestion(dir);
     }
 }
 
@@ -5040,7 +5200,10 @@ function submitExam(force = false) {
     noWrongState.classList.add('hidden');
     if (submitExamBtn) submitExamBtn.classList.add('hidden');
     if (examTimerWrap) examTimerWrap.classList.add('hidden');
-    if (examResult) examResult.classList.remove('hidden');
+    if (examResult) {
+        examResult.classList.remove('hidden');
+        replayClass(examResult, 'enter-rise');
+    }
     if (examScoreText) examScoreText.textContent = `You scored ${correct} / ${total}`;
     if (examDetailText) examDetailText.textContent = `${pct}% • ${correct} correct • ${wrong} wrong • ${unanswered} unanswered`;
 
@@ -5050,6 +5213,7 @@ function submitExam(force = false) {
 
 function exitExamToPractice() {
     stopExamTimer();
+    resetExamIntro();
     isExamMode = false;
     isReviewMode = false;
     examSubmitted = false;
@@ -5062,6 +5226,7 @@ function exitExamToPractice() {
 
 function enterReview() {
     stopExamTimer();
+    resetExamIntro();
     isExamMode = false;
     isReviewMode = true;
     reviewIndex = 0;
@@ -5072,6 +5237,7 @@ function enterReview() {
 
 function setSubject(subject) {
     stopExamTimer();
+    resetExamIntro();
     currentSubject = subject;
     currentQuestionIndex = 0;
     userAnswers = {};
@@ -5099,6 +5265,7 @@ function setupEventListeners() {
             if (currentQuestionIndex > 0) currentQuestionIndex--;
         }
         renderQuestion();
+        if (isExamMode && !isReviewMode) animateQuestion(-1);
     });
 
     nextBtn.addEventListener('click', () => {
@@ -5111,6 +5278,7 @@ function setupEventListeners() {
             currentQuestionIndex++;
         }
         renderQuestion();
+        if (isExamMode && !isReviewMode) animateQuestion(1);
     });
 
     practiceModeBtn.addEventListener('click', () => {
@@ -5126,6 +5294,10 @@ function setupEventListeners() {
     }
 
     reviewModeBtn.addEventListener('click', () => {
+        if (isExamMode && examPending) {
+            enterReview();
+            return;
+        }
         if (isExamMode && !examSubmitted) {
             if (!submitExam(false) && wrongQuestions.length === 0) return;
             if (wrongQuestions.length > 0) enterReview();
@@ -5137,6 +5309,10 @@ function setupEventListeners() {
     reviewBtn.addEventListener('click', () => {
         enterReview();
     });
+
+    if (examBeginBtn) examBeginBtn.addEventListener('click', beginExamCountdown);
+    if (examCancelBtn) examCancelBtn.addEventListener('click', exitExamToPractice);
+    if (examCancelBtn2) examCancelBtn2.addEventListener('click', exitExamToPractice);
 
     if (submitExamBtn) {
         submitExamBtn.addEventListener('click', () => {
