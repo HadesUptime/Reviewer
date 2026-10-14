@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#fff1f7">
     <title>Grade 11 Reviewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -51,6 +52,7 @@
         #app > * { flex-shrink: 0; }
         #app > #question-card,
         #app > #empty-state,
+        #app > #exam-result,
         #app > #no-wrong-state { flex: 1 1 0; min-height: 0; flex-shrink: 1; }
 
         /* ---------- Brand ---------- */
@@ -138,17 +140,17 @@
         /* ---------- Mode toggle (segmented control) ---------- */
         .mode-toggle {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 4px;
             padding: 4px;
             background: rgba(255,255,255,.7);
             border: 1px solid var(--line);
             border-radius: 14px;
-            max-width: 26rem;
+            max-width: 38rem;
             width: 100%;
             margin: 0 auto;
         }
-        #practice-mode, #review-mode {
+        #practice-mode, #exam-mode, #review-mode {
             padding: clamp(6px, 1.4vmin, 10px) 8px !important;
             font-size: clamp(.72rem, 1.9vmin, .9rem) !important;
             font-weight: 700 !important;
@@ -157,7 +159,33 @@
             cursor: pointer;
             border: 0;
         }
-        #practice-mode i, #review-mode i { margin-right: 6px !important; }
+        #practice-mode i, #exam-mode i, #review-mode i { margin-right: 6px !important; }
+
+        /* ---------- Exam mode ---------- */
+        #exam-timer-wrap {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 10px;
+            background: #fce7f3;
+            font-weight: 800;
+            font-size: clamp(.75rem, 2vmin, .9rem);
+            white-space: nowrap;
+        }
+        #exam-timer-wrap.hidden { display: none !important; }
+        #exam-timer-wrap.danger { background: #fee2e2; color: #b91c1c; }
+        #exam-timer-wrap.danger .pulse-dot { animation: pulse 1s infinite; }
+        .pulse-dot { width: 8px; height: 8px; border-radius: 9999px; background: currentColor; display: inline-block; }
+        #submit-exam-btn.hidden { display: none !important; }
+        #exam-result.hidden { display: none !important; }
+        #exam-result:not(.hidden) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
         /* ---------- Question card ---------- */
         #question-card {
@@ -185,7 +213,7 @@
             border-top: 1px solid var(--line);
             background: #fff;
         }
-        #prev-btn, #next-btn {
+        #prev-btn, #next-btn, #submit-exam-btn {
             padding: clamp(8px, 1.8vmin, 14px) clamp(14px, 3vmin, 26px) !important;
             font-size: clamp(.8rem, 2vmin, .95rem);
             font-weight: 700;
@@ -310,6 +338,145 @@
         .gradient-bg { color: #fff !important; }
         .card-footer { border-top-color: #fbcfe8; }
         #empty-state, #no-wrong-state { gap: 2px; }
+
+        /* =====================================================================
+           EXAM MODE: calm, dark, distraction-free.
+           Switched on by body.exam-active (set by the small script at the bottom).
+           ===================================================================== */
+        body.exam-active {
+            color-scheme: dark;
+            color: #e5e7eb;
+            background: #0b1220;
+        }
+        body.exam-active .fade-in,
+        body.exam-active .pulse { animation: none; }
+
+        /* Header: quiet title, show only the current subject */
+        body.exam-active .app-title { color: #f1f5f9; font-weight: 700; letter-spacing: -0.01em; }
+        body.exam-active .app-sub { font-size: 0; }
+        body.exam-active .app-sub::after {
+            content: "EXAM IN PROGRESS";
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            color: #94a3b8;
+        }
+        body.exam-active .subject-grid { display: flex; justify-content: flex-start; }
+        body.exam-active .subject-grid button.bg-gray-200 { display: none; }
+        body.exam-active #app .subject-grid button {
+            width: auto;
+            pointer-events: none;
+            padding: 5px 14px !important;
+            border-radius: 8px !important;
+            background: #111a2b;
+            border: 1px solid #26364f;
+            color: #cbd5e1 !important;
+            font-weight: 600 !important;
+        }
+
+        /* Stats bar: flat panel, no score reveal, prominent timer */
+        body.exam-active .stats-bar {
+            background: #111a2b;
+            border: 1px solid #1f2a44;
+            box-shadow: none;
+            border-radius: 12px;
+        }
+        body.exam-active .progress-ring circle:first-child { stroke: #1f2a44; }
+        body.exam-active #progress-circle { stroke: #93c5fd; }
+        body.exam-active .score-block,
+        body.exam-active #review-btn { display: none !important; }
+        body.exam-active #exam-timer-wrap {
+            background: #0b1220;
+            border: 1px solid #334155;
+            color: #f1f5f9;
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: clamp(1rem, 3vmin, 1.35rem);
+            font-weight: 700;
+            letter-spacing: .04em;
+            font-variant-numeric: tabular-nums;
+        }
+        body.exam-active #exam-timer-wrap:not(.danger) .pulse-dot { display: none; }
+        body.exam-active #exam-timer-wrap.danger {
+            background: #2a0f12;
+            border-color: #7f1d1d;
+            color: #fca5a5;
+        }
+
+        /* Mode switch stays reachable but fades into the background */
+        body.exam-active .mode-toggle {
+            background: transparent;
+            border-color: #1f2a44;
+            max-width: 24rem;
+            opacity: .55;
+        }
+        body.exam-active .mode-toggle:hover { opacity: .9; }
+
+        /* Neutral palette overrides (beat the pink ones) */
+        body.exam-active .bg-gray-200 { background: #162238 !important; color: #94a3b8 !important; }
+        body.exam-active .hover\:bg-gray-300:hover { background: #1e2c47 !important; }
+        body.exam-active .gradient-bg { background: #2563eb; }
+        body.exam-active .text-gray-800 { color: #f1f5f9 !important; }
+        body.exam-active .text-gray-700 { color: #cbd5e1 !important; }
+        body.exam-active .text-gray-600 { color: #94a3b8 !important; }
+        body.exam-active .text-gray-500 { color: #8b9bb4 !important; }
+        body.exam-active button:focus-visible { outline-color: #93c5fd; }
+        body.exam-active button:disabled { opacity: .4; }
+
+        /* Question card: like a printed paper in the dark */
+        body.exam-active #question-card,
+        body.exam-active #exam-result,
+        body.exam-active #empty-state,
+        body.exam-active #no-wrong-state {
+            background: #111a2b;
+            border: 1px solid #1f2a44;
+            box-shadow: none;
+            border-radius: 12px;
+        }
+        body.exam-active .card-footer { background: #111a2b; border-top-color: #1f2a44; }
+        body.exam-active #question-number {
+            background: transparent !important;
+            color: #94a3b8 !important;
+            padding: 0 !important;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+        body.exam-active #question-text {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 600 !important;
+            line-height: 1.5;
+            font-size: clamp(1rem, 3vmin, 1.4rem) !important;
+        }
+
+        /* Answer choices: still, high contrast, clear selection */
+        body.exam-active .option-btn,
+        body.exam-active #options-container > button {
+            background: #162238;
+            border: 1.5px solid #26364f;
+            color: #e5e7eb;
+            border-radius: 10px;
+            transform: none;
+        }
+        body.exam-active .option-btn:hover:not(.selected):not(.correct):not(.wrong),
+        body.exam-active #options-container > button:hover:not(.selected):not(.correct):not(.wrong) {
+            background: #1b2b47;
+            border-color: #60a5fa;
+            color: #fff;
+            transform: none;
+        }
+        body.exam-active .selected {
+            background: #1d4ed8 !important;
+            border-color: #93c5fd !important;
+            color: #fff !important;
+        }
+
+        /* Navigation */
+        body.exam-active #next-btn { background: #2563eb; }
+        body.exam-active #submit-exam-btn { background: #e2e8f0; color: #0b1220 !important; }
+
+        /* No explanations during an exam */
+        body.exam-active #feedback { display: none !important; }
     </style>
 </head>
 <body>
@@ -365,7 +532,8 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <div class="flex gap-4">
+                    <div id="exam-timer-wrap" class="hidden"><span class="pulse-dot"></span><span id="exam-timer">45:00</span></div>
+                    <div class="flex gap-4 score-block">
                         <div class="text-center">
                             <p class="stat-num font-bold text-green-500" id="correct-count">0</p>
                             <p class="stat-label text-gray-500">Correct</p>
@@ -384,6 +552,8 @@
         <!-- Mode Toggle -->
         <div class="mode-toggle">
             <button id="practice-mode" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white">Practice Mode
+            </button>
+            <button id="exam-mode" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">Exam Mode
             </button>
             <button id="review-mode" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">Review Wrong
             </button>
@@ -407,8 +577,25 @@
             <div class="card-footer">
                 <button id="prev-btn" class="transition bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">Previous
                 </button>
+                <button id="submit-exam-btn" class="hidden transition gradient-bg text-white hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed" disabled>Submit Exam
+                </button>
                 <button id="next-btn" class="transition gradient-bg text-white hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
                     Next</button>
+            </div>
+        </div>
+
+        <!-- Exam Result -->
+        <div id="exam-result" class="hidden bg-white card-shadow text-center" style="padding:16px;border-radius:20px;">
+            <h2 class="font-bold text-gray-800 mb-2">Exam Finished!</h2>
+            <p id="exam-score-text" class="text-gray-600">You scored 0 / 0</p>
+            <p id="exam-detail-text" class="text-gray-600" style="margin-bottom:16px;">0% • 0 correct • 0 wrong • 0 unanswered</p>
+            <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+                <button id="exam-review-btn" class="transition gradient-bg text-white hover:opacity-90" style="padding:10px 22px;border-radius:12px;font-weight:700;border:0;cursor:pointer;">Review Wrong
+                </button>
+                <button id="exam-retry-btn" class="transition bg-gray-200 text-gray-700 hover:bg-gray-300" style="padding:10px 22px;border-radius:12px;font-weight:700;border:0;cursor:pointer;">Retry Exam
+                </button>
+                <button id="exam-practice-btn" class="transition bg-gray-200 text-gray-700 hover:bg-gray-300" style="padding:10px 22px;border-radius:12px;font-weight:700;border:0;cursor:pointer;">Back to Practice
+                </button>
             </div>
         </div>
 
@@ -427,6 +614,28 @@
         </div>
     </div>
 
+    <script>
+        /* Exam-mode theme switch. Watches the same elements app.js toggles,
+           so no changes to app.js are needed. */
+        (function () {
+            var meta = document.querySelector('meta[name="theme-color"]');
+            function shown(id) {
+                var el = document.getElementById(id);
+                return !!el && !el.classList.contains('hidden');
+            }
+            function sync() {
+                var examBtn = document.getElementById('exam-mode');
+                var on = shown('exam-timer-wrap') || shown('submit-exam-btn') || shown('exam-result') ||
+                         (!!examBtn && examBtn.classList.contains('gradient-bg'));
+                document.body.classList.toggle('exam-active', on);
+                if (meta) meta.setAttribute('content', on ? '#0b1220' : '#fff1f7');
+            }
+            new MutationObserver(sync).observe(document.getElementById('app'), {
+                attributes: true, attributeFilter: ['class', 'style'], subtree: true, childList: true
+            });
+            sync();
+        })();
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
