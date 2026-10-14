@@ -1,3075 +1,1936 @@
-// Science Questions - General Science 11 Term I
+// Science Questions - Chemical Reactions (Second Term First Summative)
 const scienceQuestions = [
-    // Part I: Translational and Rotational Motion
+    // Part I: Basic Concepts (Questions 1-10)
     {
         id: 1,
-        question: "A delivery cart moves forward while each wheel spins around its axle. Which description is correct?",
+        subject: "science",
+        question: "What is a chemical reaction?",
         options: [
-            "The cart and wheels show rotational motion only.",
-            "The cart translates while the wheels rotate.",
-            "The cart rotates while the wheels translate.",
-            "Neither motion occurs."
+            "A change in shape only",
+            "A process that forms new substances",
+            "A change in size only",
+            "A change in location"
         ],
         correct: 1,
-        rationale: "The cart changes position, so it undergoes translational motion, while the wheels turn about their axles, so they undergo rotational motion."
+        rationale: "A chemical reaction is a process that forms new substances with different properties."
     },
     {
         id: 2,
-        question: "A mechanic uses a longer handle to turn a stubborn valve. Why does this help?",
+        subject: "science",
+        question: "What are the starting substances in a chemical reaction called?",
         options: [
-            "It increases the lever arm and therefore the torque.",
-            "It decreases the mass of the valve.",
-            "It removes friction completely.",
-            "It reduces gravitational acceleration."
+            "Products",
+            "Catalysts",
+            "Reactants",
+            "Precipitates"
         ],
-        correct: 0,
-        rationale: "Torque depends on the applied force and its distance from the pivot. A longer lever arm can produce greater torque for the same force."
+        correct: 2,
+        rationale: "The starting substances in a chemical reaction are called reactants."
     },
     {
         id: 3,
-        question: "Which situation mainly demonstrates rotational motion without significant translation?",
+        subject: "science",
+        question: "What are the substances formed after a chemical reaction called?",
         options: [
-            "A bus traveling along a highway",
-            "A ball rolling down a hallway",
-            "A ceiling fan turning while fixed to the ceiling",
-            "A cyclist moving around a track"
+            "Reactants",
+            "Products",
+            "Elements",
+            "Coefficients"
         ],
-        correct: 2,
-        rationale: "The fan blades rotate about a fixed axis while the fan assembly remains essentially in the same location."
+        correct: 1,
+        rationale: "The substances formed after a chemical reaction are called products."
     },
     {
         id: 4,
-        question: "A rolling basketball crosses the court while spinning. What types of motion are present?",
+        subject: "science",
+        question: "What does the arrow (→) in a chemical equation mean?",
         options: [
-            "Translational only",
-            "Rotational only",
-            "Both translational and rotational",
-            "Oscillatory only"
+            "Equals",
+            "Dissolves",
+            "Produces or yields",
+            "Disappears"
         ],
         correct: 2,
-        rationale: "Its center moves across the court (translation) while the ball spins about its axis (rotation)."
+        rationale: "The arrow (→) in a chemical equation means produces or yields."
     },
     {
         id: 5,
-        question: "A wheel of fixed radius rotates faster while rolling without slipping. What happens to the linear speed of the wheel's center?",
+        subject: "science",
+        question: "Which of the following is a possible sign of a chemical reaction?",
         options: [
-            "It decreases.",
-            "It increases.",
-            "It becomes zero.",
-            "It is unrelated to rotation."
+            "Moving an object",
+            "Cutting paper",
+            "Formation of gas bubbles",
+            "Changing the position of an object"
         ],
-        correct: 1,
-        rationale: "For rolling without slipping, v = rω. With constant radius, greater angular speed corresponds to greater linear speed."
+        correct: 2,
+        rationale: "Formation of gas bubbles is a possible sign that a chemical reaction has occurred."
     },
     {
         id: 6,
-        question: "A dancer spins while moving from one side of the stage to the other. Which statement is most accurate?",
+        subject: "science",
+        question: "What is a precipitate?",
         options: [
-            "Only translation occurs.",
-            "Only rotation occurs.",
-            "Both translation and rotation occur.",
-            "No mechanical motion occurs."
+            "A type of gas",
+            "A solid formed from a solution during a reaction",
+            "A liquid that evaporates",
+            "A chemical symbol"
         ],
-        correct: 2,
-        rationale: "Moving across the stage is translational motion, while spinning about the body axis is rotational motion."
+        correct: 1,
+        rationale: "A precipitate is a solid formed from a solution during a chemical reaction."
     },
     {
         id: 7,
-        question: "A student pushes a classroom door with the same force at two locations. Where should the student push to produce the greater turning effect?",
+        subject: "science",
+        question: "Which observation may indicate that a chemical reaction has occurred?",
         options: [
-            "Very close to the hinge",
-            "At the handle, far from the hinge",
-            "Directly on the hinge",
-            "The location does not matter"
+            "A color change",
+            "Moving a chair",
+            "Cutting paper",
+            "Changing a container"
         ],
-        correct: 1,
-        rationale: "Applying the force farther from the pivot increases the lever arm and therefore the torque."
+        correct: 0,
+        rationale: "A color change may indicate that a chemical reaction has occurred."
     },
     {
         id: 8,
-        question: "A rotating amusement-park wheel completes more revolutions each minute. Which quantity has increased?",
+        subject: "science",
+        question: "What happens to atoms during a chemical reaction?",
         options: [
-            "Mass",
-            "Angular velocity",
-            "Weight",
-            "Density"
+            "They disappear",
+            "They are destroyed",
+            "They rearrange to form new substances",
+            "They turn into nothing"
         ],
-        correct: 1,
-        rationale: "More rotation per unit time means a greater angular velocity."
+        correct: 2,
+        rationale: "During a chemical reaction, atoms rearrange to form new substances, but are neither created nor destroyed."
     },
     {
         id: 9,
-        question: "Which observation best shows that an object can rotate and translate simultaneously?",
+        subject: "science",
+        question: "Which law states that matter cannot be created or destroyed during an ordinary chemical reaction?",
         options: [
-            "A clock hand turning",
-            "A parked bicycle",
-            "A soccer ball rolling forward",
-            "A book lying on a table"
+            "Law of Gravity",
+            "Law of Conservation of Mass",
+            "Newton's First Law",
+            "Law of Motion"
         ],
-        correct: 2,
-        rationale: "A rolling soccer ball moves forward while rotating about its own axis."
+        correct: 1,
+        rationale: "The Law of Conservation of Mass states that matter cannot be created or destroyed during an ordinary chemical reaction."
     },
     {
         id: 10,
-        question: "A skater changes body position while spinning and begins rotating more rapidly. Which conclusion is supported by the Term I concepts?",
+        subject: "science",
+        question: "What must be equal on both sides of a balanced chemical equation?",
         options: [
-            "Body configuration can affect rotational motion.",
-            "Gravity has disappeared.",
-            "The skater's mass has become zero.",
-            "Rotational motion has changed into translation."
+            "The number of compounds",
+            "The number of molecules in all cases",
+            "The number of atoms of each element",
+            "The number of coefficients"
         ],
-        correct: 0,
-        rationale: "The examination emphasizes that changing body position can change rotational behavior, as in a figure skater pulling the arms inward."
-    },
-    // Alternative questions for Part I
-    {
-        id: 101,
-        question: "When a car drives down a straight road, what type of motion does the car body experience?",
-        options: [
-            "Pure rotational motion",
-            "Pure translational motion",
-            "Both rotational and translational motion",
-            "No motion"
-        ],
-        correct: 1,
-        rationale: "The car body moves along a straight path without rotating about its center, so it experiences pure translational motion."
-    },
-    {
-        id: 102,
-        question: "Why is it easier to open a door by pushing on the handle rather than near the hinges?",
-        options: [
-            "The handle is made of stronger material",
-            "The lever arm is longer, creating more torque",
-            "Less force is needed near the hinges",
-            "The door is lighter near the handle"
-        ],
-        correct: 1,
-        rationale: "Torque = force × distance from pivot. A longer lever arm (handle) produces more torque for the same applied force."
-    },
-    {
-        id: 103,
-        question: "A spinning top rotates in place without moving across the floor. What type of motion is this?",
-        options: [
-            "Translational motion",
-            "Rotational motion only",
-            "Both translational and rotational",
-            "Oscillatory motion"
-        ],
-        correct: 1,
-        rationale: "The top spins about its axis but its center of mass remains stationary, so it only has rotational motion."
-    },
-    {
-        id: 104,
-        question: "If a wheel rolls without slipping and its angular speed doubles, what happens to its linear speed?",
-        options: [
-            "It stays the same",
-            "It doubles",
-            "It halves",
-            "It becomes zero"
-        ],
-        correct: 1,
-        rationale: "For rolling without slipping, v = rω. If ω doubles and r is constant, v also doubles."
-    },
-    {
-        id: 105,
-        question: "A figure skater pulls their arms inward while spinning. What happens to their rotation speed?",
-        options: [
-            "It decreases",
-            "It increases",
-            "It stays the same",
-            "It becomes zero"
-        ],
-        correct: 1,
-        rationale: "Conservation of angular momentum - when the moment of inertia decreases (arms pulled in), angular velocity increases."
+        correct: 2,
+        rationale: "In a balanced chemical equation, the number of atoms of each element must be equal on both sides."
     },
 
-    // Part II: Simple and Compound Machines
+    // Part II: Types of Chemical Reactions (Questions 11-25)
     {
         id: 11,
-        question: "Workers must move a heavy crate into a truck. Why can a long ramp make the task easier than lifting the crate vertically?",
+        subject: "science",
+        question: "Which type of reaction combines two or more substances to form one product?",
         options: [
-            "The ramp eliminates the crate's weight.",
-            "The ramp reduces the required force by increasing the distance.",
-            "The ramp removes gravity.",
-            "The ramp creates energy."
+            "Decomposition",
+            "Synthesis",
+            "Single replacement",
+            "Double replacement"
         ],
         correct: 1,
-        rationale: "An inclined plane trades a longer distance for a smaller required input force."
+        rationale: "Synthesis is a reaction that combines two or more substances to form one product."
     },
     {
         id: 12,
-        question: "Which simple machine is represented by a playground slide?",
+        subject: "science",
+        question: "What is the general pattern of a synthesis reaction?",
         options: [
-            "Lever",
-            "Pulley",
-            "Inclined plane",
-            "Wheel and axle"
+            "AB -> A + B",
+            "A + BC -> AC + B",
+            "A + B -> AB",
+            "AB + CD -> AD + CB"
         ],
         correct: 2,
-        rationale: "A slide is an inclined plane: a sloping surface that allows movement between different heights."
+        rationale: "The general pattern of a synthesis reaction is A + B -> AB."
     },
     {
         id: 13,
-        question: "A worker uses a pulley to lift supplies. Which is a valid advantage of a pulley system?",
+        subject: "science",
+        question: "Which equation represents a synthesis reaction?",
         options: [
-            "It can change the direction of force and, depending on the arrangement, reduce effort.",
-            "It removes the mass of the load.",
-            "It eliminates gravity.",
-            "It creates unlimited energy."
+            "2H2O2 -> 2H2O + O2",
+            "2H2 + O2 -> 2H2O",
+            "Zn + 2HCl -> ZnCl2 + H2",
+            "CH4 + 2O2 -> CO2 + 2H2O"
         ],
-        correct: 0,
-        rationale: "Pulleys can redirect an applied force and pulley combinations can provide mechanical advantage."
+        correct: 1,
+        rationale: "2H2 + O2 -> 2H2O represents synthesis (combination of hydrogen and oxygen to form water)."
     },
     {
         id: 14,
-        question: "Why is a bicycle classified as a compound machine?",
+        subject: "science",
+        question: "What happens during a decomposition reaction?",
         options: [
-            "It contains only a wheel and axle.",
-            "It combines several simple machines that work together.",
-            "It has a metal frame.",
-            "It always uses electricity."
+            "Two substances combine",
+            "One compound breaks down into simpler substances",
+            "Two compounds exchange ions",
+            "A substance changes state only"
         ],
         correct: 1,
-        rationale: "A compound machine combines two or more simple machines or mechanisms to perform a task."
+        rationale: "During a decomposition reaction, one compound breaks down into simpler substances."
     },
     {
         id: 15,
-        question: "A hand trolley makes it easier to move a heavy box across a floor mainly because its wheels:",
+        subject: "science",
+        question: "What is the general pattern of a decomposition reaction?",
         options: [
-            "increase the box's mass.",
-            "reduce resistance by allowing rolling motion.",
-            "increase gravity.",
-            "produce new energy."
+            "A + B -> AB",
+            "AB -> A + B",
+            "A + BC -> AC + B",
+            "AB + CD -> AD + CB"
         ],
         correct: 1,
-        rationale: "Wheels reduce the resistance associated with sliding the load directly across the floor."
+        rationale: "The general pattern of a decomposition reaction is AB -> A + B."
     },
     {
         id: 16,
-        question: "Which statement best describes an efficient machine?",
+        subject: "science",
+        question: "Which equation represents a decomposition reaction?",
         options: [
-            "It performs the same useful task with less wasted energy.",
-            "It always has more parts.",
-            "It must be heavier than other machines.",
-            "It eliminates all energy losses."
+            "2H2O2 -> 2H2O + O2",
+            "2H2 + O2 -> 2H2O",
+            "C + O2 -> CO2",
+            "AgNO3 + NaCl -> AgCl + NaNO3"
         ],
         correct: 0,
-        rationale: "Efficiency concerns how much input energy becomes useful output; improving efficiency reduces wasted energy."
+        rationale: "2H2O2 -> 2H2O + O2 represents decomposition (hydrogen peroxide breaking down into water and oxygen)."
     },
     {
         id: 17,
-        question: "A school is comparing two lifting devices. Which evidence should receive the greatest weight?",
+        subject: "science",
+        question: "What happens during a single replacement reaction?",
         options: [
-            "Paint color and decoration",
-            "Safety, reliability, efficiency, and useful performance",
-            "Number of labels on the machine",
-            "Weight alone"
+            "One element replaces another element in a compound",
+            "One compound breaks into simpler substances",
+            "Two compounds exchange ions",
+            "Two substances combine into one product"
         ],
-        correct: 1,
-        rationale: "The source examination repeatedly evaluates machines using functional criteria such as safety, reliability, and efficiency."
+        correct: 0,
+        rationale: "In a single replacement reaction, one element replaces another element in a compound."
     },
     {
         id: 18,
-        question: "A lower bicycle gear is useful when climbing a steep hill because it can help the rider obtain:",
+        subject: "science",
+        question: "What is the general pattern of a single replacement reaction?",
         options: [
-            "greater turning effect at the wheel.",
-            "less gravitational acceleration.",
-            "zero friction.",
-            "a smaller bicycle mass."
+            "A + B -> AB",
+            "AB -> A + B",
+            "A + BC -> AC + B",
+            "AB + CD -> AD + CB"
         ],
-        correct: 0,
-        rationale: "The Term I examination links a lower gear with greater turning force or torque, making climbing easier."
+        correct: 2,
+        rationale: "The general pattern of a single replacement reaction is A + BC -> AC + B."
     },
     {
         id: 19,
-        question: "A can opener uses levers, gears, and wheel-like parts. What makes it a compound machine?",
+        subject: "science",
+        question: "In the reaction Zn + 2HCl -> ZnCl2 + H2, which element replaces hydrogen?",
         options: [
-            "It is made of metal.",
-            "It combines multiple simple-machine mechanisms.",
-            "It has a handle.",
-            "It requires human effort."
+            "Chlorine",
+            "Oxygen",
+            "Zinc",
+            "Carbon"
         ],
-        correct: 1,
-        rationale: "Its classification comes from combining several simple machines that work together."
+        correct: 2,
+        rationale: "In Zn + 2HCl -> ZnCl2 + H2, zinc replaces hydrogen in the compound."
     },
     {
         id: 20,
-        question: "Which redesign best reflects sound engineering principles for a laboratory cart?",
+        subject: "science",
+        question: "What occurs during a double replacement reaction?",
         options: [
-            "Decorative body with unstable wheels",
-            "Stable platform, sturdy wheels, and reliable brakes",
-            "Heavier frame with no brakes",
-            "Smaller wheels regardless of load"
+            "A compound breaks apart",
+            "Two compounds exchange ions",
+            "Two elements form one product",
+            "A substance melts"
         ],
         correct: 1,
-        rationale: "A good design prioritizes safe, stable, reliable operation rather than appearance or unnecessary mass."
+        rationale: "In a double replacement reaction, two compounds exchange ions."
     },
-    // Alternative questions for Part II
-    {
-        id: 111,
-        question: "Using a ramp to move a heavy box into a truck requires less force than lifting it straight up because:",
-        options: [
-            "The ramp reduces the weight of the box",
-            "The ramp increases the distance over which force is applied",
-            "The ramp eliminates gravity",
-            "The ramp creates energy"
-        ],
-        correct: 1,
-        rationale: "An inclined plane allows you to apply a smaller force over a longer distance to achieve the same work against gravity."
-    },
-    {
-        id: 112,
-        question: "A wheelchair ramp is an example of which simple machine?",
-        options: [
-            "Lever",
-            "Pulley",
-            "Inclined plane",
-            "Screw"
-        ],
-        correct: 2,
-        rationale: "A ramp is a sloping surface that allows movement between different heights, which is the definition of an inclined plane."
-    },
-    {
-        id: 113,
-        question: "What is the main benefit of using a block and tackle pulley system?",
-        options: [
-            "It changes the color of the load",
-            "It can multiply the applied force",
-            "It eliminates the need for any force",
-            "It makes the load heavier"
-        ],
-        correct: 1,
-        rationale: "A block and tackle system uses multiple pulleys to provide mechanical advantage, reducing the force needed to lift a load."
-    },
-    {
-        id: 114,
-        question: "A pair of scissors is considered a compound machine because it:",
-        options: [
-            "Has two blades",
-            "Combines levers and a wedge",
-            "Is made of metal",
-            "Can cut paper"
-        ],
-        correct: 1,
-        rationale: "Scissors combine two levers (the handles) with wedges (the blades), making them a compound machine."
-    },
-    {
-        id: 115,
-        question: "Why do furniture movers use a dolly with wheels instead of sliding heavy furniture across the floor?",
-        options: [
-            "Wheels make the furniture lighter",
-            "Rolling friction is much less than sliding friction",
-            "Wheels eliminate gravity",
-            "Wheels create energy"
-        ],
-        correct: 1,
-        rationale: "Wheels convert sliding friction to rolling friction, which requires significantly less force to overcome."
-    },
-
-    // Part III: Electricity, Energy, and Safety
     {
         id: 21,
-        question: "A 15-W LED lamp operates for 6 hours. How much electrical energy does it use?",
+        subject: "science",
+        question: "What is the general pattern of a double replacement reaction?",
         options: [
-            "21 Wh",
-            "90 Wh",
-            "2.5 Wh",
-            "900 Wh"
+            "A + B -> AB",
+            "AB -> A + B",
+            "A + BC -> AC + B",
+            "AB + CD -> AD + CB"
         ],
-        correct: 1,
-        rationale: "Using E = P × t: 15 W × 6 h = 90 Wh."
+        correct: 3,
+        rationale: "The general pattern of a double replacement reaction is AB + CD -> AD + CB."
     },
     {
         id: 22,
-        question: "Appliance A is rated 100 W and operates for 5 hours. Appliance B is rated 400 W and operates for 1 hour. Which uses more energy?",
+        subject: "science",
+        question: "Which equation represents a double replacement reaction?",
         options: [
-            "Appliance A",
-            "Appliance B",
-            "They use the same energy.",
-            "Power rating alone cannot be used with the given times."
+            "2H2 + O2 -> 2H2O",
+            "2H2O2 -> 2H2O + O2",
+            "AgNO3 + NaCl -> AgCl + NaNO3",
+            "C + O2 -> CO2"
         ],
-        correct: 0,
-        rationale: "A uses 100 × 5 = 500 Wh, while B uses 400 × 1 = 400 Wh."
+        correct: 2,
+        rationale: "AgNO3 + NaCl -> AgCl + NaNO3 represents double replacement (exchange of ions)."
     },
     {
         id: 23,
-        question: "Which household action best reduces unnecessary electricity use?",
+        subject: "science",
+        question: "What is a combustion reaction?",
         options: [
-            "Keep lights on in empty rooms.",
-            "Use efficient lighting and switch devices off when not needed.",
-            "Use higher-wattage bulbs for the same lighting need.",
-            "Leave every appliance operating continuously."
+            "A reaction involving oxygen that releases energy",
+            "A process of freezing",
+            "A process of dissolving only",
+            "A reaction that always absorbs heat"
         ],
-        correct: 1,
-        rationale: "Efficient devices and avoiding unnecessary operation reduce electrical energy consumption and wastage."
+        correct: 0,
+        rationale: "A combustion reaction is a reaction involving oxygen that releases energy."
     },
     {
         id: 24,
-        question: "Why is an LED lighting upgrade generally consistent with energy-efficiency goals?",
+        subject: "science",
+        question: "What are the products of complete combustion of a hydrocarbon?",
         options: [
-            "LEDs can provide useful lighting with less wasted energy.",
-            "LEDs create electrical energy.",
-            "LEDs require no current.",
-            "LEDs eliminate all energy losses."
-        ],
-        correct: 0,
-        rationale: "The Term I examination identifies LEDs as converting a greater proportion of electrical energy into useful light with less waste heat."
-    },
-    {
-        id: 25,
-        question: "During a long power interruption, why should a refrigerator door be kept closed as much as possible?",
-        options: [
-            "To stop gravity from acting on the food",
-            "To reduce the entry of warmer surrounding air",
-            "To generate new electrical energy",
-            "To make the refrigerator heavier"
+            "Salt and hydrogen",
+            "Carbon dioxide and water",
+            "Oxygen and hydrogen",
+            "Carbon and salt"
         ],
         correct: 1,
-        rationale: "Keeping the door closed slows heat transfer into the refrigerator and helps the contents remain cold longer."
+        rationale: "The products of complete combustion of a hydrocarbon are carbon dioxide and water."
     },
     {
-        id: 26,
-        question: "A mobile phone becomes warm after extended use. Which energy explanation is best?",
+        id:  25,
+        subject: "science",
+        question: "Which equation represents the complete combustion of methane?",
         options: [
-            "Electrical energy is transformed into useful operation and some thermal energy.",
-            "The phone creates heat without using energy.",
-            "All electrical energy becomes stored chemical energy.",
-            "The surrounding air is always the only heat source."
+            "CH4 + 2O2 -> CO2 + 2H2O",
+            "2H2O2 -> 2H2O + O2",
+            "Zn + 2HCl -> ZnCl2 + H2",
+            "AgNO3 + NaCl -> AgCl + NaNO3"
         ],
         correct: 0,
-        rationale: "Operating electronics transform electrical energy; some becomes useful work and some is dissipated as heat."
+        rationale: "CH4 + 2O2 -> CO2 + 2H2O represents the complete combustion of methane."
+    },
+
+    // Part III: Chemical Equations (Questions 26-34)
+    {
+        id: 26,
+        subject: "science",
+        question: "What is a chemical equation?",
+        options: [
+            "A drawing of a laboratory",
+            "A representation of a chemical reaction using formulas and symbols",
+            "A list of laboratory rules",
+            "A graph of temperature only"
+        ],
+        correct: 1,
+        rationale: "A chemical equation is a representation of a chemical reaction using formulas and symbols."
     },
     {
         id: 27,
-        question: "Why should people avoid fallen electrical wires after a storm?",
+        subject: "science",
+        question: "What do coefficients represent in a chemical equation?",
         options: [
-            "The wires may still be energized.",
-            "Rain always makes electricity harmless.",
-            "The wires lose all current immediately.",
-            "Only thick wires can conduct electricity."
+            "The colors of substances",
+            "The number of atoms in a chemical symbol",
+            "The relative amounts of substances",
+            "The state of matter only"
         ],
-        correct: 0,
-        rationale: "A fallen wire can remain connected to an electrical source and may still carry dangerous current."
+        correct: 2,
+        rationale: "Coefficients in a chemical equation represent the relative amounts of substances."
     },
     {
         id: 28,
-        question: "A helmet helps protect a cyclist during impact partly because it:",
+        subject: "science",
+        question: "Why must chemical equations be balanced?",
         options: [
-            "increases the stopping time and can reduce average force.",
-            "eliminates momentum before the collision.",
-            "removes kinetic energy from the universe.",
-            "prevents gravity from acting."
+            "To make the equation longer",
+            "To follow the Law of Conservation of Mass",
+            "To change the reactants",
+            "To make every reaction faster"
         ],
-        correct: 0,
-        rationale: "For a given change in momentum, increasing the stopping time lowers the average impact force."
+        correct: 1,
+        rationale: "Chemical equations must be balanced to follow the Law of Conservation of Mass."
     },
     {
         id: 29,
-        question: "A barangay hall wants to reduce electricity consumption. Which plan best matches the Term I principles?",
+        subject: "science",
+        question: "Why should subscripts not be changed when balancing chemical equations?",
         options: [
-            "Install efficient lamps and turn them off in unused rooms.",
-            "Install more high-wattage lamps and leave them on.",
-            "Run all appliances continuously.",
-            "Replace efficient lamps with less efficient ones."
+            "They change the identity of the substance",
+            "They make equations shorter",
+            "They remove reactants",
+            "They have no meaning"
         ],
         correct: 0,
-        rationale: "The plan combines efficient technology with responsible use, directly reducing energy wastage."
+        rationale: "Subscripts should not be changed because they change the identity of the substance."
     },
     {
         id: 30,
-        question: "Which statement about energy-efficient appliances is most appropriate?",
+        subject: "science",
+        question: "Which is the balanced form of H2 + O2 -> H2O?",
         options: [
-            "They aim to provide useful performance while reducing unnecessary energy use.",
-            "They do not use electrical energy.",
-            "They always cost nothing to operate.",
-            "They eliminate heat production completely."
-        ],
-        correct: 0,
-        rationale: "Efficiency means obtaining useful output while minimizing energy losses; it does not mean zero energy use or zero losses."
-    },
-    // Alternative questions for Part III
-    {
-        id: 121,
-        question: "A 60-watt light bulb is left on for 3 hours. How much energy does it consume?",
-        options: [
-            "20 Wh",
-            "60 Wh",
-            "180 Wh",
-            "1800 Wh"
-        ],
-        correct: 2,
-        rationale: "Energy = Power × Time = 60 W × 3 h = 180 Wh"
-    },
-    {
-        id: 122,
-        question: "Which device would use more energy: a 1000-watt heater for 1 hour or a 500-watt heater for 3 hours?",
-        options: [
-            "The 1000-watt heater",
-            "The 500-watt heater",
-            "Both use the same energy",
-            "Cannot be determined"
+            "H2 + O2 -> H2O",
+            "2H2 + O2 -> 2H2O",
+            "H2 + 2O2 -> H2O",
+            "2H2 + 2O2 -> H2O"
         ],
         correct: 1,
-        rationale: "1000W × 1h = 1000 Wh, 500W × 3h = 1500 Wh. The 500-watt heater uses more energy due to longer operating time."
+        rationale: "2H2 + O2 -> 2H2O is the balanced form (2 hydrogen atoms and 2 oxygen atoms in reactants = 2 hydrogen atoms and 1 oxygen atom in products)."
     },
-    {
-        id: 123,
-        question: "What is the most effective way to reduce your home electricity bill?",
-        options: [
-            "Use more appliances",
-            "Use energy-efficient appliances and turn off unused devices",
-            "Leave all lights on",
-            "Use higher wattage bulbs"
-        ],
-        correct: 1,
-        rationale: "Energy-efficient appliances convert more input energy into useful work, and turning off devices eliminates unnecessary energy consumption."
-    },
-    {
-        id: 124,
-        question: "Why do LED bulbs cost less to operate than incandescent bulbs producing the same amount of light?",
-        options: [
-            "LEDs are cheaper to buy",
-            "LEDs convert more electrical energy into light and less into heat",
-            "LEDs use no electricity",
-            "LEDs are brighter"
-        ],
-        correct: 1,
-        rationale: "LEDs are more efficient because they waste less energy as heat, converting a higher percentage of electrical energy into visible light."
-    },
-    {
-        id: 125,
-        question: "Why is it dangerous to touch a fallen power line, even if it's not sparking?",
-        options: [
-            "It might still be carrying electrical current",
-            "It's never dangerous",
-            "Only sparking wires are dangerous",
-            "The wire is too hot to touch"
-        ],
-        correct: 0,
-        rationale: "A fallen power line can still be energized and carry lethal current, even if there are no visible sparks."
-    },
-
-    // Part IV: Physics of Fluids
     {
         id: 31,
-        question: "A student pushes inward on the plunger of a water-filled syringe. What happens to the pressure in the enclosed water?",
+        subject: "science",
+        question: "Which is the balanced form of N2 + H2 -> NH3?",
         options: [
-            "It increases and the pressure is transmitted through the fluid.",
-            "It becomes zero everywhere.",
-            "It affects only one water molecule.",
-            "It removes the water's mass."
+            "N2 + H2 -> NH3",
+            "N2 + 2H2 -> 2NH3",
+            "N2 + 3H2 -> 2NH3",
+            "2N2 + H2 -> NH3"
         ],
-        correct: 0,
-        rationale: "An applied pressure in an enclosed fluid is transmitted through the fluid, consistent with Pascal's principle."
+        correct: 2,
+        rationale: "N2 + 3H2 -> 2NH3 is the balanced form (2 nitrogen atoms and 6 hydrogen atoms in reactants = 2 nitrogen atoms and 6 hydrogen atoms in products)."
     },
     {
         id: 32,
-        question: "Which principle is most directly involved in the operation of a hydraulic jack?",
+        subject: "science",
+        question: "How many hydrogen atoms are in one H2O molecule?",
         options: [
-            "Pascal's principle",
-            "Law of reflection",
-            "Ohm's law",
-            "Law of universal gravitation only"
+            "1",
+            "2",
+            "3",
+            "4"
         ],
-        correct: 0,
-        rationale: "A hydraulic jack relies on pressure applied to an enclosed fluid being transmitted throughout the fluid."
+        correct: 1,
+        rationale: "One H2O molecule contains 2 hydrogen atoms."
     },
     {
         id: 33,
-        question: "Two differently shaped containers contain the same liquid. Points X and Y are at the same depth. How should their fluid pressures compare?",
-        options: [
-            "X must have greater pressure.",
-            "Y must have greater pressure.",
-            "They are the same if density and gravity are the same.",
-            "Pressure depends only on container width."
-        ],
-        correct: 2,
-        rationale: "Hydrostatic pressure at a given depth depends on density, gravity, and depth, not on container shape."
-    },
-    {
-        id: 34,
-        question: "Which change increases hydrostatic pressure at a point in the same liquid, assuming gravity is unchanged?",
-        options: [
-            "Decrease the depth.",
-            "Increase the depth.",
-            "Change only the container color.",
-            "Make the container decorative."
-        ],
-        correct: 1,
-        rationale: "Hydrostatic pressure follows P = ρgh, so increasing depth increases pressure."
-    },
-    {
-        id: 35,
-        question: "A hydraulic system has a small input piston and a larger output piston. Why can the output force be larger?",
-        options: [
-            "The transmitted pressure acts over a larger output area.",
-            "The large piston removes gravity.",
-            "The fluid creates energy from nothing.",
-            "The load loses its mass."
-        ],
-        correct: 0,
-        rationale: "Because P = F/A and pressure is transmitted, the same pressure acting on a larger area can produce a larger force."
-    },
-    {
-        id: 36,
-        question: "Which expression represents pressure?",
-        options: [
-            "P = F/A",
-            "P = F × A",
-            "P = m/v",
-            "P = P × t"
-        ],
-        correct: 0,
-        rationale: "Pressure is defined as force per unit area, P = F/A."
-    },
-    {
-        id: 37,
-        question: "A floating object displaces more water after its shape is modified while its total weight remains unchanged. What can happen to the buoyant force?",
-        options: [
-            "It can increase.",
-            "It must become zero.",
-            "Gravity stops acting.",
-            "Water loses density."
-        ],
-        correct: 0,
-        rationale: "Buoyant force is related to the weight of displaced fluid; displacing a greater volume can increase the buoyant force."
-    },
-    {
-        id: 38,
-        question: "Which statement best summarizes Archimedes' principle?",
-        options: [
-            "An immersed object experiences an upward force related to the weight of displaced fluid.",
-            "All fluids have zero pressure.",
-            "Objects float only when gravity disappears.",
-            "Container shape alone determines buoyancy."
-        ],
-        correct: 0,
-        rationale: "Archimedes' principle connects buoyant force to the weight of the fluid displaced by an immersed object."
-    },
-    {
-        id: 39,
-        question: "If the density of a liquid and gravitational acceleration stay constant, which variable directly changes the pressure ρgh?",
-        options: [
-            "Depth",
-            "Container color",
-            "Container brand",
-            "Surface decoration"
-        ],
-        correct: 0,
-        rationale: "In P = ρgh, with ρ and g fixed, pressure changes directly with depth h."
-    },
-    {
-        id: 40,
-        question: "Which explanation best describes why hydraulic systems can help lift heavy loads?",
-        options: [
-            "They transmit pressure through an enclosed fluid and use piston-area differences.",
-            "They eliminate the weight of the load.",
-            "They remove all friction and gravity.",
-            "They reduce the mass of the load to zero."
-        ],
-        correct: 0,
-        rationale: "Hydraulic devices use Pascal's principle together with different piston areas to obtain a larger output force."
-    },
-    // Alternative questions for Part IV
-    {
-        id: 131,
-        question: "When you squeeze a sealed water bottle, what happens to the pressure inside?",
-        options: [
-            "It decreases",
-            "It increases and is transmitted equally throughout",
-            "It stays the same",
-            "It becomes zero"
-        ],
-        correct: 1,
-        rationale: "According to Pascal's principle, pressure applied to an enclosed fluid is transmitted undiminished to all parts of the fluid."
-    },
-    {
-        id: 132,
-        question: "A hydraulic lift can raise a car using a relatively small force. This is possible because:",
-        options: [
-            "The fluid creates energy",
-            "A small force on a small piston creates pressure that acts on a larger piston area",
-            "The car becomes lighter",
-            "Gravity is reduced"
-        ],
-        correct: 1,
-        rationale: "Pascal's principle: pressure applied to a small piston is transmitted to a larger piston, multiplying the force."
-    },
-    {
-        id: 133,
-        question: "At what depth is water pressure greater: 2 meters below the surface or 5 meters below the surface?",
-        options: [
-            "2 meters",
-            "5 meters",
-            "Same pressure at both depths",
-            "Cannot be determined"
-        ],
-        correct: 1,
-        rationale: "Hydrostatic pressure P = ρgh increases with depth, so pressure is greater at 5 meters than at 2 meters."
-    },
-    {
-        id: 134,
-        question: "Why does a steel ship float while a steel nail sinks?",
-        options: [
-            "The ship is made of different material",
-            "The ship displaces more water, creating greater buoyant force",
-            "The ship has no weight",
-            "Water doesn't affect steel"
-        ],
-        correct: 1,
-        rationale: "The ship's shape displaces a large volume of water, creating a buoyant force equal to its weight. The nail displaces very little water."
-    },
-    {
-        id: 135,
-        question: "What happens to the pressure at the bottom of a swimming pool if you dive deeper?",
-        options: [
-            "Pressure decreases",
-            "Pressure increases",
-            "Pressure stays the same",
-            "Pressure becomes zero"
-        ],
-        correct: 1,
-        rationale: "Pressure in a fluid increases with depth according to P = ρgh, where h is the depth below the surface."
-    },
-
-    // Part V: Integrated Physics and Engineering Applications
-    {
-        id: 41,
-        question: "A warehouse wants a device for repeatedly lifting heavy materials. Which proposal is best supported by the Term I physics concepts?",
-        options: [
-            "A hydraulic lifting device with appropriate safety controls",
-            "A decorative platform with no lifting mechanism",
-            "A heavier manual box with no wheels",
-            "A display board"
-        ],
-        correct: 0,
-        rationale: "Hydraulic lifting systems are practical applications of fluid pressure and can improve productivity when designed safely."
-    },
-    {
-        id: 42,
-        question: "A machine performs the required task but wastes large amounts of energy. What should engineers primarily improve?",
-        options: [
-            "Efficiency",
-            "Decoration",
-            "Mass",
-            "Color"
-        ],
-        correct: 0,
-        rationale: "If useful performance is maintained while energy waste is reduced, machine efficiency improves."
-    },
-    {
-        id: 43,
-        question: "Which test result would best support approving a new school lifting device?",
-        options: [
-            "It safely moves the required load repeatedly with less effort.",
-            "It has the brightest paint.",
-            "It contains the most decorative parts.",
-            "It is the heaviest design."
-        ],
-        correct: 0,
-        rationale: "Functional testing should demonstrate safe, reliable, effective performance."
-    },
-    {
-        id: 44,
-        question: "A designer wants a cart that is both useful and safe. Which feature combination is best?",
-        options: [
-            "Sturdy wheels, stable load area, and secure brakes",
-            "Unstable wheels and no brakes",
-            "Very heavy frame only",
-            "Decorative panels only"
-        ],
-        correct: 0,
-        rationale: "The combination addresses movement, load stability, and stopping control."
-    },
-    {
-        id: 45,
-        question: "A city is selecting new public equipment. One option costs more initially but is safer and uses less energy over time. Which consideration supports choosing it?",
-        options: [
-            "Long-term efficiency and safety",
-            "Appearance only",
-            "Initial cost as the only criterion",
-            "Maximum energy consumption"
-        ],
-        correct: 0,
-        rationale: "The Term I questions emphasize evaluating designs using long-term efficiency and safety, not initial cost alone."
-    },
-    {
-        id: 46,
-        question: "Which proposed demonstration most clearly shows the relationship between translation and rotation?",
-        options: [
-            "Roll a ball across the floor and observe its forward motion and spin.",
-            "Place a book on a table.",
-            "Hold a ball without moving it.",
-            "Turn off an electric fan."
-        ],
-        correct: 0,
-        rationale: "A rolling ball provides simultaneous, directly observable translational and rotational motion."
-    },
-    {
-        id: 47,
-        question: "A student claims that wheels eliminate friction completely. Which response is most scientifically appropriate based on the examination?",
-        options: [
-            "Wheels can reduce resistance in many situations, but they do not eliminate friction completely.",
-            "The claim is always correct.",
-            "Wheels eliminate gravity instead.",
-            "Friction exists only in fluids."
-        ],
-        correct: 0,
-        rationale: "The examination treats wheels as reducing friction/resistance, not eliminating it."
-    },
-    {
-        id: 48,
-        question: "Which choice best demonstrates physics improving daily quality of life?",
-        options: [
-            "Using machines and appliances to perform tasks more efficiently and safely",
-            "Adding decorations to equipment",
-            "Increasing energy waste",
-            "Ignoring safety systems"
-        ],
-        correct: 0,
-        rationale: "The source examination frames physics applications in terms of useful technologies, efficiency, convenience, and safety."
-    },
-    {
-        id: 49,
-        question: "A machine design is cheaper to build but repeatedly fails its brakes. What is the strongest reason not to choose it?",
-        options: [
-            "Safety and reliability are essential engineering criteria.",
-            "The machine may not have enough colors.",
-            "Low price always means poor physics.",
-            "Heavy machines are always safer."
-        ],
-        correct: 0,
-        rationale: "A design that fails a critical safety system should not be favored merely because of lower initial cost."
-    },
-    {
-        id: 50,
-        question: "Which design goal best integrates the major ideas assessed in the Term I examination?",
-        options: [
-            "Create devices that perform useful tasks efficiently, safely, and reliably.",
-            "Maximize energy waste.",
-            "Use the greatest possible force in every task.",
-            "Make all machines heavier."
-        ],
-        correct: 0,
-        rationale: "Across the examination, good applications of physics are evaluated by useful performance, efficiency, safety, and reliability."
-    },
-    // Alternative questions for Part V
-    {
-        id: 141,
-        question: "When designing a new product, what should be the primary consideration?",
-        options: [
-            "How colorful it looks",
-            "How safely and efficiently it performs its function",
-            "How expensive the materials are",
-            "How heavy it is"
-        ],
-        correct: 1,
-        rationale: "Good engineering prioritizes safety, efficiency, and reliable performance over cosmetic features."
-    },
-    {
-        id: 142,
-        question: "A machine uses 1000 J of energy but only does 300 J of useful work. What should engineers focus on improving?",
-        options: [
-            "The machine's color",
-            "The machine's efficiency",
-            "The machine's weight",
-            "The machine's brand"
-        ],
-        correct: 1,
-        rationale: "With only 30% efficiency (300/1000), the machine wastes too much energy. Engineers should improve efficiency to reduce waste."
-    },
-    {
-        id: 143,
-        question: "Why is safety testing important before releasing a new product?",
-        options: [
-            "It makes the product look better",
-            "It ensures the product won't harm users and works reliably",
-            "It increases the price",
-            "It's required by law only"
-        ],
-        correct: 1,
-        rationale: "Safety testing identifies potential hazards and ensures reliable operation, protecting users and preventing failures."
-    },
-    {
-        id: 144,
-        question: "A company must choose between two similar products. Product A costs less but has poor safety ratings. Product B costs more but is safer. Which should they choose?",
-        options: [
-            "Product A - save money",
-            "Product B - safety is more important than initial cost",
-            "Either one - they're the same",
-            "Neither one"
-        ],
-        correct: 1,
-        rationale: "Safety should be a primary consideration. The long-term costs of accidents and failures often exceed initial savings."
-    },
-    {
-        id: 145,
-        question: "What is the main purpose of engineering design?",
-        options: [
-            "To create decorative objects",
-            "To solve problems and improve quality of life",
-            "To use as much energy as possible",
-            "To make things as heavy as possible"
-        ],
-        correct: 1,
-        rationale: "Engineering aims to create solutions that improve life through efficient, safe, and reliable designs."
-    },
-
-    // Part VI: Quantitative and Higher-Order Review
-    {
-        id: 51,
-        question: "A 60-W fan operates for 5 hours. A 20-W lamp operates for 10 hours. Which uses more electrical energy?",
-        options: [
-            "The fan",
-            "The lamp",
-            "They use the same energy.",
-            "There is not enough information."
-        ],
-        correct: 0,
-        rationale: "Fan: 60 × 5 = 300 Wh. Lamp: 20 × 10 = 200 Wh. The fan uses more energy."
-    },
-    {
-        id: 52,
-        question: "A student applies the same perpendicular force with a 0.20 m wrench and then a 0.40 m wrench. How does the torque compare?",
-        options: [
-            "The 0.40 m wrench produces twice the torque.",
-            "The 0.20 m wrench produces twice the torque.",
-            "Both produce zero torque.",
-            "Torque is independent of lever-arm length."
-        ],
-        correct: 0,
-        rationale: "For perpendicular force, τ = rF. Doubling r while keeping F constant doubles the torque."
-    },
-    {
-        id: 53,
-        question: "A fluid has constant density. Point B is twice as deep as Point A. Using P = ρgh for gauge pressure, how does B's pressure compare?",
-        options: [
-            "It is twice as large.",
-            "It is half as large.",
-            "It is the same.",
-            "It becomes zero."
-        ],
-        correct: 0,
-        rationale: "With ρ and g constant, pressure is directly proportional to depth. Doubling h doubles ρgh."
-    },
-    {
-        id: 54,
-        question: "In an ideal hydraulic system, the same pressure reaches two pistons. The output piston has four times the area of the input piston. The output force is:",
-        options: [
-            "four times the input force.",
-            "one-fourth the input force.",
-            "the same as the input force.",
-            "zero."
-        ],
-        correct: 0,
-        rationale: "Since F = PA, the same pressure acting on four times the area produces four times the force."
-    },
-    {
-        id: 55,
-        question: "A machine receives 500 J of input work and provides 400 J of useful output work. What is its efficiency?",
-        options: [
-            "20%",
-            "80%",
-            "100%",
-            "125%"
-        ],
-        correct: 1,
-        rationale: "Efficiency = (useful output/input) × 100 = (400/500) × 100 = 80%."
-    },
-    {
-        id: 56,
-        question: "A student wants to reduce the force needed to move a heavy load upward using an inclined plane. Which change is most consistent with the reviewed principle?",
-        options: [
-            "Use a longer ramp for the same height.",
-            "Use a shorter, steeper ramp.",
-            "Increase the load's mass.",
-            "Remove the ramp."
-        ],
-        correct: 0,
-        rationale: "For the same vertical height, a longer ramp increases the distance and reduces the ideal input force required."
-    },
-    {
-        id: 57,
-        question: "Which statement correctly distinguishes power from electrical energy in the examination contexts?",
-        options: [
-            "Power is a rate, while energy use depends on power and operating time.",
-            "Power and energy are always identical.",
-            "Energy depends only on wattage and never on time.",
-            "Power is measured in watt-hours."
-        ],
-        correct: 0,
-        rationale: "Power is the rate of energy transfer (watts); electrical energy over a period can be found from E = P × t."
-    },
-    {
-        id: 58,
-        question: "A rolling wheel suddenly stops rotating but its center continues sliding forward. Which description is now most accurate?",
-        options: [
-            "It has translational motion without rotational motion.",
-            "It has rotational motion only.",
-            "It has neither type of motion.",
-            "Translation automatically stops whenever rotation stops."
-        ],
-        correct: 0,
-        rationale: "If the center continues changing position while the wheel no longer spins, the remaining motion is translational."
-    },
-    {
-        id: 59,
-        question: "Which student conclusion best synthesizes the Term I topics?",
-        options: [
-            "Physics principles can be used to analyze motion, make work easier, improve energy use, explain fluids, and evaluate safer designs.",
-            "Physics applies only to laboratory experiments.",
-            "Machines remove the need for energy.",
-            "Fluid pressure and motion have no practical applications."
-        ],
-        correct: 0,
-        rationale: "The examination integrates physics in daily life, motion, machines, electricity, fluids, efficiency, and engineering evaluation."
-    },
-    {
-        id: 60,
-        question: "A school team must choose a final prototype. Which decision process is most scientifically defensible?",
-        options: [
-            "Compare measured performance, energy use, safety, reliability, and required effort.",
-            "Choose the most colorful prototype.",
-            "Choose the heaviest prototype without testing.",
-            "Choose randomly because physics cannot guide design."
-        ],
-        correct: 0,
-        rationale: "Evidence-based evaluation using performance, efficiency, safety, reliability, and effort aligns with the design reasoning assessed throughout the Term I examination."
-    },
-    // Alternative questions for Part VI
-    {
-        id: 151,
-        question: "A 100-watt TV runs for 2 hours. A 50-watt lamp runs for 5 hours. Which consumes more energy?",
-        options: [
-            "The TV (200 Wh)",
-            "The lamp (250 Wh)",
-            "Both consume the same",
-            "Cannot be determined"
-        ],
-        correct: 1,
-        rationale: "TV: 100W × 2h = 200 Wh. Lamp: 50W × 5h = 250 Wh. The lamp uses more energy."
-    },
-    {
-        id: 152,
-        question: "If you apply a 10 N force at 0.5 m from a pivot, what is the torque? If you apply the same force at 1.0 m from the pivot, what is the torque?",
-        options: [
-            "5 Nm and 10 Nm",
-            "10 Nm and 5 Nm",
-            "5 Nm and 5 Nm",
-            "10 Nm and 10 Nm"
-        ],
-        correct: 0,
-        rationale: "Torque = force × distance. First: 10 N × 0.5 m = 5 Nm. Second: 10 N × 1.0 m = 10 Nm."
-    },
-    {
-        id: 153,
-        question: "In water, pressure at 10 meters depth is approximately 100 kPa. What is the pressure at 20 meters depth?",
-        options: [
-            "50 kPa",
-            "100 kPa",
-            "200 kPa",
-            "400 kPa"
-        ],
-        correct: 2,
-        rationale: "Pressure is proportional to depth. Doubling the depth from 10m to 20m doubles the pressure from 100 kPa to 200 kPa."
-    },
-    {
-        id: 154,
-        question: "A hydraulic press has a small piston of area 10 cm² and a large piston of area 100 cm². If you apply 100 N of force to the small piston, what force does the large piston exert?",
-        options: [
-            "10 N",
-            "100 N",
-            "1000 N",
-            "10000 N"
-        ],
-        correct: 2,
-        rationale: "Pressure = Force/Area = 100N/10cm² = 10 N/cm². This pressure acts on the large piston: Force = Pressure × Area = 10 N/cm² × 100 cm² = 1000 N."
-    },
-    {
-        id: 155,
-        question: "A motor does 800 J of work in 10 seconds. What is its power output?",
-        options: [
-            "8 W",
-            "80 W",
-            "800 W",
-            "8000 W"
-        ],
-        correct: 1,
-        rationale: "Power = Work/Time = 800 J / 10 s = 80 W"
-    }
-];
-
-// Mathematics Questions - General Mathematics Grade 11
-const mathQuestions = [
-    // Lesson 1: Calculating Salaries and Wages (Questions 1-10)
-    {
-        id: 1,
-        subject: "math",
-        question: "If an employee has an annual salary of ₱360,000, what is their monthly salary?",
-        options: [
-            "₱25,000",
-            "₱30,000",
-            "₱35,000",
-            "₱40,000"
-        ],
-        correct: 1,
-        rationale: "Monthly Salary = Annual Salary ÷ 12 = ₱360,000 ÷ 12 = ₱30,000"
-    },
-    {
-        id: 2,
-        subject: "math",
-        question: "A worker earns ₱150 per hour and worked 45 hours this week. What is their regular pay (assuming 40 hours is regular)?",
-        options: [
-            "₱5,500",
-            "₱6,000",
-            "₱6,750",
-            "₱7,500"
-        ],
-        correct: 1,
-        rationale: "Regular Pay = Hourly Rate × Regular Hours = ₱150 × 40 = ₱6,000"
-    },
-    {
-        id: 3,
-        subject: "math",
-        question: "If overtime pay is calculated at 1.5 times the regular rate, and a worker earns ₱200/hour with 5 overtime hours, what is the overtime pay?",
-        options: [
-            "₱1,000",
-            "₱1,250",
-            "₱1,500",
-            "₱2,000"
-        ],
-        correct: 2,
-        rationale: "Overtime Pay = Overtime Hours × Hourly Rate × OT Multiplier = 5 × ₱200 × 1.5 = ₱1,500"
-    },
-    {
-        id: 4,
-        subject: "math",
-        question: "An employee's gross pay is ₱25,000. If total deductions are ₱4,500, what is the net pay?",
-        options: [
-            "₱20,500",
-            "₱21,500",
-            "₱29,500",
-            "₱30,500"
-        ],
-        correct: 0,
-        rationale: "Net Pay = Gross Pay − Total Deductions = ₱25,000 − ₱4,500 = ₱20,500"
-    },
-    {
-        id: 5,
-        subject: "math",
-        question: "If a worker's net pay is ₱18,000 and deductions are ₱3,600, what is the gross pay?",
-        options: [
-            "₱14,400",
-            "₱21,600",
-            "₱22,000",
-            "₱24,000"
-        ],
-        correct: 1,
-        rationale: "Gross Pay = Net Pay + Deductions = ₱18,000 + ₱3,600 = ₱21,600"
-    },
-    {
-        id: 6,
-        subject: "math",
-        question: "An employee earns ₱180/hour for the first 8 hours and ₱270/hour for overtime. If they worked 10 hours, what is their total pay?",
-        options: [
-            "₱1,620",
-            "₱1,800",
-            "₱1,980",
-            "₱2,160"
-        ],
-        correct: 2,
-        rationale: "Regular: 8 × ₱180 = ₱1,440. Overtime: 2 × ₱270 = ₱540. Total = ₱1,440 + ₱540 = ₱1,980"
-    },
-    {
-        id: 7,
-        subject: "math",
-        question: "What is the annual salary of someone who earns ₱32,500 monthly?",
-        options: [
-            "₱360,000",
-            "₱375,000",
-            "₱390,000",
-            "₱420,000"
-        ],
-        correct: 2,
-        rationale: "Annual Salary = Monthly Salary × 12 = ₱32,500 × 12 = ₱390,000"
-    },
-    {
-        id: 8,
-        subject: "math",
-        question: "If overtime multiplier is 2 (double time) and hourly rate is ₱125, what is the overtime pay for 4 hours?",
-        options: [
-            "₱500",
-            "₱750",
-            "₱1,000",
-            "₱1,500"
-        ],
-        correct: 2,
-        rationale: "Overtime Pay = 4 × ₱125 × 2 = ₱1,000"
-    },
-    {
-        id: 9,
-        subject: "math",
-        question: "A worker's gross pay is ₱28,000 with deductions of ₱5,600 for taxes and ₱1,400 for other contributions. What is the net pay?",
-        options: [
-            "₱21,000",
-            "₱22,400",
-            "₱26,600",
-            "₱35,000"
-        ],
-        correct: 0,
-        rationale: "Total Deductions = ₱5,600 + ₱1,400 = ₱7,000. Net Pay = ₱28,000 − ₱7,000 = ₱21,000"
-    },
-    {
-        id: 10,
-        subject: "math",
-        question: "If a daily wage is ₱800 and a worker worked 22 days in a month, what is their monthly salary?",
-        options: [
-            "₱15,200",
-            "₱16,000",
-            "₱17,600",
-            "₱18,400"
-        ],
-        correct: 2,
-        rationale: "Monthly Salary = Daily Wage × Days Worked = ₱800 × 22 = ₱17,600"
-    },
-    // Alternative questions for Lesson 1
-    {
-        id: 101,
-        subject: "math",
-        question: "A teacher earns an annual salary of ₱468,000. What is their monthly salary?",
-        options: [
-            "₱36,000",
-            "₱39,000",
-            "₱42,000",
-            "₱45,000"
-        ],
-        correct: 1,
-        rationale: "Monthly Salary = Annual Salary ÷ 12 = ₱468,000 ÷ 12 = ₱39,000"
-    },
-    {
-        id: 102,
-        subject: "math",
-        question: "At ₱175 per hour for 38 regular hours and 6 overtime hours at 1.5×, what is the total pay?",
-        options: [
-            "₱6,650",
-            "₱7,175",
-            "₱7,700",
-            "₱8,225"
-        ],
-        correct: 1,
-        rationale: "Regular: 38 × ₱175 = ₱6,650. Overtime: 6 × ₱175 × 1.5 = ₱1,575. Total = ₱8,225"
-    },
-
-    // Lesson 2: Percentage Increase and Decrease (Questions 11-20)
-    {
-        id: 11,
-        subject: "math",
-        question: "What is 25% of 200?",
-        options: [
-            "25",
-            "40",
-            "50",
-            "75"
-        ],
-        correct: 2,
-        rationale: "25% of 200 = 0.25 × 200 = 50"
-    },
-    {
-        id: 12,
-        subject: "math",
-        question: "If a price increases from ₱400 to ₱500, what is the percentage increase?",
-        options: [
-            "20%",
-            "25%",
-            "30%",
-            "35%"
-        ],
-        correct: 1,
-        rationale: "% Increase = [(500 − 400) ÷ 400] × 100% = (100 ÷ 400) × 100% = 25%"
-    },
-    {
-        id: 13,
-        subject: "math",
-        question: "A product originally priced at ₱1,200 is now ₱960. What is the percentage decrease?",
-        options: [
-            "15%",
-            "20%",
-            "25%",
-            "30%"
-        ],
-        correct: 1,
-        rationale: "% Decrease = [(1200 − 960) ÷ 1200] × 100% = (240 ÷ 1200) × 100% = 20%"
-    },
-    {
-        id: 14,
-        subject: "math",
-        question: "If a salary of ₱30,000 increases by 10%, what is the new salary?",
-        options: [
-            "₱31,000",
-            "₱32,000",
-            "₱33,000",
-            "₱34,000"
-        ],
-        correct: 2,
-        rationale: "New Value = Original(1 + r) = ₱30,000(1 + 0.10) = ₱30,000 × 1.10 = ₱33,000"
-    },
-    {
-        id: 15,
-        subject: "math",
-        question: "After a 15% discount, a shirt costs ₱850. What was the original price?",
-        options: [
-            "₱950",
-            "₱977.50",
-            "₱1,000",
-            "₱1,050"
-        ],
-        correct: 2,
-        rationale: "Original = New ÷ (1 − r) = ₱850 ÷ 0.85 = ₱1,000"
-    },
-    {
-        id: 16,
-        subject: "math",
-        question: "What is 12.5% as a decimal?",
-        options: [
-            "0.0125",
-            "0.125",
-            "1.25",
-            "12.5"
-        ],
-        correct: 1,
-        rationale: "12.5% = 12.5 ÷ 100 = 0.125"
-    },
-    {
-        id: 17,
-        subject: "math",
-        question: "If 150 is 30% of a number, what is the number?",
-        options: [
-            "400",
-            "450",
-            "500",
-            "550"
-        ],
-        correct: 2,
-        rationale: "If 30% = 150, then 100% = 150 ÷ 0.30 = 500"
-    },
-    {
-        id: 18,
-        subject: "math",
-        question: "A car depreciates by 20% each year. If it costs ₱800,000 now, what will it be worth after 1 year?",
-        options: [
-            "₱620,000",
-            "₱640,000",
-            "₱660,000",
-            "₱680,000"
-        ],
-        correct: 1,
-        rationale: "New Value = Original(1 − r) = ₱800,000(1 − 0.20) = ₱800,000 × 0.80 = ₱640,000"
-    },
-    {
-        id: 19,
-        subject: "math",
-        question: "What percentage is 45 of 180?",
-        options: [
-            "20%",
-            "22.5%",
-            "25%",
-            "27.5%"
-        ],
-        correct: 2,
-        rationale: "Percentage = (45 ÷ 180) × 100% = 0.25 × 100% = 25%"
-    },
-    {
-        id: 20,
-        subject: "math",
-        question: "If a number increases by 40% to become 280, what was the original number?",
-        options: [
-            "168",
-            "180",
-            "200",
-            "220"
-        ],
-        correct: 2,
-        rationale: "Original = New ÷ (1 + r) = 280 ÷ 1.40 = 200"
-    },
-    // Alternative questions for Lesson 2
-    {
-        id: 111,
-        subject: "math",
-        question: "A price decreases from ₱750 to ₱600. What is the percentage decrease?",
-        options: [
-            "15%",
-            "18%",
-            "20%",
-            "25%"
-        ],
-        correct: 2,
-        rationale: "% Decrease = [(750 − 600) ÷ 750] × 100% = (150 ÷ 750) × 100% = 20%"
-    },
-    {
-        id: 112,
-        subject: "math",
-        question: "If ₱5,000 increases by 8%, what is the new amount?",
-        options: [
-            "₱5,300",
-            "₱5,400",
-            "₱5,500",
-            "₱5,600"
-        ],
-        correct: 1,
-        rationale: "New Value = ₱5,000(1 + 0.08) = ₱5,000 × 1.08 = ₱5,400"
-    },
-
-    // Lesson 3: Patterns and Sequences (Questions 21-30)
-    {
-        id: 21,
-        subject: "math",
-        question: "What is the next term in the arithmetic sequence: 3, 7, 11, 15, ...?",
-        options: [
-            "17",
-            "18",
-            "19",
-            "21"
-        ],
-        correct: 2,
-        rationale: "Common difference d = 4. Next term = 15 + 4 = 19"
-    },
-    {
-        id: 22,
-        subject: "math",
-        question: "What is the common ratio in the geometric sequence: 2, 6, 18, 54, ...?",
+        subject: "science",
+        question: "How many oxygen atoms are represented by 2O2?",
         options: [
             "2",
             "3",
             "4",
             "6"
         ],
-        correct: 1,
-        rationale: "Common ratio r = 6 ÷ 2 = 3 (or 18 ÷ 6 = 3, 54 ÷ 18 = 3)"
+        correct: 2,
+        rationale: "2O2 represents 2 oxygen molecules, each with 2 atoms, totaling 4 oxygen atoms."
     },
+    {
+        id: 34,
+        subject: "science",
+        question: "What does the chemical formula H2O represent?",
+        options: [
+            "Two oxygen atoms and one hydrogen atom",
+            "Two hydrogen atoms and one oxygen atom",
+            "Two water molecules",
+            "One hydrogen atom and two oxygen atoms"
+        ],
+        correct: 1,
+        rationale: "H2O represents two hydrogen atoms and one oxygen atom in a water molecule."
+    },
+
+    // Part IV: Physical and Chemical Changes (Questions 35-40)
+    {
+        id: 35,
+        subject: "science",
+        question: "Which of the following is an example of a physical change?",
+        options: [
+            "Rusting iron",
+            "Burning wood",
+            "Melting ice",
+            "Cooking an egg"
+        ],
+        correct: 2,
+        rationale: "Melting ice is a physical change because only the state of matter changes, not the chemical composition."
+    },
+    {
+        id: 36,
+        subject: "science",
+        question: "Which of the following is an example of a chemical change?",
+        options: [
+            "Cutting paper",
+            "Melting wax",
+            "Boiling water",
+            "Rusting iron"
+        ],
+        correct: 3,
+        rationale: "Rusting iron is a chemical change because iron reacts with oxygen to form iron oxide."
+    },
+    {
+        id: 37,
+        subject: "science",
+        question: "What distinguishes a chemical change from a physical change?",
+        options: [
+            "A chemical change forms new substances",
+            "A physical change always releases gas",
+            "A chemical change changes size only",
+            "A physical change always forms a solid"
+        ],
+        correct: 0,
+        rationale: "A chemical change forms new substances with different properties, unlike a physical change."
+    },
+    {
+        id: 38,
+        subject: "science",
+        question: "Which process is generally a physical change?",
+        options: [
+            "Burning paper",
+            "Digestion of food",
+            "Freezing water",
+            "Rusting a nail"
+        ],
+        correct: 2,
+        rationale: "Freezing water is generally a physical change because only the state changes from liquid to solid."
+    },
+    {
+        id: 39,
+        subject: "science",
+        question: "Which process is generally a chemical change?",
+        options: [
+            "Breaking glass",
+            "Dissolving sugar in water",
+            "Evaporating water",
+            "Burning paper"
+        ],
+        correct: 3,
+        rationale: "Burning paper is a chemical change because paper reacts with oxygen to form ash and gases."
+    },
+    {
+        id: 40,
+        subject: "science",
+        question: "Does a temperature change always prove that a chemical reaction occurred?",
+        options: [
+            "Yes, always",
+            "No, not by itself",
+            "Only when water is present",
+            "Only when a solid forms"
+        ],
+        correct: 1,
+        rationale: "A temperature change alone does not prove a chemical reaction occurred; other signs like color change or gas formation are needed."
+    },
+
+    // Part V: Energy and Other Concepts (Questions 41-45)
+    {
+        id: 41,
+        subject: "science",
+        question: "What is a catalyst?",
+        options: [
+            "A substance that speeds up a reaction without being consumed overall",
+            "A product of every reaction",
+            "A type of precipitate",
+            "A substance that must always be a gas"
+        ],
+        correct: 0,
+        rationale: "A catalyst is a substance that speeds up a reaction without being consumed overall."
+    },
+    {
+        id: 42,
+        subject: "science",
+        question: "What is an exothermic reaction?",
+        options: [
+            "A reaction that absorbs heat",
+            "A reaction that releases heat",
+            "A reaction with no energy change",
+            "A physical change only"
+        ],
+        correct: 1,
+        rationale: "An exothermic reaction is a reaction that releases heat to its surroundings."
+    },
+    {
+        id: 43,
+        subject: "science",
+        question: "What is an endothermic reaction?",
+        options: [
+            "A reaction that releases heat",
+            "A reaction that absorbs energy from its surroundings",
+            "A reaction that always produces flames",
+            "A reaction that forms only solids"
+        ],
+        correct: 1,
+        rationale: "An endothermic reaction is a reaction that absorbs energy from its surroundings."
+    },
+    {
+        id: 44,
+        subject: "science",
+        question: "Why is the Law of Conservation of Mass important when balancing chemical equations?",
+        options: [
+            "It makes equations longer",
+            "It ensures that atoms are accounted for on both sides",
+            "It changes the identity of elements",
+            "It ensures that every reaction releases heat"
+        ],
+        correct: 1,
+        rationale: "The Law of Conservation of Mass is important because it ensures that atoms are accounted for on both sides of the equation."
+    },
+    {
+        id: 45,
+        subject: "science",
+        question: "What happens to the atoms of reactants when they form products?",
+        options: [
+            "The atoms are destroyed",
+            "New atoms are created from nothing",
+            "The atoms rearrange into new combinations",
+            "Every atom becomes a different element"
+        ],
+        correct: 2,
+        rationale: "The atoms of reactants rearrange into new combinations to form products, but are neither created nor destroyed."
+    },
+
+    // Alternative questions for Chemical Reactions
+    {
+        id: 101,
+        subject: "science",
+        question: "In the reaction AB + CD -> AD + CB, what type of reaction is this?",
+        options: [
+            "Synthesis",
+            "Decomposition",
+            "Single replacement",
+            "Double replacement"
+        ],
+        correct: 3,
+        rationale: "AB + CD -> AD + CB is a double replacement reaction where two compounds exchange ions."
+    },
+    {
+        id: 102,
+        subject: "science",
+        question: "Which of the following is NOT a sign of a chemical reaction?",
+        options: [
+            "Color change",
+            "Gas formation",
+            "Temperature change alone",
+            "Precipitate formation"
+        ],
+        correct: 2,
+        rationale: "Temperature change alone is not a definitive sign of a chemical reaction; other indicators like color change, gas formation, or precipitate formation are needed."
+    },
+    {
+        id: 103,
+        subject: "science",
+        question: "In the reaction 2Na + Cl2 -> 2NaCl, what type of reaction is this?",
+        options: [
+            "Decomposition",
+            "Synthesis",
+            "Single replacement",
+            "Double replacement"
+        ],
+        correct: 1,
+        rationale: "2Na + Cl2 -> 2NaCl is a synthesis reaction combining sodium and chlorine to form sodium chloride."
+    },
+    {
+        id: 104,
+        subject: "science",
+        question: "What is formed when iron reacts with oxygen in the presence of water?",
+        options: [
+            "Iron oxide (rust)",
+            "Iron chloride",
+            "Iron sulfate",
+            "Pure iron"
+        ],
+        correct: 0,
+        rationale: "Iron reacts with oxygen in the presence of water to form iron oxide, commonly known as rust."
+    },
+    {
+        id:  105,
+        subject: "science",
+        question: "Why can a catalyst be reused in a reaction?",
+        options: [
+            "It is consumed in the reaction",
+            "It is regenerated at the end of the reaction",
+            "It changes into a different substance",
+            "It becomes part of the products"
+        ],
+        correct: 1,
+        rationale: "A catalyst is regenerated at the end of the reaction, allowing it to be reused."
+    }
+];
+
+// Mathematics Questions - General Mathematics Grade 11
+// Summative Test Coverage: Functions to Piecewise Functions
+// 45 Multiple-Choice Questions
+const mathQuestions = [
+    // Part I. Relations and Functions (Questions 1-9)
+    {
+        id: 1,
+        subject: "math",
+        question: "What is a relation in mathematics?",
+        options: [
+            "A set of numbers that are always equal",
+            "A set of ordered pairs",
+            "A multiplication operation",
+            "A type of equation only"
+        ],
+        correct: 1,
+        rationale: "A relation in mathematics is a set of ordered pairs that define a relationship between two sets."
+    },
+    {
+        id: 2,
+        subject: "math",
+        question: "What is a function?",
+        options: [
+            "A relation where every input has exactly one output",
+            "A relation where every input has two outputs",
+            "A relation with no inputs",
+            "A set of numbers without a pattern"
+        ],
+        correct: 0,
+        rationale: "A function is a relation where each input (x-value) has exactly one output (y-value)."
+    },
+    {
+        id: 3,
+        subject: "math",
+        question: "Which of the following relations is a function?",
+        options: [
+            "{(1,2), (1,3), (2,4)}",
+            "{(1,2), (2,3), (3,4)}",
+            "{(2,1), (2,3), (4,5)}",
+            "{(3,1), (3,2), (3,3)}"
+        ],
+        correct: 1,
+        rationale: "The relation {(1,2), (2,3), (3,4)} is a function because each x-value (1, 2, 3) has exactly one y-value."
+    },
+    {
+        id: 4,
+        subject: "math",
+        question: "What is the domain of a function?",
+        options: [
+            "The set of all output values",
+            "The set of all input values",
+            "The highest value only",
+            "The lowest value only"
+        ],
+        correct: 1,
+        rationale: "The domain of a function is the set of all possible input values (x-values)."
+    },
+    {
+        id: 5,
+        subject: "math",
+        question: "What is the range of a function?",
+        options: [
+            "The set of all input values",
+            "The set of all negative values",
+            "The set of all output values",
+            "The set of all variables"
+        ],
+        correct: 2,
+        rationale: "The range of a function is the set of all possible output values (y-values)."
+    },
+    {
+        id: 6,
+        subject: "math",
+        question: "Which test determines whether a graph represents a function?",
+        options: [
+            "Horizontal Line Test",
+            "Vertical Line Test",
+            "Addition Test",
+            "Inverse Test"
+        ],
+        correct: 1,
+        rationale: "The Vertical Line Test determines if a graph represents a function - if any vertical line intersects the graph more than once, it is not a function."
+    },
+    {
+        id: 7,
+        subject: "math",
+        question: "Which of the following is an example of a function?",
+        options: [
+            "One student assigned two different student numbers",
+            "One input assigned exactly one output",
+            "One input assigned three different outputs",
+            "One input assigned no output in a stated relation"
+        ],
+        correct: 1,
+        rationale: "A function requires exactly one output for each input."
+    },
+    {
+        id: 8,
+        subject: "math",
+        question: "If a relation contains the ordered pairs {(8,4), (6,9), (7,2)}, what is its domain?",
+        options: [
+            "{8, 6, 7}",
+            "{4, 9, 2}",
+            "{8, 4, 6}",
+            "{8, 6, 9}"
+        ],
+        correct: 0,
+        rationale: "The domain is the set of all x-values: {8, 6, 7}."
+    },
+    {
+        id: 9,
+        subject: "math",
+        question: "For the relation {(3,9), (5,9), (7,9)}, what is its range?",
+        options: [
+            "{3, 5, 7}",
+            "{9}",
+            "{3, 9}",
+            "{5, 9}"
+        ],
+        correct: 1,
+        rationale: "The range is the set of all y-values: {9}."
+    },
+    // Part II. Function Notation and Evaluation (Questions 10-17)
+    {
+        id: 10,
+        subject: "math",
+        question: "What does f(x) represent?",
+        options: [
+            "The input only",
+            "The output of a function for input x",
+            "The domain only",
+            "The inverse of x"
+        ],
+        correct: 1,
+        rationale: "f(x) represents the output value of the function f when the input is x."
+    },
+    {
+        id: 11,
+        subject: "math",
+        question: "Given f(x) = 2x + 3, find f(4).",
+        options: [
+            "8",
+            "10",
+            "11",
+            "14"
+        ],
+        correct: 2,
+        rationale: "f(4) = 2(4) + 3 = 8 + 3 = 11."
+    },
+    {
+        id: 12,
+        subject: "math",
+        question: "Given f(x) = 3x - 5, find f(2).",
+        options: [
+            "1",
+            "6",
+            "11",
+            "-1"
+        ],
+        correct: 0,
+        rationale: "f(2) = 3(2) - 5 = 6 - 5 = 1."
+    },
+    {
+        id: 13,
+        subject: "math",
+        question: "Given f(x) = x² + 2, find f(3).",
+        options: [
+            "6",
+            "9",
+            "11",
+            "12"
+        ],
+        correct: 2,
+        rationale: "f(3) = 3² + 2 = 9 + 2 = 11."
+    },
+    {
+        id: 14,
+        subject: "math",
+        question: "Given f(x) = 4x + 1, find f(-2).",
+        options: [
+            "-9",
+            "-7",
+            "7",
+            "9"
+        ],
+        correct: 1,
+        rationale: "f(-2) = 4(-2) + 1 = -8 + 1 = -7."
+    },
+    {
+        id: 15,
+        subject: "math",
+        question: "Given f(x) = x² - 5, find f(-3).",
+        options: [
+            "-14",
+            "-4",
+            "4",
+            "14"
+        ],
+        correct: 2,
+        rationale: "f(-3) = (-3)² - 5 = 9 - 5 = 4."
+    },
+    {
+        id: 16,
+        subject: "math",
+        question: "If f(x) = 5x, what is f(0)?",
+        options: [
+            "0",
+            "1",
+            "5",
+            "10"
+        ],
+        correct: 0,
+        rationale: "f(0) = 5(0) = 0."
+    },
+    {
+        id: 17,
+        subject: "math",
+        question: "Given f(x) = 2x - 7, find f(5).",
+        options: [
+            "2",
+            "3",
+            "7",
+            "10"
+        ],
+        correct: 1,
+        rationale: "f(5) = 2(5) - 7 = 10 - 7 = 3."
+    },
+    // Part III. Operations on Functions (Questions 18-22)
+    // For Questions 18-22, use: f(x) = x + 2, g(x) = 3x - 1
+    {
+        id: 18,
+        subject: "math",
+        question: "Given f(x) = x + 2 and g(x) = 3x - 1, find (f + g)(x).",
+        options: [
+            "4x + 1",
+            "2x + 3",
+            "4x - 1",
+            "3x + 2"
+        ],
+        correct: 0,
+        rationale: "(f + g)(x) = (x + 2) + (3x - 1) = 4x + 1."
+    },
+    {
+        id: 19,
+        subject: "math",
+        question: "Given f(x) = x + 2 and g(x) = 3x - 1, find (f - g)(x).",
+        options: [
+            "2x + 3",
+            "-2x + 3",
+            "4x + 1",
+            "2x - 3"
+        ],
+        correct: 1,
+        rationale: "(f - g)(x) = (x + 2) - (3x - 1) = x + 2 - 3x + 1 = -2x + 3."
+    },
+    {
+        id: 20,
+        subject: "math",
+        question: "Given f(x) = x + 2 and g(x) = 3x - 1, find (fg)(x).",
+        options: [
+            "3x² + 5x - 2",
+            "3x² - x + 2",
+            "4x + 1",
+            "3x² + 6x - 1"
+        ],
+        correct: 0,
+        rationale: "(fg)(x) = (x + 2)(3x - 1) = 3x² - x + 6x - 2 = 3x² + 5x - 2."
+    },
+    {
+        id: 21,
+        subject: "math",
+        question: "Given f(x) = x + 2 and g(x) = 3x - 1, find (f/g)(x).",
+        options: [
+            "(x + 2)/(3x - 1)",
+            "(3x - 1)/(x + 2)",
+            "4x + 1",
+            "3x² + 5x - 2"
+        ],
+        correct: 0,
+        rationale: "(f/g)(x) = f(x) / g(x) = (x + 2)/(3x - 1)."
+    },
+    {
+        id: 22,
+        subject: "math",
+        question: "For (f/g)(x) = (x + 2)/(3x - 1), which value of x must be excluded from the domain?",
+        options: [
+            "x = 0",
+            "x = 1",
+            "x = 1/3",
+            "x = -2"
+        ],
+        correct: 2,
+        rationale: "The denominator 3x - 1 = 0 when x = 1/3, so x = 1/3 must be excluded to avoid division by zero."
+    },
+    // Part IV. Composition of Functions (Questions 23-28)
     {
         id: 23,
         subject: "math",
-        question: "What is the 5th term of the Fibonacci sequence starting with 1, 1?",
+        question: "What does (f o g)(x) mean?",
         options: [
-            "3",
-            "5",
-            "8",
-            "13"
+            "f(x) + g(x)",
+            "f(x) - g(x)",
+            "f(g(x))",
+            "f(x)g(x)"
         ],
-        correct: 1,
-        rationale: "Fibonacci: 1, 1, 2, 3, 5. The 5th term is 5."
+        correct: 2,
+        rationale: "(f o g)(x) means f(g(x)), where g(x) is used as the input to f."
     },
     {
         id: 24,
         subject: "math",
-        question: "What is the 6th triangular number?",
+        question: "Given f(x) = 2x + 1 and g(x) = x², find (f o g)(x).",
         options: [
-            "15",
-            "18",
-            "21",
-            "28"
+            "2x + 1",
+            "2x² + 1",
+            "(2x + 1)²",
+            "x² + 1"
         ],
-        correct: 2,
-        rationale: "Tₙ = n(n + 1) ÷ 2. T₆ = 6(7) ÷ 2 = 42 ÷ 2 = 21"
+        correct: 1,
+        rationale: "(f o g)(x) = f(g(x)) = f(x²) = 2(x²) + 1 = 2x² + 1."
     },
     {
         id: 25,
         subject: "math",
-        question: "What is the 7th square number?",
+        question: "Given f(x) = 2x + 1 and g(x) = x², find (g o f)(x).",
         options: [
-            "36",
-            "42",
-            "49",
-            "56"
+            "2x² + 1",
+            "4x² + 4x + 1",
+            "x² + 2x + 1",
+            "4x + 1"
         ],
-        correct: 2,
-        rationale: "Square number aₙ = n². a₇ = 7² = 49"
+        correct: 1,
+        rationale: "(g o f)(x) = g(f(x)) = g(2x + 1) = (2x + 1)² = 4x² + 4x + 1."
     },
     {
         id: 26,
         subject: "math",
-        question: "What is the 4th cube number?",
+        question: "Given f(x) = x + 3 and g(x) = 2x, find f(g(4)).",
         options: [
-            "16",
-            "27",
-            "64",
-            "81"
+            "8",
+            "11",
+            "14",
+            "16"
         ],
-        correct: 2,
-        rationale: "Cube number aₙ = n³. a₄ = 4³ = 64"
+        correct: 1,
+        rationale: "g(4) = 2(4) = 8, then f(8) = 8 + 3 = 11."
     },
     {
         id: 27,
         subject: "math",
-        question: "What is the next term in the sequence: 2, 1, 3, 4, 7, 11, ...?",
+        question: "Given f(x) = 3x - 2 and g(x) = x + 4, find g(f(2)).",
         options: [
-            "15",
-            "16",
-            "18",
-            "22"
+            "4",
+            "6",
+            "8",
+            "10"
         ],
         correct: 2,
-        rationale: "This is a Lucas-type sequence where each term is the sum of the previous two: 7 + 11 = 18"
+        rationale: "f(2) = 3(2) - 2 = 4, then g(4) = 4 + 4 = 8."
     },
     {
         id: 28,
         subject: "math",
-        question: "What is the 10th term of the arithmetic sequence with a₁ = 5 and d = 3?",
+        question: "Is f(g(x)) always equal to g(f(x))?",
         options: [
-            "30",
-            "32",
-            "35",
-            "38"
+            "Yes, for all functions",
+            "No, the order of composition can change the result",
+            "Yes, if x is positive",
+            "No, composition is never possible"
         ],
         correct: 1,
-        rationale: "aₙ = a₁ + (n − 1)d = 5 + (10 − 1)3 = 5 + 27 = 32"
+        rationale: "Function composition is not commutative - f(g(x)) is not always equal to g(f(x))."
     },
+    // Part V. One-to-One and Inverse Functions (Questions 29-36)
     {
         id: 29,
         subject: "math",
-        question: "What is the 5th term of the geometric sequence with a₁ = 2 and r = 4?",
+        question: "What is a one-to-one function?",
         options: [
-            "64",
-            "128",
-            "256",
-            "512"
+            "A function where every input has two outputs",
+            "A function where different inputs have different outputs",
+            "A function with no domain",
+            "A function with only one ordered pair"
         ],
         correct: 1,
-        rationale: "aₙ = a₁rⁿ⁻¹ = 2(4)⁴ = 2 × 64 = 128"
+        rationale: "A one-to-one function is where different inputs have different outputs - each output corresponds to exactly one input."
     },
     {
         id: 30,
         subject: "math",
-        question: "What is the pattern in: 5, 10, 7, 14, 11, 22, ...?",
+        question: "Which test is used to determine whether a function is one-to-one from its graph?",
         options: [
-            "Add 5, subtract 3",
-            "Multiply by 2, subtract 3",
-            "Add 5, multiply by 2",
-            "Multiply by 2, add 5"
+            "Vertical Line Test",
+            "Horizontal Line Test",
+            "Addition Test",
+            "Substitution Test"
         ],
         correct: 1,
-        rationale: "This is an alternating pattern: ×2, −3, ×2, −3, ×2... 5×2=10, 10−3=7, 7×2=14, 14−3=11, 11×2=22"
+        rationale: "The Horizontal Line Test determines if a function is one-to-one - if any horizontal line intersects the graph more than once, it is not one-to-one."
     },
-    // Alternative questions for Lesson 3
-    {
-        id: 121,
-        subject: "math",
-        question: "What is the next term in: 4, 12, 36, 108, ...?",
-        options: [
-            "216",
-            "324",
-            "432",
-            "540"
-        ],
-        correct: 1,
-        rationale: "Geometric sequence with r = 3. Next term = 108 × 3 = 324"
-    },
-    {
-        id: 122,
-        subject: "math",
-        question: "What is the 8th term of the arithmetic sequence: 10, 15, 20, ...?",
-        options: [
-            "40",
-            "42",
-            "45",
-            "50"
-        ],
-        correct: 2,
-        rationale: "aₙ = a₁ + (n − 1)d = 10 + (8 − 1)5 = 10 + 35 = 45"
-    },
-
-    // Lesson 4: Sequences and Series in General (Questions 31-40)
     {
         id: 31,
         subject: "math",
-        question: "What is the sum of the arithmetic series: 2 + 5 + 8 + 11 + 14?",
+        question: "What is the inverse of a function?",
         options: [
-            "35",
-            "38",
-            "40",
-            "42"
+            "A function that reverses the original function's input-output relationship",
+            "A function that always squares the input",
+            "A function that adds zero",
+            "A function that doubles every output"
         ],
-        correct: 2,
-        rationale: "Sₙ = n/2(a₁ + aₙ) = 5/2(2 + 14) = 2.5 × 16 = 40"
+        correct: 0,
+        rationale: "The inverse of a function reverses the input-output relationship - if f(a) = b, then f⁻¹(b) = a."
     },
     {
         id: 32,
         subject: "math",
-        question: "Find the sum of the first 10 terms of the arithmetic sequence with a₁ = 3 and d = 5.",
+        question: "What is the notation for the inverse of f(x)?",
         options: [
-            "240",
-            "255",
-            "265",
-            "280"
+            "f(x)²",
+            "1/f(x)",
+            "f⁻¹(x)",
+            "f'(x)"
         ],
         correct: 2,
-        rationale: "Sₙ = n/2[2a₁ + (n − 1)d] = 10/2[2(3) + 9(5)] = 5[6 + 45] = 5 × 51 = 255"
+        rationale: "The notation f⁻¹(x) represents the inverse function of f(x)."
     },
     {
         id: 33,
         subject: "math",
-        question: "What is the sum of the geometric series: 3 + 6 + 12 + 24 + 48?",
+        question: "Find the inverse of f(x) = 2x + 4.",
         options: [
-            "87",
-            "93",
-            "96",
-            "99"
+            "f⁻¹(x) = 2x - 4",
+            "f⁻¹(x) = (x - 4)/2",
+            "f⁻¹(x) = (x + 4)/2",
+            "f⁻¹(x) = 4x + 2"
         ],
         correct: 1,
-        rationale: "Sₙ = a₁(rⁿ − 1)/(r − 1) = 3(2⁵ − 1)/(2 − 1) = 3(31)/1 = 93"
+        rationale: "Let y = 2x + 4. Swap x and y: x = 2y + 4. Solve: x - 4 = 2y, so y = (x - 4)/2."
     },
     {
         id: 34,
         subject: "math",
-        question: "Find the sum of the first 6 terms of the geometric sequence with a₁ = 4 and r = 3.",
+        question: "Find the inverse of f(x) = 3x - 6.",
         options: [
-            "1,456",
-            "1,458",
-            "1,460",
-            "1,464"
+            "f⁻¹(x) = (x + 6)/3",
+            "f⁻¹(x) = (x - 6)/3",
+            "f⁻¹(x) = 3x + 6",
+            "f⁻¹(x) = x/3 - 6"
         ],
-        correct: 1,
-        rationale: "Sₙ = a₁(rⁿ − 1)/(r − 1) = 4(3⁶ − 1)/(3 − 1) = 4(728)/2 = 1,458"
+        correct: 0,
+        rationale: "Let y = 3x - 6. Swap x and y: x = 3y - 6. Solve: x + 6 = 3y, so y = (x + 6)/3."
     },
     {
         id: 35,
         subject: "math",
-        question: "What is the sum of the infinite geometric series: 8 + 4 + 2 + 1 + ...?",
+        question: "If f(x) = x + 5, what is f⁻¹(x)?",
         options: [
-            "14",
-            "15",
-            "16",
-            "18"
+            "x + 5",
+            "x - 5",
+            "5 - x",
+            "5x"
         ],
-        correct: 2,
-        rationale: "S∞ = a₁/(1 − r) = 8/(1 − 0.5) = 8/0.5 = 16 (since |r| = 0.5 < 1)"
+        correct: 1,
+        rationale: "Let y = x + 5. Swap x and y: x = y + 5. Solve: y = x - 5."
     },
     {
         id: 36,
         subject: "math",
-        question: "Find the sum of the first 100 natural numbers (1 + 2 + 3 + ... + 100).",
+        question: "What is the first step when finding the inverse of a function using algebra?",
         options: [
-            "4,950",
-            "5,000",
-            "5,050",
-            "5,100"
+            "Square both sides",
+            "Replace f(x) with y",
+            "Multiply both sides by zero",
+            "Add the same number to every term"
         ],
-        correct: 2,
-        rationale: "Σi = n(n + 1)/2 = 100(101)/2 = 5,050"
+        correct: 1,
+        rationale: "The first step in finding an inverse function is to replace f(x) with y."
     },
+    // Part VI. Piecewise Functions (Questions 37-45)
+    // For Questions 37-40, use: f(x) = x + 2 if x < 0, f(x) = 2x + 1 if x ≥ 0
     {
         id: 37,
         subject: "math",
-        question: "What is the sum of the first 5 terms of the sequence: 1, 4, 9, 16, 25?",
+        question: "Given f(x) = x + 2 if x < 0, and f(x) = 2x + 1 if x ≥ 0, find f(-3).",
         options: [
-            "45",
-            "50",
-            "55",
-            "60"
+            "-1",
+            "-3",
+            "1",
+            "5"
         ],
-        correct: 2,
-        rationale: "This is the sum of squares. Σi² = n(n + 1)(2n + 1)/6 = 5(6)(11)/6 = 55"
+        correct: 0,
+        rationale: "Since -3 < 0, use f(x) = x + 2: f(-3) = -3 + 2 = -1."
     },
     {
         id: 38,
         subject: "math",
-        question: "Find the sum of the first 4 terms of the sequence: 1, 8, 27, 64.",
+        question: "Given f(x) = x + 2 if x < 0, and f(x) = 2x + 1 if x ≥ 0, find f(2).",
         options: [
-            "90",
-            "100",
-            "110",
-            "120"
+            "2",
+            "3",
+            "4",
+            "5"
         ],
-        correct: 1,
-        rationale: "This is the sum of cubes. Σi³ = [n(n + 1)/2]² = [4(5)/2]² = 10² = 100"
+        correct: 3,
+        rationale: "Since 2 ≥ 0, use f(x) = 2x + 1: f(2) = 2(2) + 1 = 5."
     },
     {
         id: 39,
         subject: "math",
-        question: "What is the 15th term of the arithmetic sequence with a₁ = 10 and d = 7?",
+        question: "Given f(x) = x + 2 if x < 0, and f(x) = 2x + 1 if x ≥ 0, find f(0).",
         options: [
-            "105",
-            "108",
-            "112",
-            "115"
+            "0",
+            "1",
+            "2",
+            "3"
         ],
         correct: 1,
-        rationale: "aₙ = a₁ + (n − 1)d = 10 + (15 − 1)7 = 10 + 98 = 108"
+        rationale: "Since 0 ≥ 0, use f(x) = 2x + 1: f(0) = 2(0) + 1 = 1."
     },
     {
         id: 40,
         subject: "math",
-        question: "Find the sum of the arithmetic series: 1 + 3 + 5 + 7 + 9 + 11 + 13 + 15.",
+        question: "Given f(x) = x + 2 if x < 0, and f(x) = 2x + 1 if x ≥ 0, which rule should be used to evaluate f(-5)?",
         options: [
-            "56",
-            "60",
-            "64",
-            "68"
+            "x + 2",
+            "2x + 1",
+            "Both rules",
+            "Neither rule"
         ],
-        correct: 2,
-        rationale: "Sₙ = n/2(a₁ + aₙ) = 8/2(1 + 15) = 4 × 16 = 64"
+        correct: 0,
+        rationale: "Since -5 < 0, use the rule f(x) = x + 2."
     },
-    // Alternative questions for Lesson 4
-    {
-        id: 131,
-        subject: "math",
-        question: "What is the sum of the infinite geometric series: 12 + 6 + 3 + 1.5 + ...?",
-        options: [
-            "20",
-            "22",
-            "24",
-            "26"
-        ],
-        correct: 2,
-        rationale: "S∞ = a₁/(1 − r) = 12/(1 − 0.5) = 12/0.5 = 24"
-    },
-    {
-        id: 132,
-        subject: "math",
-        question: "Find the sum of the first 20 natural numbers.",
-        options: [
-            "190",
-            "200",
-            "210",
-            "220"
-        ],
-        correct: 2,
-        rationale: "Σi = n(n + 1)/2 = 20(21)/2 = 210"
-    },
-
-    // Lesson 5: Metric Units (Questions 41-50)
     {
         id: 41,
         subject: "math",
-        question: "How many centimeters are in 2.5 meters?",
+        question: "What is a piecewise function?",
         options: [
-            "25 cm",
-            "250 cm",
-            "2500 cm",
-            "25000 cm"
+            "A function that uses one rule for every possible input",
+            "A function defined by different rules for different conditions",
+            "A function with no output",
+            "A function that only uses multiplication"
         ],
         correct: 1,
-        rationale: "1 m = 100 cm, so 2.5 m = 2.5 × 100 = 250 cm"
+        rationale: "A piecewise function is defined by different rules for different conditions or intervals of the domain."
     },
     {
         id: 42,
         subject: "math",
-        question: "Convert 3,500 grams to kilograms.",
+        question: "What does x ≤ 3 mean?",
         options: [
-            "0.35 kg",
-            "3.5 kg",
-            "35 kg",
-            "350 kg"
+            "x is greater than 3",
+            "x is less than 3 only",
+            "x is less than or equal to 3",
+            "x is greater than or equal to 3"
         ],
-        correct: 1,
-        rationale: "1 kg = 1,000 g, so 3,500 g = 3,500 ÷ 1,000 = 3.5 kg"
+        correct: 2,
+        rationale: "x ≤ 3 means x is less than or equal to 3."
     },
     {
         id: 43,
         subject: "math",
-        question: "How many milliliters are in 2.75 liters?",
+        question: "What does x > -2 mean?",
         options: [
-            "275 mL",
-            "2,750 mL",
-            "27,500 mL",
-            "275,000 mL"
+            "x is less than -2",
+            "x is greater than -2",
+            "x is less than or equal to -2",
+            "x is equal to -2 only"
         ],
         correct: 1,
-        rationale: "1 L = 1,000 mL, so 2.75 L = 2.75 × 1,000 = 2,750 mL"
+        rationale: "x > -2 means x is greater than -2."
     },
     {
         id: 44,
         subject: "math",
-        question: "Convert 450 mm to meters.",
+        question: "Given f(x) = 3x if x ≤ 1, and f(x) = x + 4 if x > 1, find f(1).",
         options: [
-            "0.045 m",
-            "0.45 m",
-            "4.5 m",
-            "45 m"
+            "1",
+            "3",
+            "4",
+            "5"
         ],
         correct: 1,
-        rationale: "1 m = 1,000 mm, so 450 mm = 450 ÷ 1,000 = 0.45 m"
+        rationale: "Since 1 ≤ 1, use f(x) = 3x: f(1) = 3(1) = 3."
     },
     {
         id: 45,
         subject: "math",
-        question: "How many kilometers are in 15,000 meters?",
-        options: [
-            "1.5 km",
-            "15 km",
-            "150 km",
-            "1,500 km"
-        ],
-        correct: 1,
-        rationale: "1 km = 1,000 m, so 15,000 m = 15,000 ÷ 1,000 = 15 km"
-    },
-    {
-        id: 46,
-        subject: "math",
-        question: "Convert 0.8 kg to grams.",
-        options: [
-            "8 g",
-            "80 g",
-            "800 g",
-            "8,000 g"
-        ],
-        correct: 2,
-        rationale: "1 kg = 1,000 g, so 0.8 kg = 0.8 × 1,000 = 800 g"
-    },
-    {
-        id: 47,
-        subject: "math",
-        question: "How many centimeters are in 75 millimeters?",
-        options: [
-            "0.75 cm",
-            "7.5 cm",
-            "75 cm",
-            "750 cm"
-        ],
-        correct: 1,
-        rationale: "1 cm = 10 mm, so 75 mm = 75 ÷ 10 = 7.5 cm"
-    },
-    {
-        id: 48,
-        subject: "math",
-        question: "Convert 5.2 km to meters.",
-        options: [
-            "52 m",
-            "520 m",
-            "5,200 m",
-            "52,000 m"
-        ],
-        correct: 2,
-        rationale: "1 km = 1,000 m, so 5.2 km = 5.2 × 1,000 = 5,200 m"
-    },
-    {
-        id: 49,
-        subject: "math",
-        question: "How many liters are in 8,500 mL?",
-        options: [
-            "0.85 L",
-            "8.5 L",
-            "85 L",
-            "850 L"
-        ],
-        correct: 1,
-        rationale: "1 L = 1,000 mL, so 8,500 mL = 8,500 ÷ 1,000 = 8.5 L"
-    },
-    {
-        id: 50,
-        subject: "math",
-        question: "Convert 3.6 m to centimeters.",
-        options: [
-            "36 cm",
-            "360 cm",
-            "3,600 cm",
-            "36,000 cm"
-        ],
-        correct: 1,
-        rationale: "1 m = 100 cm, so 3.6 m = 3.6 × 100 = 360 cm"
-    },
-    // Alternative questions for Lesson 5
-    {
-        id: 141,
-        subject: "math",
-        question: "Convert 4,250 mL to liters.",
-        options: [
-            "0.425 L",
-            "4.25 L",
-            "42.5 L",
-            "425 L"
-        ],
-        correct: 1,
-        rationale: "1 L = 1,000 mL, so 4,250 mL = 4,250 ÷ 1,000 = 4.25 L"
-    },
-    {
-        id: 142,
-        subject: "math",
-        question: "How many meters are in 0.05 km?",
-        options: [
-            "5 m",
-            "50 m",
-            "500 m",
-            "5,000 m"
-        ],
-        correct: 1,
-        rationale: "1 km = 1,000 m, so 0.05 km = 0.05 × 1,000 = 50 m"
-    },
-
-    // Lesson 6: Sequences and Series in Finance (Questions 51-60)
-    {
-        id: 51,
-        subject: "math",
-        question: "If you borrow ₱500,000 at 6% annual interest for 20 years (monthly payments), what is i (interest rate per period)?",
-        options: [
-            "0.005",
-            "0.006",
-            "0.06",
-            "0.6"
-        ],
-        correct: 0,
-        rationale: "i = annual rate ÷ periods per year = 0.06 ÷ 12 = 0.005"
-    },
-    {
-        id: 52,
-        subject: "math",
-        question: "If you invest ₱2,000 monthly at 8% annual interest for 10 years, what is n (number of periods)?",
-        options: [
-            "10",
-            "60",
-            "120",
-            "240"
-        ],
-        correct: 2,
-        rationale: "n = years × periods per year = 10 × 12 = 120"
-    },
-    {
-        id: 53,
-        subject: "math",
-        question: "What is the future value of a lump sum of ₱100,000 invested at 5% for 3 years?",
-        options: [
-            "₱115,000",
-            "₱115,762.50",
-            "₱125,000",
-            "₱157,625"
-        ],
-        correct: 1,
-        rationale: "FV = PV(1 + i)ⁿ = ₱100,000(1.05)³ = ₱100,000 × 1.157625 = ₱115,762.50"
-    },
-    {
-        id: 54,
-        subject: "math",
-        question: "If you make 24 equal payments of ₱5,000 each, what is the total amount paid?",
-        options: [
-            "₱100,000",
-            "₱120,000",
-            "₱150,000",
-            "₱200,000"
-        ],
-        correct: 1,
-        rationale: "Total = nP = 24 × ₱5,000 = ₱120,000"
-    },
-    {
-        id: 55,
-        subject: "math",
-        question: "A loan of ₱300,000 has monthly payments of ₱2,500 for 15 years. What is the total paid?",
-        options: [
-            "₱300,000",
-            "₱450,000",
-            "₱500,000",
-            "₱550,000"
-        ],
-        correct: 1,
-        rationale: "n = 15 × 12 = 180. Total = 180 × ₱2,500 = ₱450,000"
-    },
-    {
-        id: 56,
-        subject: "math",
-        question: "If ₱50,000 earns 4% interest compounded annually for 2 years, what is the future value?",
-        options: [
-            "₱54,000",
-            "₱54,080",
-            "₱58,000",
-            "₱58,320"
-        ],
-        correct: 1,
-        rationale: "FV = PV(1 + i)ⁿ = ₱50,000(1.04)² = ₱50,000 × 1.0816 = ₱54,080"
-    },
-    {
-        id: 57,
-        subject: "math",
-        question: "What is the present value of ₱50,000 to be received in 5 years at 6% interest?",
-        options: [
-            "₱35,000",
-            "₱37,362.90",
-            "₱40,000",
-            "₱42,500"
-        ],
-        correct: 1,
-        rationale: "PV = FV ÷ (1 + i)ⁿ = ₱50,000 ÷ (1.06)⁵ = ₱50,000 ÷ 1.3382 ≈ ₱37,362.90"
-    },
-    {
-        id: 58,
-        subject: "math",
-        question: "If you save ₱3,000 monthly for 5 years at 6% annual interest, what is n?",
-        options: [
-            "5",
-            "12",
-            "60",
-            "120"
-        ],
-        correct: 2,
-        rationale: "n = years × periods per year = 5 × 12 = 60"
-    },
-    {
-        id: 59,
-        subject: "math",
-        question: "A lump sum of ₱200,000 doubles in 10 years. What is the annual interest rate (approximately)?",
-        options: [
-            "5%",
-            "7%",
-            "10%",
-            "12%"
-        ],
-        correct: 1,
-        rationale: "Using Rule of 72: 72 ÷ 10 ≈ 7.2%. Or: 2 = (1 + r)¹⁰, so r ≈ 7.2%"
-    },
-    {
-        id: 60,
-        subject: "math",
-        question: "If monthly payments are ₱8,000 for 180 months, what is the total paid?",
-        options: [
-            "₱800,000",
-            "₱1,000,000",
-            "₱1,440,000",
-            "₱1,800,000"
-        ],
-        correct: 2,
-        rationale: "Total = nP = 180 × ₱8,000 = ₱1,440,000"
-    },
-    // Alternative questions for Lesson 6
-    {
-        id: 151,
-        subject: "math",
-        question: "If you borrow ₱800,000 at 8% annual interest for 25 years (monthly payments), what is i?",
-        options: [
-            "0.0067",
-            "0.008",
-            "0.08",
-            "0.8"
-        ],
-        correct: 0,
-        rationale: "i = annual rate ÷ periods per year = 0.08 ÷ 12 ≈ 0.0067"
-    },
-    {
-        id: 152,
-        subject: "math",
-        question: "What is the future value of ₱75,000 at 6% for 4 years?",
-        options: [
-            "₱84,000",
-            "₱89,000",
-            "₱94,678.50",
-            "₱100,000"
-        ],
-        correct: 2,
-        rationale: "FV = PV(1 + i)ⁿ = ₱75,000(1.06)⁴ = ₱75,000 × 1.2625 ≈ ₱94,678.50"
-    },
-
-    // Lesson 7: Sigma Notation (Questions 61-70) - Adding extra to reach 60
-    {
-        id: 61,
-        subject: "math",
-        question: "What is Σ (from i=1 to 5) i?",
-        options: [
-            "10",
-            "15",
-            "20",
-            "25"
-        ],
-        correct: 1,
-        rationale: "Σi = 1 + 2 + 3 + 4 + 5 = 15"
-    },
-    {
-        id: 62,
-        subject: "math",
-        question: "What is Σ (from i=1 to 4) 2i?",
-        options: [
-            "8",
-            "12",
-            "16",
-            "20"
-        ],
-        correct: 3,
-        rationale: "Σ2i = 2(1) + 2(2) + 2(3) + 2(4) = 2 + 4 + 6 + 8 = 20"
-    },
-    {
-        id: 63,
-        subject: "math",
-        question: "What is Σ (from i=1 to 3) i²?",
-        options: [
-            "6",
-            "9",
-            "14",
-            "18"
-        ],
-        correct: 2,
-        rationale: "Σi² = 1² + 2² + 3² = 1 + 4 + 9 = 14"
-    },
-    {
-        id: 64,
-        subject: "math",
-        question: "Using the formula, what is Σ (from i=1 to 10) i?",
-        options: [
-            "45",
-            "50",
-            "55",
-            "60"
-        ],
-        correct: 2,
-        rationale: "Σi = n(n + 1)/2 = 10(11)/2 = 55"
-    },
-    {
-        id: 65,
-        subject: "math",
-        question: "What is Σ (from i=1 to 4) 3?",
-        options: [
-            "3",
-            "6",
-            "9",
-            "12"
-        ],
-        correct: 3,
-        rationale: "Σ3 = 3 + 3 + 3 + 3 = 12 (adding 3 four times)"
-    },
-    {
-        id: 66,
-        subject: "math",
-        question: "What is Σ (from i=1 to 3) (i + 1)?",
+        question: "Given f(x) = x² if x < 2, and f(x) = 2x + 1 if x ≥ 2, find f(3).",
         options: [
             "6",
             "7",
-            "8",
-            "9"
-        ],
-        correct: 3,
-        rationale: "Σ(i + 1) = (1+1) + (2+1) + (3+1) = 2 + 3 + 4 = 9"
-    },
-    {
-        id: 67,
-        subject: "math",
-        question: "Using the formula, what is Σ (from i=1 to 5) i²?",
-        options: [
-            "45",
-            "50",
-            "55",
-            "65"
-        ],
-        correct: 2,
-        rationale: "Σi² = n(n + 1)(2n + 1)/6 = 5(6)(11)/6 = 55"
-    },
-    {
-        id: 68,
-        subject: "math",
-        question: "What is Σ (from i=1 to 3) i³?",
-        options: [
-            "18",
-            "27",
-            "36",
-            "45"
-        ],
-        correct: 2,
-        rationale: "Σi³ = 1³ + 2³ + 3³ = 1 + 8 + 27 = 36"
-    },
-    {
-        id: 69,
-        subject: "math",
-        question: "What is Σ (from i=1 to 4) (2i + 1)?",
-        options: [
-            "16",
-            "20",
-            "24",
-            "28"
+            "9",
+            "10"
         ],
         correct: 1,
-        rationale: "Σ(2i + 1) = (2×1+1) + (2×2+1) + (2×3+1) + (2×4+1) = 3 + 5 + 7 + 9 = 24"
-    },
-    {
-        id: 70,
-        subject: "math",
-        question: "Using the cube sum formula, what is Σ (from i=1 to 4) i³?",
-        options: [
-            "64",
-            "81",
-            "100",
-            "125"
-        ],
-        correct: 2,
-        rationale: "Σi³ = [n(n + 1)/2]² = [4(5)/2]² = 10² = 100"
+        rationale: "Since 3 ≥ 2, use f(x) = 2x + 1: f(3) = 2(3) + 1 = 7."
     }
 ];
 
-// Biology Questions - Biology 1 Term 1
+// Biology Questions - Plant Biology (Second Term First Summative)
 const biologyQuestions = [
-    // I. Biology and Its Branches (Questions 1-5)
+    // Part 1: Plant Cells and Tissues (Questions 1-10)
     {
         id: 1,
         subject: "biology",
-        question: "A scientist is studying how a population of deer interacts with the plants and other animals in a forest ecosystem. Which branch of biology is most relevant to this study?",
+        question: "What are the basic units of life in plants?",
         options: [
-            "Genetics",
-            "Ecology",
-            "Physiology",
-            "Morphology"
+            "Tissues",
+            "Cells",
+            "Organs",
+            "Systems"
         ],
         correct: 1,
-        rationale: "Ecology studies interactions among organisms and their environment, which matches the scenario of studying deer in a forest ecosystem."
+        rationale: "Cells are the basic units of life in plants, as in all living organisms."
     },
     {
         id: 2,
         subject: "biology",
-        question: "A researcher is investigating how blue eye color is passed from parents to children across generations. This study belongs to which branch of biology?",
+        question: "Similar cells work together to form what structures that perform specific functions?",
         options: [
-            "Genetics",
-            "Histology",
-            "Biochemistry",
-            "Embryology"
+            "Tissues",
+            "Organs",
+            "Organelles",
+            "Meristems"
         ],
         correct: 0,
-        rationale: "Genetics is the study of genes, heredity, and transmission of traits, which describes the study of eye color inheritance."
+        rationale: "Similar cells working together form tissues that perform specific functions."
     },
     {
         id: 3,
         subject: "biology",
-        question: "A doctor is examining tissue samples under a microscope to diagnose a disease. Which branch of biology involves the microscopic study of tissues?",
+        question: "Plant tissues are organized into how many main tissue systems?",
         options: [
-            "Morphology",
-            "Physiology",
-            "Histology",
-            "Biochemistry"
+            "Two",
+            "Three",
+            "Four",
+            "Five"
         ],
-        correct: 2,
-        rationale: "Histology is the microscopic study of tissues, which is what the doctor is doing with tissue samples."
+        correct: 1,
+        rationale: "Plant tissues are organized into three main tissue systems: dermal, ground, and vascular."
     },
     {
         id: 4,
         subject: "biology",
-        question: "A scientist is studying the chemical reactions that occur during cellular respiration. This falls under which branch of biology?",
+        question: "What are the three main tissue systems found in plants?",
         options: [
-            "Embryology",
-            "Biochemistry",
-            "Ecology",
-            "Morphology"
+            "Xylem, phloem, cambium",
+            "Epidermis, cortex, pith",
+            "Dermal, ground, and vascular tissue systems",
+            "Parenchyma, collenchyma, sclerenchyma"
         ],
-        correct: 1,
-        rationale: "Biochemistry studies chemical processes in living organisms, such as those in cellular respiration."
+        correct: 2,
+        rationale: "The three main tissue systems are dermal, ground, and vascular tissue systems."
     },
     {
         id: 5,
         subject: "biology",
-        question: "When studying the development of a fertilized egg into a fully formed organism, which branch of biology would be most relevant?",
+        question: "What does the dermal tissue system function as, and what does it mainly include?",
         options: [
-            "Embryology",
-            "Genetics",
-            "Physiology",
-            "Ecology"
+            "Photosynthesis storage; parenchyma",
+            "The protective covering of the plant; mainly includes the epidermis",
+            "Structural support; collenchyma",
+            "Water transport; xylem"
         ],
-        correct: 0,
-        rationale: "Embryology studies the development of organisms, from fertilized egg to fully formed organism."
+        correct: 1,
+        rationale: "The dermal tissue system functions as the protective covering of the plant and mainly includes the epidermis."
     },
-
-    // II. Cell Theory (Questions 6-10)
     {
         id: 6,
         subject: "biology",
-        question: "A student observes that all the bacteria in a culture dish came from existing bacteria that were already present. Which principle of cell theory does this observation support?",
+        question: "Between which two tissue systems is the ground tissue system located?",
         options: [
-            "All living organisms are composed of one or more cells",
-            "Cell is the basic unit of life",
-            "All cells arise from pre-existing cells",
-            "Cells contain genetic material"
+            "Xylem and phloem",
+            "Cortex and epidermis",
+            "The dermal and vascular tissues",
+            "Apical and lateral meristems"
         ],
         correct: 2,
-        rationale: "The observation that bacteria come from existing bacteria supports the principle that all cells arise from pre-existing cells."
+        rationale: "The ground tissue system is located between the dermal and vascular tissues."
     },
     {
         id: 7,
         subject: "biology",
-        question: "Which scientist is credited with observing cork cells and introducing the term 'cell'?",
+        question: "What three tissue types are included in the ground tissue system?",
         options: [
-            "Antonie van Leeuwenhoek",
-            "Robert Hooke",
-            "Matthias Schleiden",
-            "Theodor Schwann"
+            "Parenchyma, collenchyma, and sclerenchyma",
+            "Epidermis, cuticle, trichome",
+            "Xylem, phloem, cambium",
+            "Cork, periderm, bark"
         ],
-        correct: 1,
-        rationale: "Robert Hooke observed cork and introduced the term 'cell'."
+        correct: 0,
+        rationale: "The ground tissue system includes parenchyma, collenchyma, and sclerenchyma."
     },
     {
         id: 8,
         subject: "biology",
-        question: "A scientist claims that plants are composed of cells. Which scientist's work supports this claim?",
+        question: "What system serves as the plant's transport system and consists of xylem and phloem?",
         options: [
-            "Rudolf Virchow",
-            "Theodor Schwann",
-            "Matthias Schleiden",
-            "Robert Hooke"
+            "Dermal tissue system",
+            "Ground tissue system",
+            "The vascular tissue system",
+            "Meristematic system"
         ],
         correct: 2,
-        rationale: "Matthias Schleiden concluded that plants are composed of cells."
+        rationale: "The vascular tissue system serves as the plant's transport system and consists of xylem and phloem."
     },
     {
         id: 9,
         subject: "biology",
-        question: "Who proposed that animals are composed of cells?",
+        question: "What are the most common and least specialized plant cells, featuring thin primary walls and living nuclei at maturity?",
         options: [
-            "Matthias Schleiden",
-            "Theodor Schwann",
-            "Rudolf Virchow",
-            "Antonie van Leeuwenhoek"
+            "Sclerenchyma cells",
+            "Collenchyma cells",
+            "Parenchyma cells",
+            "Guard cells"
         ],
-        correct: 1,
-        rationale: "Theodor Schwann concluded that animals are composed of cells."
+        correct: 2,
+        rationale: "Parenchyma cells are the most common and least specialized plant cells with thin primary walls and living nuclei at maturity."
     },
     {
         id: 10,
         subject: "biology",
-        question: "Which scientist is associated with the principle that cells arise from pre-existing cells?",
+        question: "What metabolic tasks are handled by parenchyma cells located in the leaf mesophyll?",
         options: [
-            "Robert Hooke",
-            "Antonie van Leeuwenhoek",
-            "Rudolf Virchow",
-            "Matthias Schleiden"
+            "Water transport",
+            "Photosynthesis",
+            "Lignin deposition",
+            "Secondary growth"
         ],
-        correct: 2,
-        rationale: "Rudolf Virchow proposed that cells arise from pre-existing cells."
+        correct: 1,
+        rationale: "Parenchyma cells in the leaf mesophyll handle photosynthesis."
     },
 
-    // III. Prokaryotic vs Eukaryotic (Questions 11-15)
+    // Part 2: Plant Cell Types & Permanent Tissues (Questions 11-20)
     {
         id: 11,
         subject: "biology",
-        question: "A bacterium is found to have its DNA floating in the nucleoid region without a nuclear membrane. Is this cell prokaryotic or eukaryotic?",
+        question: "What tasks do parenchyma cells perform in roots and stems?",
         options: [
-            "Prokaryotic",
-            "Eukaryotic",
-            "Both",
-            "Neither"
+            "Food and starch storage, as well as wound healing",
+            "Rigid structural support only",
+            "Waterproof barrier creation via suberin",
+            "Primary lengthening of internodes"
         ],
         correct: 0,
-        rationale: "Prokaryotic cells have DNA in the nucleoid and no membrane-bound nucleus or organelles."
+        rationale: "Parenchyma cells in roots and stems perform food and starch storage, as well as wound healing."
     },
     {
         id: 12,
         subject: "biology",
-        question: "A cell contains mitochondria, endoplasmic reticulum, and a membrane-bound nucleus. What type of cell is this?",
+        question: "What are the cell walls of parenchyma cells primarily made of?",
         options: [
-            "Prokaryotic",
-            "Eukaryotic",
-            "Virus",
-            "Prion"
+            "Lignin",
+            "Suberin",
+            "Cellulose",
+            "Pectin"
         ],
-        correct: 1,
-        rationale: "Eukaryotic cells have a membrane-bound nucleus and membrane-bound organelles like mitochondria and ER."
+        correct: 2,
+        rationale: "The cell walls of parenchyma cells are primarily made of cellulose."
     },
     {
         id: 13,
         subject: "biology",
-        question: "If a cell has a nucleoid but lacks mitochondria and Golgi apparatus, how would you classify it?",
+        question: "How are collenchyma cells characterized regarding their shape and cell walls?",
         options: [
-            "Eukaryotic",
-            "Prokaryotic",
-            "Plant cell",
-            "Animal cell"
+            "Elongated living cells with unevenly thickened primary cell walls that lack lignin",
+            "Dead cells at maturity with heavy lignin",
+            "Isodiametric cells with thin secondary walls",
+            "Circular cells with narrow lumens"
         ],
-        correct: 1,
-        rationale: "Nucleoid + no membrane-bound organelles = prokaryotic."
+        correct: 0,
+        rationale: "Collenchyma cells are elongated living cells with unevenly thickened primary cell walls that lack lignin."
     },
     {
         id: 14,
         subject: "biology",
-        question: "A student is examining a cell under a microscope and observes a nucleus, mitochondria, and ER. What conclusion can they draw?",
+        question: "What type of support do collenchyma cells provide to growing plant parts, such as young stems and leaf petioles?",
         options: [
-            "The cell is prokaryotic",
-            "The cell is eukaryotic",
-            "The cell is a virus",
-            "The cell is dead"
+            "Rigid, unyielding support",
+            "Flexible structural support and tensile strength",
+            "Complete waterproofing",
+            "Active transport of sugars"
         ],
         correct: 1,
-        rationale: "Nucleus + mitochondria + ER = eukaryotic."
+        rationale: "Collenchyma cells provide flexible structural support and tensile strength to growing plant parts."
     },
     {
         id: 15,
         subject: "biology",
-        question: "Which of the following structures would you NOT expect to find in a prokaryotic cell?",
+        question: "What distinct chemical components are found in heavy, localized deposits in collenchyma cell walls?",
         options: [
-            "DNA",
-            "Ribosomes",
-            "Nucleus",
-            "Cell membrane"
+            "Cellulose, hemicellulose, and pectin",
+            "Pure lignin and suberin",
+            "Starch and chlorophyll",
+            "Silica and calcium carbonate"
         ],
-        correct: 2,
-        rationale: "Prokaryotic cells lack a membrane-bound nucleus, though they have DNA, ribosomes, and cell membrane."
+        correct: 0,
+        rationale: "Heavy, localized deposits in collenchyma cell walls contain cellulose, hemicellulose, and pectin."
     },
-
-    // IV. Cell Cycle (Questions 16-20)
     {
         id: 16,
         subject: "biology",
-        question: "During which phase of the cell cycle does DNA replication occur?",
+        question: "Why do collenchyma cells remain pliable and translucent under a light microscope?",
         options: [
-            "G₁ phase",
-            "S phase",
-            "G₂ phase",
-            "M phase"
+            "Because they lack chloroplasts",
+            "Because they lack lignin",
+            "Because they have thin secondary walls",
+            "Because they are dead at maturity"
         ],
         correct: 1,
-        rationale: "DNA replication occurs during S (Synthesis) phase."
+        rationale: "Collenchyma cells remain pliable and translucent because they lack lignin."
     },
     {
         id: 17,
         subject: "biology",
-        question: "A cell is growing and performing its normal functions but not replicating DNA. Which phase is it likely in?",
+        question: "How are sclerenchyma cells described at maturity?",
         options: [
-            "S phase",
-            "G₁ phase",
-            "G₂ phase",
-            "M phase"
+            "Living cells with active nuclei",
+            "Pliable cells with thin primary walls",
+            "Rigid, dead cells at maturity with thick, hardened secondary walls containing lignin",
+            "Unspecialized cells for storage"
         ],
-        correct: 1,
-        rationale: "G₁ phase is when the cell grows and performs normal functions before DNA replication."
+        correct: 2,
+        rationale: "Sclerenchyma cells are rigid, dead cells at maturity with thick, hardened secondary walls containing lignin."
     },
     {
         id: 18,
         subject: "biology",
-        question: "What is the purpose of DNA replication during the cell cycle?",
+        question: "What kind of support do sclerenchyma cells provide in non-growing parts of the plant?",
         options: [
-            "To increase cell size",
-            "To ensure genetic material can be distributed to daughter cells",
-            "To produce proteins",
-            "To generate energy"
+            "Temporary flexible support",
+            "Maximum structural support",
+            "Photosynthetic support",
+            "Meristematic division support"
         ],
         correct: 1,
-        rationale: "DNA replication ensures genetic material can be distributed to daughter cells."
+        rationale: "Sclerenchyma cells provide maximum structural support in non-growing parts of the plant."
     },
     {
         id: 19,
         subject: "biology",
-        question: "During which phase does the cell prepare for division after DNA has been replicated?",
+        question: "What are the two main subtypes of sclerenchyma cells?",
         options: [
-            "G₁ phase",
-            "S phase",
-            "G₂ phase",
-            "Cytokinesis"
+            "Xylem and phloem",
+            "Epidermis and periderm",
+            "Long, slender fibers and hard, versatile sclereids",
+            "Companion cells and sieve tubes"
         ],
         correct: 2,
-        rationale: "G₂ phase is when the cell grows and prepares for cell division after DNA replication."
+        rationale: "The two main subtypes of sclerenchyma cells are long, slender fibers and hard, versatile sclereids."
     },
     {
         id: 20,
         subject: "biology",
-        question: "In what order do the phases of the cell cycle occur?",
+        question: "What happens to the inner cell space (lumen) in sclerenchyma cells due to thick secondary wall layers?",
         options: [
-            "M → G₁ → S → G₂ → Cytokinesis",
-            "G₁ → S → G₂ → M → Cytokinesis",
-            "S → G₁ → G₂ → M → Cytokinesis",
-            "G₂ → S → G₁ → M → Cytokinesis"
+            "It expands significantly",
+            "It fills with chloroplasts",
+            "It becomes very small and narrow",
+            "It disappears entirely to form vessel elements"
         ],
-        correct: 1,
-        rationale: "The correct order is Interphase (G₁, S, G₂) → M Phase → Cytokinesis."
+        correct: 2,
+        rationale: "Due to thick secondary wall layers, the lumen in sclerenchyma cells becomes very small and narrow."
     },
 
-    // V. Mitosis (Questions 21-25)
+    // Part 3: Meristematic Tissues and Growth (Questions 21-32)
     {
         id: 21,
         subject: "biology",
-        question: "During which phase of mitosis do chromosomes align at the equatorial plane?",
+        question: "What are meristems defined as?",
         options: [
-            "Prophase",
-            "Metaphase",
-            "Anaphase",
-            "Telophase"
+            "Regions of unspecialized, actively dividing cells in plants that enable continuous growth and development",
+            "Dead transport tubes in the stem center",
+            "Protective epidermal layers on leaves",
+            "Storage tissues found in roots"
         ],
-        correct: 1,
-        rationale: "During metaphase, chromosomes align at the equatorial plane."
+        correct: 0,
+        rationale: "Meristems are regions of unspecialized, actively dividing cells in plants that enable continuous growth and development."
     },
     {
         id: 22,
         subject: "biology",
-        question: "What happens during anaphase of mitosis?",
+        question: "What are the three main types of meristematic tissues?",
         options: [
-            "Chromosomes condense",
-            "Sister chromatids separate and move to opposite poles",
-            "New nuclear envelopes form",
-            "Chromosomes align at the equator"
+            "Dermal, ground, vascular",
+            "Parenchyma, collenchyma, sclerenchyma",
+            "Apical meristem, lateral meristem, and intercalary meristem",
+            "Xylem, phloem, cambium"
         ],
-        correct: 1,
-        rationale: "During anaphase, sister chromatids separate and move to opposite poles."
+        correct: 2,
+        rationale: "The three main types of meristematic tissues are apical meristem, lateral meristem, and intercalary meristem."
     },
     {
         id: 23,
         subject: "biology",
-        question: "How does cytokinesis differ between animal and plant cells?",
+        question: "What type of growth is caused by apical meristems?",
         options: [
-            "Animal cells form a cell plate, plant cells form a cleavage furrow",
-            "Animal cells form a cleavage furrow, plant cells form a cell plate",
-            "Both form cleavage furrows",
-            "Both form cell plates"
+            "Secondary growth (widening)",
+            "Primary growth (i.e., lengthening of the plant)",
+            "Cork production",
+            "Wound healing growth"
         ],
         correct: 1,
-        rationale: "Animal cells form a cleavage furrow, while plant cells form a cell plate during cytokinesis."
+        rationale: "Apical meristems cause primary growth, which is the lengthening of the plant."
     },
     {
         id: 24,
         subject: "biology",
-        question: "What is the result of mitosis in terms of daughter cells?",
+        question: "Where do apical meristems occur?",
         options: [
-            "Four genetically different haploid cells",
-            "Two genetically identical diploid cells",
-            "Two genetically different haploid cells",
-            "Four genetically identical diploid cells"
+            "At the tips of shoots and roots",
+            "Inside the vascular bundle",
+            "In the internodes of grasses",
+            "Beneath the bark of mature trees"
         ],
-        correct: 1,
-        rationale: "Mitosis produces two genetically identical daughter cells with the same chromosome number as the parent."
+        correct: 0,
+        rationale: "Apical meristems occur at the tips of shoots and roots."
     },
     {
         id: 25,
         subject: "biology",
-        question: "During which phase of mitosis do chromosomes condense and the nuclear envelope break down?",
+        question: "What new structures are produced by apical meristems?",
         options: [
-            "Prophase",
-            "Metaphase",
-            "Anaphase",
-            "Telophase"
+            "Secondary wood and inner bark",
+            "New leaves and flowers",
+            "Cork cells and periderm",
+            "Sclerenchyma fibers"
         ],
-        correct: 0,
-        rationale: "During prophase, chromosomes condense and the nuclear envelope breaks down."
+        correct: 1,
+        rationale: "Apical meristems produce new leaves and flowers."
     },
-
-    // VI. Cell Cycle Checkpoints (Questions 26-30)
     {
         id: 26,
         subject: "biology",
-        question: "If a cell has damaged DNA at the G₁ checkpoint, what might happen?",
+        question: "What type of growth is caused by lateral meristems?",
         options: [
-            "The cell immediately divides",
-            "The cell cycle may stop until repair occurs or enter G₀",
-            "The cell skips to M phase",
-            "The cell undergoes meiosis"
+            "Primary growth (lengthening)",
+            "Secondary growth (i.e., widening of the plant)",
+            "Intercalary elongation",
+            "Leaf mesophyll development"
         ],
         correct: 1,
-        rationale: "Damaged DNA at G₁ checkpoint may cause the cell cycle to stop until repair occurs or enter G₀."
+        rationale: "Lateral meristems cause secondary growth, which is the widening of the plant."
     },
     {
         id: 27,
         subject: "biology",
-        question: "What can happen if cell cycle checkpoints fail?",
+        question: "Where does lateral meristem occur in the stem?",
         options: [
-            "Cell death",
-            "Uncontrolled cell division which may contribute to cancer",
-            "Normal cell division",
-            "Increased DNA repair"
+            "At the cambium",
+            "At the root tip",
+            "In the epidermis",
+            "Within the leaf blade"
         ],
-        correct: 1,
-        rationale: "Checkpoint failure can lead to uncontrolled cell division, which may contribute to cancer."
+        correct: 0,
+        rationale: "Lateral meristem occurs at the cambium in the stem."
     },
     {
         id: 28,
         subject: "biology",
-        question: "What is the purpose of cell cycle checkpoints?",
+        question: "What do lateral meristems produce on trees regarding bark?",
         options: [
-            "To speed up cell division",
-            "To regulate progression and prevent damaged cells from dividing",
-            "To increase genetic variation",
-            "To produce more ATP"
+            "Leaves",
+            "Bark on trees",
+            "Root hairs",
+            "Flower petals"
         ],
         correct: 1,
-        rationale: "Checkpoints regulate progression through the cell cycle and help prevent damaged cells from dividing."
+        rationale: "Lateral meristems produce bark on trees."
     },
     {
         id: 29,
         subject: "biology",
-        question: "A cell enters G₀ phase. What does this indicate?",
+        question: "How is the vascular cambium described structurally in a lateral meristem?",
         options: [
-            "The cell is actively dividing",
-            "The cell is in a resting phase and not preparing to divide",
-            "The cell is undergoing DNA replication",
-            "The cell is in mitosis"
+            "As a thick layer of dead cells covering roots",
+            "As a thin cylinder of lateral meristem located between the primary xylem and primary phloem",
+            "As hollow tubes for water transport",
+            "As photosynthetic cells in the cortex"
         ],
         correct: 1,
-        rationale: "G₀ is a resting phase where the cell is not preparing to divide."
+        rationale: "The vascular cambium is a thin cylinder of lateral meristem located between the primary xylem and primary phloem."
     },
     {
         id: 30,
         subject: "biology",
-        question: "Which checkpoint is most critical for preventing cancer development?",
+        question: "What does the vascular cambium produce to the inside and outside, respectively?",
         options: [
-            "The checkpoint that allows all cells to divide",
-            "The checkpoint that stops damaged cells from dividing",
-            "The checkpoint that speeds up division",
-            "The checkpoint that skips DNA repair"
+            "Epidermis to the inside, cork to the outside",
+            "Primary xylem to the inside, primary phloem to the outside",
+            "Secondary xylem (wood) to the inside and secondary phloem (inner bark) to the outside",
+            "Pith to the inside, cortex to the outside"
         ],
-        correct: 1,
-        rationale: "The checkpoint that stops damaged cells from dividing is critical for preventing cancer development."
+        correct: 2,
+        rationale: "The vascular cambium produces secondary xylem (wood) to the inside and secondary phloem (inner bark) to the outside."
     },
-
-    // VII. Meiosis (Questions 31-35)
     {
         id: 31,
         subject: "biology",
-        question: "What is the purpose of meiosis?",
+        question: "Where is the intercalary meristem located?",
         options: [
-            "Cell growth and repair",
-            "Production of haploid cells for sexual reproduction",
-            "Production of identical daughter cells",
-            "DNA replication"
+            "In the leaves and internodes at the intercalary position",
+            "Exclusively in root caps",
+            "At the very outer edge of tree bark",
+            "Inside the seed coat"
         ],
-        correct: 1,
-        rationale: "Meiosis produces haploid cells for sexual reproduction."
+        correct: 0,
+        rationale: "The intercalary meristem is located in the leaves and internodes at the intercalary position."
     },
     {
         id: 32,
         subject: "biology",
-        question: "During which phase of meiosis does crossing over occur?",
+        question: "In which types of plants is intercalary meristem typically found?",
         options: [
-            "Metaphase I",
-            "Anaphase I",
-            "Prophase I",
-            "Telophase II"
+            "Woody dicots only",
+            "Grass, monocots, and pines",
+            "Aquatic algae",
+            "Ferns and mosses"
         ],
-        correct: 2,
-        rationale: "Crossing over occurs during Prophase I when homologous chromosomes pair to form tetrads."
+        correct: 1,
+        rationale: "Intercalary meristem is typically found in grass, monocots, and pines."
     },
+
+    // Part 4: Cork, Vascular Tissues, and Plant Organs (Questions 33-45)
     {
         id: 33,
         subject: "biology",
-        question: "How many divisions occur in meiosis?",
+        question: "What is cork in woody plants?",
         options: [
-            "One",
-            "Two",
-            "Three",
-            "Four"
+            "A protective, waterproof tissue that forms the outer layer of bark",
+            "The living tissue that transports food",
+            "The central pith of a stem",
+            "The primary site of photosynthesis"
         ],
-        correct: 1,
-        rationale: "Meiosis involves two divisions: Meiosis I and Meiosis II."
+        correct: 0,
+        rationale: "Cork is a protective, waterproof tissue that forms the outer layer of bark in woody plants."
     },
     {
         id: 34,
         subject: "biology",
-        question: "What is the final result of meiosis?",
+        question: "What waxy substance do cork cells contain to prevent water loss and block pathogens?",
         options: [
-            "Two genetically identical diploid cells",
-            "Four genetically different haploid cells",
-            "Two genetically different haploid cells",
-            "Four genetically identical diploid cells"
+            "Lignin",
+            "Pectin",
+            "Suberin",
+            "Cellulose"
         ],
-        correct: 1,
-        rationale: "Meiosis results in four genetically different haploid cells."
+        correct: 2,
+        rationale: "Cork cells contain suberin, a waxy substance that prevents water loss and blocks pathogens."
     },
     {
         id: 35,
         subject: "biology",
-        question: "When does DNA replication occur in meiosis?",
+        question: "What type of lateral meristem produces cork cells on its outer side?",
         options: [
-            "Before Meiosis I only",
-            "Before Meiosis II only",
-            "Before both Meiosis I and Meiosis II",
-            "After Meiosis II"
+            "Vascular cambium",
+            "Cork cambium",
+            "Apical meristem",
+            "Intercalary meristem"
         ],
-        correct: 0,
-        rationale: "DNA replication occurs before Meiosis I only."
+        correct: 1,
+        rationale: "The cork cambium is the lateral meristem that produces cork cells on its outer side."
     },
-
-    // VIII. Genetic Variation (Questions 36-40)
     {
         id: 36,
         subject: "biology",
-        question: "What is crossing over?",
+        question: "Together, cork and cork cambium form what layer that replaces the epidermis as the plant grows wider?",
         options: [
-            "Separation of sister chromatids",
-            "Exchange of genetic material between homologous chromosomes",
-            "Random arrangement of chromosomes",
-            "Division of cytoplasm"
+            "The periderm",
+            "The vascular cylinder",
+            "The mesophyll",
+            "The root cortex"
         ],
-        correct: 1,
-        rationale: "Crossing over is the exchange of genetic material between homologous chromosomes during Prophase I."
+        correct: 0,
+        rationale: "Cork and cork cambium together form the periderm, which replaces the epidermis as the plant grows wider."
     },
     {
         id: 37,
         subject: "biology",
-        question: "During which phase does independent assortment occur?",
+        question: "What is the primary function of the vascular tissue called xylem?",
         options: [
-            "Prophase I",
-            "Metaphase I",
-            "Anaphase I",
-            "Telophase I"
+            "It moves water and dissolved minerals upward from the roots to the stems and leaves",
+            "It distributes sugars down to the roots",
+            "It provides dermal protection",
+            "It stores excess starch"
         ],
-        correct: 1,
-        rationale: "Independent assortment occurs during Metaphase I when homologous pairs align randomly."
+        correct: 0,
+        rationale: "Xylem moves water and dissolved minerals upward from the roots to the stems and leaves."
     },
     {
         id: 38,
         subject: "biology",
-        question: "If crossing over does not occur, what happens to genetic variation?",
+        question: "What tough substance reinforces mature xylem cells to provide structural support?",
         options: [
-            "It increases",
-            "It is reduced but chromosome number still decreases",
-            "It remains the same",
-            "It becomes zero"
+            "Suberin",
+            "Lignin",
+            "Pectin",
+            "Cellulose only"
         ],
         correct: 1,
-        rationale: "If crossing over does not occur, genetic variation is reduced but chromosome number can still be reduced normally."
+        rationale: "Lignin reinforces mature xylem cells to provide structural support."
     },
     {
         id: 39,
         subject: "biology",
-        question: "What is independent assortment?",
+        question: "What is the function of phloem in vascular tissue?",
         options: [
-            "Exchange of genetic material",
-            "Random arrangement of homologous chromosome pairs during Metaphase I",
-            "Separation of sister chromatids",
-            "DNA replication"
+            "It transports water unilaterally",
+            "It transports sugars and organic nutrients made during photosynthesis to all parts of the plant in multiple directions",
+            "It forms the outer bark barrier",
+            "It drives primary vertical lengthening"
         ],
         correct: 1,
-        rationale: "Independent assortment is the random arrangement of homologous chromosome pairs during Metaphase I."
+        rationale: "Phloem transports sugars and organic nutrients made during photosynthesis to all parts of the plant in multiple directions."
     },
     {
         id: 40,
         subject: "biology",
-        question: "Which process contributes to genetic variation by exchanging genetic material between homologous chromosomes?",
+        question: "What specialized living cells make up phloem tissue?",
         options: [
-            "Independent assortment",
-            "Crossing over",
-            "DNA replication",
-            "Cytokinesis"
+            "Sieve tubes and companion cells",
+            "Tracheids and vessel elements",
+            "Collenchyma and fibers",
+            "Cork and cork cambium"
         ],
-        correct: 1,
-        rationale: "Crossing over contributes to genetic variation by exchanging genetic material between homologous chromosomes."
+        correct: 0,
+        rationale: "Phloem tissue is made up of specialized living cells called sieve tubes and companion cells."
     },
-
-    // IX. Mitosis vs Meiosis (Questions 41-45)
     {
         id: 41,
         subject: "biology",
-        question: "How many daughter cells are produced in mitosis?",
+        question: "How are xylem and phloem grouped together in stems, roots, and leaves?",
         options: [
-            "One",
-            "Two",
-            "Four",
-            "Eight"
+            "They form vascular bundles, acting as the plant's plumbing system",
+            "They form random scattered clusters in the epidermis",
+            "They function independently of ground tissue",
+            "They convert into meristematic cambium"
         ],
-        correct: 1,
-        rationale: "Mitosis produces two daughter cells."
+        correct: 0,
+        rationale: "Xylem and phloem are grouped together in vascular bundles, acting as the plant's plumbing system."
     },
     {
         id: 42,
         subject: "biology",
-        question: "What separates during Meiosis I?",
+        question: "What are the central regions and boundary layers typically found in a cross-section of a stem?",
         options: [
-            "Sister chromatids",
-            "Homologous chromosomes",
-            "Centromeres",
-            "Nuclear envelope"
+            "Epidermis, cortex, phloem, xylem, pith, and the vascular cylinder",
+            "Cuticle, stomata, and guard cells",
+            "Apical tips and nodes",
+            "Bark, cork, and periderm"
         ],
-        correct: 1,
-        rationale: "Homologous chromosomes separate during Meiosis I."
+        correct: 0,
+        rationale: "A cross-section of a stem typically shows epidermis, cortex, phloem, xylem, pith, and the vascular cylinder."
     },
     {
         id: 43,
         subject: "biology",
-        question: "Which process is used for cell growth and repair?",
+        question: "What are the five major parts and organs of plants?",
         options: [
-            "Meiosis",
-            "Mitosis",
-            "Both",
-            "Neither"
+            "Roots, stems, leaves, flowers, and fruits",
+            "Xylem, phloem, cambium, cortex, pith",
+            "Parenchyma, collenchyma, sclerenchyma, dermal, vascular",
+            "Seeds, spores, cones, needles, moss"
         ],
-        correct: 1,
-        rationale: "Mitosis is used for cell growth and repair."
+        correct: 0,
+        rationale: "The five major parts and organs of plants are roots, stems, leaves, flowers, and fruits."
     },
     {
         id: 44,
         subject: "biology",
-        question: "What separates during Mitosis and Meiosis II?",
+        question: "What specific subtype of sclereids is cylindrical and shaped like a bone or dumbbell?",
         options: [
-            "Homologous chromosomes",
-            "Sister chromatids",
-            "Nucleus",
-            "Cytoplasm"
+            "Brachysclereid",
+            "Macrosclereid",
+            "Osteosclereid",
+            "Astrosclereid"
         ],
-        correct: 1,
-        rationale: "Sister chromatids separate during Mitosis and Meiosis II."
+        correct: 2,
+        rationale: "Osteosclereid is a subtype of sclereids that is cylindrical and shaped like a bone or dumbbell."
     },
     {
         id: 45,
         subject: "biology",
-        question: "Which process produces genetically identical daughter cells?",
+        question: "What subtype of sclereids features star-like branching structures?",
         options: [
-            "Meiosis",
-            "Mitosis",
-            "Both",
-            "Neither"
+            "Astrosclereid",
+            "Filliform sclereid",
+            "Brachysclereid",
+            "Fiber"
         ],
-        correct: 1,
-        rationale: "Mitosis produces genetically identical daughter cells."
-    },
-
-    // X. Cell Transport (Questions 46-50)
-    {
-        id: 46,
-        subject: "biology",
-        question: "What is selective permeability?",
-        options: [
-            "All substances can cross the membrane",
-            "No substances can cross the membrane",
-            "Membrane regulates which substances can cross",
-            "Water only can cross"
-        ],
-        correct: 2,
-        rationale: "Selective permeability means the membrane regulates which substances can cross."
-    },
-    {
-        id: 47,
-        subject: "biology",
-        question: "Which type of transport does NOT require ATP?",
-        options: [
-            "Active transport",
-            "Passive transport",
-            "Both",
-            "Neither"
-        ],
-        correct: 1,
-        rationale: "Passive transport does not require ATP."
-    },
-    {
-        id: 48,
-        subject: "biology",
-        question: "What is the general direction of passive transport?",
-        options: [
-            "Low to high concentration",
-            "High to low concentration",
-            "Both directions equally",
-            "No specific direction"
-        ],
-        correct: 1,
-        rationale: "Passive transport generally moves substances from high to low concentration."
-    },
-    {
-        id: 49,
-        subject: "biology",
-        question: "Which type of transport can move substances against the concentration gradient?",
-        options: [
-            "Passive transport",
-            "Active transport",
-            "Both",
-            "Neither"
-        ],
-        correct: 1,
-        rationale: "Active transport can move substances against the concentration gradient using cellular energy."
-    },
-    {
-        id: 50,
-        subject: "biology",
-        question: "What is cell transport?",
-        options: [
-            "Cell division",
-            "Movement of substances into and out of cells",
-            "Energy production",
-            "DNA replication"
-        ],
-        correct: 1,
-        rationale: "Cell transport is the movement of substances into and out of cells."
-    },
-
-    // XI. Types of Transport (Questions 51-55)
-    {
-        id: 51,
-        subject: "biology",
-        question: "A substance moves from high to low concentration without using ATP. What type of transport is this?",
-        options: [
-            "Active transport",
-            "Simple diffusion",
-            "Phagocytosis",
-            "Exocytosis"
-        ],
-        correct: 1,
-        rationale: "Simple diffusion moves substances from high to low concentration without ATP."
-    },
-    {
-        id: 52,
-        subject: "biology",
-        question: "What is osmosis?",
-        options: [
-            "Movement of ions against gradient",
-            "Movement of water across a selectively permeable membrane",
-            "Engulfing large particles",
-            "Release of substances from vesicles"
-        ],
-        correct: 1,
-        rationale: "Osmosis is the movement of water across a selectively permeable membrane."
-    },
-    {
-        id: 53,
-        subject: "biology",
-        question: "A cell engulfs a large bacterium. What process is this?",
-        options: [
-            "Exocytosis",
-            "Phagocytosis",
-            "Simple diffusion",
-            "Facilitated diffusion"
-        ],
-        correct: 1,
-        rationale: "Phagocytosis is when a cell engulfs a large particle."
-    },
-    {
-        id: 54,
-        subject: "biology",
-        question: "Vesicles fuse with the plasma membrane to release substances outside the cell. What is this process called?",
-        options: [
-            "Phagocytosis",
-            "Exocytosis",
-            "Osmosis",
-            "Active transport"
-        ],
-        correct: 1,
-        rationale: "Exocytosis is when vesicles fuse with the plasma membrane and release substances outside the cell."
-    },
-    {
-        id: 55,
-        subject: "biology",
-        question: "What moves substances such as ions against their concentration gradient?",
-        options: [
-            "Simple diffusion",
-            "Protein pump",
-            "Osmosis",
-            "Facilitated diffusion"
-        ],
-        correct: 1,
-        rationale: "Protein pumps move substances such as ions against their concentration gradient using cellular energy."
-    },
-
-    // XII. Tonicity (Questions 56-58)
-    {
-        id: 56,
-        subject: "biology",
-        question: "An animal cell is placed in a hypertonic solution. What happens to the cell?",
-        options: [
-            "Water moves in and the cell may burst",
-            "Water moves out and the cell shrinks",
-            "No water movement occurs",
-            "The cell divides"
-        ],
-        correct: 1,
-        rationale: "In hypertonic solution (higher solute outside), water moves out and animal cell shrinks."
-    },
-    {
-        id: 57,
-        subject: "biology",
-        question: "What happens to a plant cell in a hypertonic solution?",
-        options: [
-            "It swells and becomes turgid",
-            "Water leaves and plasmolysis occurs",
-            "It bursts",
-            "No change occurs"
-        ],
-        correct: 1,
-        rationale: "Plant cell in hypertonic solution: water leaves → plasmolysis."
-    },
-    {
-        id: 58,
-        subject: "biology",
-        question: "If the solute concentration is lower outside the cell, what type of solution is this and what happens?",
-        options: [
-            "Hypertonic, water moves out",
-            "Hypotonic, water moves in",
-            "Hypertonic, water moves in",
-            "Hypotonic, water moves out"
-        ],
-        correct: 1,
-        rationale: "Lower solute outside = hypotonic, water moves in (Hypo = water in)."
-    },
-
-    // XIII. Cell Requirements (Questions 59-60)
-    {
-        id: 59,
-        subject: "biology",
-        question: "What are the basic requirements of a cell?",
-        options: [
-            "Only water",
-            "Energy, nutrients, and water",
-            "Only energy",
-            "Only nutrients"
-        ],
-        correct: 1,
-        rationale: "Basic requirements of a cell are energy, nutrients, and water."
-    },
-    {
-        id: 60,
-        subject: "biology",
-        question: "Why is waste removal important for cells?",
-        options: [
-            "To increase cell size",
-            "To prevent waste accumulation from interfering with normal cellular functions",
-            "To produce more energy",
-            "To replicate DNA"
-        ],
-        correct: 1,
-        rationale: "Waste removal prevents waste accumulation from interfering with normal cellular functions."
+        correct: 0,
+        rationale: "Astrosclereid is a subtype of sclereids that features star-like branching structures."
     },
 
     // Alternative questions for Biology
     {
         id: 101,
         subject: "biology",
-        question: "A marine biologist studies how coral reefs interact with fish, algae, and water quality. Which branch of biology is this study primarily related to?",
+        question: "Which tissue system includes the epidermis and serves as the plant's protective outer layer?",
         options: [
-            "Genetics",
-            "Ecology",
-            "Histology",
-            "Embryology"
+            "Vascular tissue system",
+            "Ground tissue system",
+            "Dermal tissue system",
+            "Meristematic system"
         ],
-        correct: 1,
-        rationale: "Ecology studies interactions among organisms and their environment."
+        correct: 2,
+        rationale: "The dermal tissue system includes the epidermis and serves as the plant's protective outer layer."
     },
     {
         id: 102,
         subject: "biology",
-        question: "A genetic counselor helps a family understand how a genetic disorder might be passed to their children. This involves which branch of biology?",
+        question: "Which cells are responsible for photosynthesis in leaves?",
         options: [
-            "Physiology",
-            "Genetics",
-            "Morphology",
-            "Biochemistry"
+            "Sclerenchyma cells",
+            "Collenchyma cells",
+            "Parenchyma cells in mesophyll",
+            "Guard cells"
         ],
-        correct: 1,
-        rationale: "Genetics studies genes, heredity, and transmission of traits."
+        correct: 2,
+        rationale: "Parenchyma cells in the leaf mesophyll are responsible for photosynthesis."
     },
     {
         id: 103,
         subject: "biology",
-        question: "A cell has a nucleus but no membrane-bound organelles. Is this possible?",
+        question: "What is the main difference between collenchyma and sclerenchyma cells?",
         options: [
-            "Yes, this is a prokaryotic cell",
-            "No, eukaryotic cells have both nucleus and organelles",
-            "Yes, this is a eukaryotic cell",
-            "No, prokaryotic cells have no nucleus"
+            "Collenchyma is dead at maturity, sclerenchyma is living",
+            "Collenchyma provides flexible support, sclerenchyma provides rigid support",
+            "Collenchyma transports water, sclerenchyma transports food",
+            "There is no difference"
         ],
         correct: 1,
-        rationale: "Eukaryotic cells have both a nucleus and membrane-bound organelles. A cell with nucleus but no organelles is not typical."
+        rationale: "Collenchyma provides flexible support for growing parts, while sclerenchyma provides rigid support for non-growing parts."
     },
     {
         id: 104,
         subject: "biology",
-        question: "During which phase does the cell grow and prepare for division after DNA replication?",
+        question: "Which meristem is responsible for the thickening of tree trunks?",
         options: [
-            "G₁ phase",
-            "S phase",
-            "G₂ phase",
-            "M phase"
+            "Apical meristem",
+            "Lateral meristem (vascular cambium)",
+            "Intercalary meristem",
+            "Root apical meristem"
         ],
-        correct: 2,
-        rationale: "G₂ phase is for growth and preparation for cell division after DNA replication in S phase."
+        correct: 1,
+        rationale: "The lateral meristem (vascular cambium) is responsible for the thickening or secondary growth of tree trunks."
     },
     {
         id: 105,
         subject: "biology",
-        question: "A cell in a hypotonic solution swells. Why does this happen?",
+        question: "What is the function of sieve tubes in phloem?",
         options: [
-            "Water moves out of the cell",
-            "Water moves into the cell",
-            "Solute moves into the cell",
-            "Solute moves out of the cell"
+            "Transport water upward",
+            "Transport sugars and organic nutrients",
+            "Provide structural support",
+            "Protect the plant from pathogens"
         ],
         correct: 1,
-        rationale: "In hypotonic solution, water moves into the cell causing it to swell."
+        rationale: "Sieve tubes in phloem transport sugars and organic nutrients throughout the plant."
     }
 ];
 
 // Effective Communication Questions - Second Term First Summative
-const komunikasyonQuestions = [
+const effectiveCommQuestions = [
     // I. Academic Texts vs Technical Texts (Questions 1-6)
     {
         id: 1,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which type of text presents ideas, arguments, interpretations, or research findings?",
         options: [
             "Technical text",
@@ -3082,7 +1943,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 2,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What is the main purpose of a technical text?",
         options: [
             "To entertain readers with fictional stories",
@@ -3095,7 +1956,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 3,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which of the following is an example of an academic text?",
         options: [
             "Research paper",
@@ -3108,7 +1969,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 4,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which feature is most commonly associated with technical texts?",
         options: [
             "Emotional language",
@@ -3121,7 +1982,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 5,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "A student writes a paper analyzing the effects of AI on education using research evidence. What type of text is it?",
         options: [
             "Technical report",
@@ -3134,7 +1995,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 6,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "A document explains how to operate an AI learning platform step by step. What type of text is it?",
         options: [
             "Position paper",
@@ -3148,7 +2009,7 @@ const komunikasyonQuestions = [
     // II. Types of Texts (Questions 7-14)
     {
         id: 7,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which text presents a systematic investigation of a problem or question?",
         options: [
             "Research paper",
@@ -3161,7 +2022,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 8,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which text states a clear position on an issue and supports it with evidence and logical arguments?",
         options: [
             "Abstract",
@@ -3174,7 +2035,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 9,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What is a brief overview of a research study that summarizes its problem, methods, findings, and conclusions?",
         options: [
             "Memorandum",
@@ -3187,7 +2048,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 10,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which text evaluates a book's content, themes, strengths, weaknesses, and significance?",
         options: [
             "Research paper",
@@ -3200,7 +2061,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 11,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which text presents technical information, findings, analysis, and conclusions related to a project or investigation?",
         options: [
             "Technical report",
@@ -3213,7 +2074,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 12,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which type of text develops a central idea through an introduction, body, and conclusion?",
         options: [
             "Abstract",
@@ -3226,7 +2087,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 13,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What is a concise, professional written message used for official internal communication?",
         options: [
             "Position paper",
@@ -3239,7 +2100,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 14,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which text provides directions for operating equipment, using a system, or completing a task?",
         options: [
             "Abstract",
@@ -3254,7 +2115,7 @@ const komunikasyonQuestions = [
     // III. Characteristics of Effective Technical Writing (Questions 15-20)
     {
         id: 15,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which characteristic ensures that instructions are easy to understand?",
         options: [
             "Clarity",
@@ -3267,7 +2128,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 16,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which characteristic requires information to be exact and measurable whenever necessary?",
         options: [
             "Context",
@@ -3280,7 +2141,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 17,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Why is accuracy important in technical writing?",
         options: [
             "It makes the text more entertaining.",
@@ -3293,7 +2154,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 18,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Why should instructions follow a logical sequence?",
         options: [
             "To make the text more emotional",
@@ -3306,7 +2167,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 19,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What should a writer do when using unfamiliar technical terms for beginners?",
         options: [
             "Explain the unfamiliar terms.",
@@ -3319,7 +2180,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 20,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which instruction demonstrates precision?",
         options: [
             "Heat the solution for a while.",
@@ -3334,7 +2195,7 @@ const komunikasyonQuestions = [
     // IV. Audience, Purpose, and Context (Questions 21-25)
     {
         id: 21,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Who refers to the intended readers or listeners of a message?",
         options: [
             "Purpose",
@@ -3347,7 +2208,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 22,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which question does purpose answer?",
         options: [
             "Who will receive the message?",
@@ -3360,7 +2221,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 23,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What does context refer to?",
         options: [
             "The circumstances and situation surrounding communication",
@@ -3373,7 +2234,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 24,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "A student creates a cyberbullying awareness poster for younger students using simple words and relatable examples. What is the student primarily adapting to?",
         options: [
             "Research findings",
@@ -3386,7 +2247,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 25,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "A student writes a formal proposal for school administrators using evidence and recommended policies. Which approach is most appropriate?",
         options: [
             "Casual language and jokes",
@@ -3401,7 +2262,7 @@ const komunikasyonQuestions = [
     // V. Multimodal Communication (Questions 26-31)
     {
         id: 26,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What is multimodal communication?",
         options: [
             "Communicating only through written words",
@@ -3414,7 +2275,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 27,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which mode includes words, sentences, written explanations, and spoken language?",
         options: [
             "Linguistic",
@@ -3427,7 +2288,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 28,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which mode includes photographs, illustrations, icons, diagrams, and colors?",
         options: [
             "Gestural",
@@ -3440,7 +2301,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 29,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which mode includes narration, music, and sound effects?",
         options: [
             "Visual",
@@ -3453,7 +2314,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 30,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Facial expressions, body movements, and hand gestures belong to which mode?",
         options: [
             "Spatial",
@@ -3466,7 +2327,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 31,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "The arrangement, placement, and organization of elements belong to which mode?",
         options: [
             "Spatial",
@@ -3481,7 +2342,7 @@ const komunikasyonQuestions = [
     // VI. Interpretation, Engagement, and Expression (Questions 32-36)
     {
         id: 32,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What should you do when interpreting a multimodal text?",
         options: [
             "Focus only on its colors.",
@@ -3494,7 +2355,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 33,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What involves understanding and explaining a text's meaning by examining its claims, evidence, purpose, audience, and context?",
         options: [
             "Expression",
@@ -3507,7 +2368,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 34,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What involves actively interacting with ideas by asking questions, discussing implications, and evaluating information?",
         options: [
             "Interpretation",
@@ -3520,7 +2381,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 35,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What refers to communicating one's own thoughts, interpretations, opinions, and ideas effectively?",
         options: [
             "Expression",
@@ -3533,7 +2394,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 36,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "A student analyzes an editorial's arguments and supporting evidence to understand its message. Which process is demonstrated?",
         options: [
             "Engagement",
@@ -3548,7 +2409,7 @@ const komunikasyonQuestions = [
     // VII. Critical Thinking and Credible Evidence (Questions 37-41)
     {
         id: 37,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What should you do first when evaluating information from an online source?",
         options: [
             "Count its likes and reposts.",
@@ -3561,7 +2422,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 38,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What should you examine to determine whether a claim is trustworthy?",
         options: [
             "The number of emojis used",
@@ -3574,7 +2435,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 39,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "A claim presents evidence that does not actually support its conclusion. What should a critical thinker do?",
         options: [
             "Analyze whether the evidence supports the claim.",
@@ -3587,7 +2448,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 40,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Why should you consider alternative explanations when evaluating information?",
         options: [
             "To make your opinion impossible to change",
@@ -3600,7 +2461,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 41,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "What does it mean to interpret results carefully?",
         options: [
             "Make conclusions based on personal feelings.",
@@ -3615,7 +2476,7 @@ const komunikasyonQuestions = [
     // VIII. Organization, Tone, and Language (Questions 42-45)
     {
         id: 42,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which part of an academic text introduces the topic and central idea?",
         options: [
             "Body",
@@ -3628,7 +2489,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 43,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which part develops supporting ideas, arguments, and evidence?",
         options: [
             "Body",
@@ -3641,7 +2502,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 44,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "Which tone is most appropriate for a memorandum sent to teachers announcing a schedule change?",
         options: [
             "Sarcastic and emotional",
@@ -3654,7 +2515,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 45,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "When adapting a research report into a social media campaign, what must remain accurate?",
         options: [
             "Only the original report's formatting",
@@ -3669,7 +2530,7 @@ const komunikasyonQuestions = [
     // Alternative questions for Effective Communication
     {
         id: 101,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "A writer uses simple language and short sentences when explaining a complex topic to beginners. Which characteristic of effective writing does this demonstrate?",
         options: [
             "Clarity",
@@ -3682,7 +2543,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 102,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "A technical document specifies '15 minutes at 200°C' instead of 'cook for a bit.' Which characteristic does this show?",
         options: [
             "Vagueness",
@@ -3695,7 +2556,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 103,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "When writing for an audience of medical professionals, a writer uses specialized terminology. When writing for general readers, the writer explains those terms. What is the writer adapting to?",
         options: [
             "The writer's personal preference",
@@ -3708,7 +2569,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 104,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "A social media post uses emojis, hashtags, and images along with text. How many modes of communication are being used?",
         options: [
             "One mode only",
@@ -3721,7 +2582,7 @@ const komunikasyonQuestions = [
     },
     {
         id: 105,
-        subject: "komunikasyon",
+        subject: "effective-comm",
         question: "When evaluating a viral news story, a student checks the source, date, and supporting evidence. What skill is the student demonstrating?",
         options: [
             "Blind acceptance",
@@ -3734,12 +2595,2018 @@ const komunikasyonQuestions = [
     }
 ];
 
+// Mabisang Komunikasyon Questions - Second Term First Summative
+const komunikasyonQuestions = [
+    // I. Mga Uri ng Paglalahad (Questions 1-6)
+    {
+        id: 1,
+        subject: "komunikasyon",
+        question: "Anong uri ng paglalahad ay nagpapakita ng espesyalisadong impormasyon at paglalahad sa mga komplikadong proseso?",
+        options: [
+            "Dyornalistik na Pagsulat",
+            "Teknikal na Paglalahad",
+            "Malikhaing Pagsulat",
+            "Propesyonal na Pagsulat"
+        ],
+        correct: 1,
+        rationale: "Teknikal na Paglalahad ay nagpapakita ng espesyalisadong impormasyon at paglalahad sa mga komplikadong proseso."
+    },
+    {
+        id: 2,
+        subject: "komunikasyon",
+        question: "Aling uri ng paglalahad ay tumutukoy sa mga sanggunian o pinagkukunan ng datos?",
+        options: [
+            "Referensyal na Paglalahad",
+            "Teknikal na Paglalahad",
+            "Akademikong Pagsulat",
+            "Malikhaing Pagsulat"
+        ],
+        correct: 0,
+        rationale: "Referensyal na Paglalahad ay tumutukoy sa mga sanggunian o pinagkukunan ng datos."
+    },
+    {
+        id: 3,
+        subject: "komunikasyon",
+        question: "Anong uri ng pagsulat ay tumutukoy sa pamamahayag o pagbabalita?",
+        options: [
+            "Dyornalistik na Pagsulat",
+            "Propesyonal na Pagsulat",
+            "Malikhaing Pagsulat",
+            "Akademikong Pagsulat"
+        ],
+        correct: 0,
+        rationale: "Dyornalistik na Pagsulat ay tumutukoy sa pamamahayag o pagbabalita."
+    },
+    {
+        id: 4,
+        subject: "komunikasyon",
+        question: "Aling uri ng pagsulat ay intelektuwal na sulating ginagamit sa paaralan, tesis, at pagsusuri ng datos?",
+        options: [
+            "Malikhaing Pagsulat",
+            "Propesyonal na Pagsulat",
+            "Akademikong Pagsulat",
+            "Dyornalistik na Pagsulat"
+        ],
+        correct: 2,
+        rationale: "Akademikong Pagsulat ay intelektuwal na sulating ginagamit sa paaralan, tesis, at pagsusuri ng datos at kalidad ng kaalaman."
+    },
+    {
+        id: 5,
+        subject: "komunikasyon",
+        question: "Anong uri ng pagsulat ay nagpapakita ng masining na pagpapahayag, imahinasyon, at damdamin ng mga mambabasa?",
+        options: [
+            "Akademikong Pagsulat",
+            "Malikhaing Pagsulat",
+            "Propesyonal na Pagsulat",
+            "Referensyal na Paglalahad"
+        ],
+        correct: 1,
+        rationale: "Malikhaing Pagsulat ay masining na pagpapahayag na nagpapakita ng imahinasyon at damdamin ng mga mambabasa."
+    },
+    {
+        id: 6,
+        subject: "komunikasyon",
+        question: "Aling uri ng pagsulat ay pormal na komunikasyon na may eksklusibo o direksiyong kailangang sundin sa isang tiyak na larangan ng trabaho?",
+        options: [
+            "Dyornalistik na Pagsulat",
+            "Propesyonal na Pagsulat",
+            "Malikhaing Pagsulat",
+            "Referensyal na Paglalahad"
+        ],
+        correct: 1,
+        rationale: "Propesyonal na Pagsulat ay pormal na komunikasyon na may direksiyong kailangang sundin sa isang tiyak na larangan ng trabaho."
+    },
+
+    // II. Katangian at Proseso ng Pagsulat (Questions 7-15)
+    {
+        id: 7,
+        subject: "komunikasyon",
+        question: "Ano ang pangunahing katangian ng isang mabuting pagsulat ukol sa personal na opinyon?",
+        options: [
+            "Hindi personal sa opinyon; dapat may batayan o ebidensya",
+            "Dapat laging nakabatay sa damdamin",
+            "Hindi kailangan ng ebidensya",
+            "Dapat hindi direkta"
+        ],
+        correct: 0,
+        rationale: "Ang mabuting pagsulat ay hindi personal sa opinyon at dapat may batayan o ebidensya."
+    },
+    {
+        id: 8,
+        subject: "komunikasyon",
+        question: "Alin sa mga sumusunod ang hindi katangian ng mabuting pagsulat?",
+        options: [
+            "Direkta",
+            "Nakabatay sa katotohanan",
+            "Batay sa karanasan",
+            "Nakabatay lamang sa hinuha"
+        ],
+        correct: 3,
+        rationale: "Ang mabuting pagsulat ay direkta, nakabatay sa katotohanan, at batay sa karanasan, hindi sa hinuha lamang."
+    },
+    {
+        id: 9,
+        subject: "komunikasyon",
+        question: "Ano ang unang hakbang sa proseso ng pagsulat?",
+        options: [
+            "Pagsusulat",
+            "Pagrebisa",
+            "Pagpaplano",
+            "Balangkas"
+        ],
+        correct: 2,
+        rationale: "Ang unang hakbang sa proseso ng pagsulat ay Pagpaplano kung saan kinikilala ang objectives, context, at layunin."
+    },
+    {
+        id: 10,
+        subject: "komunikasyon",
+        question: "Sa pagpaplano, ano ang dapat unang tukuyin?",
+        options: [
+            "Ang mga salitang gagamitin",
+            "Ang layunin at konteksto",
+            "Ang haba ng dokumento",
+            "Ang format ng pagsulat"
+        ],
+        correct: 1,
+        rationale: "Sa pagpaplano, dapat unang tukuyin ang layunin at konteksto ng pagsulat."
+    },
+    {
+        id: 11,
+        subject: "komunikasyon",
+        question: "Anong bahagi ng proseso ang kabilang ang panimula, katawan, at pag-uugnay?",
+        options: [
+            "Pagpaplano",
+            "Balangkas",
+            "Pagsusulat",
+            "Pagrebisa"
+        ],
+        correct: 1,
+        rationale: "Ang Balangkas ay binubuo ng panimula, katawan, at pag-uugnay."
+    },
+    {
+        id: 12,
+        subject: "komunikasyon",
+        question: "Alin sa mga sumusunod ay isang paraan ng pagsulat?",
+        options: [
+            "Pagbibigay-depinisyon",
+            "Pagtulog",
+            "Pagkain",
+            "Paglalaro"
+        ],
+        correct: 0,
+        rationale: "Ang Pagbibigay-depinisyon ay isa sa mga paraan ng pagsulat."
+    },
+    {
+        id: 13,
+        subject: "komunikasyon",
+        question: "Ano ang ibig sabihin ng enumerasyon bilang paraan ng pagsulat?",
+        options: [
+            "Pagbibigay ng kahulugan",
+            "Pagtatala ng mga item o puntos",
+            "Pagsulat ng kwento",
+            "Pagsulat ng tula"
+        ],
+        correct: 1,
+        rationale: "Ang enumerasyon ay pagtatala ng mga item o puntos."
+    },
+    {
+        id: 14,
+        subject: "komunikasyon",
+        question: "Alin sa mga sumusunod ay isang paraan na nagpapakita ng sanhi at bunga?",
+        options: [
+            "Direktang sipi",
+            "Paraphrasing",
+            "Sanhi at bunga",
+            "Lagom"
+        ],
+        correct: 2,
+        rationale: "Ang Sanhi at bunga ay isang paraan na nagpapakita ng ugat at resulta ng isang pangyayari."
+    },
+    {
+        id: 15,
+        subject: "komunikasyon",
+        question: "Ano ang ibig sabihin ng paraphrasing?",
+        options: [
+            "Kopyahin nang eksakto ang mga salita",
+            "Sabihin nang sariling mga salita ang ibig sabihin",
+            "Maglagay ng tala",
+            "Magsumite ng buod"
+        ],
+        correct: 1,
+        rationale: "Ang paraphrasing ay pagsasabi ng ibig sabihin nang sariling mga salita."
+    },
+
+    // III. Akademikong Pagsulat (Questions 16-20)
+    {
+        id: 16,
+        subject: "komunikasyon",
+        question: "Ano ang kahulugan ng Akademikong Pagsulat?",
+        options: [
+            "Pormal na uri ng pagsulat na gumagamit ng mataas na antas ng wika",
+            "Impormal na uri ng pagsulat",
+            "Pagsulat na gumagamit ng balbal",
+            "Pagsulat na wala istruktura"
+        ],
+        correct: 0,
+        rationale: "Akademikong Pagsulat ay pormal na uri ng pagsulat na gumagamit ng mataas na antas ng wika at may sinusunod na istruktura."
+    },
+    {
+        id: 17,
+        subject: "komunikasyon",
+        question: "Ano ang pangunahing katangian ng Akademikong Pagsulat ukol sa wika?",
+        options: [
+            "Pormal: Hindi gumagamit ng kolokyal o balbal na salita",
+            "Impormal: Gumagamit ng sleng",
+            "Kolokyal: Gumagamit ng pang-araw-araw na salita",
+            "Balbal: Gumagamit ng impormal na salita"
+        ],
+        correct: 0,
+        rationale: "Ang Akademikong Pagsulat ay pormal at hindi gumagamit ng kolokyal o balbal na salita."
+    },
+    {
+        id: 18,
+        subject: "komunikasyon",
+        question: "Bakit mahalaga ang pananagutan sa Akademikong Pagsulat?",
+        options: [
+            "Kinikilala ang mga pinagkunan ng impormasyon (citation/bibliograpiya)",
+            "Hindi na kailangan ng mga pinagkunan",
+            "Pinapayagan ang pag-plagiarism",
+            "Hindi mahalaga"
+        ],
+        correct: 0,
+        rationale: "Ang pananagutan ay mahalaga dahil kinikilala ang mga pinagkunan ng impormasyon sa pamamagitan ng citation at bibliograpiya."
+    },
+    {
+        id: 19,
+        subject: "komunikasyon",
+        question: "Ano ang ibig sabihin na 'obhetibo' sa Akademikong Pagsulat?",
+        options: [
+            "Nakabatay sa personal na opinyon lamang",
+            "Nakabatay sa katotohanan (facts) at hindi sa personal na opinyon lamang",
+            "Nakabatay sa damdamin",
+            "Nakabatay sa hinuha"
+        ],
+        correct: 1,
+        rationale: "Ang obhetibo ay nakabatay sa katotohanan at hindi sa personal na opinyon lamang."
+    },
+    {
+        id: 20,
+        subject: "komunikasyon",
+        question: "Ano ang ibig sabihin na 'malinaw at tumpak' sa Akademikong Pagsulat?",
+        options: [
+            "Direkta sa punto at may lohikal na organisasyon",
+            "Malabo at walang organisasyon",
+            "Mahaba at walang punto",
+            "Personal at damdamin"
+        ],
+        correct: 0,
+        rationale: "Ang malinaw at tumpak ay direkta sa punto at may lohikal na organisasyon."
+    },
+
+    // IV. Panel Discussion (Questions 21-30)
+    {
+        id: 21,
+        subject: "komunikasyon",
+        question: "Ano ang Panel Discussion o Talakayang Panel?",
+        options: [
+            "Pormal na diskusyon kung saan ang mga eksperto ay nag-uusap tungkol sa isang paksa",
+            "Impormal na usapan",
+            "Debate kung saan nag-aaway ang mga tao",
+            "Individual na presentation"
+        ],
+        correct: 0,
+        rationale: "Ang Panel Discussion ay pormal na diskusyon kung saan ang mga eksperto ay nag-uusap tungkol sa isang paksa sa harap ng madla."
+    },
+    {
+        id: 22,
+        subject: "komunikasyon",
+        question: "Sino ang pinakamahalagang tauhan sa Panel Discussion?",
+        options: [
+            "Moderator (Tagapamagitan)",
+            "Panelists",
+            "Audience",
+            "Guest"
+        ],
+        correct: 0,
+        rationale: "Ang Moderator ay pinakamahalagang tauhan dahil siya ang nagpapakilala, nagtatanong, at nagpapanatili ng kaayusan."
+    },
+    {
+        id: 23,
+        subject: "komunikasyon",
+        question: "Ano ang papel ng Moderator sa Panel Discussion?",
+        options: [
+            "Nagpapakilala sa mga panelists, nagtatanong, nagpapanatili ng kaayusan, at naglalagom",
+            "Tumutugot lamang sa tanong",
+            "Hindi nagsasalita",
+            "Nag-aaway sa panelists"
+        ],
+        correct: 0,
+        rationale: "Ang Moderator ay nagpapakilala sa mga panelists, nagtatanong, nagpapanatili ng kaayusan, at naglalagom ng napag-usapan."
+    },
+    {
+        id: 24,
+        subject: "komunikasyon",
+        question: "Sino ang mga Panelists sa Panel Discussion?",
+        options: [
+            "Mga taong may malalim na kaalaman sa paksa na sumasagot sa mga tanong",
+            "Mga ordinaryong tao",
+            "Mga bata",
+            "Mga bisita"
+        ],
+        correct: 0,
+        rationale: "Ang mga Panelists ay mga taong may malalim na kaalaman sa paksa na sumasagot sa mga tanong."
+    },
+    {
+        id: 25,
+        subject: "komunikasyon",
+        question: "Ilang Panelists ang karaniwang binubuo ng isang Panel Discussion?",
+        options: [
+            "3 hanggang 5 katao",
+            "1 tao lamang",
+            "10 katao",
+            "20 katao"
+        ],
+        correct: 0,
+        rationale: "Karaniwang binubuo ng 3 hanggang 5 katao ang mga Panelists sa isang Panel Discussion."
+    },
+    {
+        id: 26,
+        subject: "komunikasyon",
+        question: "Sino ang Audience sa Panel Discussion?",
+        options: [
+            "Mga nakikinig na maaaring ding magtanong sa huling bahagi",
+            "Mga Panelists",
+            "Moderator",
+            "Host"
+        ],
+        correct: 0,
+        rationale: "Ang Audience ay mga nakikinig na maaaring ding magtanong sa huling bahagi ng talakayan (Q&A session)."
+    },
+    {
+        id: 27,
+        subject: "komunikasyon",
+        question: "Ano ang layunin ng Panel Discussion?",
+        options: [
+            "Magbigay ng iba't ibang pananaw at malalim na impormasyon ukol sa isang isyu",
+            "Mag-away ang mga panelists",
+            "Mag-entertain lamang",
+            "Magpersonal na opinyon"
+        ],
+        correct: 0,
+        rationale: "Ang layunin ng Panel Discussion ay magbigay ng iba't ibang pananaw at malalim na impormasyon ukol sa isang isyu."
+    },
+    {
+        id: 28,
+        subject: "komunikasyon",
+        question: "Ano ang nangyayari sa Q&A session ng Panel Discussion?",
+        options: [
+            "Ang audience ay pwedeng magtanong sa mga panelists",
+            "Nag-aaway ang mga panelists",
+            "Umalis ang audience",
+            "Wala nang nangyayari"
+        ],
+        correct: 0,
+        rationale: "Sa Q&A session, ang audience ay pwedeng magtanong sa mga panelists."
+    },
+    {
+        id: 29,
+        subject: "komunikasyon",
+        question: "Paano naiiba ang Panel Discussion sa Debate?",
+        options: [
+            "Sa Panel Discussion, hindi nag-aaway o nagtatalo ang mga panelists; nagtutulungan silang magbahagi ng kaalaman",
+            "Sa Panel Discussion, nag-aaway ang mga panelists",
+            "Sa Debate, nagtutulungan ang mga participants",
+            "Walang pagkakaiba"
+        ],
+        correct: 0,
+        rationale: "Sa Panel Discussion, hindi nag-aaway o nagtatalo ang mga panelists; nagtutulungan silang magbahagi ng kaalaman at magbigay-linaw."
+    },
+    {
+        id: 30,
+        subject: "komunikasyon",
+        question: "Bakit itinuturing na impormatibong aktibidad ang Panel Discussion kapag ginagamit sa akademikong konteksto?",
+        options: [
+            "Dahil ang mga panelists ay nagtutulungan upang magbahagi ng kaalaman at magbigay-linaw sa isang akademikong paksa",
+            "Dahil nag-aaway sila",
+            "Dahil personal lang ang paksa",
+            "Dahil hindi ito pormal"
+        ],
+        correct: 0,
+        rationale: "Ang Panel Discussion ay itinuturing na impormatibong aktibidad dahil ang mga panelists ay nagtutulungan upang magbahagi ng kaalaman at magbigay-linaw sa isang akademikong paksa."
+    },
+
+    // V. Impormatibong Pagsulat (Questions 31-45)
+    {
+        id: 31,
+        subject: "komunikasyon",
+        question: "Ano ang Impormatibong Pagsulat o Tekstong Impormatibo?",
+        options: [
+            "Uri ng teksto na naglalayong magbigay ng malinaw, tumpak, at walang kinikilingang impormasyon",
+            "Uri ng teksto na nagpapakita ng personal na opinyon",
+            "Uri ng teksto na nag-e-entertain",
+            "Uri ng teksto na nag-aaway"
+        ],
+        correct: 0,
+        rationale: "Ang Impormatibong Pagsulat ay uri ng teksto na naglalayong magbigay ng malinaw, tumpak, at walang kinikilingang impormasyon."
+    },
+    {
+        id: 32,
+        subject: "komunikasyon",
+        question: "Ano ang layunin ng Impormatibong Pagsulat?",
+        options: [
+            "Magpaliwanag at magdagdag ng kaalaman sa mambabasa nang hindi nagpapakita ng personal na pagkiling (bias)",
+            "Magpakita ng personal na opinyon",
+            "Mag-entertain",
+            "Mag-away"
+        ],
+        correct: 0,
+        rationale: "Ang layunin ng Impormatibong Pagsulat ay magpaliwanag at magdagdag ng kaalaman nang hindi nagpapakita ng personal na pagkiling."
+    },
+    {
+        id: 33,
+        subject: "komunikasyon",
+        question: "Ano ang Paghahambing bilang bahagi ng Impormatibong Pagsulat?",
+        options: [
+            "Pagpapakita ng pagkakatulad at pagkakaiba",
+            "Pagbibigay ng kahulugan",
+            "Pagsulat ng kwento",
+            "Pagsulat ng tula"
+        ],
+        correct: 0,
+        rationale: "Ang Paghahambing ay pagpapakita ng pagkakatulad at pagkakaiba."
+    },
+    {
+        id: 34,
+        subject: "komunikasyon",
+        question: "Ano ang Sanhi at Bunga bilang bahagi ng Impormatibong Pagsulat?",
+        options: [
+            "Pagpapaliwanag kung bakit nangyari ang isang bagay at ano ang naging resulta nito",
+            "Pagbibigay ng kahulugan",
+            "Pagsulat ng kwento",
+            "Pagsulat ng tula"
+        ],
+        correct: 0,
+        rationale: "Ang Sanhi at Bunga ay pagpapaliwanag kung bakit nangyari ang isang bagay at ano ang naging resulta nito."
+    },
+    {
+        id: 35,
+        subject: "komunikasyon",
+        question: "Ano ang Pagbibigay-depinisyon bilang bahagi ng Impormatibong Pagsulat?",
+        options: [
+            "Pagpapaliwanag ng kahulugan ng isang partikular na termino o konsepto",
+            "Paghahambing",
+            "Sanhi at bunga",
+            "Pagsusuri"
+        ],
+        correct: 0,
+        rationale: "Ang Pagbibigay-depinisyon ay pagpapaliwanag ng kahulugan ng isang partikular na termino o konsepto."
+    },
+    {
+        id: 36,
+        subject: "komunikasyon",
+        question: "Ano ang Pagsusuri (Pag-iisa-isa) bilang bahagi ng Impormatibong Pagsulat?",
+        options: [
+            "Paghihimay-himay ng mga detalye ng isang paksa",
+            "Pagbibigay ng kahulugan",
+            "Paghahambing",
+            "Sanhi at bunga"
+        ],
+        correct: 0,
+        rationale: "Ang Pagsusuri o Pag-iisa-isa ay paghihimay-himay ng mga detalye ng isang paksa."
+    },
+    {
+        id: 37,
+        subject: "komunikasyon",
+        question: "Bakit mahalaga na walang kinikilingan (bias) ang Impormatibong Pagsulat?",
+        options: [
+            "Para sa malinaw at makatotohanang impormasyon",
+            "Para sa personal na opinyon",
+            "Para sa entertainment",
+            "Para sa pag-away"
+        ],
+        correct: 0,
+        rationale: "Mahalaga na walang kinikilingan ang Impormatibong Pagsulat para sa malinaw at makatotohanang impormasyon."
+    },
+    {
+        id: 38,
+        subject: "komunikasyon",
+        question: "Anong uri ng teksto ang isang encyclopedia entry?",
+        options: [
+            "Impormatibong Pagsulat",
+            "Malikhaing Pagsulat",
+            "Dyornalistik na Pagsulat",
+            "Propesyonal na Pagsulat"
+        ],
+        correct: 0,
+        rationale: "Ang encyclopedia entry ay halimbawa ng Impormatibong Pagsulat dahil nagbibigay ito ng impormasyon nang walang bias."
+    },
+    {
+        id: 39,
+        subject: "komunikasyon",
+        question: "Anong uri ng teksto ang isang news report?",
+        options: [
+            "Dyornalistik na Pagsulat",
+            "Malikhaing Pagsulat",
+            "Akademikong Pagsulat",
+            "Propesyonal na Pagsulat"
+        ],
+        correct: 0,
+        rationale: "Ang news report ay halimbawa ng Dyornalistik na Pagsulat dahil ito ay pamamahayag o pagbabalita."
+    },
+    {
+        id: 40,
+        subject: "komunikasyon",
+        question: "Anong uri ng teksto ang isang business email?",
+        options: [
+            "Propesyonal na Pagsulat",
+            "Malikhaing Pagsulat",
+            "Akademikong Pagsulat",
+            "Dyornalistik na Pagsulat"
+        ],
+        correct: 0,
+        rationale: "Ang business email ay halimbawa ng Propesyonal na Pagsulat dahil ito ay pormal na komunikasyon sa trabaho."
+    },
+    {
+        id: 41,
+        subject: "komunikasyon",
+        question: "Anong uri ng teksto ang isang short story?",
+        options: [
+            "Malikhaing Pagsulat",
+            "Akademikong Pagsulat",
+            "Dyornalistik na Pagsulat",
+            "Propesyonal na Pagsulat"
+        ],
+        correct: 0,
+        rationale: "Ang short story ay halimbawa ng Malikhaing Pagsulat dahil ito ay nagpapakita ng imahinasyon at damdamin."
+    },
+    {
+        id: 42,
+        subject: "komunikasyon",
+        question: "Anong uri ng teksto ang isang research paper?",
+        options: [
+            "Akademikong Pagsulat",
+            "Malikhaing Pagsulat",
+            "Dyornalistik na Pagsulat",
+            "Propesyonal na Pagsulat"
+        ],
+        correct: 0,
+        rationale: "Ang research paper ay halimbawa ng Akademikong Pagsulat dahil ito ay intelektuwal na sulating ginagamit sa paaralan at pagsusuri ng datos."
+    },
+    {
+        id: 43,
+        subject: "komunikasyon",
+        question: "Anong uri ng teksto ang isang user manual?",
+        options: [
+            "Teknikal na Paglalahad",
+            "Malikhaing Pagsulat",
+            "Dyornalistik na Pagsulat",
+            "Propesyonal na Pagsulat"
+        ],
+        correct: 0,
+        rationale: "Ang user manual ay halimbawa ng Teknikal na Paglalahad dahil ito ay nagpapakita ng espesyalisadong impormasyon sa paggamit ng produkto."
+    },
+    {
+        id: 44,
+        subject: "komunikasyon",
+        question: "Anong uri ng teksto ang isang bibliography?",
+        options: [
+            "Referensyal na Paglalahad",
+            "Malikhaing Pagsulat",
+            "Dyornalistik na Pagsulat",
+            "Propesyonal na Pagsulat"
+        ],
+        correct: 0,
+        rationale: "Ang bibliography ay halimbawa ng Referensyal na Paglalahad dahil ito ay mga sanggunian o pinagkukunan ng datos."
+    },
+    {
+        id: 45,
+        subject: "komunikasyon",
+        question: "Ano ang koneksyon sa pagitan ng Panel Discussion at Impormatibong Pagsulat?",
+        options: [
+            "Ang Panel Discussion ay isang impormatibong akademikong gawain na nagbibigay ng kaalaman",
+            "Wala silang koneksyon",
+            "Ang Panel Discussion ay creative writing",
+            "Ang Panel Discussion ay dyornalistik"
+        ],
+        correct: 0,
+        rationale: "Ang Panel Discussion ay isang impormatibong akademikong gawain na nagbibigay ng kaalaman at magbigay-linaw sa isang paksa."
+    },
+
+    // Alternative questions for Mabisang Komunikasyon
+    {
+        id: 101,
+        subject: "komunikasyon",
+        question: "Kung ang isang dokumento ay nagpapakita ng mga hakbang sa pag-install ng software, anong uri ng paglalahad ito?",
+        options: [
+            "Teknikal na Paglalahad",
+            "Dyornalistik na Pagsulat",
+            "Malikhaing Pagsulat",
+            "Akademikong Pagsulat"
+        ],
+        correct: 0,
+        rationale: "Ang dokumento na nagpapakita ng mga hakbang sa pag-install ay Teknikal na Paglalahad dahil ito ay espesyalisadong impormasyon sa komplikadong proseso."
+    },
+    {
+        id: 102,
+        subject: "komunikasyon",
+        question: "Kung ang isang artikulo ay naglalayong magpaliwanag ng konsepto ng climate change nang walang personal na opinyon, anong uri ito?",
+        options: [
+            "Impormatibong Pagsulat",
+            "Malikhaing Pagsulat",
+            "Dyornalistik na Pagsulat",
+            "Propesyonal na Pagsulat"
+        ],
+        correct: 0,
+        rationale: "Ang artikulong nagpapaliwanag ng konsepto nang walang personal na opinyon ay Impormatibong Pagsulat."
+    },
+    {
+        id: 103,
+        subject: "komunikasyon",
+        question: "Sa isang Panel Discussion tungkol sa mental health, sino ang nagsisiguro na pantay ang pagkakataon ng bawat panelist na magsalita?",
+        options: [
+            "Moderator",
+            "Panelists",
+            "Audience",
+            "Host"
+        ],
+        correct: 0,
+        rationale: "Ang Moderator ang nagsisiguro na pantay ang pagkakataon ng bawat panelist na magsalita at nagpapanatili ng kaayusan."
+    },
+    {
+        id: 104,
+        subject: "komunikasyon",
+        question: "Anong paraan ng pagsulat ang gumagamit ng sariling mga salita para sabihin ang ibig sabihin ng isang teksto?",
+        options: [
+            "Paraphrasing",
+            "Direktang sipi",
+            "Enumerasyon",
+            "Lagom"
+        ],
+        correct: 0,
+        rationale: "Ang Paraphrasing ay paggamit ng sariling mga salita para sabihin ang ibig sabihin ng isang teksto."
+    },
+    {
+        id: 105,
+        subject: "komunikasyon",
+        question: "Bakit hindi dapat gumamit ng balbal na salita sa Akademikong Pagsulat?",
+        options: [
+            "Dahil ito ay pormal na uri ng pagsulat na nangangailangan ng mataas na antas ng wika",
+            "Dahil okay lang ang balbal",
+            "Dahil mas mabuti ang balbal",
+            "Dahil wala nang ibang salita"
+        ],
+        correct: 0,
+        rationale: "Ang Akademikong Pagsulat ay pormal na uri ng pagsulat na nangangailangan ng mataas na antas ng wika at hindi gumagamit ng balbal."
+    }
+];
+
+// Life and Career Questions - Second Term First Summative
+const lifeCareerQuestions = [
+    // I. Skills (Questions 1-6)
+    {
+        id: 1,
+        subject: "life-career",
+        question: "What are skills acquired through formal education and training called?",
+        options: [
+            "Soft Skills",
+            "Hard Skills",
+            "Natural Abilities",
+            "Hobbies"
+        ],
+        correct: 1,
+        rationale: "Hard Skills are learnable knowledge and abilities acquired through formal education and training."
+    },
+    {
+        id: 2,
+        subject: "life-career",
+        question: "Which type of skills refers to character traits and interpersonal qualities?",
+        options: [
+            "Hard Skills",
+            "Soft Skills",
+            "Technical Skills",
+            "Academic Skills"
+        ],
+        correct: 1,
+        rationale: "Soft Skills refer to character traits and interpersonal qualities like communication, teamwork, and adaptability."
+    },
+    {
+        id: 3,
+        subject: "life-career",
+        question: "Programming, accounting, and foreign language proficiency are examples of which type of skills?",
+        options: [
+            "Soft Skills",
+            "Hard Skills",
+            "Natural Abilities",
+            "Personality Traits"
+        ],
+        correct: 1,
+        rationale: "Programming, accounting, and foreign language proficiency are learnable hard skills."
+    },
+    {
+        id: 4,
+        subject: "life-career",
+        question: "Communication, teamwork, and problem-solving are examples of which type of skills?",
+        options: [
+            "Hard Skills",
+            "Soft Skills",
+            "Technical Skills",
+            "Academic Knowledge"
+        ],
+        correct: 1,
+        rationale: "Communication, teamwork, and problem-solving are soft skills related to character and interpersonal qualities."
+    },
+    {
+        id: 5,
+        subject: "life-career",
+        question: "Why are both hard skills and soft skills important for career success?",
+        options: [
+            "Only hard skills matter in the workplace",
+            "Only soft skills matter in the workplace",
+            "Hard skills get you hired, soft skills help you succeed and advance",
+            "Neither is important"
+        ],
+        correct: 2,
+        rationale: "Hard skills qualify you for jobs, while soft skills help you work effectively with others and advance in your career."
+    },
+    {
+        id: 6,
+        subject: "life-career",
+        question: "Which skill type is typically harder to teach or train?",
+        options: [
+            "Hard Skills",
+            "Soft Skills",
+            "Both are equally easy to teach",
+            "Neither can be taught"
+        ],
+        correct: 1,
+        rationale: "Soft skills are typically harder to teach as they involve personality, behavior, and interpersonal dynamics."
+    },
+
+    // II. Influences (Questions 7-15)
+    {
+        id: 7,
+        subject: "life-career",
+        question: "What does 'student influence' refer to in career decision-making?",
+        options: [
+            "Student's height and weight",
+            "Motivating factors and sets of likes and dislikes",
+            "Student's family background only",
+            "Student's school location"
+        ],
+        correct: 1,
+        rationale: "Student influence refers to motivating factors and the student's personal likes and dislikes that affect career choices."
+    },
+    {
+        id: 8,
+        subject: "life-career",
+        question: "How can peer pressure affect career choices?",
+        options: [
+            "Friends can encourage or discourage certain career paths",
+            "Friends have no influence on career choices",
+            "Peer pressure always leads to bad career decisions",
+            "Peer pressure only affects school grades"
+        ],
+        correct: 0,
+        rationale: "Friends can encourage or discourage certain career paths through their opinions and examples."
+    },
+    {
+        id: 9,
+        subject: "life-career",
+        question: "What are community norms?",
+        options: [
+            "Individual preferences",
+            "Community values and local economic possibilities that may impact career choices",
+            "School rules only",
+            "Government laws"
+        ],
+        correct: 1,
+        rationale: "Community norms are community values and local economic possibilities that influence career choices."
+    },
+    {
+        id: 10,
+        subject: "life-career",
+        question: "How does school influence career decisions?",
+        options: [
+            "School has no influence on career",
+            "School performance and experiences can expose students to various fields",
+            "School only teaches math and science",
+            "School forces students into specific careers"
+        ],
+        correct: 1,
+        rationale: "School performance and experiences expose students to various fields and influence their career interests."
+    },
+    {
+        id: 11,
+        subject: "life-career",
+        question: "If a community values entrepreneurship, how might this affect career choices?",
+        options: [
+            "Students will avoid business careers",
+            "Students may be more inclined to start their own businesses",
+            "Community values never affect career choices",
+            "Students will only choose government jobs"
+        ],
+        correct: 1,
+        rationale: "Community values like entrepreneurship can make students more inclined to pursue business careers."
+    },
+    {
+        id: 12,
+        subject: "life-career",
+        question: "What is a positive effect of peer influence on career choices?",
+        options: [
+            "Peer pressure always leads to poor decisions",
+            "Friends can inspire and motivate each other to pursue meaningful careers",
+            "Friends only discourage career ambitions",
+            "Peer influence has no positive effects"
+        ],
+        correct: 1,
+        rationale: "Positive peer influence can inspire and motivate students to pursue meaningful careers."
+    },
+    {
+        id: 13,
+        subject: "life-career",
+        question: "How might a student's personal interests influence their career choice?",
+        options: [
+            "Personal interests have no effect on career",
+            "Students tend to choose careers aligned with their interests and passions",
+            "Students always choose careers opposite to their interests",
+            "Interests only affect hobbies, not careers"
+        ],
+        correct: 1,
+        rationale: "Students tend to choose careers aligned with their interests and passions."
+    },
+    {
+        id: 14,
+        subject: "life-career",
+        question: "What role do teachers play in career influence?",
+        options: [
+            "Teachers have no role in career decisions",
+            "Teachers can identify student strengths and suggest suitable career paths",
+            "Teachers only teach academic subjects",
+            "Teachers discourage career exploration"
+        ],
+        correct: 1,
+        rationale: "Teachers can identify student strengths and suggest suitable career paths based on their observations."
+    },
+    {
+        id: 15,
+        subject: "life-career",
+        question: "How does family background influence career choices?",
+        options: [
+            "Family has no influence on career",
+            "Family values, traditions, and practical concerns shape career perspectives",
+            "Family only influences where you live",
+            "Family influence is always negative"
+        ],
+        correct: 1,
+        rationale: "Family values, traditions, and practical concerns shape a student's career perspectives and choices."
+    },
+
+    // III. Important Terms (Questions 16-20)
+    {
+        id: 16,
+        subject: "life-career",
+        question: "What does 'influence' mean in the context of career planning?",
+        options: [
+            "To ignore others",
+            "To affect or inspire others' decisions and actions",
+            "To force someone to do something",
+            "To have no effect"
+        ],
+        correct: 1,
+        rationale: "Influence means to affect or inspire others' decisions and actions in a positive or negative way."
+    },
+    {
+        id: 17,
+        subject: "life-career",
+        question: "What is the definition of 'career'?",
+        options: [
+            "A temporary job",
+            "A profession or occupation undertaken for a significant period of life",
+            "A hobby",
+            "A school subject"
+        ],
+        correct: 1,
+        rationale: "A career is a profession or occupation undertaken for a significant period of a person's life."
+    },
+    {
+        id: 18,
+        subject: "life-career",
+        question: "What does 'planning' involve in career development?",
+        options: [
+            "Doing nothing and waiting",
+            "Setting goals and creating strategies to achieve them",
+            "Randomly choosing a job",
+            "Copying others' choices"
+        ],
+        correct: 1,
+        rationale: "Planning involves setting goals and creating strategies to achieve career objectives."
+    },
+    {
+        id: 19,
+        subject: "life-career",
+        question: "What does 'social' mean in career contexts?",
+        options: [
+            "Being alone",
+            "Relating to people and interpersonal interactions",
+            "Using social media only",
+            "Being antisocial"
+        ],
+        correct: 1,
+        rationale: "Social relates to people and interpersonal interactions in career and work environments."
+    },
+    {
+        id: 20,
+        subject: "life-career",
+        question: "What are family expectations in career planning?",
+        options: [
+            "Forced career choices",
+            "Values, traditions, and practical concerns that families pass down",
+            "Ignored by children",
+            "Only about money"
+        ],
+        correct: 1,
+        rationale: "Family expectations are values, traditions, and practical concerns that influence career perspectives."
+    },
+
+    // IV. Environmental Influence - Job Market Demand (Questions 21-24)
+    {
+        id: 21,
+        subject: "life-career",
+        question: "What does job market demand refer to?",
+        options: [
+            "The availability of jobs in specific industries",
+            "The number of schools",
+            "The population size",
+            "The weather conditions"
+        ],
+        correct: 0,
+        rationale: "Job market demand refers to the availability of jobs in specific industries."
+    },
+    {
+        id: 22,
+        subject: "life-career",
+        question: "Why is it important to consider job market demand when choosing a career?",
+        options: [
+            "It's not important",
+            "It affects employment opportunities and job security",
+            "It only affects salary",
+            "It only affects location"
+        ],
+        correct: 1,
+        rationale: "Job market demand affects employment opportunities and job security in chosen careers."
+    },
+    {
+        id: 23,
+        subject: "life-career",
+        question: "What happens to career opportunities in a declining industry?",
+        options: [
+            "Opportunities increase",
+            "Opportunities decrease and competition becomes more intense",
+            "Opportunities stay the same",
+            "Only salary decreases"
+        ],
+        correct: 1,
+        rationale: "In declining industries, opportunities decrease and competition becomes more intense."
+    },
+    {
+        id: 24,
+        subject: "life-career",
+        question: "Which careers are likely growing in job market demand today?",
+        options: [
+            "Typewriter repair",
+            "Technology, healthcare, and renewable energy",
+            "Only traditional manufacturing",
+            "Only agriculture"
+        ],
+        correct: 1,
+        rationale: "Technology, healthcare, and renewable energy are growing sectors with high job market demand."
+    },
+
+    // V. Environmental Influence - Technology and AI (Questions 25-28)
+    {
+        id: 25,
+        subject: "life-career",
+        question: "How is technology and AI affecting careers?",
+        options: [
+            "Technology has no effect on careers",
+            "The rise of automation and AI is creating new jobs while changing others",
+            "Technology only destroys jobs",
+            "AI only affects computer programmers"
+        ],
+        correct: 1,
+        rationale: "Technology and AI are creating new jobs while transforming or eliminating others."
+    },
+    {
+        id: 26,
+        subject: "life-career",
+        question: "What is a positive impact of AI on careers?",
+        options: [
+            "AI has no positive impacts",
+            "AI creates new job opportunities in tech and data fields",
+            "AI only takes jobs away",
+            "AI only affects manufacturing"
+        ],
+        correct: 1,
+        rationale: "AI creates new job opportunities in technology, data analysis, and AI-related fields."
+    },
+    {
+        id: 27,
+        subject: "life-career",
+        question: "How can students prepare for careers affected by AI?",
+        options: [
+            "Ignore technology completely",
+            "Develop adaptability and learn new technologies continuously",
+            "Focus only on manual labor",
+            "Avoid learning about AI"
+        ],
+        correct: 1,
+        rationale: "Students should develop adaptability and continuously learn new technologies to prepare for AI-affected careers."
+    },
+    {
+        id: 28,
+        subject: "life-career",
+        question: "Which skills are becoming more important due to AI advancement?",
+        options: [
+            "Manual repetition skills",
+            "Critical thinking, creativity, and emotional intelligence",
+            "Only memorization",
+            "Only physical strength"
+        ],
+        correct: 1,
+        rationale: "Critical thinking, creativity, and emotional intelligence are becoming more important as AI handles routine tasks."
+    },
+
+    // VI. Environmental Influence - Globalization (Questions 29-32)
+    {
+        id: 29,
+        subject: "life-career",
+        question: "What is globalization in the context of careers?",
+        options: [
+            "Staying in one country forever",
+            "The integration of economies and societies means careers are no longer limited to local opportunities",
+            "Only international trade",
+            "Only tourism"
+        ],
+        correct: 1,
+        rationale: "Globalization means careers are no longer limited to local opportunities due to economic and social integration."
+    },
+    {
+        id: 30,
+        subject: "life-career",
+        question: "How does globalization create career opportunities?",
+        options: [
+            "It doesn't create opportunities",
+            "It allows professionals to work for international companies and remote positions",
+            "It only benefits large corporations",
+            "It only affects developed countries"
+        ],
+        correct: 1,
+        rationale: "Globalization allows professionals to work for international companies and access remote positions worldwide."
+    },
+    {
+        id: 31,
+        subject: "life-career",
+        question: "What skill becomes more important in a globalized job market?",
+        options: [
+            "Local dialect only",
+            "Cross-cultural communication and language skills",
+            "Only technical skills",
+            "Only manual skills"
+        ],
+        correct: 1,
+        rationale: "Cross-cultural communication and language skills become important in a globalized job market."
+    },
+    {
+        id: 32,
+        subject: "life-career",
+        question: "How does globalization increase competition?",
+        options: [
+            "It decreases competition",
+            "Professionals now compete globally, not just locally",
+            "Competition stays the same",
+            "Only local competition exists"
+        ],
+        correct: 1,
+        rationale: "Globalization means professionals compete globally, not just locally, increasing competition."
+    },
+
+    // VII. Environmental Influence - Global Issues (Questions 33-36)
+    {
+        id: 33,
+        subject: "life-career",
+        question: "How do global issues like environmental crises influence career demand?",
+        options: [
+            "They have no effect on careers",
+            "They create demand for careers in sustainability, renewable energy, and environmental protection",
+            "They only destroy jobs",
+            "They only affect scientists"
+        ],
+        correct: 1,
+        rationale: "Environmental crises create demand for careers in sustainability, renewable energy, and environmental protection."
+    },
+    {
+        id: 34,
+        subject: "life-career",
+        question: "What career fields are growing due to climate change concerns?",
+        options: [
+            "Fossil fuel industries only",
+            "Renewable energy, environmental science, and sustainability consulting",
+            "Only traditional manufacturing",
+            "Only agriculture"
+        ],
+        correct: 1,
+        rationale: "Renewable energy, environmental science, and sustainability consulting are growing due to climate change concerns."
+    },
+    {
+        id: 35,
+        subject: "life-career",
+        question: "How do disasters affect career opportunities?",
+        options: [
+            "Disasters have no effect on careers",
+            "They create demand for emergency response, disaster management, and reconstruction careers",
+            "They only destroy careers",
+            "They only affect doctors"
+        ],
+        correct: 1,
+        rationale: "Disasters create demand for emergency response, disaster management, and reconstruction careers."
+    },
+    {
+        id: 36,
+        subject: "life-career",
+        question: "How does human migration influence career demand?",
+        options: [
+            "Migration has no effect on careers",
+            "It creates demand for multicultural services, translation, and integration support careers",
+            "It only affects border control",
+            "It only affects tourism"
+        ],
+        correct: 1,
+        rationale: "Human migration creates demand for multicultural services, translation, and integration support careers."
+    },
+
+    // VIII. Environmental Influence - Scholarships (Questions 37-40)
+    {
+        id: 37,
+        subject: "life-career",
+        question: "What are scholarships?",
+        options: [
+            "Loans that must be repaid",
+            "Financial assistance programs that help students pursue education",
+            "Only for athletic students",
+            "Only for wealthy students"
+        ],
+        correct: 1,
+        rationale: "Scholarships are financial assistance programs that help students pursue education without repayment."
+    },
+    {
+        id: 38,
+        subject: "life-career",
+        question: "How do scholarships affect career opportunities?",
+        options: [
+            "They have no effect on careers",
+            "They enable students to access education and qualifications for desired careers",
+            "They only benefit wealthy families",
+            "They only affect academic careers"
+        ],
+        correct: 1,
+        rationale: "Scholarships enable students to access education and qualifications for desired careers."
+    },
+    {
+        id: 39,
+        subject: "life-career",
+        question: "What types of scholarships are available?",
+        options: [
+            "Only academic scholarships",
+            "Academic, athletic, need-based, and career-specific scholarships",
+            "Only athletic scholarships",
+            "Only need-based scholarships"
+        ],
+        correct: 1,
+        rationale: "Various types of scholarships exist: academic, athletic, need-based, and career-specific."
+    },
+    {
+        id: 40,
+        subject: "life-career",
+        question: "Why should students actively seek scholarships?",
+        options: [
+            "Scholarships are not worth seeking",
+            "They reduce financial barriers to education and career goals",
+            "Only wealthy students need scholarships",
+            "Scholarships are guaranteed for everyone"
+        ],
+        correct: 1,
+        rationale: "Scholarships reduce financial barriers to education and help achieve career goals."
+    },
+
+    // IX. Environmental Influence - Mentoring (Questions 41-45)
+    {
+        id: 41,
+        subject: "life-career",
+        question: "What is mentoring?",
+        options: [
+            "Teaching a class",
+            "The guidance and support from experienced professionals",
+            "Only for students",
+            "Only for beginners"
+        ],
+        correct: 1,
+        rationale: "Mentoring is the guidance and support from experienced professionals to help others grow."
+    },
+    {
+        id: 42,
+        subject: "life-career",
+        question: "How does mentoring benefit career development?",
+        options: [
+            "It has no benefits",
+            "It provides industry insights, networking opportunities, and career guidance",
+            "It only wastes time",
+            "It only benefits the mentor"
+        ],
+        correct: 1,
+        rationale: "Mentoring provides industry insights, networking opportunities, and career guidance."
+    },
+    {
+        id: 43,
+        subject: "life-career",
+        question: "Who can be a mentor?",
+        options: [
+            "Only teachers",
+            "Experienced professionals, teachers, or senior colleagues in your field",
+            "Only family members",
+            "Only friends"
+        ],
+        correct: 1,
+        rationale: "Mentors can be experienced professionals, teachers, or senior colleagues in your field."
+    },
+    {
+        id: 44,
+        subject: "life-career",
+        question: "What should a mentee do to benefit from mentoring?",
+        options: [
+            "Ignore the mentor's advice",
+            "Actively seek guidance, ask questions, and implement feedback",
+            "Only meet once a year",
+            "Expect the mentor to solve all problems"
+        ],
+        correct: 1,
+        rationale: "Mentees should actively seek guidance, ask questions, and implement feedback to benefit from mentoring."
+    },
+    {
+        id: 45,
+        subject: "life-career",
+        question: "How can someone find a mentor?",
+        options: [
+            "Mentors find you automatically",
+            "Through networking, professional organizations, school programs, or workplace initiatives",
+            "Only through family connections",
+            "Only through social media"
+        ],
+        correct: 1,
+        rationale: "Mentors can be found through networking, professional organizations, school programs, or workplace initiatives."
+    },
+
+    // Alternative questions for Life and Career
+    {
+        id: 101,
+        subject: "life-career",
+        question: "A student excels in mathematics and enjoys solving problems. Which career path might align with their hard skills?",
+        options: [
+            "Artist",
+            "Engineer or Data Analyst",
+            "Professional Athlete",
+            "Musician"
+        ],
+        correct: 1,
+        rationale: "Engineering and data analysis require strong mathematical skills and problem-solving abilities."
+    },
+    {
+        id: 102,
+        subject: "life-career",
+        question: "A student works well in teams and communicates effectively. Which soft skills do they demonstrate?",
+        options: [
+            "Programming skills",
+            "Teamwork and communication",
+            "Accounting skills",
+            "Technical writing"
+        ],
+        correct: 1,
+        rationale: "Working well in teams and communicating effectively are soft skills essential for workplace success."
+    },
+    {
+        id: 103,
+        subject: "life-career",
+        question: "How can a student balance peer influence with personal career goals?",
+        options: [
+            "Ignore all peer opinions",
+            "Consider peer input but make decisions based on personal interests and research",
+            "Follow all peer suggestions blindly",
+            "Let friends decide their career"
+        ],
+        correct: 1,
+        rationale: "Students should consider peer input but make career decisions based on personal interests and research."
+    },
+    {
+        id: 104,
+        subject: "life-career",
+        question: "Why is continuous learning important in today's job market?",
+        options: [
+            "It's not important",
+            "Technology and job requirements change rapidly, requiring ongoing skill development",
+            "Only for technology careers",
+            "Only for medical careers"
+        ],
+        correct: 1,
+        rationale: "Technology and job requirements change rapidly, making continuous learning essential for career success."
+    },
+    {
+        id: 105,
+        subject: "life-career",
+        question: "What is the benefit of having diverse skills (both hard and soft)?",
+        options: [
+            "No benefit",
+            "Greater adaptability and opportunities across different career paths",
+            "Only useful for one specific job",
+            "Only important for managers"
+        ],
+        correct: 1,
+        rationale: "Diverse skills provide greater adaptability and opportunities across different career paths."
+    }
+];
+
+// PagKas Questions - Second Term First Summative
+const pagkasQuestions = [
+    // I. Mga Anyo ng Pakikibaka (Questions 1-10)
+    {
+        id: 1,
+        subject: "pagkas",
+        question: "Ano ang kahulugan ng pakikibaka?",
+        options: [
+            "Pagsunod lamang sa utos",
+            "Pagkilos o paglaban para sa isang layunin",
+            "Pag-iwas sa anumang problema",
+            "Paghahanap ng kayamanan"
+        ],
+        correct: 1,
+        rationale: "Ang pakikibaka ay pagkilos o paglaban para sa isang layunin, lalo na sa panahon ng pananakop at pang-aapi."
+    },
+    {
+        id: 2,
+        subject: "pagkas",
+        question: "Bakit hindi iisa ang paraan ng pakikibaka?",
+        options: [
+            "Dahil walang layunin",
+            "Nagkakaiba ito batay sa layunin, panahon, at sitwasyon",
+            "Lahat ay dapat gumamit ng armas",
+            "Dapat lahat ay mapayapa"
+        ],
+        correct: 1,
+        rationale: "Ang pakikibaka ay nagkakaiba batay sa layunin, panahon, at sitwasyon."
+    },
+    {
+        id: 3,
+        subject: "pagkas",
+        question: "Ano ang armadong pakikibaka?",
+        options: [
+            "Paggamit ng panulat at edukasyon",
+            "Paggamit ng sandata o lakas upang labanan ang mananakop",
+            "Mapayapang protesta lamang",
+            "Pag-aalis ng problema"
+        ],
+        correct: 1,
+        rationale: "Ang armadong pakikibaka ay paggamit ng sandata o lakas upang labanan ang mananakop."
+    },
+    {
+        id: 4,
+        subject: "pagkas",
+        question: "Ano ang mapayapang pakikibaka?",
+        options: [
+            "Paggamit ng mga baril",
+            "Pagsali sa digmaan",
+            "Kilos-protesta, boycott, petisyon, at mapayapang pagtutol",
+            "Pagtakas sa problema"
+        ],
+        correct: 2,
+        rationale: "Ang mapayapang pakikibaka ay kinabibilangan ng kilos-protesta, boycott, petisyon, at mapayapang pagtutol."
+    },
+    {
+        id: 5,
+        subject: "pagkas",
+        question: "Ano ang pakikibakang intelektuwal?",
+        options: [
+            "Paggamit ng lakas",
+            "Paggamit ng panulat, edukasyon, at ideya upang magmulat ng kamalayan",
+            "Pagsali sa labanan",
+            "Pagtakas sa sitwasyon"
+        ],
+        correct: 1,
+        rationale: "Ang pakikibakang intelektuwal ay paggamit ng panulat, edukasyon, at ideya upang magmulat ng kamalayan."
+    },
+    {
+        id: 6,
+        subject: "pagkas",
+        question: "Sino ang pangunahing pinuno ng Katipunan sa Himagsikang Pilipino (1896-1898)?",
+        options: [
+            "Jose Rizal",
+            "Andres Bonifacio",
+            "Emilio Aguinaldo",
+            "Apolinario Mabini"
+        ],
+        correct: 1,
+        rationale: "Si Andres Bonifacio ang pangunahing pinuno ng Katipunan sa Himagsikang Pilipino laban sa Espanya."
+    },
+    {
+        id: 7,
+        subject: "pagkas",
+        question: "Anong himagsikan ang pinakamahabang pag-aalsa sa kasaysayan ng Pilipinas?",
+        options: [
+            "Himagsikang Pilipino",
+            "Rebolusyong Dagohoy (1744-1829)",
+            "Digmaang Pilipino-Amerikano",
+            "Himagsikan sa Cavite"
+        ],
+        correct: 1,
+        rationale: "Ang Rebolusyong Dagohoy (1744-1829) ang pinakamahabang pag-aalsa sa kasaysayan ng Pilipinas na naganap sa Bohol."
+    },
+    {
+        id: 8,
+        subject: "pagkas",
+        question: "Sino ang gumamit ng diplomasya at talakayan upang isulong ang kalayaan?",
+        options: [
+            "Andres Bonifacio at Emilio Aguinaldo",
+            "Apolinario Mabini at Manuel L. Quezon",
+            "Jose Rizal at Marcelo H. del Pilar",
+            "Diego Silang at Gabriela Silang"
+        ],
+        correct: 1,
+        rationale: "Si Apolinario Mabini at Manuel L. Quezon ang gumamit ng diplomasya at talakayan upang isulong ang kalayaan."
+    },
+    {
+        id: 9,
+        subject: "pagkas",
+        question: "Ano ang Kilusang Sakdalista noong 1930s?",
+        options: [
+            "Kilusang panrelihiyon",
+            "Nagprotesta laban sa kolonyal na pamahalaan ng Amerika at naghangad ng agarang kalayaan",
+            "Kilusang pang-ekonomiya lamang",
+            "Kilusang pangkalusugan"
+        ],
+        correct: 1,
+        rationale: "Ang Kilusang Sakdalista ay nagprotesta laban sa kolonyal na pamahalaan ng Amerika at naghangad ng agarang kalayaan."
+    },
+    {
+        id: 10,
+        subject: "pagkas",
+        question: "Ano ang gerilyang pakikidigma?",
+        options: [
+            "Malaking grupo na lumalaban",
+            "Maliliit at mabilis na pangkat na kumikilos upang harapin ang mas malakas na puwersa",
+            "Armadong paglaban lamang",
+            "Mapayapang protesta"
+        ],
+        correct: 1,
+        rationale: "Sa gerilyang pakikidigma, maliliit at mabilis na pangkat ang kumikilos upang harapin ang mas malakas na puwersa."
+    },
+
+    // II. Kolonyalismong Espanyol (Questions 11-20)
+    {
+        id: 11,
+        subject: "pagkas",
+        question: "Ano ang pangunahing dahilan ng kolonyalismo ng Espanya sa Pilipinas?",
+        options: [
+            "Paghahanap ng kayamanan, pagpapalawak ng kapangyarihan, at pagpapalaganap ng Kristiyanismo",
+            "Pagtulong sa mga Pilipino",
+            "Pagpapalaganap ng kultura lamang",
+            "Pagtuturo ng wikang Kastila"
+        ],
+        correct: 0,
+        rationale: "Ang pananakop ng Espanya ay udyok ng paghahanap ng kayamanan, pagpapalawak ng kapangyarihan, at pagpapalaganap ng Kristiyanismo."
+    },
+    {
+        id: 12,
+        subject: "pagkas",
+        question: "Ano ang encomienda?",
+        options: [
+            "Sistema ng pagtuturo",
+            "Sistema kung saan binibigyan ang isang Espanyol ng lupa at mga Pilipino na nagtatrabaho",
+            "Uri ng relihiyon",
+            "Sistema ng kalakalan"
+        ],
+        correct: 1,
+        rationale: "Ang encomienda ay sistema kung saan binibigyan ang isang Espanyol ng lupa at mga Pilipino na nagtatrabaho."
+    },
+    {
+        id: 13,
+        subject: "pagkas",
+        question: "Ano ang polo y servicios?",
+        options: [
+            "Sistema ng pagbubuhis",
+            "Sapilitang paggawa ng mga Pilipino para sa mga Espanyol",
+            "Uri ng pagkain",
+            "Sistema ng pagpapalakal"
+        ],
+        correct: 1,
+        rationale: "Ang polo y servicios ay sapilitang paggawa ng mga Pilipino para sa mga Espanyol."
+    },
+    {
+        id: 14,
+        subject: "pagkas",
+        question: "Sino ang Gobernador-Heneral?",
+        options: [
+            "Pinuno ng mga prayle",
+            "Pinakamataas na awtoridad na kinatawan ng hari ng Espanya",
+            "Pinuno ng mga magsasaka",
+            "Pinuno ng mga ilustrado"
+        ],
+        correct: 1,
+        rationale: "Ang Gobernador-Heneral ang pinakamataas na awtoridad na kinatawan ng hari ng Espanya."
+    },
+    {
+        id: 15,
+        subject: "pagkas",
+        question: "Ano ang kalakalang Galyon?",
+        options: [
+            "Kalakalan sa pagitan ng Pilipinas at China",
+            "Kalakalan ng ginto sa pagitan ng Espanya at Pilipinas",
+            "Kalakalan sa loob ng Pilipinas lamang",
+            "Kalakalan ng produkto sa Amerika"
+        ],
+        correct: 1,
+        rationale: "Ang kalakalang Galyon ay kalakalan ng ginto sa pagitan ng Espanya at Pilipinas na nagpalubha sa lokal na ekonomiya."
+    },
+    {
+        id: 16,
+        subject: "pagkas",
+        question: "Ano ang frailocracy?",
+        options: [
+            "Pamumuno ng mga datu",
+            "Pamumuno ng mga prayle o paring Espanyol",
+            "Pamumuno ng mga ilustrado",
+            "Pamumuno ng mga indio"
+        ],
+        correct: 1,
+        rationale: "Ang frailocracy ay pamumuno ng mga prayle o paring Espanyol dahil sa pagkakaisa ng simbahan at estado."
+    },
+    {
+        id: 17,
+        subject: "pagkas",
+        question: "Ano ang Educational Decree of 1863?",
+        options: [
+            "Pagbawas ng mga paaralan",
+            "Tangkang buksan ang paaralan sa lahat ngunit nanatiling makamayaman",
+            "Pagtatayo ng mga simbahan lamang",
+            "Pagtanggal ng edukasyon"
+        ],
+        correct: 1,
+        rationale: "Ang Educational Decree of 1863 ay tangkang buksan ang paaralan sa lahat ngunit nanatiling makamayaman."
+    },
+    {
+        id: 18,
+        subject: "pagkas",
+        question: "Sino ang mga Peninsulares?",
+        options: [
+            "Espanyol mula Espanya",
+            "Espanyol ipinanganak sa Pilipinas",
+            "Katutubong Pilipino",
+            "Mestizo"
+        ],
+        correct: 0,
+        rationale: "Ang mga Peninsulares ay mga Espanyol mula Espanya na nasa pinakamataas na antas ng lipunang kolonyal."
+    },
+    {
+        id: 19,
+        subject: "pagkas",
+        question: "Sino ang mga Indio sa sistemang caste?",
+        options: [
+            "Espanyol mula Espanya",
+            "Espanyol ipinanganak sa Pilipinas",
+            "Katutubong Pilipino na pinakaapi",
+            "Mestizo"
+        ],
+        correct: 2,
+        rationale: "Ang mga Indio ay katutubong Pilipino na nasa pinakamababang antas at pinakaapi sa sistemang caste."
+    },
+    {
+        id: 20,
+        subject: "pagkas",
+        question: "Ano ang Limpieza de Sangre?",
+        options: [
+            "Pagsusuri ng dugo",
+            "Kadalisayan ng dugo kung saan ang halaga ng tao ay itinatakda ng kanyang lahi",
+            "Uri ng sakit",
+            "Sistema ng pagkain"
+        ],
+        correct: 1,
+        rationale: "Ang Limpieza de Sangre ay kadalisayan ng dugo kung saan ang halaga ng tao ay itinatakda ng kanyang lahi."
+    },
+
+    // III. Mga Tugon ng mga Pilipino (Questions 21-30)
+    {
+        id: 21,
+        subject: "pagkas",
+        question: "Ano ang ginawa ng mga Pilipino sa pamamagitan ng pag-aalsa at himagsikan?",
+        options: [
+            "Sumunod lamang sa Espanya",
+            "Lumaban laban sa mapang-aping pamamahala ng mga mananakop",
+            "Umalis sa Pilipinas",
+            "Pumayag sa pang-aapi"
+        ],
+        correct: 1,
+        rationale: "Dahil sa pang-aabuso ng mga Espanyol, maraming Pilipino ang nag-aklas at lumaban."
+    },
+    {
+        id: 22,
+        subject: "pagkas",
+        question: "Paano nagtatanggol ang mga Pilipino sa kanilang sariling kultura?",
+        options: [
+            "Sumunod sa kultura ng Espanya",
+            "Pinagtibay ang pagkakakilanlan sa pamamagitan ng pagpapanatili ng wika, sining, at kaugalian",
+            "Tinanggihan ang kanilang kultura",
+            "Ginamit ang wikang Kastila"
+        ],
+        correct: 1,
+        rationale: "Pinagtibay ng mga Pilipino ang kanilang pagkakakilanlan sa pamamagitan ng pagpapanatili ng wika, sining, at kaugalian."
+    },
+    {
+        id: 23,
+        subject: "pagkas",
+        question: "Sino ang mga ilustrado at propagandista?",
+        options: [
+            "Mga magsasaka",
+            "Mga edukadong Pilipino na hinangad ng reporma at pagkakapantay-pantay",
+            "Mga prayle",
+            "Mga Espanyol"
+        ],
+        correct: 1,
+        rationale: "Ang mga ilustrado at propagandista ay mga edukadong Pilipino na hinangad ng reporma at pagkakapantay-pantay."
+    },
+    {
+        id: 24,
+        subject: "pagkas",
+        question: "Ano ang ipinaglaban ng mga propagandista?",
+        options: [
+            "Pananakop ng ibang bansa",
+            "Pantay na karapatan, kalayaan sa pamamahayag, at representasyon sa pamahalaan",
+            "Pagpapalakal ng Espanya",
+            "Pagtanggal ng edukasyon"
+        ],
+        correct: 1,
+        rationale: "Ipinaglaban ng mga propagandista ang pantay na karapatan, kalayaan sa pamamahayag, at representasyon sa pamahalaan."
+    },
+    {
+        id: 25,
+        subject: "pagkas",
+        question: "Sino ang mga pangunahing propagandista?",
+        options: [
+            "Andres Bonifacio at Emilio Aguinaldo",
+            "Jose Rizal, Marcelo H. del Pilar, at Graciano Lopez Jaena",
+            "Apolinario Mabini at Manuel L. Quezon",
+            "Diego Silang at Gabriela Silang"
+        ],
+        correct: 1,
+        rationale: "Si Jose Rizal, Marcelo H. del Pilar, at Graciano Lopez Jaena ang mga pangunahing propagandista."
+    },
+    {
+        id: 26,
+        subject: "pagkas",
+        question: "Ano ang mga akda ni Jose Rizal na nagmulat sa kamalayan ng mamamayan?",
+        options: [
+            "Mga tula lamang",
+            "Noli Me Tangere at El Filibusterismo",
+            "Mga kanta",
+            "Mga dulog panteatro"
+        ],
+        correct: 1,
+        rationale: "Ang Noli Me Tangere at El Filibusterismo ni Jose Rizal ay nagmulat sa kamalayan ng mamamayan."
+    },
+    {
+        id: 27,
+        subject: "pagkas",
+        question: "Paano nag-aklas si Francisco Dagohoy?",
+        options: [
+            "Sa pamamagitan ng diplomasya",
+            "Sa pamamagitan ng armadong paglaban sa Bohol",
+            "Sa pamamagitan ng pagtatagod",
+            "Sa pamamagitan ng pag-aalis"
+        ],
+        correct: 1,
+        rationale: "Si Francisco Dagohoy ay nag-aklas sa pamamagitan ng armadong paglaban sa Bohol laban sa Espanya."
+    },
+    {
+        id: 28,
+        subject: "pagkas",
+        question: "Ano ang papel ng mga kababaihan sa panitikan bilang pakikibaka?",
+        options: [
+            "Walang papel",
+            "Nagpahayag ng damdaming makabayan at panlipunan sa pamamagitan ng kanilang mga akda",
+            "Sumunod lamang sa mga lalaki",
+            "Nagtayo ng mga bahay"
+        ],
+        correct: 1,
+        rationale: "Ang mga kababaihan sa panitikan ay nagpahayag ng damdaming makabayan at panlipunan sa pamamagitan ng kanilang mga akda."
+    },
+    {
+        id: 29,
+        subject: "pagkas",
+        question: "Ano ang epekto ng kolonyalismo sa ekonomiya ng Pilipinas?",
+        options: [
+            "Naging masagana ang ekonomiya",
+            "Kinontrol ng Espanya ang kalakalan at likas na yaman para sa sariling kapakanan",
+            "Naging malaya ang Pilipinas",
+            "Nabigyan ng karapatan ang mga magsasaka"
+        ],
+        correct: 1,
+        rationale: "Kinontrol ng Espanya ang kalakalan at likas na yaman ng Pilipinas para sa sariling kapakanan."
+    },
+    {
+        id: 30,
+        subject: "pagkas",
+        question: "Ano ang indulto de comercio?",
+        options: [
+            "Pribelehiyong makilahok sa kalakalan na ginamit ng mga alcalde Mayor",
+            "Sistema ng pagbubuhis",
+            "Uri ng relihiyon",
+            "Sistema ng edukasyon"
+        ],
+        correct: 0,
+        rationale: "Ang indulto de comercio ay pribelehiyong makilahok sa kalakalan na ginamit ng mga alcalde Mayor."
+    },
+
+    // IV. Batas Militar (Questions 31-40)
+    {
+        id: 31,
+        subject: "pagkas",
+        question: "Ano ang Batas Militar?",
+        options: [
+            "Paghahanap ng kalayaan",
+            "Paglaban sa diktadura upang maibalik ang demokrasya at karapatang pantao",
+            "Sistema ng edukasyon",
+            "Uri ng ekonomiya"
+        ],
+        correct: 1,
+        rationale: "Ang Batas Militar ay paglaban sa diktadura upang maibalik ang demokrasya at karapatang pantao."
+    },
+    {
+        id: 32,
+        subject: "pagkas",
+        question: "Sino ang nagpatakwad ng Batas Militar noong 1972?",
+        options: [
+            "Jose Rizal",
+            "Ferdinand Marcos",
+            "Emilio Aguinaldo",
+            "Manuel L. Quezon"
+        ],
+        correct: 1,
+        rationale: "Si Ferdinand Marcos ang nagpatakwad ng Batas Militar noong 1972."
+    },
+    {
+        id: 33,
+        subject: "pagkas",
+        question: "Ano ang First Quarter Storm (FQS)?",
+        options: [
+            "Uri ng bagyo",
+            "Serye ng mga protesta noong 1970 laban sa diktadura",
+            "Uri ng laro",
+            "Sistema ng edukasyon"
+        ],
+        correct: 1,
+        rationale: "Ang First Quarter Storm (FQS) ay serye ng mga protesta noong 1970 laban sa diktadura."
+    },
+    {
+        id: 34,
+        subject: "pagkas",
+        question: "Ano ang Oplan Bayanihan?",
+        options: [
+            "Sistema ng edukasyon",
+            "Internal security plan na patuloy na nagpapabagsak sa karapatang pantao",
+            "Uri ng ekonomiya",
+            "Programa pangkalusugan"
+        ],
+        correct: 1,
+        rationale: "Ang Oplan Bayanihan ay internal security plan na patuloy na nagpapabagsak sa karapatang pantao."
+    },
+    {
+        id: 35,
+        subject: "pagkas",
+        question: "Ano ang enforced disappearance?",
+        options: [
+            "Paglayas ng tao",
+            "Pagkawala ng tao sa walang impormasyon sa lokasyon o kalagayan",
+            "Pagpatay ng tao",
+            "Pagbili ng tao"
+        ],
+        correct: 1,
+        rationale: "Ang enforced disappearance ay pagkawala ng tao sa walang impormasyon sa lokasyon o kalagayan."
+    },
+    {
+        id: 36,
+        subject: "pagkas",
+        question: "Paano ipinakita ng mga aktibista ang kanilang pakikibaka laban sa Batas Militar?",
+        options: [
+            "Sa pamamagitan ng pagpapakumbaba",
+            "Sa pamamagitan ng mga protesta, welga, at demonstrasyon",
+            "Sa pamamagitan ng pag-aalis",
+            "Sa pamamagitan ng pagtataboy"
+        ],
+        correct: 1,
+        rationale: "Ipinakita ng mga aktibista ang kanilang pakikibaka sa pamamagitan ng mga protesta, welga, at demonstrasyon."
+    },
+    {
+        id: 37,
+        subject: "pagkas",
+        question: "Ano ang Guardia Civil?",
+        options: [
+            "Grupo ng mga magsasaka",
+            "Itinatag noong 1868 upang panatilihin ang kaayusan ngunit naging simbolo ng dahas",
+            "Grupo ng mga guro",
+            "Grupo ng mga manggagawa"
+        ],
+        correct: 1,
+        rationale: "Ang Guardia Civil ay itinatag noong 1868 upang panatilihin ang kaayusan ngunit naging simbolo ng dahas."
+    },
+    {
+        id: 38,
+        subject: "pagkas",
+        question: "Bakit mahalaga ang pagkakaisa sa pakikibaka?",
+        options: [
+            "Dahil mas marami ang kailangang kainin",
+            "Dahil ang isang bansang walang pagkakaisa ay madaling mapasailalim ng dayuhang kapangyarihan",
+            "Dahil mas madaling makakuha ng trabaho",
+            "Dahil mas marami ang pera"
+        ],
+        correct: 1,
+        rationale: "Ang isang bansang walang pagkakaisa ay madaling mapasailalim ng dayuhang kapangyarihan."
+    },
+    {
+        id: 39,
+        subject: "pagkas",
+        question: "Ano ang kinalaman ng mga kabataan sa pakikibaka laban sa Batas Militar?",
+        options: [
+            "Walang kinalaman",
+            "Naglunsad ng mga welga at demonstrasyon para sa karapatan sa edukasyon",
+            "Sumunod lamang sa pamahalaan",
+            "Umalis sa bansa"
+        ],
+        correct: 1,
+        rationale: "Ang mga kabataan ay naglunsad ng mga welga at demonstrasyon para sa karapatan sa edukasyon."
+    },
+    {
+        id: 40,
+        subject: "pagkas",
+        question: "Ano ang aral ng Batas Militar?",
+        options: [
+            "Dapat sundin ang diktadura",
+            "Dapat ipaglaban ang demokrasya at karapatang pantao",
+            "Dapat umalis sa bansa",
+            "Dapat maging pasaway"
+        ],
+        correct: 1,
+        rationale: "Ang aral ng Batas Militar ay dapat ipaglaban ang demokrasya at karapatang pantao."
+    },
+
+    // V. Mga Aral at Konklusyon (Questions 41-45)
+    {
+        id: 41,
+        subject: "pagkas",
+        question: "Ano ang kahalagahan ng soberanya?",
+        options: [
+            "Walang kahalagahan",
+            "Ang kalayaan at pagkakaisa ng bansa ay dapat ipaglaban",
+            "Dapat ipagbili ang bansa",
+            "Dapat sumunod sa ibang bansa"
+        ],
+        correct: 1,
+        rationale: "Ang soberanya ay mahalaga dahil ang kalayaan at pagkakaisa ng bansa ay dapat ipaglaban."
+    },
+    {
+        id: 42,
+        subject: "pagkas",
+        question: "Ano ang pangmatagalang epekto ng kolonyalismo sa pulitika?",
+        options: [
+            "Naging perpekto ang sistema",
+            "Ang sistema ng patronahe sa pulitika ay pamana ng kolonyal na pamamaraan",
+            "Nawala ang pulitika",
+            "Naging demokratiko ang lahat"
+        ],
+        correct: 1,
+        rationale: "Ang sistema ng patronahe sa pulitika ay pamana ng kolonyal na pamamaraan na kailangang harapin."
+    },
+    {
+        id: 43,
+        subject: "pagkas",
+        question: "Ano ang di-pantay na pamamahagi ng yaman?",
+        options: [
+            "Lahat ay may pantay na yaman",
+            "Pamana ng kolonyalismo na nagdulot ng pagkakawatak-watak ng lipunan",
+            "Walang nagmamay-ari",
+            "Lahat ay mahirap"
+        ],
+        correct: 1,
+        rationale: "Ang di-pantay na pamamahagi ng yaman ay pamana ng kolonyalismo na nagdulot ng pagkakawatak-watak ng lipunan."
+    },
+    {
+        id: 44,
+        subject: "pagkas",
+        question: "Bakit mahalaga ang kamalayang makabayan?",
+        options: [
+            "Dahil kailangan ng pera",
+            "Dahil ito ay nagbigay-inspirasyon sa mga Pilipino na ipaglaban ang kanilang kalayaan",
+            "Dahil kailangan ng trabaho",
+            "Dahil kailangan ng abroad"
+        ],
+        correct: 1,
+        rationale: "Ang kamalayang makabayan ay nagbigay-inspirasyon sa mga Pilipino na ipaglaban ang kanilang kalayaan."
+    },
+    {
+        id: 45,
+        subject: "pagkas",
+        question: "Ano ang konklusyon tungkol sa pakikibaka?",
+        options: [
+            "Dapat huwag lumaban",
+            "Ang pakikibaka ay nagsilbing punla ng kamalayang makabayan at dapat ipagpatuloy ang paglaban sa katarungan",
+            "Dapat sumuko sa dayuhan",
+            "Dapat maging pasaway"
+        ],
+        correct: 1,
+        rationale: "Ang pakikibaka ay nagsilbing punla ng kamalayang makabayan at dapat ipagpatuloy ang paglaban sa katarungan."
+    },
+
+    // Alternative questions for PagKas
+    {
+        id: 101,
+        subject: "pagkas",
+        question: "Tama o Mali: Ang pakikibaka ay nasusukat lamang sa pamamagitan ng pisikal na labanan o paggamit ng karahasan.",
+        options: [
+            "Tama",
+            "Mali - nagkakaiba ang anyo ng pakikibaka batay sa layunin at sitwasyon",
+            "Tama sa lahat ng pagkakataon",
+            "Walang kasagutan"
+        ],
+        correct: 1,
+        rationale: "Mali - ang pakikibaka ay hindi lamang pisikal na labanan kundi maaari ring mapayapa o intelektuwal."
+    },
+    {
+        id: 102,
+        subject: "pagkas",
+        question: "Tama o Mali: Sa ilalim ng Educational Decree of 1863, naging bukas ang paaralan para sa lahat ngunit nanatili itong para sa piling tao at mayayaman.",
+        options: [
+            "Tama",
+            "Mali - libre sa lahat",
+            "Mali - wala pang paaralan",
+            "Walang kasagutan"
+        ],
+        correct: 0,
+        rationale: "Tama - kahit may Educational Decree, nanatiling para sa piling tao at mayayaman ang edukasyon."
+    },
+    {
+        id: 103,
+        subject: "pagkas",
+        question: "Tama o Mali: Ang kalakalang Galyon ay nakatulong nang lubusan sa pag-unlad ng lokal na agrikultura at industriya ng Pilipinas.",
+        options: [
+            "Tama",
+            "Mali - nagpalubha ito sa lokal na ekonomiya",
+            "Mali - walang epekto",
+            "Walang kasagutan"
+        ],
+        correct: 1,
+        rationale: "Mali - ang kalakalang Galyon ay nagpalubha sa lokal na ekonomiya dahil monopolyo ng Espanya."
+    },
+    {
+        id: 104,
+        subject: "pagkas",
+        question: "Tama o Mali: Sa sistemang Encomienda, ang pangunahing dahilan ng pagkawala ng lupa ng maraming magsasaka hanggang sa kasalukuyan.",
+        options: [
+            "Tama",
+            "Mali - hindi ito ang pangunahing dahilan",
+            "Mali - bumalik na ang lahat ng lupa",
+            "Walang kasagutan"
+        ],
+        correct: 0,
+        rationale: "Tama - ang sistemang Encomienda ay nagdulot ng pagkawala ng lupa ng maraming magsasaka."
+    },
+    {
+        id: 105,
+        subject: "pagkas",
+        question: "Ayon sa prinsipyo ng mapayapang pakikibaka, ano ang paraan upang makamit ang katarungan?",
+        options: [
+            "Paggamit ng karahasan",
+            "Maayos na pakikipag-usap at hindi paggamit ng pananakit",
+            "Pagtakas lamang",
+            "Pagsunod lamang"
+        ],
+        correct: 1,
+        rationale: "Ayon sa prinsipyo ng mapayapang pakikibaka, ang katarungan ay maaaring makamit sa pamamagitan ng maayos na pakikipag-usap."
+    }
+];
+
 // Combine all questions
 const allQuestions = [
     ...scienceQuestions.map(q => ({...q, subject: "science"})),
     ...mathQuestions,
     ...biologyQuestions,
-    ...komunikasyonQuestions
+    ...komunikasyonQuestions,
+    ...effectiveCommQuestions,
+    ...lifeCareerQuestions,
+    ...pagkasQuestions
 ];
 
 // Shuffle function for randomization
@@ -3812,6 +4679,9 @@ const scienceBtn = document.getElementById('science-btn');
 const mathBtn = document.getElementById('math-btn');
 const biologyBtn = document.getElementById('biology-btn');
 const komunikasyonBtn = document.getElementById('komunikasyon-btn');
+const effectiveCommBtn = document.getElementById('effective-comm-btn');
+const lifeCareerBtn = document.getElementById('life-career-btn');
+const pagkasBtn = document.getElementById('pagkas-btn');
 
 // Initialize
 function init() {
@@ -4033,6 +4903,9 @@ function setupEventListeners() {
         mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         renderQuestion();
@@ -4053,6 +4926,9 @@ function setupEventListeners() {
         scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         renderQuestion();
@@ -4073,6 +4949,9 @@ function setupEventListeners() {
         scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         renderQuestion();
@@ -4093,6 +4972,78 @@ function setupEventListeners() {
         scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        renderQuestion();
+        updateStats();
+    });
+
+    effectiveCommBtn.addEventListener('click', () => {
+        if (currentSubject === "effective-comm") return;
+        currentSubject = "effective-comm";
+        currentQuestionIndex = 0;
+        userAnswers = {};
+        reviewAnswers = {};
+        wrongQuestions = [];
+        reviewIndex = 0;
+        isReviewMode = false;
+        questions = selectRandomQuestions(currentSubject);
+        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        renderQuestion();
+        updateStats();
+    });
+
+    lifeCareerBtn.addEventListener('click', () => {
+        if (currentSubject === "life-career") return;
+        currentSubject = "life-career";
+        currentQuestionIndex = 0;
+        userAnswers = {};
+        reviewAnswers = {};
+        wrongQuestions = [];
+        reviewIndex = 0;
+        isReviewMode = false;
+        questions = selectRandomQuestions(currentSubject);
+        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        renderQuestion();
+        updateStats();
+    });
+
+    pagkasBtn.addEventListener('click', () => {
+        if (currentSubject === "pagkas") return;
+        currentSubject = "pagkas";
+        currentQuestionIndex = 0;
+        userAnswers = {};
+        reviewAnswers = {};
+        wrongQuestions = [];
+        reviewIndex = 0;
+        isReviewMode = false;
+        questions = selectRandomQuestions(currentSubject);
+        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
         reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
         renderQuestion();
