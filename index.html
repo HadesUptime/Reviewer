@@ -88,8 +88,11 @@
         @media (min-width: 640px) {
             .subject-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
+        @media (min-width: 1024px) {
+            .subject-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+        }
         /* Targeted by id so sizing survives any class swapping done in app.js */
-        #science-btn, #math-btn, #biology-btn, #komunikasyon-btn {
+        #science-btn, #math-btn, #biology-btn, #komunikasyon-btn, #effective-comm-btn, #life-career-btn, #pagkas-btn {
             width: 100%;
             padding: clamp(6px, 1.5vmin, 12px) 8px !important;
             font-size: clamp(.7rem, 1.9vmin, .9rem) !important;
@@ -102,7 +105,7 @@
             cursor: pointer;
             border: 0;
         }
-        #science-btn i, #math-btn i, #biology-btn i, #komunikasyon-btn i { margin-right: 6px !important; }
+        #science-btn i, #math-btn i, #biology-btn i, #komunikasyon-btn i, #effective-comm-btn i, #life-career-btn i, #pagkas-btn i { margin-right: 6px !important; }
 
         /* ---------- Stats ---------- */
         .stats-bar {
@@ -279,12 +282,16 @@
             .app-sub, .stat-label { display: none; }
             .app-header { flex-direction: row; align-items: center; }
             .app-title-row { flex-shrink: 0; }
-            .subject-grid { flex: 1; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-            #science-btn i, #math-btn i, #biology-btn i, #komunikasyon-btn i { display: none; }
+            .subject-grid { flex: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            #science-btn i, #math-btn i, #biology-btn i, #komunikasyon-btn i, #effective-comm-btn i, #life-career-btn i, #pagkas-btn i { display: none; }
+        }
+        /* Small tablets */
+        @media (min-width: 640px) and (max-width: 1023px) {
+            .subject-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
         /* Tiny phones: shorten button text spacing */
         @media (max-width: 380px) {
-            #science-btn i, #math-btn i, #biology-btn i, #komunikasyon-btn i { display: none; }
+            #science-btn i, #math-btn i, #biology-btn i, #komunikasyon-btn i, #effective-comm-btn i, #life-career-btn i, #pagkas-btn i { display: none; }
         }
 
         /* ---------- Pink theme overrides (win over classes toggled by app.js) ---------- */
@@ -322,7 +329,13 @@
                 </button>
                 <button id="biology-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">Biology
                 </button>
-                <button id="komunikasyon-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">Effective Communication
+                <button id="komunikasyon-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">Mabisang Komunikasyon
+                </button>
+                <button id="effective-comm-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">Effective Comm
+                </button>
+                <button id="life-career-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">Life & Career
+                </button>
+                <button id="pagkas-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">PagKas
                 </button>
             </div>
         </header>
