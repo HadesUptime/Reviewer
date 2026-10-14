@@ -9,7 +9,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
+        @property --ga { syntax: '<color>'; inherits: false; initial-value: #ec4899; }
+        @property --gb { syntax: '<color>'; inherits: false; initial-value: #be185d; }
+
         :root {
+            --theme-t: .65s;
+            --ease-out: cubic-bezier(.2, .7, .2, 1);
             --ink: #500724;
             --muted: #9d4a6f;
             --line: #fbcfe8;
@@ -53,10 +58,11 @@
         #app > #question-card,
         #app > #empty-state,
         #app > #exam-result,
-        #app > #no-wrong-state { flex: 1 1 0; min-height: 0; flex-shrink: 1; }
+        #app > #no-wrong-state,
+        #app > #exam-intro { flex: 1 1 0; min-height: 0; flex-shrink: 1; }
 
         /* ---------- Brand ---------- */
-        .gradient-bg { background: linear-gradient(135deg, var(--brand-a) 0%, var(--brand-b) 100%); }
+        .gradient-bg { --ga: var(--brand-a); --gb: var(--brand-b); background: linear-gradient(135deg, var(--ga) 0%, var(--gb) 100%); }
         .card-shadow { box-shadow: 0 8px 30px rgba(190, 24, 93, 0.12); }
 
         /* ---------- Header ---------- */
@@ -173,7 +179,6 @@
             font-size: clamp(.75rem, 2vmin, .9rem);
             white-space: nowrap;
         }
-        #exam-timer-wrap.hidden { display: none !important; }
         #exam-timer-wrap.danger { background: #fee2e2; color: #b91c1c; }
         #exam-timer-wrap.danger .pulse-dot { animation: pulse 1s infinite; }
         .pulse-dot { width: 8px; height: 8px; border-radius: 9999px; background: currentColor; display: inline-block; }
@@ -353,33 +358,12 @@
         body.exam-active {
             color-scheme: dark;
             color: #e5e7eb;
-            background: #0b1220;
         }
         body.exam-active .fade-in,
         body.exam-active .pulse { animation: none; }
 
         /* Header: quiet title, show only the current subject */
         body.exam-active .app-title { color: #f1f5f9; font-weight: 700; letter-spacing: -0.01em; }
-        body.exam-active .app-sub { font-size: 0; }
-        body.exam-active .app-sub::after {
-            content: "EXAM IN PROGRESS";
-            font-size: .68rem;
-            font-weight: 700;
-            letter-spacing: .18em;
-            color: #94a3b8;
-        }
-        body.exam-active .subject-grid { display: flex; justify-content: flex-start; }
-        body.exam-active .subject-grid button.bg-gray-200 { display: none; }
-        body.exam-active #app .subject-grid button {
-            width: auto;
-            pointer-events: none;
-            padding: 5px 14px !important;
-            border-radius: 8px !important;
-            background: #111a2b;
-            border: 1px solid #26364f;
-            color: #cbd5e1 !important;
-            font-weight: 600 !important;
-        }
 
         /* Stats bar: flat panel, no score reveal, prominent timer */
         body.exam-active .stats-bar {
@@ -390,7 +374,6 @@
         }
         body.exam-active .progress-ring circle:first-child { stroke: #1f2a44; }
         body.exam-active #progress-circle { stroke: #93c5fd; }
-        body.exam-active .score-block,
         body.exam-active #review-btn { display: none !important; }
         body.exam-active #exam-timer-wrap {
             background: #0b1220;
@@ -422,7 +405,7 @@
         /* Neutral palette overrides (beat the pink ones) */
         body.exam-active .bg-gray-200 { background: #162238 !important; color: #94a3b8 !important; }
         body.exam-active .hover\:bg-gray-300:hover { background: #1e2c47 !important; }
-        body.exam-active .gradient-bg { background: #2563eb; }
+        body.exam-active .gradient-bg { --ga: #2563eb; --gb: #1d4ed8; }
         body.exam-active .text-gray-800 { color: #f1f5f9 !important; }
         body.exam-active .text-gray-700 { color: #cbd5e1 !important; }
         body.exam-active .text-gray-600 { color: #94a3b8 !important; }
@@ -433,6 +416,7 @@
         /* Question card: like a printed paper in the dark */
         body.exam-active #question-card,
         body.exam-active #exam-result,
+        body.exam-active #exam-intro,
         body.exam-active #empty-state,
         body.exam-active #no-wrong-state {
             background: #111a2b;
@@ -479,7 +463,6 @@
         }
 
         /* Navigation */
-        body.exam-active #next-btn { background: #2563eb; }
         body.exam-active #submit-exam-btn { background: #e2e8f0; color: #0b1220 !important; }
 
 
@@ -492,6 +475,248 @@
 
         /* No explanations during an exam */
         body.exam-active #feedback { display: none !important; }
+
+        /* =====================================================================
+           EXAM TRANSITION: everything below makes the switch to exam mode
+           feel like one continuous motion instead of a hard cut.
+           ===================================================================== */
+
+        /* 1. Background: a dark layer fades in over the pink one (gradients can't be tweened directly) */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity .8s ease;
+            background:
+                radial-gradient(900px 520px at 10% -10%, rgba(59,130,246,.16), transparent 60%),
+                radial-gradient(800px 500px at 100% 110%, rgba(99,102,241,.10), transparent 60%),
+                #0b1220;
+        }
+        body.exam-active::before { opacity: 1; }
+        body { transition: color var(--theme-t) ease; }
+
+        /* 2. Surfaces and text cross-fade between the two palettes */
+        body .app-title, body .stats-bar, body .mode-toggle, body #question-card,
+        body #exam-result, body #exam-intro, body #empty-state, body #no-wrong-state,
+        body .card-footer, body #question-number, body #question-text,
+        body .exam-pill, body .intro-stat, body .intro-title, body .intro-eyebrow,
+        body .intro-rules, body .count-num, body .count-label,
+        body :is(p, h1, h2, span)[class*="text-gray-"] {
+            transition: background-color var(--theme-t) ease, border-color var(--theme-t) ease,
+                        color var(--theme-t) ease, box-shadow var(--theme-t) ease,
+                        opacity .5s ease;
+        }
+        /* Gradient buttons: tween the two stops (needs the @property rules above) */
+        body .gradient-bg {
+            transition: --ga var(--theme-t) ease, --gb var(--theme-t) ease,
+                        opacity .25s ease, transform .2s ease, box-shadow .25s ease;
+        }
+        body .gradient-bg:active:not(:disabled), body .bg-gray-200:active:not(:disabled) { transform: scale(.98); }
+
+        /* 3. Header: the subject grid folds away, the subject pill and status line slide in */
+        body .app-header { gap: 0; }
+        .subject-collapse {
+            display: grid;
+            grid-template-rows: 1fr;
+            margin-top: var(--gap);
+            transition: grid-template-rows .6s cubic-bezier(.4,0,.2,1), margin-top .6s cubic-bezier(.4,0,.2,1),
+                        opacity .45s ease .15s, visibility 0s;
+        }
+        .subject-clip { min-height: 0; overflow: hidden; }
+        .subject-grid button:focus-visible { outline-offset: -3px; }
+        .exam-pill-wrap {
+            display: grid;
+            grid-template-rows: 0fr;
+            margin-top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: grid-template-rows .6s cubic-bezier(.4,0,.2,1), margin-top .6s cubic-bezier(.4,0,.2,1),
+                        opacity .3s ease, visibility 0s linear .6s;
+        }
+        .exam-pill {
+            display: inline-block;
+            width: fit-content;
+            padding: 5px 14px;
+            border-radius: 8px;
+            background: #111a2b;
+            border: 1px solid #26364f;
+            color: #cbd5e1;
+            font-weight: 600;
+            font-size: clamp(.7rem, 1.9vmin, .9rem);
+            white-space: nowrap;
+            margin: 1px;
+        }
+        body.exam-active .subject-collapse {
+            grid-template-rows: 0fr;
+            margin-top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: grid-template-rows .6s cubic-bezier(.4,0,.2,1), margin-top .6s cubic-bezier(.4,0,.2,1),
+                        opacity .3s ease, visibility 0s linear .6s;
+        }
+        body.exam-active .exam-pill-wrap {
+            grid-template-rows: 1fr;
+            margin-top: var(--gap);
+            opacity: 1;
+            visibility: visible;
+            transition: grid-template-rows .6s cubic-bezier(.4,0,.2,1), margin-top .6s cubic-bezier(.4,0,.2,1),
+                        opacity .5s ease .2s, visibility 0s;
+        }
+        .app-sub { display: grid; justify-items: end; }
+        .app-sub span { grid-area: 1 / 1; transition: opacity .5s ease, transform .5s var(--ease-out); }
+        .app-sub .sub-b {
+            opacity: 0;
+            transform: translateY(5px);
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+        body.exam-active .app-sub .sub-a { opacity: 0; transform: translateY(-5px); }
+        body.exam-active .app-sub .sub-b { opacity: 1; transform: none; }
+
+        /* 4. Stats bar: score folds away and the timer grows in, rather than popping */
+        .score-block {
+            max-width: 12rem;
+            overflow: hidden;
+            transition: max-width .55s cubic-bezier(.4,0,.2,1), opacity .35s ease, margin-right .55s cubic-bezier(.4,0,.2,1), visibility 0s;
+        }
+        body.exam-active .score-block {
+            max-width: 0;
+            opacity: 0;
+            margin-right: -16px;
+            visibility: hidden;
+            transition: max-width .55s cubic-bezier(.4,0,.2,1), opacity .3s ease, margin-right .55s cubic-bezier(.4,0,.2,1), visibility 0s linear .55s;
+        }
+        body #exam-timer-wrap {
+            max-width: 12rem;
+            overflow: hidden;
+            transition: max-width .55s cubic-bezier(.4,0,.2,1), margin-right .55s cubic-bezier(.4,0,.2,1),
+                        padding .55s cubic-bezier(.4,0,.2,1), opacity .45s ease .1s,
+                        background-color var(--theme-t) ease, border-color var(--theme-t) ease, color var(--theme-t) ease,
+                        visibility 0s;
+        }
+        body #exam-timer-wrap.hidden {
+            display: flex !important;
+            max-width: 0;
+            opacity: 0;
+            padding-left: 0;
+            padding-right: 0;
+            margin-right: -16px;
+            border-width: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: max-width .4s ease, margin-right .4s ease, padding .4s ease, opacity .25s ease, visibility 0s linear .4s;
+        }
+
+        /* 5. Mode toggle fades back instead of snapping */
+        .mode-toggle { transition: opacity .6s ease, background-color var(--theme-t) ease, border-color var(--theme-t) ease; }
+
+        /* 6. Panels: the old card lifts away, the next one rises in */
+        @keyframes examRise {
+            from { opacity: 0; transform: translateY(14px) scale(.985); }
+            to   { opacity: 1; transform: none; }
+        }
+        body .enter-rise, body.exam-active .enter-rise { animation: examRise .55s var(--ease-out) backwards; }
+        body #app .panel-leave {
+            opacity: 0;
+            transform: translateY(6px) scale(.99);
+            pointer-events: none;
+            transition: opacity .22s ease, transform .22s ease, background-color var(--theme-t) ease,
+                        border-color var(--theme-t) ease, box-shadow var(--theme-t) ease, color var(--theme-t) ease;
+        }
+        body #app #exam-intro.leaving {
+            opacity: 0;
+            transform: translateY(-8px) scale(.99);
+            pointer-events: none;
+            transition: opacity .26s ease, transform .26s ease, background-color var(--theme-t) ease, border-color var(--theme-t) ease;
+        }
+
+        /* 7. Moving between exam questions: slide in from the direction you're heading */
+        @keyframes qInNext { from { opacity: 0; transform: translateX(18px); }  to { opacity: 1; transform: none; } }
+        @keyframes qInPrev { from { opacity: 0; transform: translateX(-18px); } to { opacity: 1; transform: none; } }
+        .card-scroll.q-in-next { animation: qInNext .3s var(--ease-out) backwards; }
+        .card-scroll.q-in-prev { animation: qInPrev .3s var(--ease-out) backwards; }
+        @keyframes pick { 0% { transform: scale(.985); } 100% { transform: none; } }
+        .option-btn.just-picked { animation: pick .22s ease-out; }
+        body.exam-active .option-btn, body.exam-active #options-container > button {
+            transition: background .25s ease, border-color .25s ease, color .25s ease;
+        }
+
+        /* ---------- Exam briefing + countdown ---------- */
+        #exam-intro {
+            --intro-gap: clamp(8px, 2vmin, 16px);
+            padding: clamp(14px, 3vmin, 28px) !important;
+            border-radius: 20px;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+        #exam-intro.hidden { display: none !important; }
+        #exam-intro:not(.hidden) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .intro-view {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--intro-gap);
+            width: 100%;
+            margin: auto 0;
+        }
+        #exam-intro[data-phase="count"] .brief-view { display: none; }
+        #exam-intro:not([data-phase="count"]) .count-view { display: none; }
+        .intro-eyebrow { font-size: .7rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+        .intro-title { font-size: clamp(1.3rem, 4.4vmin, 2rem); font-weight: 800; letter-spacing: -.02em; line-height: 1.15; color: var(--ink); }
+        .intro-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(6px, 1.4vmin, 12px); width: 100%; max-width: 30rem; }
+        .intro-stat { padding: clamp(8px, 1.8vmin, 14px) 6px; border-radius: 12px; background: #fff5fa; border: 1px solid var(--line); }
+        .intro-stat b { display: block; font-size: clamp(1.1rem, 3.4vmin, 1.6rem); font-weight: 800; line-height: 1.1; font-variant-numeric: tabular-nums; }
+        .intro-stat span { font-size: .64rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
+        .intro-rules {
+            list-style: none; margin: 0; padding: 0; width: 100%; max-width: 30rem; text-align: left;
+            display: flex; flex-direction: column; gap: 6px;
+            font-size: clamp(.78rem, 2vmin, .92rem); line-height: 1.4; color: #831843;
+        }
+        .intro-rules li { display: flex; gap: 10px; }
+        .intro-rules li::before { content: ""; flex: 0 0 6px; height: 6px; border-radius: 9999px; background: var(--brand-a); margin-top: .5em; }
+        .intro-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 2px; }
+        .intro-actions button { padding: 10px 24px; border-radius: 12px; font-weight: 700; border: 0; cursor: pointer; }
+        .count-label { font-size: .72rem; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+        .count-num {
+            font-size: clamp(4rem, 22vmin, 8rem);
+            font-weight: 800;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+            color: var(--ink);
+            min-height: 1em;
+        }
+        .count-num.tick { animation: countTick .8s ease-out both; }
+        @keyframes countTick {
+            0%   { opacity: 0; transform: scale(1.45); }
+            22%  { opacity: 1; transform: scale(1); }
+            75%  { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(.92); }
+        }
+        body.exam-active .intro-eyebrow, body.exam-active .count-label { color: #94a3b8; }
+        body.exam-active .intro-title, body.exam-active .count-num { color: #f1f5f9; }
+        body.exam-active .intro-stat { background: #162238; border-color: #26364f; color: #f1f5f9; }
+        body.exam-active .intro-stat span { color: #94a3b8; }
+        body.exam-active .intro-rules { color: #cbd5e1; }
+        body.exam-active .intro-rules li::before { background: #60a5fa; }
+
+        @media (max-height: 520px) {
+            body.exam-active .exam-pill-wrap { margin-top: 0; }
+            .subject-collapse { flex: 1; margin-top: 0; }
+            body.exam-active .subject-collapse { margin-top: 0; }
+            .intro-rules { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -500,10 +725,11 @@
         <header class="app-header">
             <div class="app-title-row">
                 <h1 class="app-title">Grade 11 Reviewer</h1>
-                <p class="app-sub">Practice &amp; Learn</p>
+                <p class="app-sub"><span class="sub-a">Practice &amp; Learn</span><span class="sub-b">Exam in progress</span></p>
             </div>
 
-            <!-- Subject Selector -->
+            <!-- Subject Selector (folds away in exam mode) -->
+            <div class="subject-collapse"><div class="subject-clip">
             <div class="subject-grid">
                 <button id="science-btn" class="px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white">General Science
                 </button>
@@ -520,6 +746,10 @@
                 <button id="pagkas-btn" class="px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300">PagKas
                 </button>
             </div>
+            </div></div>
+
+            <!-- Current subject (slides in during exam mode) -->
+            <div class="exam-pill-wrap"><div class="subject-clip"><span id="exam-subject-pill" class="exam-pill">General Science</span></div></div>
         </header>
 
         <!-- Stats Bar -->
@@ -599,6 +829,35 @@
             </div>
         </div>
 
+        <!-- Exam Briefing + Countdown -->
+        <div id="exam-intro" class="hidden bg-white card-shadow" data-phase="brief" role="region" aria-label="Exam briefing">
+            <div class="intro-view brief-view">
+                <p class="intro-eyebrow">Exam mode</p>
+                <h2 id="exam-intro-subject" class="intro-title">General Science</h2>
+                <div class="intro-stats">
+                    <div class="intro-stat"><b id="exam-intro-count">60</b><span>Questions</span></div>
+                    <div class="intro-stat"><b id="exam-intro-time">60</b><span>Minutes</span></div>
+                    <div class="intro-stat"><b>At end</b><span>Feedback</span></div>
+                </div>
+                <ul class="intro-rules">
+                    <li>The timer starts only after a short countdown.</li>
+                    <li>No feedback or explanations until you submit.</li>
+                    <li>Answer every question to unlock Submit. When time runs out, the exam submits itself.</li>
+                </ul>
+                <div class="intro-actions">
+                    <button id="exam-begin-btn" class="gradient-bg text-white hover:opacity-90">Begin Exam</button>
+                    <button id="exam-cancel-btn" class="transition bg-gray-200 text-gray-700 hover:bg-gray-300">Cancel</button>
+                </div>
+            </div>
+            <div class="intro-view count-view" aria-live="polite">
+                <p class="count-label">Get ready</p>
+                <div id="exam-count-num" class="count-num" aria-hidden="true">3</div>
+                <div class="intro-actions">
+                    <button id="exam-cancel-btn-2" class="transition bg-gray-200 text-gray-700 hover:bg-gray-300">Cancel</button>
+                </div>
+            </div>
+        </div>
+
         <!-- Exam Result -->
         <div id="exam-result" class="hidden bg-white card-shadow text-center" style="padding:16px;border-radius:20px;">
             <h2 class="font-bold text-gray-800 mb-2">Exam Finished!</h2>
@@ -640,7 +899,7 @@
             }
             function sync() {
                 var examBtn = document.getElementById('exam-mode');
-                var on = shown('exam-timer-wrap') || shown('submit-exam-btn') || shown('exam-result') ||
+                var on = shown('exam-timer-wrap') || shown('submit-exam-btn') || shown('exam-result') || shown('exam-intro') ||
                          (!!examBtn && examBtn.classList.contains('gradient-bg'));
                 document.body.classList.toggle('exam-active', on);
                 if (meta) meta.setAttribute('content', on ? '#0b1220' : '#fff1f7');
