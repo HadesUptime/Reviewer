@@ -4652,6 +4652,11 @@ let reviewAnswers = {}; // Store answers for review mode
 let wrongQuestions = [];
 let isReviewMode = false;
 let reviewIndex = 0;
+let isExamMode = false;
+let examAnswers = {};
+let examTimeLeft = 0;
+let examTimerInterval = null;
+let examSubmitted = false;
 
 // DOM Elements
 const questionCard = document.getElementById('question-card');
@@ -4682,6 +4687,16 @@ const komunikasyonBtn = document.getElementById('komunikasyon-btn');
 const effectiveCommBtn = document.getElementById('effective-comm-btn');
 const lifeCareerBtn = document.getElementById('life-career-btn');
 const pagkasBtn = document.getElementById('pagkas-btn');
+const examModeBtn = document.getElementById('exam-mode');
+const examTimerWrap = document.getElementById('exam-timer-wrap');
+const examTimer = document.getElementById('exam-timer');
+const submitExamBtn = document.getElementById('submit-exam-btn');
+const examResult = document.getElementById('exam-result');
+const examScoreText = document.getElementById('exam-score-text');
+const examDetailText = document.getElementById('exam-detail-text');
+const examReviewBtn = document.getElementById('exam-review-btn');
+const examRetryBtn = document.getElementById('exam-retry-btn');
+const examPracticeBtn = document.getElementById('exam-practice-btn');
 
 // Initialize
 function init() {
@@ -4692,32 +4707,41 @@ function init() {
 
 // Render current question
 function renderQuestion() {
-    const currentQuestions = isReviewMode ? wrongQuestions : questions;
-    const currentIndex = isReviewMode ? reviewIndex : currentQuestionIndex;
-    
+    if (typeof examResult !== 'undefined' && examResult) examResult.classList.add('hidden');
+
+    const isReview = isReviewMode;
+    const isExam = isExamMode && !isReview;
+
+    const currentQuestions = isReview ? wrongQuestions : questions;
+    const currentIndex = isReview ? reviewIndex : currentQuestionIndex;
+
     if (currentQuestions.length === 0) {
-        if (isReviewMode) {
+        if (isReview) {
             questionCard.classList.add('hidden');
             noWrongState.classList.remove('hidden');
         } else {
             questionCard.classList.add('hidden');
             emptyState.classList.remove('hidden');
         }
+        if (submitExamBtn) submitExamBtn.classList.add('hidden');
+        if (examTimerWrap) examTimerWrap.classList.add('hidden');
         return;
     }
 
     questionCard.classList.remove('hidden');
     emptyState.classList.add('hidden');
     noWrongState.classList.add('hidden');
+    if (typeof examResult !== 'undefined' && examResult) examResult.classList.add('hidden');
 
     const question = currentQuestions[currentIndex];
-    const userAnswer = isReviewMode ? reviewAnswers[question.id] : userAnswers[question.id];
+    if (!question) return;
+    const userAnswer = isReview ? reviewAnswers[question.id] : (isExam ? examAnswers[question.id] : userAnswers[question.id]);
 
-    questionNumber.textContent = isReviewMode 
+    questionNumber.textContent = isReview
         ? `Wrong Question ${currentIndex + 1} of ${wrongQuestions.length}`
-        : `Question ${currentIndex + 1} of ${questions.length}`;
-    
-    questionText.textContent = question.question;
+        : (isExam
+            ? `Exam Question ${currentIndex + 1} of ${questions.length}`
+            : `Question ${currentIndex + 1} of ${questions.length}`);
 
     // Render options
     optionsContainer.innerHTML = '';
@@ -4730,33 +4754,35 @@ function renderQuestion() {
             </span>
             ${option}
         `;
-        
-        // Check if this option was selected
-        if (userAnswer === index) {
-            button.classList.add('selected');
-        }
-        
-        // Show correct/wrong if answered
-        if (userAnswer !== undefined && userAnswer !== null) {
-            if (index === question.correct) {
-                button.classList.add('correct');
-            } else if (index === userAnswer && userAnswer !== question.correct) {
-                button.classList.add('wrong');
-            }
-            button.disabled = true;
-        } else {
+
+        if (isExam) {
+            if (userAnswer === index) button.classList.add('selected');
             button.addEventListener('click', () => selectAnswer(index));
+        } else {
+            if (userAnswer === index) button.classList.add('selected');
+            if (userAnswer !== undefined && userAnswer !== null) {
+                if (index === question.correct) {
+                    button.classList.add('correct');
+                } else if (index === userAnswer && userAnswer !== question.correct) {
+                    button.classList.add('wrong');
+                }
+                button.disabled = true;
+            } else {
+                button.addEventListener('click', () => selectAnswer(index));
+            }
         }
 
         optionsContainer.appendChild(button);
     });
 
-    // Show feedback if answered
-    if (userAnswer !== undefined && userAnswer !== null) {
+    // Show feedback if answered (hidden in exam mode until submit)
+    if (isExam) {
+        feedback.classList.add('hidden');
+    } else if (userAnswer !== undefined && userAnswer !== null) {
         feedback.classList.remove('hidden');
         const isCorrect = userAnswer === question.correct;
         feedback.className = `mt-6 p-4 rounded-xl ${isCorrect ? 'bg-green-100' : 'bg-red-100'}`;
-        feedbackText.textContent = isCorrect ? '✓ Correct!' : '✗ Incorrect';
+        feedbackText.textContent = isCorrect ? 'Correct!' : 'Incorrect';
         feedbackText.className = `font-semibold mb-2 ${isCorrect ? 'text-green-700' : 'text-red-700'}`;
         rationale.textContent = question.rationale;
     } else {
@@ -4766,28 +4792,45 @@ function renderQuestion() {
     // Update navigation buttons
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex === currentQuestions.length - 1;
+    if (submitExamBtn) {
+        if (isExam) {
+            submitExamBtn.classList.remove('hidden');
+            updateSubmitButtonState();
+        } else {
+            submitExamBtn.classList.add('hidden');
+            submitExamBtn.disabled = false;
+            submitExamBtn.textContent = 'Submit Exam';
+        }
+    }
+    if (examTimerWrap) {
+        if (isExam) examTimerWrap.classList.remove('hidden');
+        else examTimerWrap.classList.add('hidden');
+    }
 }
 
 // Select answer
 function selectAnswer(index) {
-    const currentQuestions = isReviewMode ? wrongQuestions : questions;
-    const currentIndex = isReviewMode ? reviewIndex : currentQuestionIndex;
+    const isReview = isReviewMode;
+    const isExam = isExamMode && !isReview;
+    const currentQuestions = isReview ? wrongQuestions : questions;
+    const currentIndex = isReview ? reviewIndex : currentQuestionIndex;
     const question = currentQuestions[currentIndex];
+    if (!question) return;
 
-    if (isReviewMode) {
-        // Store answer for review mode
+    if (isExam) {
+        examAnswers[question.id] = index;
+    } else if (isReview) {
         reviewAnswers[question.id] = index;
     } else {
         userAnswers[question.id] = index;
-        
-        // Track wrong answers
+
+        // Track wrong answers (match by id + subject since ids repeat across subjects)
         if (index !== question.correct) {
-            if (!wrongQuestions.find(q => q.id === question.id)) {
+            if (!wrongQuestions.find(q => q.id === question.id && q.subject === question.subject)) {
                 wrongQuestions.push(question);
             }
         } else {
-            // Remove from wrong if corrected
-            wrongQuestions = wrongQuestions.filter(q => q.id !== question.id);
+            wrongQuestions = wrongQuestions.filter(q => !(q.id === question.id && q.subject === question.subject));
         }
     }
 
@@ -4797,10 +4840,27 @@ function selectAnswer(index) {
 
 // Update statistics
 function updateStats() {
+    const isExam = isExamMode && !isReviewMode;
+
+    if (isExam) {
+        const answered = Object.keys(examAnswers).length;
+        questionCount.textContent = `${answered} / ${questions.length} Questions`;
+        correctCount.textContent = '–';
+        wrongCount.textContent = '–';
+        const progress = questions.length ? (answered / questions.length) * 100 : 0;
+        const circumference = 2 * Math.PI * 28;
+        const offset = circumference - (progress / 100) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+        progressText.textContent = `${Math.round(progress)}%`;
+        reviewBtn.classList.add('hidden');
+        updateSubmitButtonState();
+        return;
+    }
+
     const answered = Object.keys(userAnswers).length;
     let correct = 0;
     let wrong = 0;
-    
+
     questions.forEach(q => {
         if (userAnswers[q.id] !== undefined) {
             if (userAnswers[q.id] === q.correct) {
@@ -4816,7 +4876,7 @@ function updateStats() {
     wrongCount.textContent = wrong;
 
     // Update progress circle
-    const progress = (answered / questions.length) * 100;
+    const progress = questions.length ? (answered / questions.length) * 100 : 0;
     const circumference = 2 * Math.PI * 28;
     const offset = circumference - (progress / 100) * circumference;
     progressCircle.style.strokeDashoffset = offset;
@@ -4825,24 +4885,226 @@ function updateStats() {
     // Update review button
     if (wrongQuestions.length > 0) {
         reviewBtn.classList.remove('hidden');
-        reviewBtn.innerHTML = `<i class="fas fa-redo"></i> Review Wrong (${wrongQuestions.length})`;
+        reviewBtn.innerHTML = `Review Wrong (${wrongQuestions.length})`;
     } else {
         reviewBtn.classList.add('hidden');
     }
+}
+
+// ---------- Exam mode helpers ----------
+function formatExamTime(totalSeconds) {
+    const s = Math.max(0, totalSeconds);
+    const m = Math.floor(s / 60);
+    const r = s % 60;
+    return `${String(m).padStart(2, '0')}:${String(r).padStart(2, '0')}`;
+}
+
+function updateExamTimerDisplay() {
+    if (!examTimer) return;
+    examTimer.textContent = formatExamTime(examTimeLeft);
+    if (examTimerWrap) {
+        if (examTimeLeft <= 300) examTimerWrap.classList.add('danger');
+        else examTimerWrap.classList.remove('danger');
+    }
+}
+
+function stopExamTimer() {
+    if (examTimerInterval) {
+        clearInterval(examTimerInterval);
+        examTimerInterval = null;
+    }
+    if (examTimerWrap) examTimerWrap.classList.remove('danger');
+}
+
+function startExamTimer() {
+    stopExamTimer();
+    examTimeLeft = Math.max(questions.length * 60, 600);
+    updateExamTimerDisplay();
+    examTimerInterval = setInterval(() => {
+        examTimeLeft--;
+        updateExamTimerDisplay();
+        if (examTimeLeft <= 0) {
+            submitExam(true);
+        }
+    }, 1000);
+}
+
+function updateModeButtons() {
+    const active = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+    const inactive = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+    if (!practiceModeBtn || !examModeBtn || !reviewModeBtn) return;
+    practiceModeBtn.className = (!isReviewMode && !isExamMode) ? active : inactive;
+    examModeBtn.className = (isExamMode && !isReviewMode) ? active : inactive;
+    reviewModeBtn.className = isReviewMode ? active : inactive;
+}
+
+function updateSubjectButtons() {
+    const active = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
+    const inactive = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
+    const map = {
+        'science': scienceBtn,
+        'math': mathBtn,
+        'biology': biologyBtn,
+        'komunikasyon': komunikasyonBtn,
+        'effective-comm': effectiveCommBtn,
+        'life-career': lifeCareerBtn,
+        'pagkas': pagkasBtn
+    };
+    Object.keys(map).forEach(key => {
+        if (map[key]) map[key].className = (currentSubject === key) ? active : inactive;
+    });
+}
+
+function startExam() {
+    isExamMode = true;
+    isReviewMode = false;
+    examSubmitted = false;
+    examAnswers = {};
+    currentQuestionIndex = 0;
+    reviewIndex = 0;
+    if (examResult) examResult.classList.add('hidden');
+    startExamTimer();
+    updateModeButtons();
+    updateSubjectButtons();
+    renderQuestion();
+    updateStats();
+}
+
+function getExamProgress() {
+    const total = questions.length;
+    const answered = Object.keys(examAnswers).length;
+    return { answered, total, remaining: total - answered };
+}
+
+function updateSubmitButtonState() {
+    if (!submitExamBtn) return;
+    const { answered, total, remaining } = getExamProgress();
+    if (remaining > 0) {
+        submitExamBtn.disabled = true;
+        submitExamBtn.textContent = `Submit Exam (${remaining} left)`;
+    } else {
+        submitExamBtn.disabled = false;
+        submitExamBtn.textContent = 'Submit Exam';
+    }
+}
+
+function goToFirstUnanswered() {
+    const idx = questions.findIndex(q => examAnswers[q.id] === undefined || examAnswers[q.id] === null);
+    if (idx !== -1) {
+        currentQuestionIndex = idx;
+        renderQuestion();
+        updateStats();
+    }
+}
+
+function submitExam(force = false) {
+    if (!isExamMode || examSubmitted) return false;
+    const { remaining } = getExamProgress();
+    if (remaining > 0 && !force) {
+        goToFirstUnanswered();
+        return false;
+    }
+    examSubmitted = true;
+    stopExamTimer();
+
+    let correct = 0;
+    let wrong = 0;
+    let unanswered = 0;
+    const newWrong = [];
+    questions.forEach(q => {
+        const a = examAnswers[q.id];
+        if (a === undefined || a === null) {
+            unanswered++;
+            newWrong.push(q);
+        } else if (a === q.correct) {
+            correct++;
+        } else {
+            wrong++;
+            newWrong.push(q);
+        }
+    });
+    wrongQuestions = newWrong;
+    reviewAnswers = {};
+
+    const total = questions.length;
+    const pct = total ? Math.round((correct / total) * 100) : 0;
+    questionCount.textContent = `${total} / ${total} Questions`;
+    correctCount.textContent = correct;
+    wrongCount.textContent = wrong + unanswered;
+    progressCircle.style.strokeDashoffset = 0;
+    progressText.textContent = `${pct}%`;
+    reviewBtn.classList.add('hidden');
+
+    questionCard.classList.add('hidden');
+    emptyState.classList.add('hidden');
+    noWrongState.classList.add('hidden');
+    if (submitExamBtn) submitExamBtn.classList.add('hidden');
+    if (examTimerWrap) examTimerWrap.classList.add('hidden');
+    if (examResult) examResult.classList.remove('hidden');
+    if (examScoreText) examScoreText.textContent = `You scored ${correct} / ${total}`;
+    if (examDetailText) examDetailText.textContent = `${pct}% • ${correct} correct • ${wrong} wrong • ${unanswered} unanswered`;
+
+    updateModeButtons();
+    return true;
+}
+
+function exitExamToPractice() {
+    stopExamTimer();
+    isExamMode = false;
+    isReviewMode = false;
+    examSubmitted = false;
+    examAnswers = {};
+    if (examResult) examResult.classList.add('hidden');
+    updateModeButtons();
+    renderQuestion();
+    updateStats();
+}
+
+function enterReview() {
+    stopExamTimer();
+    isExamMode = false;
+    isReviewMode = true;
+    reviewIndex = 0;
+    if (examResult) examResult.classList.add('hidden');
+    updateModeButtons();
+    renderQuestion();
+}
+
+function setSubject(subject) {
+    stopExamTimer();
+    currentSubject = subject;
+    currentQuestionIndex = 0;
+    userAnswers = {};
+    reviewAnswers = {};
+    examAnswers = {};
+    wrongQuestions = [];
+    reviewIndex = 0;
+    isReviewMode = false;
+    isExamMode = false;
+    examSubmitted = false;
+    if (examResult) examResult.classList.add('hidden');
+    questions = selectRandomQuestions(currentSubject);
+    updateModeButtons();
+    updateSubjectButtons();
+    renderQuestion();
+    updateStats();
 }
 
 // Setup event listeners
 function setupEventListeners() {
     prevBtn.addEventListener('click', () => {
         if (isReviewMode) {
-            reviewIndex--;
+            if (reviewIndex > 0) reviewIndex--;
         } else {
-            currentQuestionIndex--;
+            if (currentQuestionIndex > 0) currentQuestionIndex--;
         }
         renderQuestion();
     });
 
     nextBtn.addEventListener('click', () => {
+        const currentQuestions = isReviewMode ? wrongQuestions : questions;
+        const currentIndex = isReviewMode ? reviewIndex : currentQuestionIndex;
+        if (currentIndex >= currentQuestions.length - 1) return;
         if (isReviewMode) {
             reviewIndex++;
         } else {
@@ -4852,209 +5114,77 @@ function setupEventListeners() {
     });
 
     practiceModeBtn.addEventListener('click', () => {
-        isReviewMode = false;
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        renderQuestion();
+        exitExamToPractice();
     });
 
+    if (examModeBtn) {
+        examModeBtn.addEventListener('click', () => {
+            if (isExamMode && !isReviewMode) return;
+            questions = selectRandomQuestions(currentSubject);
+            startExam();
+        });
+    }
+
     reviewModeBtn.addEventListener('click', () => {
-        isReviewMode = true;
-        reviewIndex = 0;
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        renderQuestion();
+        if (isExamMode && !examSubmitted) {
+            if (!submitExam(false) && wrongQuestions.length === 0) return;
+            if (wrongQuestions.length > 0) enterReview();
+            return;
+        }
+        enterReview();
     });
 
     reviewBtn.addEventListener('click', () => {
-        isReviewMode = true;
-        reviewIndex = 0;
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        renderQuestion();
+        enterReview();
     });
 
+    if (submitExamBtn) {
+        submitExamBtn.addEventListener('click', () => {
+            submitExam(false);
+        });
+    }
+
+    if (examReviewBtn) {
+        examReviewBtn.addEventListener('click', () => {
+            if (wrongQuestions.length > 0) enterReview();
+        });
+    }
+
+    if (examRetryBtn) {
+        examRetryBtn.addEventListener('click', () => {
+            questions = selectRandomQuestions(currentSubject);
+            startExam();
+        });
+    }
+
+    if (examPracticeBtn) {
+        examPracticeBtn.addEventListener('click', () => {
+            setSubject(currentSubject);
+        });
+    }
+
     restartBtn.addEventListener('click', () => {
-        currentQuestionIndex = 0;
-        userAnswers = {};
-        reviewAnswers = {};
-        wrongQuestions = [];
-       reviewIndex = 0;
-        isReviewMode = false;
-        questions = selectRandomQuestions(currentSubject); // Re-randomize questions
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        renderQuestion();
-        updateStats();
+        if (isExamMode && !isReviewMode) {
+            questions = selectRandomQuestions(currentSubject);
+            startExam();
+        } else {
+            setSubject(currentSubject);
+            // setSubject reshuffles; re-enter practice explicitly
+            exitExamToPractice();
+        }
     });
 
     // Subject selection
-    scienceBtn.addEventListener('click', () => {
-        if (currentSubject === "science") return;
-        currentSubject = "science";
-        currentQuestionIndex = 0;
-        userAnswers = {};
-        reviewAnswers = {};
-        wrongQuestions = [];
-        reviewIndex = 0;
-        isReviewMode = false;
-        questions = selectRandomQuestions(currentSubject);
-        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        renderQuestion();
-        updateStats();
-    });
-
-    mathBtn.addEventListener('click', () => {
-        if (currentSubject === "math") return;
-        currentSubject = "math";
-        currentQuestionIndex = 0;
-        userAnswers = {};
-        reviewAnswers = {};
-        wrongQuestions = [];
-        reviewIndex = 0;
-        isReviewMode = false;
-        questions = selectRandomQuestions(currentSubject);
-        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        renderQuestion();
-        updateStats();
-    });
-
-    biologyBtn.addEventListener('click', () => {
-        if (currentSubject === "biology") return;
-        currentSubject = "biology";
-        currentQuestionIndex = 0;
-        userAnswers = {};
-        reviewAnswers = {};
-        wrongQuestions = [];
-        reviewIndex = 0;
-        isReviewMode = false;
-        questions = selectRandomQuestions(currentSubject);
-        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        renderQuestion();
-        updateStats();
-    });
-
-    komunikasyonBtn.addEventListener('click', () => {
-        if (currentSubject === "komunikasyon") return;
-        currentSubject = "komunikasyon";
-        currentQuestionIndex = 0;
-        userAnswers = {};
-        reviewAnswers = {};
-        wrongQuestions = [];
-        reviewIndex = 0;
-        isReviewMode = false;
-        questions = selectRandomQuestions(currentSubject);
-        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        renderQuestion();
-        updateStats();
-    });
-
-    effectiveCommBtn.addEventListener('click', () => {
-        if (currentSubject === "effective-comm") return;
-        currentSubject = "effective-comm";
-        currentQuestionIndex = 0;
-        userAnswers = {};
-        reviewAnswers = {};
-        wrongQuestions = [];
-        reviewIndex = 0;
-        isReviewMode = false;
-        questions = selectRandomQuestions(currentSubject);
-        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        renderQuestion();
-        updateStats();
-    });
-
-    lifeCareerBtn.addEventListener('click', () => {
-        if (currentSubject === "life-career") return;
-        currentSubject = "life-career";
-        currentQuestionIndex = 0;
-        userAnswers = {};
-        reviewAnswers = {};
-        wrongQuestions = [];
-        reviewIndex = 0;
-        isReviewMode = false;
-        questions = selectRandomQuestions(currentSubject);
-        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        renderQuestion();
-        updateStats();
-    });
-
-    pagkasBtn.addEventListener('click', () => {
-        if (currentSubject === "pagkas") return;
-        currentSubject = "pagkas";
-        currentQuestionIndex = 0;
-        userAnswers = {};
-        reviewAnswers = {};
-        wrongQuestions = [];
-        reviewIndex = 0;
-        isReviewMode = false;
-        questions = selectRandomQuestions(currentSubject);
-        pagkasBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        scienceBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        mathBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        biologyBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        komunikasyonBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        effectiveCommBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        lifeCareerBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-        renderQuestion();
-        updateStats();
-    });
+    scienceBtn.addEventListener('click', () => setSubject("science"));
+    mathBtn.addEventListener('click', () => setSubject("math"));
+    biologyBtn.addEventListener('click', () => setSubject("biology"));
+    komunikasyonBtn.addEventListener('click', () => setSubject("komunikasyon"));
+    effectiveCommBtn.addEventListener('click', () => setSubject("effective-comm"));
+    lifeCareerBtn.addEventListener('click', () => setSubject("life-career"));
+    pagkasBtn.addEventListener('click', () => setSubject("pagkas"));
 
     backToPracticeBtn.addEventListener('click', () => {
-        isReviewMode = false;
-        practiceModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition gradient-bg text-white';
-        reviewModeBtn.className = 'px-6 py-3 rounded-xl font-semibold transition bg-gray-200 text-gray-700 hover:bg-gray-300';
-       renderQuestion();
+        exitExamToPractice();
     });
 }
 
