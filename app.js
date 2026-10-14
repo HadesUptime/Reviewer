@@ -4779,6 +4779,9 @@ function renderQuestion() {
             ? `Exam Question ${currentIndex + 1} of ${questions.length}`
             : `Question ${currentIndex + 1} of ${questions.length}`);
 
+    // Render the question itself
+    questionText.textContent = question.question;
+
     // Render options
     optionsContainer.innerHTML = '';
     question.options.forEach((option, index) => {
